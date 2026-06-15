@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import restaurantsData from "@/data/restaurants.json";
 import RestaurantCard from "@/components/RestaurantCard";
+import FilterDropdown from "@/components/FilterDropdown";
 import { Restaurant } from "@/types";
 
 const restaurants = restaurantsData as Restaurant[];
@@ -65,74 +66,69 @@ export default function Home() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Search */}
-        <div className="relative mb-6">
-          <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
-          </svg>
-          <input
-            type="text"
-            placeholder="Search restaurants..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-200 shadow-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-400 text-base bg-white"
+        {/* Search + Filter row */}
+        <div className="flex flex-col sm:flex-row gap-3 mb-6">
+          <div className="relative flex-1">
+            <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search restaurants..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-12 pr-4 py-2.5 rounded-xl border border-gray-200 shadow-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm bg-white"
+            />
+          </div>
+
+          <FilterDropdown
+            label="Cuisine"
+            options={allCuisines}
+            selected={selectedCuisines}
+            onChange={toggleCuisine}
+            accentColor="orange"
           />
-        </div>
 
-        {/* Cuisine filter */}
-        <div className="mb-4">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Cuisine</p>
-          <div className="flex flex-wrap gap-2">
-            {allCuisines.map((c) => (
-              <button
-                key={c}
-                onClick={() => toggleCuisine(c)}
-                className={`text-sm px-3 py-1.5 rounded-full border font-medium transition-colors ${
-                  selectedCuisines.includes(c)
-                    ? "bg-orange-500 text-white border-orange-500"
-                    : "bg-white text-gray-700 border-gray-200 hover:border-orange-300"
-                }`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
+          <FilterDropdown
+            label="Area"
+            options={allAreas}
+            selected={selectedAreas}
+            onChange={toggleArea}
+            accentColor="emerald"
+          />
 
-        {/* Area filter */}
-        <div className="mb-6">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Area</p>
-          <div className="flex flex-wrap gap-2">
-            {allAreas.map((a) => (
-              <button
-                key={a}
-                onClick={() => toggleArea(a)}
-                className={`text-sm px-3 py-1.5 rounded-full border font-medium transition-colors ${
-                  selectedAreas.includes(a)
-                    ? "bg-emerald-600 text-white border-emerald-600"
-                    : "bg-white text-gray-700 border-gray-200 hover:border-emerald-300"
-                }`}
-              >
-                {a}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Results bar */}
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-sm text-gray-500">
-            {filtered.length} restaurant{filtered.length !== 1 ? "s" : ""} found
-          </p>
           {hasFilters && (
             <button
               onClick={clearAll}
-              className="text-sm text-orange-600 hover:text-orange-800 font-medium underline"
+              className="px-4 py-2.5 text-sm text-gray-500 hover:text-gray-800 border border-gray-200 rounded-xl bg-white hover:bg-gray-50 transition-colors whitespace-nowrap"
             >
               Clear all
             </button>
           )}
         </div>
+
+        {/* Active filter pills */}
+        {(selectedCuisines.length > 0 || selectedAreas.length > 0) && (
+          <div className="flex flex-wrap gap-2 mb-5">
+            {selectedCuisines.map((c) => (
+              <span key={c} className="flex items-center gap-1.5 bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1.5 rounded-full">
+                {c}
+                <button onClick={() => toggleCuisine(c)} className="hover:text-orange-600">✕</button>
+              </span>
+            ))}
+            {selectedAreas.map((a) => (
+              <span key={a} className="flex items-center gap-1.5 bg-emerald-100 text-emerald-800 text-xs font-medium px-3 py-1.5 rounded-full">
+                {a}
+                <button onClick={() => toggleArea(a)} className="hover:text-emerald-600">✕</button>
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Results count */}
+        <p className="text-sm text-gray-500 mb-4">
+          {filtered.length} restaurant{filtered.length !== 1 ? "s" : ""} found
+        </p>
 
         {/* Grid */}
         {filtered.length > 0 ? (

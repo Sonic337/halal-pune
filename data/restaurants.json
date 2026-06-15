@@ -64,7 +64,8 @@
     "tagline": "",
     "cuisines": ["Chinese", "Seafood"],
     "branches": [
-      { "area": "Sasoon Road / Dhole Patil Road", "mapsUrl": "https://maps.app.goo.gl/buqSTAhzLwi4K9q6A" }
+      { "area": "Sasoon Road", "mapsUrl": "" },
+      { "area": "Dhole Patil Road", "mapsUrl": "https://maps.app.goo.gl/buqSTAhzLwi4K9q6A" }
     ]
   },
   {
@@ -101,9 +102,9 @@
     "tagline": "",
     "cuisines": ["Cafe", "Tea", "Beverages", "Italian", "Continental", "Thai", "North Indian", "Fast Food"],
     "branches": [
-      { "area": "Mohammadwadi", "mapsUrl": "https://maps.app.goo.gl/pr2rxqhwuog3CpzL8" },
+      { "area": "Royale Heritage Mall, Mohammadwadi", "mapsUrl": "https://maps.app.goo.gl/pr2rxqhwuog3CpzL8" },
       { "area": "Koregaon Park", "mapsUrl": "https://maps.app.goo.gl/NKYwzQaZNnNpdKmj6" },
-      { "area": "Kothrud / Erandwane", "mapsUrl": "https://maps.app.goo.gl/sSwqCQGS6hApAVzS7" }
+      { "area": "Kothrud, Erandwane", "mapsUrl": "https://maps.app.goo.gl/sSwqCQGS6hApAVzS7" }
     ]
   },
   {
@@ -124,7 +125,7 @@
       { "area": "Kalyani Nagar", "mapsUrl": "https://maps.app.goo.gl/sTaMBnTitpi9JwrM9" },
       { "area": "Phoenix Marketcity, Viman Nagar", "mapsUrl": "https://maps.app.goo.gl/P6uFXPsTz7xfp1Vo8" },
       { "area": "Westend Mall, Aundh", "mapsUrl": "https://maps.app.goo.gl/dRpekWX44J3Kzcih8" },
-      { "area": "Balewadi High St", "mapsUrl": "https://maps.app.goo.gl/yvmC9HotSFRrtFtw7" },
+      { "area": "Balewadi High St, Laxman Nagar", "mapsUrl": "https://maps.app.goo.gl/yvmC9HotSFRrtFtw7" },
       { "area": "Pimpri-Chinchwad", "mapsUrl": "https://maps.app.goo.gl/R6xZ1uXczg8H3j3B6" },
       { "area": "Hinjewadi", "mapsUrl": "https://maps.app.goo.gl/UUSUvmKmM1QNwe1L8" }
     ]
@@ -139,6 +140,201 @@
       { "area": "Kothrud", "mapsUrl": "https://maps.app.goo.gl/um3W8FxMXdDVWSdQ9" },
       { "area": "Wakad", "mapsUrl": "https://maps.app.goo.gl/xiqnPYP8WWeFwyCg8" },
       { "area": "Baner", "mapsUrl": "https://maps.app.goo.gl/mBZJP3X2raBibzwc8" }
+    ]
+  },
+  {
+    "name": "Marrakesh",
+    "tagline": "",
+    "cuisines": ["North Indian", "Lebanese", "Mughlai", "Shawarma", "Biryani", "Rolls"],
+    "branches": [
+      { "area": "Shivaji Nagar", "mapsUrl": "https://www.google.com/maps?q=18.5243695751,73.8413697481" },
+      { "area": "Parvati", "mapsUrl": "https://www.google.com/maps?q=18.4844687126,73.8496239332" },
+      { "area": "Kothrud", "mapsUrl": "https://www.google.com/maps?q=18.5019000000,73.8144000000" },
+      { "area": "Kalyani Nagar", "mapsUrl": "https://www.google.com/maps?q=18.5534832000,73.9058687000" },
+      { "area": "Salunkhe Vihar Road", "mapsUrl": "https://www.google.com/maps?q=18.4779057000,73.9047663000" },
+      { "area": "Dhankawadi", "mapsUrl": "https://www.google.com/maps?q=18.4572010000,73.8520060000" },
+      { "area": "Aundh", "mapsUrl": "https://www.google.com/maps?q=18.5579591000,73.8059040000" },
+      { "area": "Magarpatta", "mapsUrl": "https://www.google.com/maps?q=18.5060489600,73.9257234700" },
+      { "area": "NIBM Road", "mapsUrl": "https://www.google.com/maps?q=18.4628302277,73.9127017558" }
+    ]
+  },
+  {
+    "name": "Habibi Ya Fatayer",
+    "tagline": "",
+    "cuisines": ["Middle Eastern", "Asian Fusion", "American"],
+    "branches": [
+      { "area": "NIBM Road", "mapsUrl": "" }
+    ]
+  },
+  {
+    "name": "Kimling",
+    "tagline": "",
+    "cuisines": ["Chinese"],
+    "branches": [
+      { "area": "Kondhwa", "mapsUrl": "" }
+    ]
+  },
+  {
+    "name": "Mocha",
+    "tagline": "",
+    "cuisines": ["Chinese", "North Indian", "Fast Food"],
+    "branches": [
+      { "area": "Salunke Vihar", "mapsUrl": "" }
+    ]
+  },
+  {
+    "name": "Pandan Kitchen",
+    "tagline": "",
+    "cuisines": ["Indonesian", "Southeast Asian"],
+    "branches": [
+      { "area": "NIBM, Kondhwa", "mapsUrl": "" }
+    ]
+  },
+  {
+    "name": "Grand Delhi Darbar",
+    "tagline": "",
+    "cuisines": ["Chinese", "North Indian", "Biryani"],
+    "branches": [
+      { "area": "Camp", "mapsUrl": "" }
+    ]
+  },
+  {
+    "name": "Persian Darbar",
+    "tagline": "",
+    "cuisines": ["Persian", "Chinese", "North Indian"],
+    "branches": [
+      { "area": "Camp", "mapsUrl": "" }
+    ]
+  },
+  {
+    "name": "Gareeb Nawaz",
+    "tagline": "",
+    "cuisines": ["North Indian", "Mughlai", "Biryani", "Kebab"],
+    "branches": [
+      { "area": "Kausar Bagh", "mapsUrl": "" }
+    ]
+  },
+  {
+    "name": "Grand Darbar",
+    "tagline": "",
+    "cuisines": ["North Indian"],
+    "branches": [
+      { "area": "Kausar Bagh", "mapsUrl": "" }
+    ]
+  },
+  {
+    "name": "Supreme",
+    "tagline": "",
+    "cuisines": ["Chinese", "Continental", "North Indian"],
+    "branches": [
+      { "area": "Kausar Bagh", "mapsUrl": "https://maps.app.goo.gl/SmoAoRzrHeBJAmVh6" }
+    ]
+  },
+  {
+    "name": "Masala Times",
+    "tagline": "",
+    "cuisines": ["North Indian", "Chinese", "Biryani"],
+    "branches": [
+      { "area": "Camp", "mapsUrl": "https://maps.app.goo.gl/MHKbXk7nKFrwsBE76" }
+    ]
+  },
+  {
+    "name": "Spice Culture",
+    "tagline": "",
+    "cuisines": ["North Indian", "Biryani"],
+    "branches": [
+      { "area": "Kondhwa", "mapsUrl": "https://maps.app.goo.gl/xZpKpJbRjooVQMEVA" }
+    ]
+  },
+  {
+    "name": "Balsam",
+    "tagline": "",
+    "cuisines": ["Continental", "Desserts"],
+    "branches": [
+      { "area": "Kondhwa", "mapsUrl": "https://maps.app.goo.gl/xjDhXREV7akTYDLZA" },
+      { "area": "Salunke Vihar Road", "mapsUrl": "" }
+    ]
+  },
+  {
+    "name": "Arabian Mandi",
+    "tagline": "",
+    "cuisines": ["Middle Eastern", "Chinese", "Biryani"],
+    "branches": [
+      { "area": "Kausar Bagh", "mapsUrl": "https://maps.app.goo.gl/FQQm44XyA46Pxt9LA" }
+    ]
+  },
+  {
+    "name": "Qehhwa Cafe",
+    "tagline": "",
+    "cuisines": ["Cafe", "Coffee", "Sandwich", "Desserts", "Pizza", "Pasta", "Beverages"],
+    "branches": [
+      { "area": "NIBM Road, Kondhwa", "mapsUrl": "https://maps.app.goo.gl/JKuUNjUMky2NBmfW8" }
+    ]
+  },
+  {
+    "name": "Chafa Cafe",
+    "tagline": "",
+    "cuisines": ["Healthy Food", "Italian", "Continental", "Salad", "Asian", "Cafe", "Coffee", "Sandwich"],
+    "branches": [
+      { "area": "Koregaon Park", "mapsUrl": "https://maps.app.goo.gl/pB6Ztu1xWGyfr83Z6" },
+      { "area": "Salunkhe Vihar Road", "mapsUrl": "https://maps.app.goo.gl/gfiH8FX3XwvKbN8P9" }
+    ]
+  },
+  {
+    "name": "Grand Shalimar",
+    "tagline": "",
+    "cuisines": ["North Indian", "Kebab", "Chinese", "Rolls"],
+    "branches": [
+      { "area": "NIBM Road", "mapsUrl": "https://maps.app.goo.gl/cASPgFc15gXyC8yg7" }
+    ]
+  },
+  {
+    "name": "Arabian Chilies",
+    "tagline": "Temporarily closed for dining — back soon!",
+    "cuisines": ["Mughlai", "North Indian", "Biryani", "Rolls", "Chinese", "Shawarma", "Seafood", "Desserts"],
+    "branches": [
+      { "area": "Kausar Bagh", "mapsUrl": "https://maps.app.goo.gl/DBT99UKaRk3v1hUQ7" }
+    ]
+  },
+  {
+    "name": "Bhiwandi Darbar",
+    "tagline": "",
+    "cuisines": ["North Indian", "Mughlai", "Biryani", "Seafood", "Chinese", "Fast Food", "Desserts", "Beverages"],
+    "branches": [
+      { "area": "Camp", "mapsUrl": "https://maps.app.goo.gl/34TGjBhV1UYH4nhc7" }
+    ]
+  },
+  {
+    "name": "The Steam Room Pizzeria",
+    "tagline": "",
+    "cuisines": ["Italian", "Pasta", "Desserts", "Beverages"],
+    "branches": [
+      { "area": "NIBM Road", "mapsUrl": "https://maps.app.goo.gl/ZhEBVAdE4h41m2SR9" }
+    ]
+  },
+  {
+    "name": "Crazy Cheesy",
+    "tagline": "",
+    "cuisines": ["Pizza", "Burger", "Pasta"],
+    "branches": [
+      { "area": "Sadashiv Peth", "mapsUrl": "https://goo.gl/maps/CrFUJVa1MJbz8L3S6" },
+      { "area": "Sinhagad Road", "mapsUrl": "https://goo.gl/maps/ZGac4nH66LH5ZP4R9" },
+      { "area": "Bavdhan", "mapsUrl": "https://goo.gl/maps/AFSWHzX5TjHzPLT47" },
+      { "area": "Viman Nagar", "mapsUrl": "https://goo.gl/maps/bDBnqcfTG3h5sYCeA" },
+      { "area": "Law College Road", "mapsUrl": "https://goo.gl/maps/yG7h1k3TgR2PoEHY8" },
+      { "area": "Hadpsar", "mapsUrl": "https://goo.gl/maps/J5F9ZrktNHfnkuNX9" },
+      { "area": "FC Road", "mapsUrl": "https://goo.gl/maps/894uDWfmUyXzxeP2A" },
+      { "area": "Pimple Saudagar", "mapsUrl": "https://goo.gl/maps/pKkZ6eEkeRDPLg1n7" },
+      { "area": "Akurdi", "mapsUrl": "https://goo.gl/maps/UQh2PQYRHYrCK3oPA" },
+      { "area": "Camp", "mapsUrl": "https://share.google/D3sOgspC243oRptjW" },
+      { "area": "Wakad", "mapsUrl": "https://goo.gl/maps/xGwsHjX5HJdPbvw46" },
+      { "area": "Salunke Vihar", "mapsUrl": "https://goo.gl/maps/NdQ1nn84kTF6bVG96" },
+      { "area": "Aundh", "mapsUrl": "https://maps.app.goo.gl/qZKzSc4kmhGZYb7L7" },
+      { "area": "Bharati Vidyapeeth", "mapsUrl": "https://goo.gl/maps/fGPPLfH9puNeuLp97" },
+      { "area": "Warje", "mapsUrl": "https://goo.gl/maps/BbdHV9QE3gEaWa1n7" },
+      { "area": "Balewadi", "mapsUrl": "https://maps.app.goo.gl/XKDUt4hrVywYfwrC8" },
+      { "area": "Koregaon Park", "mapsUrl": "https://maps.app.goo.gl/BhSUknwQpcebDZkv9" },
+      { "area": "Saswad", "mapsUrl": "https://maps.app.goo.gl/F1tjK577y1AbKZgQ9" }
     ]
   }
 ]
