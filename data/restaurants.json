@@ -17,6 +17,14 @@
     ]
   },
   {
+    "name": "Chai Square",
+    "tagline": "",
+    "cuisines": ["Fast Food", "Beverages", "Sandwich", "Bakery", "Tea", "Street Food", "Burger", "Juices"],
+    "branches": [
+      { "area": "Wanowrie", "mapsUrl": "https://maps.app.goo.gl/vSspirxFbhuG8xb7A", "lat": 18.4880464, "lng": 73.8937064 }
+    ]
+  },
+  {
     "name": "Kebabbest",
     "tagline": "",
     "cuisines": [
