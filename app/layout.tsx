@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Halal Eats Pune",
-  description: "Find halal restaurants across Pune — verified and curated",
+  title: "Wurrynot",
+  description: "Eat without the worry. Discover Pune's best local restaurants, personally picked and community-curated.",
 };
 
 export default function RootLayout({

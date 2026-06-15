@@ -99,9 +99,9 @@ export default function Home() {
       {/* Hero */}
       <div className="bg-gradient-to-r from-orange-500 to-emerald-600 text-white py-14 px-4 text-center">
         <div className="max-w-2xl mx-auto">
-          <div className="text-4xl mb-2">🕌</div>
-          <h1 className="text-4xl font-extrabold tracking-tight mb-2">Halal Eats Pune</h1>
-          <p className="text-orange-100 text-lg">Find halal restaurants across Pune — verified &amp; curated</p>
+          <div className="text-4xl mb-2">🍽️</div>
+          <h1 className="text-4xl font-extrabold tracking-tight mb-2">Wurrynot</h1>
+          <p className="text-orange-100 text-lg">Eat without the worry. Pune's best local spots, personally picked.</p>
         </div>
       </div>
 
