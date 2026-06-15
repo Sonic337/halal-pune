@@ -27,6 +27,14 @@ function nearestDistance(restaurant: Restaurant, loc: UserLocation): number | un
   return dists.length > 0 ? Math.min(...dists) : undefined;
 }
 
+function sortedBranches(restaurant: Restaurant, loc: UserLocation) {
+  return [...restaurant.branches].sort((a, b) => {
+    const da = a.lat != null && a.lng != null ? haversineKm(loc.lat, loc.lng, a.lat, a.lng) : Infinity;
+    const db = b.lat != null && b.lng != null ? haversineKm(loc.lat, loc.lng, b.lat, b.lng) : Infinity;
+    return da - db;
+  });
+}
+
 export default function Home() {
   const [search, setSearch] = useState("");
   const [selectedCuisines, setSelectedCuisines] = useState<string[]>([]);
@@ -170,6 +178,7 @@ export default function Home() {
               <RestaurantCard
                 key={r.name}
                 restaurant={r}
+                branches={userLocation ? sortedBranches(r, userLocation) : undefined}
                 distanceKm={userLocation ? nearestDistance(r, userLocation) : undefined}
               />
             ))}

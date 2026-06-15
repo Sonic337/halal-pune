@@ -54,16 +54,19 @@ const VISIBLE_LIMIT = 3;
 
 export default function RestaurantCard({
   restaurant,
+  branches: branchesProp,
   distanceKm,
 }: {
   restaurant: Restaurant;
+  branches?: Branch[];
   distanceKm?: number;
 }) {
   const [expanded, setExpanded] = useState(false);
-  const hasMore = restaurant.branches.length > VISIBLE_LIMIT;
+  const branches = branchesProp ?? restaurant.branches;
+  const hasMore = branches.length > VISIBLE_LIMIT;
   const visibleBranches =
-    hasMore && !expanded ? restaurant.branches.slice(0, VISIBLE_LIMIT) : restaurant.branches;
-  const hiddenCount = restaurant.branches.length - VISIBLE_LIMIT;
+    hasMore && !expanded ? branches.slice(0, VISIBLE_LIMIT) : branches;
+  const hiddenCount = branches.length - VISIBLE_LIMIT;
 
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow p-5 flex flex-col gap-3 border border-gray-100">
