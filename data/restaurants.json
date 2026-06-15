@@ -47,7 +47,7 @@
     "cuisines": ["Korean", "Asian"],
     "branches": [
       { "area": "Viman Nagar", "mapsUrl": "https://maps.app.goo.gl/jkrvNKtHNaUukj897" },
-      { "area": "Wakad", "mapsUrl": "" },
+      { "area": "Wakad", "mapsUrl": "https://www.google.com/maps/search/Seoul+Dak+Wakad+Pune" },
       { "area": "Expressway", "mapsUrl": "https://maps.app.goo.gl/JA1kfzCnvrXeDjv7A" }
     ]
   },
@@ -64,7 +64,7 @@
     "tagline": "",
     "cuisines": ["Chinese", "Seafood"],
     "branches": [
-      { "area": "Sasoon Road", "mapsUrl": "" },
+      { "area": "Sasoon Road", "mapsUrl": "https://www.google.com/maps/search/Ahling+Chinese+Corner+Sassoon+Road+Pune" },
       { "area": "Dhole Patil Road", "mapsUrl": "https://maps.app.goo.gl/buqSTAhzLwi4K9q6A" }
     ]
   },
@@ -163,7 +163,7 @@
     "tagline": "",
     "cuisines": ["Middle Eastern", "Asian Fusion", "American"],
     "branches": [
-      { "area": "NIBM Road", "mapsUrl": "" }
+      { "area": "NIBM Road", "mapsUrl": "https://www.google.com/maps/search/Ya+Habibi+Fatayer+NIBM+Road+Pune" }
     ]
   },
   {
@@ -171,7 +171,7 @@
     "tagline": "",
     "cuisines": ["Chinese"],
     "branches": [
-      { "area": "Kondhwa", "mapsUrl": "" }
+      { "area": "Kondhwa", "mapsUrl": "https://www.google.com/maps/search/Kimling+Chinese+Restaurant+Kondhwa+Pune" }
     ]
   },
   {
@@ -179,7 +179,7 @@
     "tagline": "",
     "cuisines": ["Chinese", "North Indian", "Fast Food"],
     "branches": [
-      { "area": "Salunke Vihar", "mapsUrl": "" }
+      { "area": "Salunke Vihar", "mapsUrl": "https://www.google.com/maps/search/Mocha+restaurant+Salunke+Vihar+Pune" }
     ]
   },
   {
@@ -187,7 +187,7 @@
     "tagline": "",
     "cuisines": ["Indonesian", "Southeast Asian"],
     "branches": [
-      { "area": "NIBM, Kondhwa", "mapsUrl": "" }
+      { "area": "NIBM, Kondhwa", "mapsUrl": "https://www.google.com/maps/search/Pandan+Kitchen+NIBM+Road+Kondhwa+Pune" }
     ]
   },
   {
@@ -195,7 +195,7 @@
     "tagline": "",
     "cuisines": ["Chinese", "North Indian", "Biryani"],
     "branches": [
-      { "area": "Camp", "mapsUrl": "" }
+      { "area": "Camp", "mapsUrl": "https://www.google.com/maps/search/Grand+Dilli+Darbar+Camp+Pune" }
     ]
   },
   {
@@ -203,7 +203,7 @@
     "tagline": "",
     "cuisines": ["Persian", "Chinese", "North Indian"],
     "branches": [
-      { "area": "Camp", "mapsUrl": "" }
+      { "area": "Camp", "mapsUrl": "https://www.google.com/maps/search/Persian+Darbar+Camp+Pune" }
     ]
   },
   {
@@ -211,7 +211,7 @@
     "tagline": "",
     "cuisines": ["North Indian", "Mughlai", "Biryani", "Kebab"],
     "branches": [
-      { "area": "Kausar Bagh", "mapsUrl": "" }
+      { "area": "Kausar Bagh", "mapsUrl": "https://www.google.com/maps/search/Gareeb+Nawaz+Kausar+Bagh+Pune" }
     ]
   },
   {
@@ -219,7 +219,7 @@
     "tagline": "",
     "cuisines": ["North Indian"],
     "branches": [
-      { "area": "Kausar Bagh", "mapsUrl": "" }
+      { "area": "Kausar Bagh", "mapsUrl": "https://www.google.com/maps/search/Grand+Darbar+Kausar+Bagh+Pune" }
     ]
   },
   {
@@ -252,7 +252,7 @@
     "cuisines": ["Continental", "Desserts"],
     "branches": [
       { "area": "Kondhwa", "mapsUrl": "https://maps.app.goo.gl/xjDhXREV7akTYDLZA" },
-      { "area": "Salunke Vihar Road", "mapsUrl": "" }
+      { "area": "Salunke Vihar Road", "mapsUrl": "https://www.google.com/maps/search/Balsam+Cafe+Kitchen+Salunke+Vihar+Road+Pune" }
     ]
   },
   {
