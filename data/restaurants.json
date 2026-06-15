@@ -33,57 +33,6 @@
     ]
   },
   {
-    "name": "Atmosphere 6",
-    "tagline": "",
-    "cuisines": [
-      "North Indian",
-      "Asian",
-      "Beverages",
-      "Chinese",
-      "Continental"
-    ],
-    "branches": [
-      {
-        "area": "Kalyani Nagar",
-        "mapsUrl": "https://maps.app.goo.gl/MaKpUS7VYeFAmypc8",
-        "lat": 18.5481382,
-        "lng": 73.9025513
-      },
-      {
-        "area": "Viman Nagar",
-        "mapsUrl": "https://maps.app.goo.gl/8UpvfLpguwknpEHKA",
-        "lat": 18.5703877,
-        "lng": 73.9133336
-      }
-    ]
-  },
-  {
-    "name": "Seoul Dak",
-    "tagline": "",
-    "cuisines": [
-      "Korean",
-      "Asian"
-    ],
-    "branches": [
-      {
-        "area": "Viman Nagar",
-        "mapsUrl": "https://maps.app.goo.gl/jkrvNKtHNaUukj897",
-        "lat": 18.5703877,
-        "lng": 73.9133336
-      },
-      {
-        "area": "Wakad",
-        "mapsUrl": "https://www.google.com/maps/search/Seoul+Dak+Wakad+Pune",
-        "lat": 18.6022495,
-        "lng": 73.7644454
-      },
-      {
-        "area": "Expressway",
-        "mapsUrl": "https://maps.app.goo.gl/JA1kfzCnvrXeDjv7A"
-      }
-    ]
-  },
-  {
     "name": "Klinq",
     "tagline": "",
     "cuisines": [
@@ -102,26 +51,6 @@
         "mapsUrl": "https://maps.app.goo.gl/XcfSq5WqsMCiAVAd7",
         "lat": 18.5703877,
         "lng": 73.9133336
-      }
-    ]
-  },
-  {
-    "name": "Ahling",
-    "tagline": "",
-    "cuisines": [
-      "Chinese",
-      "Seafood"
-    ],
-    "branches": [
-      {
-        "area": "Sasoon Road",
-        "mapsUrl": "https://www.google.com/maps/search/Ahling+Chinese+Corner+Sassoon+Road+Pune"
-      },
-      {
-        "area": "Dhole Patil Road",
-        "mapsUrl": "https://maps.app.goo.gl/buqSTAhzLwi4K9q6A",
-        "lat": 18.534898,
-        "lng": 73.8767171
       }
     ]
   },
