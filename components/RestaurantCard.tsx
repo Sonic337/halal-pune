@@ -52,20 +52,32 @@ function BranchChip({ branch }: { branch: Branch }) {
 
 const VISIBLE_LIMIT = 3;
 
-export default function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
+export default function RestaurantCard({
+  restaurant,
+  distanceKm,
+}: {
+  restaurant: Restaurant;
+  distanceKm?: number;
+}) {
   const [expanded, setExpanded] = useState(false);
   const hasMore = restaurant.branches.length > VISIBLE_LIMIT;
-  const visibleBranches = hasMore && !expanded
-    ? restaurant.branches.slice(0, VISIBLE_LIMIT)
-    : restaurant.branches;
+  const visibleBranches =
+    hasMore && !expanded ? restaurant.branches.slice(0, VISIBLE_LIMIT) : restaurant.branches;
   const hiddenCount = restaurant.branches.length - VISIBLE_LIMIT;
 
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow p-5 flex flex-col gap-3 border border-gray-100">
-      <div>
-        <h2 className="text-xl font-bold text-gray-900">{restaurant.name}</h2>
-        {restaurant.tagline && (
-          <p className="text-sm text-gray-500 mt-0.5">{restaurant.tagline}</p>
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <h2 className="text-xl font-bold text-gray-900">{restaurant.name}</h2>
+          {restaurant.tagline && (
+            <p className="text-sm text-gray-500 mt-0.5">{restaurant.tagline}</p>
+          )}
+        </div>
+        {distanceKm !== undefined && (
+          <span className="shrink-0 text-xs font-semibold bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full whitespace-nowrap">
+            {distanceKm} km
+          </span>
         )}
       </div>
 
