@@ -8,6 +8,8 @@ export interface Branch {
 export interface Restaurant {
   name: string;
   tagline: string;
+  rating?: number;
+  reviewCount?: number;
   cuisines: string[];
   branches: Branch[];
 }

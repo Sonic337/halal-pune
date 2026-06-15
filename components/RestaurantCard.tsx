@@ -77,11 +77,19 @@ export default function RestaurantCard({
             <p className="text-sm text-gray-500 mt-0.5">{restaurant.tagline}</p>
           )}
         </div>
-        {distanceKm !== undefined && (
-          <span className="shrink-0 text-xs font-semibold bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full whitespace-nowrap">
-            {distanceKm} km
-          </span>
-        )}
+        <div className="flex flex-col items-end gap-1 shrink-0">
+          {distanceKm !== undefined && (
+            <span className="text-xs font-semibold bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full whitespace-nowrap">
+              {distanceKm} km
+            </span>
+          )}
+          {restaurant.rating !== undefined && (
+            <span className="flex items-center gap-1 text-xs font-semibold text-amber-600 whitespace-nowrap">
+              ★ {restaurant.rating.toFixed(1)}
+              <span className="text-gray-400 font-normal">({restaurant.reviewCount?.toLocaleString()})</span>
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-1.5">

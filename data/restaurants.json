@@ -2,6 +2,8 @@
   {
     "name": "Liberty Grill",
     "tagline": "Best burgers in Pune",
+    "rating": 4.6,
+    "reviewCount": 77,
     "cuisines": [
       "Mexican",
       "Salad",
@@ -19,6 +21,8 @@
   {
     "name": "Chai Square",
     "tagline": "",
+    "rating": 4.7,
+    "reviewCount": 54,
     "cuisines": ["Fast Food", "Beverages", "Sandwich", "Bakery", "Tea", "Street Food", "Burger", "Juices"],
     "branches": [
       { "area": "Wanowrie", "mapsUrl": "https://maps.app.goo.gl/vSspirxFbhuG8xb7A", "lat": 18.4880464, "lng": 73.8937064 }
@@ -27,6 +31,8 @@
   {
     "name": "Kebabbest",
     "tagline": "",
+    "rating": 4.6,
+    "reviewCount": 173,
     "cuisines": [
       "Kebab",
       "North Indian"
@@ -43,6 +49,8 @@
   {
     "name": "Klinq",
     "tagline": "",
+    "rating": 4.6,
+    "reviewCount": 2653,
     "cuisines": [
       "North Indian",
       "European",
@@ -65,6 +73,8 @@
   {
     "name": "Sunmoi",
     "tagline": "",
+    "rating": 4.4,
+    "reviewCount": 1459,
     "cuisines": [
       "Chinese",
       "Thai"
@@ -81,6 +91,8 @@
   {
     "name": "Chung Fa",
     "tagline": "",
+    "rating": 4.0,
+    "reviewCount": 2257,
     "cuisines": [
       "Chinese",
       "Sichuan"
@@ -97,6 +109,8 @@
   {
     "name": "Uncle Chinese",
     "tagline": "",
+    "rating": 4.4,
+    "reviewCount": 6977,
     "cuisines": [
       "Chinese",
       "Momos",
@@ -147,6 +161,8 @@
   {
     "name": "Pimplico",
     "tagline": "",
+    "rating": 4.2,
+    "reviewCount": 7516,
     "cuisines": [
       "Cafe",
       "Tea",
@@ -179,6 +195,8 @@
   {
     "name": "Camden Lane",
     "tagline": "",
+    "rating": 4.2,
+    "reviewCount": 827,
     "cuisines": [
       "Continental",
       "Mexican",
@@ -197,6 +215,8 @@
   {
     "name": "Taco Bell",
     "tagline": "",
+    "rating": 3.5,
+    "reviewCount": 4396,
     "cuisines": [
       "Mexican"
     ],
@@ -252,6 +272,8 @@
   {
     "name": "Nothing but Chicken",
     "tagline": "",
+    "rating": 3.3,
+    "reviewCount": 259,
     "cuisines": [
       "Salad",
       "Fast Food",
@@ -294,6 +316,8 @@
   {
     "name": "Marrakesh",
     "tagline": "",
+    "rating": 2.6,
+    "reviewCount": 35,
     "cuisines": [
       "North Indian",
       "Lebanese",
@@ -314,6 +338,8 @@
   {
     "name": "Habibi Ya Fatayer",
     "tagline": "",
+    "rating": 4.4,
+    "reviewCount": 247,
     "cuisines": [
       "Middle Eastern",
       "Asian Fusion",
@@ -331,6 +357,8 @@
   {
     "name": "Kimling",
     "tagline": "",
+    "rating": 4.0,
+    "reviewCount": 1112,
     "cuisines": [
       "Chinese"
     ],
@@ -346,6 +374,8 @@
   {
     "name": "Mocha",
     "tagline": "",
+    "rating": 4.5,
+    "reviewCount": 1973,
     "cuisines": [
       "Chinese",
       "North Indian",
@@ -361,6 +391,8 @@
   {
     "name": "Pandan Kitchen",
     "tagline": "",
+    "rating": 4.9,
+    "reviewCount": 123,
     "cuisines": [
       "Indonesian",
       "Southeast Asian"
@@ -377,6 +409,8 @@
   {
     "name": "Grand Delhi Darbar",
     "tagline": "",
+    "rating": 4.2,
+    "reviewCount": 4208,
     "cuisines": [
       "Chinese",
       "North Indian",
@@ -394,6 +428,8 @@
   {
     "name": "Persian Darbar",
     "tagline": "",
+    "rating": 4.2,
+    "reviewCount": 4045,
     "cuisines": [
       "Persian",
       "Chinese",
@@ -411,6 +447,8 @@
   {
     "name": "Gareeb Nawaz",
     "tagline": "",
+    "rating": 4.5,
+    "reviewCount": 60,
     "cuisines": [
       "North Indian",
       "Mughlai",
@@ -427,6 +465,8 @@
   {
     "name": "Grand Darbar",
     "tagline": "",
+    "rating": 4.1,
+    "reviewCount": 517,
     "cuisines": [
       "North Indian"
     ],
@@ -440,6 +480,8 @@
   {
     "name": "Supreme",
     "tagline": "",
+    "rating": 4.2,
+    "reviewCount": 582,
     "cuisines": [
       "Chinese",
       "Continental",
@@ -455,6 +497,8 @@
   {
     "name": "Masala Times",
     "tagline": "",
+    "rating": 4.2,
+    "reviewCount": 634,
     "cuisines": [
       "North Indian",
       "Chinese",
@@ -472,6 +516,8 @@
   {
     "name": "Spice Culture",
     "tagline": "",
+    "rating": 4.2,
+    "reviewCount": 1319,
     "cuisines": [
       "North Indian",
       "Biryani"
@@ -488,6 +534,8 @@
   {
     "name": "Balsam",
     "tagline": "",
+    "rating": 4.3,
+    "reviewCount": 322,
     "cuisines": [
       "Continental",
       "Desserts"
@@ -508,6 +556,8 @@
   {
     "name": "Arabian Mandi",
     "tagline": "",
+    "rating": 4.4,
+    "reviewCount": 3211,
     "cuisines": [
       "Middle Eastern",
       "Chinese",
@@ -523,6 +573,8 @@
   {
     "name": "Qehhwa Cafe",
     "tagline": "",
+    "rating": 4.5,
+    "reviewCount": 392,
     "cuisines": [
       "Cafe",
       "Coffee",
@@ -544,6 +596,8 @@
   {
     "name": "Chafa Cafe",
     "tagline": "",
+    "rating": 4.3,
+    "reviewCount": 2610,
     "cuisines": [
       "Healthy Food",
       "Italian",
@@ -572,6 +626,8 @@
   {
     "name": "Grand Shalimar",
     "tagline": "",
+    "rating": 4.5,
+    "reviewCount": 585,
     "cuisines": [
       "North Indian",
       "Kebab",
@@ -590,6 +646,8 @@
   {
     "name": "Arabian Chilies",
     "tagline": "Temporarily closed for dining — back soon!",
+    "rating": 4.2,
+    "reviewCount": 538,
     "cuisines": [
       "Mughlai",
       "North Indian",
@@ -610,6 +668,8 @@
   {
     "name": "Bhiwandi Darbar",
     "tagline": "",
+    "rating": 4.1,
+    "reviewCount": 1770,
     "cuisines": [
       "North Indian",
       "Mughlai",
@@ -632,6 +692,8 @@
   {
     "name": "The Steam Room Pizzeria",
     "tagline": "",
+    "rating": 4.3,
+    "reviewCount": 41,
     "cuisines": [
       "Italian",
       "Pasta",
