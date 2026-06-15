@@ -1,0 +1,144 @@
+[
+  {
+    "name": "Liberty Grill",
+    "tagline": "Best burgers in Pune",
+    "cuisines": ["Mexican", "Salad", "Fast Food"],
+    "branches": [
+      { "area": "Wadgaon Sheri", "mapsUrl": "https://maps.app.goo.gl/jQJemMwLdQzDRQTeA" }
+    ]
+  },
+  {
+    "name": "Kebabbest",
+    "tagline": "",
+    "cuisines": ["Kebab", "North Indian"],
+    "branches": [
+      { "area": "Camp", "mapsUrl": "https://maps.app.goo.gl/s4TipT9aWp1FvKJX9" }
+    ]
+  },
+  {
+    "name": "Atmosphere 6",
+    "tagline": "",
+    "cuisines": ["North Indian", "Asian", "Beverages", "Chinese", "Continental"],
+    "branches": [
+      { "area": "Kalyani Nagar", "mapsUrl": "https://maps.app.goo.gl/MaKpUS7VYeFAmypc8" },
+      { "area": "Viman Nagar", "mapsUrl": "https://maps.app.goo.gl/8UpvfLpguwknpEHKA" }
+    ]
+  },
+  {
+    "name": "La Pino's Pizza",
+    "tagline": "",
+    "cuisines": ["Pizza", "Italian", "Pasta", "Fast Food", "Desserts", "Beverages"],
+    "branches": [
+      { "area": "Wakad", "mapsUrl": "https://maps.app.goo.gl/eH1qyXd9YaE97bsd7" },
+      { "area": "Salunke Vihar", "mapsUrl": "https://maps.app.goo.gl/Qj2pnjv6KC8VDR3T7" },
+      { "area": "Kharadi", "mapsUrl": "https://maps.app.goo.gl/RYhNUknbgMDjBymv8" },
+      { "area": "Undri", "mapsUrl": "https://maps.app.goo.gl/Y16L9fFt1HGyKs2o9" },
+      { "area": "Pimple Saudnagar", "mapsUrl": "https://maps.app.goo.gl/R1G6QpLipTjRFvsaA" },
+      { "area": "Mhalunge", "mapsUrl": "https://maps.app.goo.gl/eCVKVJe1NCkgHhRq8" },
+      { "area": "Hinjewadi", "mapsUrl": "https://maps.app.goo.gl/iTrNR88e661VitwE9" },
+      { "area": "Kothrud", "mapsUrl": "https://maps.app.goo.gl/u3BTRLTLtTvEJuXv9" },
+      { "area": "Deccan Gymkhana", "mapsUrl": "https://maps.app.goo.gl/sLpZsgbdBTehQoK68" },
+      { "area": "Moshi", "mapsUrl": "https://maps.app.goo.gl/XkbT3mCteSjpHiog9" }
+    ]
+  },
+  {
+    "name": "Seoul Dak",
+    "tagline": "",
+    "cuisines": ["Korean", "Asian"],
+    "branches": [
+      { "area": "Viman Nagar", "mapsUrl": "https://maps.app.goo.gl/jkrvNKtHNaUukj897" },
+      { "area": "Wakad", "mapsUrl": "" },
+      { "area": "Expressway", "mapsUrl": "https://maps.app.goo.gl/JA1kfzCnvrXeDjv7A" }
+    ]
+  },
+  {
+    "name": "Klinq",
+    "tagline": "",
+    "cuisines": ["North Indian", "European", "Asian", "Continental", "Italian", "Lebanese", "Bar Food", "Desserts"],
+    "branches": [
+      { "area": "Viman Nagar", "mapsUrl": "https://maps.app.goo.gl/XcfSq5WqsMCiAVAd7" }
+    ]
+  },
+  {
+    "name": "Ahling",
+    "tagline": "",
+    "cuisines": ["Chinese", "Seafood"],
+    "branches": [
+      { "area": "Sasoon Road / Dhole Patil Road", "mapsUrl": "https://maps.app.goo.gl/buqSTAhzLwi4K9q6A" }
+    ]
+  },
+  {
+    "name": "Sunmoi",
+    "tagline": "",
+    "cuisines": ["Chinese", "Thai"],
+    "branches": [
+      { "area": "Dhole Patil Road", "mapsUrl": "https://maps.app.goo.gl/CffMmkxcws2QCXGq6" }
+    ]
+  },
+  {
+    "name": "Chung Fa",
+    "tagline": "",
+    "cuisines": ["Chinese", "Sichuan"],
+    "branches": [
+      { "area": "Camp", "mapsUrl": "https://maps.app.goo.gl/FnSPQce2u3ueaGCd7" }
+    ]
+  },
+  {
+    "name": "Uncle Chinese",
+    "tagline": "",
+    "cuisines": ["Chinese", "Momos", "Seafood", "Thai", "Sichuan", "Desserts", "Beverages", "Asian"],
+    "branches": [
+      { "area": "Lullnagar", "mapsUrl": "https://maps.app.goo.gl/PztfHLCfwuhiZoLQ7" },
+      { "area": "Camp", "mapsUrl": "https://maps.app.goo.gl/6obUsM4HQ4M4AbmQ7" },
+      { "area": "Bavdhan", "mapsUrl": "https://maps.app.goo.gl/68q8pWxeUVtCqRUL9" },
+      { "area": "Koregaon Park", "mapsUrl": "https://maps.app.goo.gl/LEqaan4Miwta8jt6A" },
+      { "area": "Viman Nagar", "mapsUrl": "https://maps.app.goo.gl/Jnah2jqbBaYK8spa6" },
+      { "area": "Hinjewadi", "mapsUrl": "https://maps.app.goo.gl/bXcDKRyWY2BGm96V7" }
+    ]
+  },
+  {
+    "name": "Pimplico",
+    "tagline": "",
+    "cuisines": ["Cafe", "Tea", "Beverages", "Italian", "Continental", "Thai", "North Indian", "Fast Food"],
+    "branches": [
+      { "area": "Mohammadwadi", "mapsUrl": "https://maps.app.goo.gl/pr2rxqhwuog3CpzL8" },
+      { "area": "Koregaon Park", "mapsUrl": "https://maps.app.goo.gl/NKYwzQaZNnNpdKmj6" },
+      { "area": "Kothrud / Erandwane", "mapsUrl": "https://maps.app.goo.gl/sSwqCQGS6hApAVzS7" }
+    ]
+  },
+  {
+    "name": "Camden Lane",
+    "tagline": "",
+    "cuisines": ["Continental", "Mexican", "Coffee", "Tea"],
+    "branches": [
+      { "area": "Koregaon Park", "mapsUrl": "https://maps.app.goo.gl/ev3k8SAhDRfRxnAw6" }
+    ]
+  },
+  {
+    "name": "Taco Bell",
+    "tagline": "",
+    "cuisines": ["Mexican"],
+    "branches": [
+      { "area": "Deccan Gymkhana", "mapsUrl": "https://maps.app.goo.gl/KnMTTPwSpefVsnPp6" },
+      { "area": "Seasons Mall", "mapsUrl": "https://maps.app.goo.gl/XFGXBABr147Af28o7" },
+      { "area": "Kalyani Nagar", "mapsUrl": "https://maps.app.goo.gl/sTaMBnTitpi9JwrM9" },
+      { "area": "Phoenix Marketcity, Viman Nagar", "mapsUrl": "https://maps.app.goo.gl/P6uFXPsTz7xfp1Vo8" },
+      { "area": "Westend Mall, Aundh", "mapsUrl": "https://maps.app.goo.gl/dRpekWX44J3Kzcih8" },
+      { "area": "Balewadi High St", "mapsUrl": "https://maps.app.goo.gl/yvmC9HotSFRrtFtw7" },
+      { "area": "Pimpri-Chinchwad", "mapsUrl": "https://maps.app.goo.gl/R6xZ1uXczg8H3j3B6" },
+      { "area": "Hinjewadi", "mapsUrl": "https://maps.app.goo.gl/UUSUvmKmM1QNwe1L8" }
+    ]
+  },
+  {
+    "name": "Nothing but Chicken",
+    "tagline": "",
+    "cuisines": ["Salad", "Fast Food", "Wraps", "Kebab"],
+    "branches": [
+      { "area": "Viman Nagar", "mapsUrl": "https://maps.app.goo.gl/1ksndexmANBceuog7" },
+      { "area": "Wanwadi", "mapsUrl": "https://maps.app.goo.gl/NZgkZt5aXHH251HD9" },
+      { "area": "Kothrud", "mapsUrl": "https://maps.app.goo.gl/um3W8FxMXdDVWSdQ9" },
+      { "area": "Wakad", "mapsUrl": "https://maps.app.goo.gl/xiqnPYP8WWeFwyCg8" },
+      { "area": "Baner", "mapsUrl": "https://maps.app.goo.gl/mBZJP3X2raBibzwc8" }
+    ]
+  }
+]
