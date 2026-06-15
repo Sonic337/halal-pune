@@ -1,4 +1,7 @@
-import { Restaurant } from "@/types";
+"use client";
+
+import { useState } from "react";
+import { Restaurant, Branch } from "@/types";
 
 const CUISINE_COLORS: Record<string, string> = {
   Mexican: "bg-orange-100 text-orange-800",
@@ -24,7 +27,39 @@ function cuisineColor(cuisine: string) {
   return CUISINE_COLORS[cuisine] ?? CUISINE_COLORS.default;
 }
 
+function BranchChip({ branch }: { branch: Branch }) {
+  if (branch.mapsUrl) {
+    return (
+      <a
+        href={branch.mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1 text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 rounded-full hover:bg-emerald-100 transition-colors font-medium"
+      >
+        <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+        </svg>
+        {branch.area}
+      </a>
+    );
+  }
+  return (
+    <span className="text-xs bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full font-medium">
+      {branch.area}
+    </span>
+  );
+}
+
+const VISIBLE_LIMIT = 3;
+
 export default function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
+  const [expanded, setExpanded] = useState(false);
+  const hasMore = restaurant.branches.length > VISIBLE_LIMIT;
+  const visibleBranches = hasMore && !expanded
+    ? restaurant.branches.slice(0, VISIBLE_LIMIT)
+    : restaurant.branches;
+  const hiddenCount = restaurant.branches.length - VISIBLE_LIMIT;
+
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow p-5 flex flex-col gap-3 border border-gray-100">
       <div>
@@ -43,25 +78,31 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
       </div>
 
       <div className="flex flex-wrap gap-2 mt-auto pt-1">
-        {restaurant.branches.map((b) =>
-          b.mapsUrl ? (
-            <a
-              key={b.area}
-              href={b.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 rounded-full hover:bg-emerald-100 transition-colors font-medium"
-            >
-              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-              </svg>
-              {b.area}
-            </a>
-          ) : (
-            <span key={b.area} className="text-xs bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full font-medium">
-              {b.area}
-            </span>
-          )
+        {visibleBranches.map((b) => (
+          <BranchChip key={b.area} branch={b} />
+        ))}
+
+        {hasMore && (
+          <button
+            onClick={() => setExpanded((v) => !v)}
+            className="flex items-center gap-1 text-xs bg-gray-100 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors font-medium"
+          >
+            {expanded ? (
+              <>
+                Show less
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                </svg>
+              </>
+            ) : (
+              <>
+                +{hiddenCount} more
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </>
+            )}
+          </button>
         )}
       </div>
     </div>
