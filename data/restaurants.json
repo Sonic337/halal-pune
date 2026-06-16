@@ -1605,23 +1605,6 @@
     "rating": 4.2
   },
   {
-    "name": "Buggy @ The Mills",
-    "tagline": "",
-    "cuisines": [
-      "Kebab",
-      "Rolls",
-      "Fast Food"
-    ],
-    "branches": [
-      {
-        "area": "Dhole Patil Road",
-        "mapsUrl": "https://www.google.com/maps/search/Buggy+The+Mills+Dhole+Patil+Road+Pune",
-        "lat": 18.534898,
-        "lng": 73.8767171
-      }
-    ]
-  },
-  {
     "name": "Latitude - Blue Diamond",
     "tagline": "",
     "cuisines": [
