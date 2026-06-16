@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
+/* ============================================================
+   DESIGN SYSTEM — CSS Custom Properties
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --- Brand palette --- */
+  --brand-orange:       #f97316;  /* orange-500 */
+  --brand-orange-dark:  #ea580c;  /* orange-600 */
+  --brand-emerald:      #059669;  /* emerald-600 */
+  --brand-emerald-dark: #047857;  /* emerald-700 */
+
+  /* --- Semantic surface tokens (light) --- */
+  --color-bg:           #f8fafc;  /* slate-50 */
+  --color-surface:      #ffffff;
+  --color-surface-2:    #f1f5f9;  /* slate-100 */
+  --color-border:       #e2e8f0;  /* slate-200 */
+  --color-border-2:     #cbd5e1;  /* slate-300 */
+
+  /* --- Semantic text tokens (light) --- */
+  --color-text:         #0f172a;  /* slate-900 */
+  --color-text-2:       #475569;  /* slate-500 */
+  --color-text-3:       #94a3b8;  /* slate-400 */
+
+  /* --- Interactive tokens --- */
+  --color-focus-ring:   #fdba74;  /* orange-300 */
+
+  /* --- Shadow --- */
+  --shadow-card:        0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07);
+  --shadow-card-hover:  0 10px 15px -3px rgb(0 0 0 / 0.10), 0 4px 6px -4px rgb(0 0 0 / 0.10);
+  --shadow-popup:       0 20px 25px -5px rgb(0 0 0 / 0.10), 0 8px 10px -6px rgb(0 0 0 / 0.10);
+
+  /* --- Spacing scale (additional semantic aliases) --- */
+  --space-card:  1.25rem;  /* p-5 */
+  --space-gap:   1.25rem;  /* gap-5 */
+
+  /* --- Type scale --- */
+  --font-size-xs:   0.75rem;
+  --font-size-sm:   0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg:   1.125rem;
+  --font-size-xl:   1.25rem;
+  --font-size-2xl:  1.5rem;
+  --font-size-3xl:  1.875rem;
+  --font-size-4xl:  2.25rem;
+
+  /* --- Background: keep the legacy vars wired --- */
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
 }
 
+/* ============================================================
+   DARK MODE overrides — triggered by data-theme="dark" on <html>
+   (also respects prefers-color-scheme on first load via the
+   ThemeProvider script — see layout.tsx)
+   ============================================================ */
+
+[data-theme="dark"] {
+  --color-bg:        #0f172a;  /* slate-900 */
+  --color-surface:   #1e293b;  /* slate-800 */
+  --color-surface-2: #334155;  /* slate-700 */
+  --color-border:    #334155;  /* slate-700 */
+  --color-border-2:  #475569;  /* slate-500 */
+
+  --color-text:      #f1f5f9;  /* slate-100 */
+  --color-text-2:    #94a3b8;  /* slate-400 */
+  --color-text-3:    #64748b;  /* slate-500 */
+
+  --color-focus-ring: #f97316; /* orange-500 — more visible on dark */
+
+  --shadow-card:       0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  --shadow-popup:      0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+}
+
+/* ============================================================
+   Tailwind v4 theme bridge
+   ============================================================ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   Base styles
+   ============================================================ */
+html {
+  /* Prevent layout shift on theme toggle by keeping scrollbar always visible */
+  overflow-y: scroll;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-geist-sans, ui-sans-serif, system-ui, sans-serif);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+/* Smooth transitions for surfaces — avoids jarring flash */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+/* But don't slow down motion-sensitive things */
+button, a, input, select {
+  transition-property: background-color, border-color, color, box-shadow, opacity, transform;
+  transition-duration: 0.15s;
+}
+
+/* ============================================================
+   Cuisine badge dark-mode overrides
+   (Tailwind light-mode utility classes won't flip automatically
+   in CSS-variable dark mode, so we remap the -100/-800 pattern)
+   ============================================================ */
+[data-theme="dark"] .cuisine-badge {
+  filter: brightness(0.25) saturate(1.5);
+  color: #fff;
+}
+
+/* ============================================================
+   Scrollbar styling (non-critical, improves dark feel)
+   ============================================================ */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-surface-2); }
+::-webkit-scrollbar-thumb { background: var(--color-border-2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-3); }

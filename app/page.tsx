@@ -5,6 +5,7 @@ import restaurantsData from "@/data/restaurants.json";
 import RestaurantCard from "@/components/RestaurantCard";
 import FilterDropdown from "@/components/FilterDropdown";
 import LocationButton from "@/components/LocationButton";
+import ThemeToggle from "@/components/ThemeToggle";
 import { Restaurant } from "@/types";
 import { haversineKm } from "@/lib/distance";
 
@@ -18,9 +19,15 @@ const allAreas = Array.from(
   new Set(restaurants.flatMap((r) => r.branches.map((b) => b.area)))
 ).sort();
 
-interface UserLocation { lat: number; lng: number }
+interface UserLocation {
+  lat: number;
+  lng: number;
+}
 
-function nearestDistance(restaurant: Restaurant, loc: UserLocation): number | undefined {
+function nearestDistance(
+  restaurant: Restaurant,
+  loc: UserLocation
+): number | undefined {
   const dists = restaurant.branches
     .filter((b) => b.lat != null && b.lng != null)
     .map((b) => haversineKm(loc.lat, loc.lng, b.lat!, b.lng!));
@@ -29,8 +36,14 @@ function nearestDistance(restaurant: Restaurant, loc: UserLocation): number | un
 
 function sortedBranches(restaurant: Restaurant, loc: UserLocation) {
   return [...restaurant.branches].sort((a, b) => {
-    const da = a.lat != null && a.lng != null ? haversineKm(loc.lat, loc.lng, a.lat, a.lng) : Infinity;
-    const db = b.lat != null && b.lng != null ? haversineKm(loc.lat, loc.lng, b.lat, b.lng) : Infinity;
+    const da =
+      a.lat != null && a.lng != null
+        ? haversineKm(loc.lat, loc.lng, a.lat, a.lng)
+        : Infinity;
+    const db =
+      b.lat != null && b.lng != null
+        ? haversineKm(loc.lat, loc.lng, b.lat, b.lng)
+        : Infinity;
     return da - db;
   });
 }
@@ -49,7 +62,9 @@ export default function Home() {
 
   const filtered = useMemo(() => {
     let results = restaurants.filter((r) => {
-      const matchesSearch = r.name.toLowerCase().includes(search.toLowerCase());
+      const matchesSearch = r.name
+        .toLowerCase()
+        .includes(search.toLowerCase());
       const matchesCuisine =
         selectedCuisines.length === 0 ||
         selectedCuisines.some((c) => r.cuisines.includes(c));
@@ -92,33 +107,82 @@ export default function Home() {
     setSelectedAreas([]);
   }
 
-  const hasFilters = search || selectedCuisines.length > 0 || selectedAreas.length > 0;
+  const hasFilters =
+    search || selectedCuisines.length > 0 || selectedAreas.length > 0;
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-emerald-50">
-      {/* Hero */}
-      <div className="bg-gradient-to-r from-orange-500 to-emerald-600 text-white py-14 px-4 text-center">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-4xl mb-2">🍽️</div>
-          <h1 className="text-4xl font-extrabold tracking-tight mb-2">Wurrynot</h1>
-          <p className="text-orange-100 text-lg">Eat without the worry. Pune's best local spots, personally picked.</p>
-          <p className="text-orange-200 text-sm mt-3">Spotted something wrong? Reach us at <a href="mailto:contactwurrynot@gmail.com" className="underline underline-offset-2 hover:text-white transition-colors">contactwurrynot@gmail.com</a></p>
+    <main
+      style={{ backgroundColor: "var(--color-bg)", color: "var(--color-text)" }}
+      className="min-h-screen"
+    >
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <header className="relative bg-gradient-to-r from-orange-500 to-emerald-600 text-white py-12 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="text-4xl mb-2" aria-hidden="true">
+            🍽️
+          </div>
+          <h1 className="text-4xl font-extrabold tracking-tight mb-2">
+            Wurrynot
+          </h1>
+          <p className="text-orange-100 text-lg">
+            Eat without the worry. Pune&apos;s best local spots, personally
+            picked.
+          </p>
+          <p className="text-orange-200 text-sm mt-3">
+            Spotted something wrong?{" "}
+            <a
+              href="mailto:contactwurrynot@gmail.com"
+              className="underline underline-offset-2 hover:text-white transition-colors"
+            >
+              contactwurrynot@gmail.com
+            </a>
+          </p>
         </div>
-      </div>
 
+        {/* Theme toggle — top-right of hero */}
+        <div className="absolute top-4 right-4">
+          <ThemeToggle />
+        </div>
+      </header>
+
+      {/* ── Content ──────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Search + Filter row */}
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
+          {/* Search input */}
           <div className="relative flex-1">
-            <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
+            <svg
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+              style={{ color: "var(--color-text-3)" }}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z"
+              />
             </svg>
             <input
               type="text"
               placeholder="Search restaurants..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-12 pr-4 py-2.5 rounded-xl border border-gray-200 shadow-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm bg-white"
+              className="
+                w-full pl-12 pr-4 py-2.5 rounded-xl text-sm
+                focus:outline-none focus:ring-2
+              "
+              style={{
+                backgroundColor: "var(--color-surface)",
+                color: "var(--color-text)",
+                border: "1px solid var(--color-border)",
+                boxShadow: "var(--shadow-card)",
+                // @ts-expect-error CSS custom property
+                "--tw-ring-color": "var(--color-focus-ring)",
+              }}
             />
           </div>
 
@@ -141,7 +205,24 @@ export default function Home() {
           {hasFilters && (
             <button
               onClick={clearAll}
-              className="px-4 py-2.5 text-sm text-gray-500 hover:text-gray-800 border border-gray-200 rounded-xl bg-white hover:bg-gray-50 transition-colors whitespace-nowrap"
+              className="px-4 py-2.5 text-sm rounded-xl font-medium transition-colors whitespace-nowrap"
+              style={{
+                backgroundColor: "var(--color-surface)",
+                color: "var(--color-text-2)",
+                border: "1px solid var(--color-border)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                  "var(--color-surface-2)";
+                (e.currentTarget as HTMLButtonElement).style.color =
+                  "var(--color-text)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                  "var(--color-surface)";
+                (e.currentTarget as HTMLButtonElement).style.color =
+                  "var(--color-text-2)";
+              }}
             >
               Clear all
             </button>
@@ -152,22 +233,53 @@ export default function Home() {
         {(selectedCuisines.length > 0 || selectedAreas.length > 0) && (
           <div className="flex flex-wrap gap-2 mb-5">
             {selectedCuisines.map((c) => (
-              <span key={c} className="flex items-center gap-1.5 bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1.5 rounded-full">
+              <span
+                key={c}
+                className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full"
+                style={{
+                  backgroundColor: "color-mix(in srgb, var(--brand-orange) 15%, var(--color-surface))",
+                  color: "var(--brand-orange-dark)",
+                  border: "1px solid color-mix(in srgb, var(--brand-orange) 30%, transparent)",
+                }}
+              >
                 {c}
-                <button onClick={() => toggleCuisine(c)} className="hover:text-orange-600">✕</button>
+                <button
+                  onClick={() => toggleCuisine(c)}
+                  aria-label={`Remove ${c} filter`}
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  ✕
+                </button>
               </span>
             ))}
             {selectedAreas.map((a) => (
-              <span key={a} className="flex items-center gap-1.5 bg-emerald-100 text-emerald-800 text-xs font-medium px-3 py-1.5 rounded-full">
+              <span
+                key={a}
+                className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full"
+                style={{
+                  backgroundColor: "color-mix(in srgb, var(--brand-emerald) 15%, var(--color-surface))",
+                  color: "var(--brand-emerald-dark)",
+                  border: "1px solid color-mix(in srgb, var(--brand-emerald) 30%, transparent)",
+                }}
+              >
                 {a}
-                <button onClick={() => toggleArea(a)} className="hover:text-emerald-600">✕</button>
+                <button
+                  onClick={() => toggleArea(a)}
+                  aria-label={`Remove ${a} filter`}
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  ✕
+                </button>
               </span>
             ))}
           </div>
         )}
 
         {/* Results count */}
-        <p className="text-sm text-gray-500 mb-4">
+        <p
+          className="text-sm mb-4"
+          style={{ color: "var(--color-text-2)" }}
+        >
           {filtered.length} restaurant{filtered.length !== 1 ? "s" : ""} found
           {userLocation && ` within ${radiusKm} km`}
         </p>
@@ -179,18 +291,35 @@ export default function Home() {
               <RestaurantCard
                 key={r.name}
                 restaurant={r}
-                branches={userLocation ? sortedBranches(r, userLocation) : undefined}
-                distanceKm={userLocation ? nearestDistance(r, userLocation) : undefined}
+                branches={
+                  userLocation ? sortedBranches(r, userLocation) : undefined
+                }
+                distanceKm={
+                  userLocation ? nearestDistance(r, userLocation) : undefined
+                }
               />
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 text-gray-400">
-            <div className="text-5xl mb-3">🍽️</div>
-            <p className="text-lg font-medium">
-              {userLocation ? `No restaurants within ${radiusKm} km` : "No restaurants match your filters"}
+          <div
+            className="text-center py-20"
+            style={{ color: "var(--color-text-3)" }}
+          >
+            <div className="text-5xl mb-3" aria-hidden="true">
+              🍽️
+            </div>
+            <p className="text-lg font-medium" style={{ color: "var(--color-text-2)" }}>
+              {userLocation
+                ? `No restaurants within ${radiusKm} km`
+                : "No restaurants match your filters"}
             </p>
-            <button onClick={clearAll} className="mt-3 text-orange-500 underline text-sm">Clear filters</button>
+            <button
+              onClick={clearAll}
+              className="mt-3 text-sm underline transition-opacity hover:opacity-70"
+              style={{ color: "var(--brand-orange)" }}
+            >
+              Clear filters
+            </button>
           </div>
         )}
       </div>

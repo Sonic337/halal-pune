@@ -3,7 +3,10 @@
 import { useState } from "react";
 
 interface Props {
-  onLocation: (coords: { lat: number; lng: number } | null, radiusKm: number) => void;
+  onLocation: (
+    coords: { lat: number; lng: number } | null,
+    radiusKm: number
+  ) => void;
 }
 
 type Status = "idle" | "loading" | "active" | "denied";
@@ -23,7 +26,10 @@ export default function LocationButton({ onLocation }: Props) {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         setStatus("active");
-        onLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude }, radius);
+        onLocation(
+          { lat: pos.coords.latitude, lng: pos.coords.longitude },
+          radius
+        );
       },
       () => {
         setStatus("denied");
@@ -38,19 +44,31 @@ export default function LocationButton({ onLocation }: Props) {
     setRadius(val);
     if (status === "active") {
       navigator.geolocation.getCurrentPosition((pos) => {
-        onLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude }, val);
+        onLocation(
+          { lat: pos.coords.latitude, lng: pos.coords.longitude },
+          val
+        );
       });
     }
   }
 
-  const buttonClass =
+  const buttonStyle: React.CSSProperties =
     status === "active"
-      ? "bg-emerald-600 text-white shadow-lg shadow-emerald-200"
+      ? {
+          backgroundColor: "var(--brand-emerald)",
+          color: "#ffffff",
+          boxShadow: "0 4px 14px 0 color-mix(in srgb, var(--brand-emerald) 40%, transparent)",
+        }
       : status === "denied"
-      ? "bg-red-500 text-white"
+      ? { backgroundColor: "#ef4444", color: "#ffffff" }
       : status === "loading"
-      ? "bg-orange-400 text-white animate-pulse"
-      : "bg-white text-gray-700 border border-gray-200 shadow-md hover:shadow-lg";
+      ? { backgroundColor: "var(--brand-orange)", color: "#ffffff" }
+      : {
+          backgroundColor: "var(--color-surface)",
+          color: "var(--color-text)",
+          border: "1px solid var(--color-border)",
+          boxShadow: "var(--shadow-card)",
+        };
 
   const label =
     status === "active"
@@ -63,11 +81,29 @@ export default function LocationButton({ onLocation }: Props) {
 
   return (
     <div className="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-50">
+      {/* Radius picker popup */}
       {status === "active" && (
-        <div className="bg-white border border-gray-200 rounded-2xl shadow-xl p-4 w-52">
+        <div
+          className="rounded-2xl p-4 w-52"
+          style={{
+            backgroundColor: "var(--color-surface)",
+            border: "1px solid var(--color-border)",
+            boxShadow: "var(--shadow-popup)",
+          }}
+        >
           <div className="flex justify-between items-center mb-2">
-            <span className="text-xs font-semibold text-gray-600">Radius</span>
-            <span className="text-xs font-bold text-emerald-700">{radius} km</span>
+            <span
+              className="text-xs font-semibold"
+              style={{ color: "var(--color-text-2)" }}
+            >
+              Radius
+            </span>
+            <span
+              className="text-xs font-bold"
+              style={{ color: "var(--brand-emerald-dark)" }}
+            >
+              {radius} km
+            </span>
           </div>
           <input
             type="range"
@@ -76,18 +112,31 @@ export default function LocationButton({ onLocation }: Props) {
             value={radius}
             onChange={handleRadiusChange}
             className="w-full accent-emerald-600"
+            aria-label="Search radius in kilometres"
           />
-          <div className="flex justify-between text-xs text-gray-400 mt-1">
+          <div
+            className="flex justify-between text-xs mt-1"
+            style={{ color: "var(--color-text-3)" }}
+          >
             <span>1 km</span>
             <span>20 km</span>
           </div>
         </div>
       )}
 
+      {/* Main button */}
       <button
         onClick={handleClick}
         disabled={status === "loading" || status === "denied"}
-        className={`px-4 py-2.5 rounded-full text-sm font-semibold transition-all ${buttonClass}`}
+        className={`px-4 py-2.5 rounded-full text-sm font-semibold transition-all ${
+          status === "loading" ? "animate-pulse" : ""
+        }`}
+        style={buttonStyle}
+        aria-label={
+          status === "active"
+            ? "Turn off location filter"
+            : "Filter by my location"
+        }
       >
         {label}
       </button>
