@@ -123,7 +123,7 @@
   {
     "name": "Uncle Chinese",
     "tagline": "",
-    "rating": 4.4,
+    "rating": 4.3,
     "reviewCount": 6977,
     "cuisines": [
       "Chinese",
@@ -138,37 +138,49 @@
     "branches": [
       {
         "area": "Lullnagar",
-        "mapsUrl": "https://maps.app.goo.gl/PztfHLCfwuhiZoLQ7"
+        "mapsUrl": "https://maps.app.goo.gl/PztfHLCfwuhiZoLQ7",
+        "rating": 4.2,
+        "reviewCount": 699
       },
       {
         "area": "Camp",
         "mapsUrl": "https://maps.app.goo.gl/6obUsM4HQ4M4AbmQ7",
         "lat": 18.5216239,
-        "lng": 73.8717527
+        "lng": 73.8717527,
+        "rating": 4.6,
+        "reviewCount": 977
       },
       {
         "area": "Bavdhan",
         "mapsUrl": "https://maps.app.goo.gl/68q8pWxeUVtCqRUL9",
         "lat": 18.5209541,
-        "lng": 73.7780873
+        "lng": 73.7780873,
+        "rating": 4.4,
+        "reviewCount": 1057
       },
       {
         "area": "Koregaon Park",
         "mapsUrl": "https://maps.app.goo.gl/LEqaan4Miwta8jt6A",
         "lat": 18.5366225,
-        "lng": 73.8932738
+        "lng": 73.8932738,
+        "rating": 4,
+        "reviewCount": 2661
       },
       {
         "area": "Viman Nagar",
         "mapsUrl": "https://maps.app.goo.gl/Jnah2jqbBaYK8spa6",
         "lat": 18.5703877,
-        "lng": 73.9133336
+        "lng": 73.9133336,
+        "rating": 4.3,
+        "reviewCount": 732
       },
       {
         "area": "Hinjewadi",
         "mapsUrl": "https://maps.app.goo.gl/bXcDKRyWY2BGm96V7",
         "lat": 18.5924098,
-        "lng": 73.7607009
+        "lng": 73.7607009,
+        "rating": 4.7,
+        "reviewCount": 851
       }
     ]
   },
@@ -190,19 +202,25 @@
     "branches": [
       {
         "area": "Royale Heritage Mall, Mohammadwadi",
-        "mapsUrl": "https://maps.app.goo.gl/pr2rxqhwuog3CpzL8"
+        "mapsUrl": "https://maps.app.goo.gl/pr2rxqhwuog3CpzL8",
+        "rating": 4.2,
+        "reviewCount": 539
       },
       {
         "area": "Koregaon Park",
         "mapsUrl": "https://maps.app.goo.gl/NKYwzQaZNnNpdKmj6",
         "lat": 18.5366225,
-        "lng": 73.8932738
+        "lng": 73.8932738,
+        "rating": 4.2,
+        "reviewCount": 4406
       },
       {
         "area": "Kothrud, Erandwane",
         "mapsUrl": "https://maps.app.goo.gl/sSwqCQGS6hApAVzS7",
         "lat": 18.4984773,
-        "lng": 73.8191685
+        "lng": 73.8191685,
+        "rating": 4.1,
+        "reviewCount": 2571
       }
     ]
   },
@@ -229,7 +247,7 @@
   {
     "name": "Taco Bell",
     "tagline": "",
-    "rating": 3.5,
+    "rating": 3.7,
     "reviewCount": 4396,
     "cuisines": [
       "Mexican"
@@ -239,54 +257,70 @@
         "area": "Deccan Gymkhana",
         "mapsUrl": "https://maps.app.goo.gl/KnMTTPwSpefVsnPp6",
         "lat": 18.5158926,
-        "lng": 73.84116
+        "lng": 73.84116,
+        "rating": 3.5,
+        "reviewCount": 774
       },
       {
         "area": "Seasons Mall",
         "mapsUrl": "https://maps.app.goo.gl/XFGXBABr147Af28o7",
         "lat": 18.5190349,
-        "lng": 73.9312884
+        "lng": 73.9312884,
+        "rating": 3.8,
+        "reviewCount": 1869
       },
       {
         "area": "Kalyani Nagar",
         "mapsUrl": "https://maps.app.goo.gl/sTaMBnTitpi9JwrM9",
         "lat": 18.5481382,
-        "lng": 73.9025513
+        "lng": 73.9025513,
+        "rating": 3.7,
+        "reviewCount": 203
       },
       {
         "area": "Phoenix Marketcity, Viman Nagar",
         "mapsUrl": "https://maps.app.goo.gl/P6uFXPsTz7xfp1Vo8",
         "lat": 18.5620429,
-        "lng": 73.916663
+        "lng": 73.916663,
+        "rating": 3.4,
+        "reviewCount": 217
       },
       {
         "area": "Westend Mall, Aundh",
         "mapsUrl": "https://maps.app.goo.gl/dRpekWX44J3Kzcih8",
         "lat": 18.5616546,
-        "lng": 73.8068193
+        "lng": 73.8068193,
+        "rating": 3.5,
+        "reviewCount": 304
       },
       {
         "area": "Balewadi High St, Laxman Nagar",
-        "mapsUrl": "https://maps.app.goo.gl/yvmC9HotSFRrtFtw7"
+        "mapsUrl": "https://maps.app.goo.gl/yvmC9HotSFRrtFtw7",
+        "rating": 3.8,
+        "reviewCount": 521
       },
       {
         "area": "Pimpri-Chinchwad",
         "mapsUrl": "https://maps.app.goo.gl/R6xZ1uXczg8H3j3B6",
         "lat": 18.6279288,
-        "lng": 73.8009829
+        "lng": 73.8009829,
+        "rating": 3.9,
+        "reviewCount": 310
       },
       {
         "area": "Hinjewadi",
         "mapsUrl": "https://maps.app.goo.gl/UUSUvmKmM1QNwe1L8",
         "lat": 18.5924098,
-        "lng": 73.7607009
+        "lng": 73.7607009,
+        "rating": 3.4,
+        "reviewCount": 198
       }
     ]
   },
   {
     "name": "Nothing but Chicken",
     "tagline": "",
-    "rating": 3.3,
+    "rating": 3.7,
     "reviewCount": 259,
     "cuisines": [
       "Salad",
@@ -299,31 +333,41 @@
         "area": "Viman Nagar",
         "mapsUrl": "https://maps.app.goo.gl/1ksndexmANBceuog7",
         "lat": 18.5703877,
-        "lng": 73.9133336
+        "lng": 73.9133336,
+        "rating": 3.8,
+        "reviewCount": 118
       },
       {
         "area": "Wanwadi",
         "mapsUrl": "https://maps.app.goo.gl/NZgkZt5aXHH251HD9",
         "lat": 18.4880464,
-        "lng": 73.8937064
+        "lng": 73.8937064,
+        "rating": 3.9,
+        "reviewCount": 89
       },
       {
         "area": "Kothrud",
         "mapsUrl": "https://maps.app.goo.gl/um3W8FxMXdDVWSdQ9",
         "lat": 18.5072618,
-        "lng": 73.8056676
+        "lng": 73.8056676,
+        "rating": 2.5,
+        "reviewCount": 11
       },
       {
         "area": "Wakad",
         "mapsUrl": "https://maps.app.goo.gl/xiqnPYP8WWeFwyCg8",
         "lat": 18.6022495,
-        "lng": 73.7644454
+        "lng": 73.7644454,
+        "rating": 2.7,
+        "reviewCount": 22
       },
       {
         "area": "Baner",
         "mapsUrl": "https://maps.app.goo.gl/mBZJP3X2raBibzwc8",
         "lat": 18.5589937,
-        "lng": 73.7845232
+        "lng": 73.7845232,
+        "rating": 3.6,
+        "reviewCount": 19
       }
     ]
   },
@@ -549,7 +593,7 @@
     "name": "Balsam",
     "tagline": "",
     "rating": 4.3,
-    "reviewCount": 322,
+    "reviewCount": 646,
     "cuisines": [
       "Continental",
       "Desserts"
@@ -559,11 +603,15 @@
         "area": "Kondhwa",
         "mapsUrl": "https://maps.app.goo.gl/xjDhXREV7akTYDLZA",
         "lat": 18.4779905,
-        "lng": 73.8940627
+        "lng": 73.8940627,
+        "rating": 4.3,
+        "reviewCount": 323
       },
       {
         "area": "Salunke Vihar Road",
-        "mapsUrl": "https://www.google.com/maps/search/Balsam+Cafe+Kitchen+Salunke+Vihar+Road+Pune"
+        "mapsUrl": "https://www.google.com/maps/search/Balsam+Cafe+Kitchen+Salunke+Vihar+Road+Pune",
+        "rating": 4.3,
+        "reviewCount": 323
       }
     ]
   },
@@ -610,7 +658,7 @@
   {
     "name": "Chafa Cafe",
     "tagline": "",
-    "rating": 4.3,
+    "rating": 4.2,
     "reviewCount": 2610,
     "cuisines": [
       "Healthy Food",
@@ -627,13 +675,17 @@
         "area": "Koregaon Park",
         "mapsUrl": "https://maps.app.goo.gl/pB6Ztu1xWGyfr83Z6",
         "lat": 18.5366225,
-        "lng": 73.8932738
+        "lng": 73.8932738,
+        "rating": 4.2,
+        "reviewCount": 2193
       },
       {
         "area": "Salunkhe Vihar Road",
         "mapsUrl": "https://maps.app.goo.gl/gfiH8FX3XwvKbN8P9",
         "lat": 18.4826972,
-        "lng": 73.8922475
+        "lng": 73.8922475,
+        "rating": 4.4,
+        "reviewCount": 417
       }
     ]
   },
@@ -784,28 +836,37 @@
         "area": "Camp",
         "mapsUrl": "https://www.google.com/maps/search/Yana+Sizzler+Camp+Pune",
         "lat": 18.5216239,
-        "lng": 73.8717527
+        "lng": 73.8717527,
+        "rating": 4.2,
+        "reviewCount": 2271
       },
       {
         "area": "Koregaon Park",
         "mapsUrl": "https://www.google.com/maps/search/Yana+Sizzler+Koregaon+Park+Pune",
         "lat": 18.5366225,
-        "lng": 73.8932738
+        "lng": 73.8932738,
+        "rating": 4.2,
+        "reviewCount": 2074
       },
       {
         "area": "FC Road",
         "mapsUrl": "https://www.google.com/maps/search/Yana+Sizzler+FC+Road+Pune",
         "lat": 18.5150117,
-        "lng": 73.8422183
+        "lng": 73.8422183,
+        "rating": 4.2,
+        "reviewCount": 9953
       },
       {
         "area": "Baner",
         "mapsUrl": "https://www.google.com/maps/search/Yana+Sizzler+Baner+Pune",
         "lat": 18.5589937,
-        "lng": 73.7845232
+        "lng": 73.7845232,
+        "rating": 4.3,
+        "reviewCount": 431
       }
     ],
-    "rating": 4.2
+    "rating": 4.2,
+    "reviewCount": 14729
   },
   {
     "name": "Shawarma.co - Lassi Wassi",
@@ -947,54 +1008,73 @@
         "area": "Camp",
         "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Camp+Pune",
         "lat": 18.5216239,
-        "lng": 73.8717527
+        "lng": 73.8717527,
+        "rating": 4.2,
+        "reviewCount": 4641
       },
       {
         "area": "Deccan Gymkhana",
         "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Deccan+Gymkhana+Pune",
         "lat": 18.5158926,
-        "lng": 73.84116
+        "lng": 73.84116,
+        "rating": 4.2,
+        "reviewCount": 7520
       },
       {
         "area": "Senapati Bapat Road",
-        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Senapati+Bapat+Road+Pune"
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Senapati+Bapat+Road+Pune",
+        "rating": 3.8,
+        "reviewCount": 362
       },
       {
         "area": "Koregaon Park",
         "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Koregaon+Park+Pune",
         "lat": 18.5366225,
-        "lng": 73.8932738
+        "lng": 73.8932738,
+        "rating": 3.9,
+        "reviewCount": 972
       },
       {
         "area": "Karve Nagar",
         "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Karve+Nagar+Pune",
         "lat": 18.4894205,
-        "lng": 73.821347
+        "lng": 73.821347,
+        "rating": 3.9,
+        "reviewCount": 2412
       },
       {
         "area": "Singhad Road",
-        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Singhad+Road+Pune"
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Singhad+Road+Pune",
+        "rating": 4,
+        "reviewCount": 358
       },
       {
         "area": "Kalyani Nagar",
         "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Kalyani+Nagar+Pune",
         "lat": 18.5481382,
-        "lng": 73.9025513
+        "lng": 73.9025513,
+        "rating": 4.2,
+        "reviewCount": 7498
       },
       {
         "area": "Katraj",
         "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Katraj+Pune",
         "lat": 18.4536792,
-        "lng": 73.8563196
+        "lng": 73.8563196,
+        "rating": 3.2,
+        "reviewCount": 241
       },
       {
         "area": "NIBM Road",
         "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+NIBM+Road+Pune",
         "lat": 18.4770994,
-        "lng": 73.8991249
+        "lng": 73.8991249,
+        "rating": 4.1,
+        "reviewCount": 2057
       }
     ],
-    "rating": 4.2
+    "rating": 4.1,
+    "reviewCount": 26061
   },
   {
     "name": "Cream Craver",
@@ -1142,16 +1222,21 @@
         "area": "Camp",
         "mapsUrl": "https://www.google.com/maps/search/Cafe+Yezdan+Camp+Pune",
         "lat": 18.5216239,
-        "lng": 73.8717527
+        "lng": 73.8717527,
+        "rating": 4.2,
+        "reviewCount": 1685
       },
       {
         "area": "NIBM Road",
         "mapsUrl": "https://www.google.com/maps/search/Cafe+Yezdan+NIBM+Road+Pune",
         "lat": 18.4770994,
-        "lng": 73.8991249
+        "lng": 73.8991249,
+        "rating": 4,
+        "reviewCount": 112
       }
     ],
-    "rating": 4.2
+    "rating": 4.2,
+    "reviewCount": 1797
   },
   {
     "name": "Akhtar's Samosa",
