@@ -27,24 +27,46 @@ function cuisineColor(cuisine: string) {
   return CUISINE_COLORS[cuisine] ?? CUISINE_COLORS.default;
 }
 
-function BranchChip({ branch }: { branch: Branch }) {
+function BranchChip({
+  branch,
+  onHover,
+  onLeave,
+}: {
+  branch: Branch;
+  onHover: (b: Branch) => void;
+  onLeave: () => void;
+}) {
+  const shared =
+    "flex items-center gap-1 text-xs px-3 py-1.5 rounded-full font-medium transition-colors";
+  const inner = (
+    <>
+      <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+      </svg>
+      {branch.area}
+    </>
+  );
+
   if (branch.mapsUrl) {
     return (
       <a
         href={branch.mapsUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-1 text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 rounded-full hover:bg-emerald-100 transition-colors font-medium"
+        onMouseEnter={() => onHover(branch)}
+        onMouseLeave={onLeave}
+        className={`${shared} bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100`}
       >
-        <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-        </svg>
-        {branch.area}
+        {inner}
       </a>
     );
   }
   return (
-    <span className="text-xs bg-gray-50 text-gray-600 border border-gray-200 px-3 py-1.5 rounded-full font-medium">
+    <span
+      onMouseEnter={() => onHover(branch)}
+      onMouseLeave={onLeave}
+      className={`${shared} bg-gray-50 text-gray-600 border border-gray-200`}
+    >
       {branch.area}
     </span>
   );
@@ -62,11 +84,26 @@ export default function RestaurantCard({
   distanceKm?: number;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const [hoveredBranch, setHoveredBranch] = useState<Branch | null>(null);
   const branches = branchesProp ?? restaurant.branches;
   const hasMore = branches.length > VISIBLE_LIMIT;
   const visibleBranches =
     hasMore && !expanded ? branches.slice(0, VISIBLE_LIMIT) : branches;
   const hiddenCount = branches.length - VISIBLE_LIMIT;
+
+  // Priority: hovered branch → nearest branch (location active) → restaurant average
+  const nearestBranch = distanceKm !== undefined ? branches[0] : undefined;
+  const activeBranch = hoveredBranch ?? nearestBranch;
+  const displayRating = activeBranch?.rating ?? restaurant.rating;
+  const displayReviewCount =
+    activeBranch?.rating !== undefined
+      ? activeBranch.reviewCount
+      : restaurant.reviewCount;
+  const ratingLabel = hoveredBranch
+    ? hoveredBranch.area
+    : nearestBranch && nearestBranch.rating !== undefined
+    ? nearestBranch.area
+    : null;
 
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow p-5 flex flex-col gap-3 border border-gray-100">
@@ -83,21 +120,23 @@ export default function RestaurantCard({
               {distanceKm} km
             </span>
           )}
-          {(() => {
-            const nearestBranch = distanceKm !== undefined ? branches[0] : undefined;
-            const displayRating = nearestBranch?.rating ?? restaurant.rating;
-            const displayReviewCount = nearestBranch?.rating !== undefined
-              ? nearestBranch.reviewCount
-              : restaurant.reviewCount;
-            return displayRating !== undefined ? (
+          {displayRating !== undefined && (
+            <div className="flex flex-col items-end gap-0.5">
               <span className="flex items-center gap-1 text-xs font-semibold text-amber-600 whitespace-nowrap">
                 ★ {displayRating.toFixed(1)}
                 {displayReviewCount !== undefined && (
-                  <span className="text-gray-400 font-normal">({displayReviewCount.toLocaleString()})</span>
+                  <span className="text-gray-400 font-normal">
+                    ({displayReviewCount.toLocaleString()})
+                  </span>
                 )}
               </span>
-            ) : null;
-          })()}
+              {ratingLabel && (
+                <span className="text-[10px] text-gray-400 font-normal">
+                  {ratingLabel}
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
@@ -111,7 +150,12 @@ export default function RestaurantCard({
 
       <div className="flex flex-wrap gap-2 mt-auto pt-1">
         {visibleBranches.map((b) => (
-          <BranchChip key={b.area} branch={b} />
+          <BranchChip
+            key={b.area}
+            branch={b}
+            onHover={setHoveredBranch}
+            onLeave={() => setHoveredBranch(null)}
+          />
         ))}
 
         {hasMore && (
