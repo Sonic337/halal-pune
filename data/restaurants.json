@@ -1688,5 +1688,23 @@
       }
     ],
     "rating": 4.5
+  },
+  {
+    "name": "Zeeshan Restaurant - Apna Hyderabadi Food",
+    "tagline": "Authentic Hyderabadi flavours — biryani, mandi & more",
+    "cuisines": [
+      "Biryani",
+      "Kebab",
+      "Mandi",
+      "Mughlai",
+      "Seafood",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Viman Nagar",
+        "mapsUrl": "https://www.google.com/maps/search/Zeeshan+Restaurant+Apna+Hyderabadi+Food+Viman+Nagar+Pune"
+      }
+    ]
   }
 ]

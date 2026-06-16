@@ -57,6 +57,7 @@ const CUISINE_COLORS: Record<string, string> = {
   Persian:           "bg-blue-50 text-blue-700",
   "Southeast Asian": "bg-indigo-50 text-indigo-700",
   Tea:               "bg-violet-50 text-violet-700",
+  Mandi:             "bg-rose-50 text-rose-700",
 };
 
 function cuisineColor(cuisine: string) {
