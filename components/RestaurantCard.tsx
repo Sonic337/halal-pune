@@ -3,65 +3,63 @@
 import { useState } from "react";
 import { Restaurant, Branch } from "@/types";
 
-/**
- * Cuisine badge colors — we keep the colorful hue-based mapping but
- * express it via CSS custom properties so dark mode can apply a
- * `filter: brightness(...)` override in globals.css via .cuisine-badge.
- */
 const CUISINE_COLORS: Record<string, string> = {
-  "North Indian":    "bg-red-100 text-red-800",
-  Mexican:           "bg-orange-100 text-orange-800",
-  Kebab:             "bg-amber-100 text-amber-800",
-  Chinese:           "bg-yellow-100 text-yellow-800",
-  Thai:              "bg-lime-100 text-lime-800",
-  Asian:             "bg-green-100 text-green-800",
-  Salad:             "bg-emerald-100 text-emerald-800",
-  "Asian Fusion":    "bg-teal-100 text-teal-800",
-  Seafood:           "bg-cyan-100 text-cyan-800",
-  Beverages:         "bg-sky-100 text-sky-800",
-  Continental:       "bg-blue-100 text-blue-800",
-  European:          "bg-indigo-100 text-indigo-800",
-  Iranian:           "bg-violet-100 text-violet-800",
-  "Fast Food":       "bg-purple-100 text-purple-800",
-  Italian:           "bg-fuchsia-100 text-fuchsia-800",
-  Korean:            "bg-pink-100 text-pink-800",
-  Desserts:          "bg-rose-100 text-rose-800",
-  Cafe:              "bg-stone-100 text-stone-800",
-  BBQ:               "bg-red-200 text-red-900",
-  Burger:            "bg-orange-200 text-orange-900",
-  Biryani:           "bg-amber-200 text-amber-900",
-  Bakery:            "bg-yellow-200 text-yellow-900",
-  Indonesian:        "bg-lime-200 text-lime-900",
-  Jamaican:          "bg-green-200 text-green-900",
-  "Healthy Food":    "bg-emerald-200 text-emerald-900",
-  Lebanese:          "bg-teal-200 text-teal-900",
-  Mediterranean:     "bg-cyan-200 text-cyan-900",
-  Juices:            "bg-sky-200 text-sky-900",
-  American:          "bg-blue-200 text-blue-900",
-  "Middle Eastern":  "bg-indigo-200 text-indigo-900",
-  Oriental:          "bg-violet-200 text-violet-900",
-  Momos:             "bg-purple-200 text-purple-900",
-  Pasta:             "bg-fuchsia-200 text-fuchsia-900",
-  "Ice Cream":       "bg-pink-200 text-pink-900",
-  Mughlai:           "bg-rose-200 text-rose-900",
-  Coffee:            "bg-stone-200 text-stone-900",
-  Pizza:             "bg-red-50 text-red-700",
-  "South Indian":    "bg-orange-50 text-orange-700",
-  Shawarma:          "bg-amber-50 text-amber-700",
-  Sandwich:          "bg-yellow-50 text-yellow-700",
-  Rolls:             "bg-lime-50 text-lime-700",
-  "Street Food":     "bg-green-50 text-green-700",
-  Wraps:             "bg-teal-50 text-teal-700",
-  "Bar Food":        "bg-cyan-50 text-cyan-700",
-  Sichuan:           "bg-sky-50 text-sky-700",
-  Persian:           "bg-blue-50 text-blue-700",
-  "Southeast Asian": "bg-indigo-50 text-indigo-700",
-  Tea:               "bg-violet-50 text-violet-700",
-  Mandi:             "bg-rose-50 text-rose-700",
+  // light: bg-X-100 text-X-800  |  dark: bg-X-900/60 text-X-200
+  "North Indian":    "bg-red-100 text-red-800 dark:bg-red-900/60 dark:text-red-200",
+  Mexican:           "bg-orange-100 text-orange-800 dark:bg-orange-900/60 dark:text-orange-200",
+  Kebab:             "bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200",
+  Chinese:           "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/60 dark:text-yellow-200",
+  Thai:              "bg-lime-100 text-lime-800 dark:bg-lime-900/60 dark:text-lime-200",
+  Asian:             "bg-green-100 text-green-800 dark:bg-green-900/60 dark:text-green-200",
+  Salad:             "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200",
+  "Asian Fusion":    "bg-teal-100 text-teal-800 dark:bg-teal-900/60 dark:text-teal-200",
+  Seafood:           "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/60 dark:text-cyan-200",
+  Beverages:         "bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-200",
+  Continental:       "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  European:          "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-200",
+  Iranian:           "bg-violet-100 text-violet-800 dark:bg-violet-900/60 dark:text-violet-200",
+  "Fast Food":       "bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-200",
+  Italian:           "bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900/60 dark:text-fuchsia-200",
+  Korean:            "bg-pink-100 text-pink-800 dark:bg-pink-900/60 dark:text-pink-200",
+  Desserts:          "bg-rose-100 text-rose-800 dark:bg-rose-900/60 dark:text-rose-200",
+  Cafe:              "bg-stone-100 text-stone-800 dark:bg-stone-800 dark:text-stone-200",
+  // light: bg-X-200 text-X-900  |  dark: bg-X-900/70 text-X-300
+  BBQ:               "bg-red-200 text-red-900 dark:bg-red-900/70 dark:text-red-300",
+  Burger:            "bg-orange-200 text-orange-900 dark:bg-orange-900/70 dark:text-orange-300",
+  Biryani:           "bg-amber-200 text-amber-900 dark:bg-amber-900/70 dark:text-amber-300",
+  Bakery:            "bg-yellow-200 text-yellow-900 dark:bg-yellow-900/70 dark:text-yellow-300",
+  Indonesian:        "bg-lime-200 text-lime-900 dark:bg-lime-900/70 dark:text-lime-300",
+  Jamaican:          "bg-green-200 text-green-900 dark:bg-green-900/70 dark:text-green-300",
+  "Healthy Food":    "bg-emerald-200 text-emerald-900 dark:bg-emerald-900/70 dark:text-emerald-300",
+  Lebanese:          "bg-teal-200 text-teal-900 dark:bg-teal-900/70 dark:text-teal-300",
+  Mediterranean:     "bg-cyan-200 text-cyan-900 dark:bg-cyan-900/70 dark:text-cyan-300",
+  Juices:            "bg-sky-200 text-sky-900 dark:bg-sky-900/70 dark:text-sky-300",
+  American:          "bg-blue-200 text-blue-900 dark:bg-blue-900/70 dark:text-blue-300",
+  "Middle Eastern":  "bg-indigo-200 text-indigo-900 dark:bg-indigo-900/70 dark:text-indigo-300",
+  Oriental:          "bg-violet-200 text-violet-900 dark:bg-violet-900/70 dark:text-violet-300",
+  Momos:             "bg-purple-200 text-purple-900 dark:bg-purple-900/70 dark:text-purple-300",
+  Pasta:             "bg-fuchsia-200 text-fuchsia-900 dark:bg-fuchsia-900/70 dark:text-fuchsia-300",
+  "Ice Cream":       "bg-pink-200 text-pink-900 dark:bg-pink-900/70 dark:text-pink-300",
+  Mughlai:           "bg-rose-200 text-rose-900 dark:bg-rose-900/70 dark:text-rose-300",
+  Coffee:            "bg-stone-200 text-stone-900 dark:bg-stone-800 dark:text-stone-300",
+  // light: bg-X-50 text-X-700  |  dark: bg-X-900/50 text-X-300
+  Pizza:             "bg-red-50 text-red-700 dark:bg-red-900/50 dark:text-red-300",
+  "South Indian":    "bg-orange-50 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300",
+  Shawarma:          "bg-amber-50 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300",
+  Sandwich:          "bg-yellow-50 text-yellow-700 dark:bg-yellow-900/50 dark:text-yellow-300",
+  Rolls:             "bg-lime-50 text-lime-700 dark:bg-lime-900/50 dark:text-lime-300",
+  "Street Food":     "bg-green-50 text-green-700 dark:bg-green-900/50 dark:text-green-300",
+  Wraps:             "bg-teal-50 text-teal-700 dark:bg-teal-900/50 dark:text-teal-300",
+  "Bar Food":        "bg-cyan-50 text-cyan-700 dark:bg-cyan-900/50 dark:text-cyan-300",
+  Sichuan:           "bg-sky-50 text-sky-700 dark:bg-sky-900/50 dark:text-sky-300",
+  Persian:           "bg-blue-50 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300",
+  "Southeast Asian": "bg-indigo-50 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300",
+  Tea:               "bg-violet-50 text-violet-700 dark:bg-violet-900/50 dark:text-violet-300",
+  Mandi:             "bg-rose-50 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300",
 };
 
 function cuisineColor(cuisine: string) {
-  return CUISINE_COLORS[cuisine] ?? "bg-gray-100 text-gray-700";
+  return CUISINE_COLORS[cuisine] ?? "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300";
 }
 
 function BranchChip({
@@ -219,14 +217,11 @@ export default function RestaurantCard({
             <div className="flex flex-col items-end gap-0.5">
               <span
                 className="flex items-center gap-1 text-xs font-semibold whitespace-nowrap"
-                style={{ color: "#d97706" }}
+                style={{ color: "#b45309" }}
               >
                 ★ {displayRating.toFixed(1)}
                 {displayReviewCount !== undefined && (
-                  <span
-                    className="font-normal"
-                    style={{ color: "var(--color-text-3)" }}
-                  >
+                  <span style={{ color: "var(--color-text-3)", fontWeight: 400 }}>
                     ({displayReviewCount.toLocaleString()})
                   </span>
                 )}
@@ -270,37 +265,15 @@ export default function RestaurantCard({
             {cuisineExpanded ? (
               <>
                 Show less
-                <svg
-                  className="w-3 h-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 15l7-7 7 7"
-                  />
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
                 </svg>
               </>
             ) : (
               <>
                 +{restaurant.cuisines.length - VISIBLE_CUISINE_LIMIT} more
-                <svg
-                  className="w-3 h-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </>
             )}
@@ -332,37 +305,15 @@ export default function RestaurantCard({
             {expanded ? (
               <>
                 Show less
-                <svg
-                  className="w-3 h-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 15l7-7 7 7"
-                  />
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
                 </svg>
               </>
             ) : (
               <>
                 +{hiddenCount} more
-                <svg
-                  className="w-3 h-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </>
             )}
