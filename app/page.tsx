@@ -171,17 +171,12 @@ export default function Home() {
               placeholder="Search restaurants..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="
-                w-full pl-12 pr-4 py-2.5 rounded-xl text-sm
-                focus:outline-none focus:ring-2
-              "
+              className="themed-input w-full pl-12 pr-4 py-2.5 rounded-xl text-sm"
               style={{
                 backgroundColor: "var(--color-surface)",
                 color: "var(--color-text)",
                 border: "1px solid var(--color-border)",
                 boxShadow: "var(--shadow-card)",
-                // @ts-expect-error CSS custom property
-                "--tw-ring-color": "var(--color-focus-ring)",
               }}
             />
           </div>

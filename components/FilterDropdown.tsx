@@ -104,13 +104,11 @@ export default function FilterDropdown({
               placeholder={`Search ${label.toLowerCase()}...`}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full px-3 py-2 text-sm rounded-lg focus:outline-none focus:ring-2"
+              className="themed-input w-full px-3 py-2 text-sm rounded-lg"
               style={{
                 backgroundColor: "var(--color-surface-2)",
                 color: "var(--color-text)",
                 border: "1px solid var(--color-border)",
-                // @ts-expect-error CSS custom property
-                "--tw-ring-color": accentVar,
               }}
             />
           </div>
