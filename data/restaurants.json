@@ -743,7 +743,8 @@
         "lat": 18.5216239,
         "lng": 73.8717527
       }
-    ]
+    ],
+    "rating": 4
   },
   {
     "name": "George Restaurant",
@@ -765,7 +766,8 @@
         "lat": 18.5216239,
         "lng": 73.8717527
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Yana Sizzler",
@@ -802,7 +804,8 @@
         "lat": 18.5589937,
         "lng": 73.7845232
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Shawarma.co - Lassi Wassi",
@@ -842,7 +845,8 @@
         "lat": 18.5366225,
         "lng": 73.8932738
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Blue Nile",
@@ -864,7 +868,8 @@
         "lat": 18.5216239,
         "lng": 73.8717527
       }
-    ]
+    ],
+    "rating": 4.1
   },
   {
     "name": "Shahi Dawat",
@@ -881,7 +886,8 @@
         "lat": 18.5216239,
         "lng": 73.8717527
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "Butterwala and Co.",
@@ -901,7 +907,8 @@
         "area": "Salunke Vihar Road",
         "mapsUrl": "https://www.google.com/maps/search/Butterwala+and+Co+Salunke+Vihar+Road+Pune"
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Salt",
@@ -921,7 +928,8 @@
         "area": "Salunke Vihar Road",
         "mapsUrl": "https://www.google.com/maps/search/Salt+Restaurant+Salunke+Vihar+Road+Pune"
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Irani Cafe",
@@ -985,7 +993,8 @@
         "lat": 18.4770994,
         "lng": 73.8991249
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Cream Craver",
@@ -1007,7 +1016,8 @@
         "lat": 18.5216239,
         "lng": 73.8717527
       }
-    ]
+    ],
+    "rating": 4
   },
   {
     "name": "Miya Kebabs",
@@ -1024,7 +1034,8 @@
         "lat": 18.5366225,
         "lng": 73.8932738
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "Bombay Seekh Parathas",
@@ -1060,7 +1071,8 @@
         "lat": 18.4820771,
         "lng": 73.8849644
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Olympia Kathi Kabab",
@@ -1073,7 +1085,8 @@
         "area": "East Street, Camp",
         "mapsUrl": "https://www.google.com/maps/search/Olympia+Kathi+Kabab+East+Street+Camp+Pune"
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "Al Di La Restaurant",
@@ -1091,7 +1104,8 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.4
   },
   {
     "name": "Jashn",
@@ -1111,7 +1125,8 @@
         "area": "Salunke Vihar Road",
         "mapsUrl": "https://www.google.com/maps/search/Jashn+Restaurant+Salunke+Vihar+Road+Pune"
       }
-    ]
+    ],
+    "rating": 4
   },
   {
     "name": "Cafe Yezdan",
@@ -1134,7 +1149,8 @@
         "lat": 18.4770994,
         "lng": 73.8991249
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Akhtar's Samosa",
@@ -1150,7 +1166,8 @@
         "lat": 18.5216239,
         "lng": 73.8717527
       }
-    ]
+    ],
+    "rating": 4.1
   },
   {
     "name": "Burger King (Camp Burger)",
@@ -1164,7 +1181,8 @@
         "area": "East Street, Camp",
         "mapsUrl": "https://www.google.com/maps/search/Burger+King+Camp+Burger+East+Street+Pune"
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "The Place - Touche The Sizzler",
@@ -1179,7 +1197,8 @@
         "lat": 18.5216239,
         "lng": 73.8717527
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Paasha - JW Marriott Pune",
@@ -1194,7 +1213,8 @@
         "area": "Senapati Bapat Road",
         "mapsUrl": "https://www.google.com/maps/search/Paasha+JW+Marriott+Pune+Senapati+Bapat+Road"
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "Spice Kitchen - JW Marriott Pune",
@@ -1211,7 +1231,8 @@
         "area": "Senapati Bapat Road",
         "mapsUrl": "https://www.google.com/maps/search/Spice+Kitchen+JW+Marriott+Pune+Senapati+Bapat+Road"
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "Tao Fu - JW Marriott Pune",
@@ -1225,7 +1246,8 @@
         "area": "Senapati Bapat Road",
         "mapsUrl": "https://www.google.com/maps/search/Tao+Fu+JW+Marriott+Pune+Senapati+Bapat+Road"
       }
-    ]
+    ],
+    "rating": 4.6
   },
   {
     "name": "Alto Vino - JW Marriott Pune",
@@ -1242,7 +1264,8 @@
         "area": "Senapati Bapat Road",
         "mapsUrl": "https://www.google.com/maps/search/Alto+Vino+JW+Marriott+Pune+Senapati+Bapat+Road"
       }
-    ]
+    ],
+    "rating": 4.7
   },
   {
     "name": "Pune Baking Company - JW Marriott Pune",
@@ -1257,7 +1280,8 @@
         "area": "Senapati Bapat Road",
         "mapsUrl": "https://www.google.com/maps/search/Pune+Baking+Company+JW+Marriott+Pune"
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "Alta Vida - Ritz-Carlton Pune",
@@ -1274,7 +1298,8 @@
         "lat": 18.5656319,
         "lng": 73.8865762
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "Three Kitchens - The Ritz-Carlton Pune",
@@ -1296,7 +1321,8 @@
         "lat": 18.5656319,
         "lng": 73.8865762
       }
-    ]
+    ],
+    "rating": 4.4
   },
   {
     "name": "Aasmana - The Ritz-Carlton Pune",
@@ -1315,7 +1341,8 @@
         "lat": 18.5656319,
         "lng": 73.8865762
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "Café 88 - Hyatt Pune",
@@ -1336,7 +1363,8 @@
         "lat": 18.5481382,
         "lng": 73.9025513
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "The Terrace Bar - Hyatt Pune",
@@ -1372,7 +1400,8 @@
         "lat": 18.5481382,
         "lng": 73.9025513
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "TG's - The Oriental Grill",
@@ -1390,7 +1419,8 @@
         "lat": 18.5481382,
         "lng": 73.9025513
       }
-    ]
+    ],
+    "rating": 4.4
   },
   {
     "name": "2BHK Diner & Key Club",
@@ -1410,7 +1440,8 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "Ba Da Bom",
@@ -1425,7 +1456,8 @@
         "area": "Sangamvadi",
         "mapsUrl": "https://www.google.com/maps/search/Ba+Da+Bom+Sangamvadi+Pune"
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "Acai",
@@ -1444,7 +1476,8 @@
         "lat": 18.534898,
         "lng": 73.8767171
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "Millers - The Luxury Club",
@@ -1464,7 +1497,8 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.1
   },
   {
     "name": "Epitome",
@@ -1485,7 +1519,8 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.1
   },
   {
     "name": "Kukoo",
@@ -1503,7 +1538,8 @@
         "area": "Sangamvadi",
         "mapsUrl": "https://www.google.com/maps/search/Kukoo+Restaurant+Sangamvadi+Pune"
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "The Game Palacio",
@@ -1541,7 +1577,8 @@
         "lat": 18.534898,
         "lng": 73.8767171
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "Di Mora",
@@ -1559,7 +1596,8 @@
         "lat": 18.534898,
         "lng": 73.8767171
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Buggy @ The Mills",
@@ -1594,7 +1632,8 @@
         "lat": 18.5366225,
         "lng": 73.8932738
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "Chingari - Sheraton Grand Pune",
@@ -1614,7 +1653,8 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.1
   },
   {
     "name": "Feast - Sheraton Grand Pune",
@@ -1636,7 +1676,8 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.3
   },
   {
     "name": "KMCY - Sheraton Grand Pune",
@@ -1651,7 +1692,8 @@
         "area": "Sangamvadi",
         "mapsUrl": "https://www.google.com/maps/search/KMCY+Sheraton+Grand+Pune+Sangamvadi"
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "The Lobby @ Sheraton Cafe",
@@ -1687,7 +1729,8 @@
         "lat": 18.5343218,
         "lng": 73.9298264
       }
-    ]
+    ],
+    "rating": 4.4
   },
   {
     "name": "Asilo - The Westin Pune",
@@ -1704,7 +1747,8 @@
         "lat": 18.5343218,
         "lng": 73.9298264
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Daily Treats - The Westin Pune",
@@ -1754,7 +1798,8 @@
         "lat": 18.534898,
         "lng": 73.8767171
       }
-    ]
+    ],
+    "rating": 4.4
   },
   {
     "name": "Kabana - Conrad Pune",
@@ -1771,7 +1816,8 @@
         "area": "Sangamvadi",
         "mapsUrl": "https://www.google.com/maps/search/Kabana+Conrad+Pune+Sangamvadi"
       }
-    ]
+    ],
+    "rating": 4.7
   },
   {
     "name": "Pune Sugar Box - Conrad Pune",
@@ -1786,7 +1832,8 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "Zeera - Conrad Pune",
@@ -1804,7 +1851,8 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.5
   },
   {
     "name": "Coriander Kitchen - Conrad Pune",
@@ -1823,6 +1871,7 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.5
   }
 ]

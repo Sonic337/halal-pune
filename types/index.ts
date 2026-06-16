@@ -3,6 +3,8 @@ export interface Branch {
   mapsUrl: string;
   lat?: number;
   lng?: number;
+  rating?: number;
+  reviewCount?: number;
 }
 
 export interface Restaurant {

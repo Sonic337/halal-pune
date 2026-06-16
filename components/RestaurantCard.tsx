@@ -83,12 +83,21 @@ export default function RestaurantCard({
               {distanceKm} km
             </span>
           )}
-          {restaurant.rating !== undefined && (
-            <span className="flex items-center gap-1 text-xs font-semibold text-amber-600 whitespace-nowrap">
-              ★ {restaurant.rating.toFixed(1)}
-              <span className="text-gray-400 font-normal">({restaurant.reviewCount?.toLocaleString()})</span>
-            </span>
-          )}
+          {(() => {
+            const nearestBranch = distanceKm !== undefined ? branches[0] : undefined;
+            const displayRating = nearestBranch?.rating ?? restaurant.rating;
+            const displayReviewCount = nearestBranch?.rating !== undefined
+              ? nearestBranch.reviewCount
+              : restaurant.reviewCount;
+            return displayRating !== undefined ? (
+              <span className="flex items-center gap-1 text-xs font-semibold text-amber-600 whitespace-nowrap">
+                ★ {displayRating.toFixed(1)}
+                {displayReviewCount !== undefined && (
+                  <span className="text-gray-400 font-normal">({displayReviewCount.toLocaleString()})</span>
+                )}
+              </span>
+            ) : null;
+          })()}
         </div>
       </div>
 
