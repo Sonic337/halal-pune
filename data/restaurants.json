@@ -1341,24 +1341,6 @@
     "rating": 4.6
   },
   {
-    "name": "Alta Vida - Ritz-Carlton Pune",
-    "tagline": "",
-    "cuisines": [
-      "Continental",
-      "Asian",
-      "Beverages"
-    ],
-    "branches": [
-      {
-        "area": "Yerawada",
-        "mapsUrl": "https://www.google.com/maps/search/Alta+Vida+Ritz+Carlton+Pune+Yerawada",
-        "lat": 18.5656319,
-        "lng": 73.8865762
-      }
-    ],
-    "rating": 4.5
-  },
-  {
     "name": "Aasmana - The Ritz-Carlton Pune",
     "tagline": "",
     "cuisines": [
