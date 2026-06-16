@@ -23,9 +23,23 @@
     "tagline": "",
     "rating": 4.7,
     "reviewCount": 54,
-    "cuisines": ["Fast Food", "Beverages", "Sandwich", "Bakery", "Tea", "Street Food", "Burger", "Juices"],
+    "cuisines": [
+      "Fast Food",
+      "Beverages",
+      "Sandwich",
+      "Bakery",
+      "Tea",
+      "Street Food",
+      "Burger",
+      "Juices"
+    ],
     "branches": [
-      { "area": "Wanowrie", "mapsUrl": "https://maps.app.goo.gl/vSspirxFbhuG8xb7A", "lat": 18.4880464, "lng": 73.8937064 }
+      {
+        "area": "Wanowrie",
+        "mapsUrl": "https://maps.app.goo.gl/vSspirxFbhuG8xb7A",
+        "lat": 18.4880464,
+        "lng": 73.8937064
+      }
     ]
   },
   {
@@ -91,7 +105,7 @@
   {
     "name": "Chung Fa",
     "tagline": "",
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 2257,
     "cuisines": [
       "Chinese",
@@ -357,7 +371,7 @@
   {
     "name": "Kimling",
     "tagline": "",
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 1112,
     "cuisines": [
       "Chinese"
@@ -706,6 +720,1108 @@
         "mapsUrl": "https://maps.app.goo.gl/ZhEBVAdE4h41m2SR9",
         "lat": 18.4631076,
         "lng": 73.9116173
+      }
+    ]
+  },
+  {
+    "name": "Badshah",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "South Indian",
+      "Pizza",
+      "Italian",
+      "Sandwich",
+      "Street Food",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Badshah+Restaurant+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      }
+    ]
+  },
+  {
+    "name": "George Restaurant",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Biryani",
+      "Chinese",
+      "Mughlai",
+      "Continental",
+      "Kebab",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/George+Restaurant+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      }
+    ]
+  },
+  {
+    "name": "Yana Sizzler",
+    "tagline": "",
+    "cuisines": [
+      "Chinese",
+      "Salad",
+      "BBQ",
+      "Seafood",
+      "Jamaican"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Yana+Sizzler+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      },
+      {
+        "area": "Koregaon Park",
+        "mapsUrl": "https://www.google.com/maps/search/Yana+Sizzler+Koregaon+Park+Pune",
+        "lat": 18.5366225,
+        "lng": 73.8932738
+      },
+      {
+        "area": "FC Road",
+        "mapsUrl": "https://www.google.com/maps/search/Yana+Sizzler+FC+Road+Pune",
+        "lat": 18.5150117,
+        "lng": 73.8422183
+      },
+      {
+        "area": "Baner",
+        "mapsUrl": "https://www.google.com/maps/search/Yana+Sizzler+Baner+Pune",
+        "lat": 18.5589937,
+        "lng": 73.7845232
+      }
+    ]
+  },
+  {
+    "name": "Shawarma.co - Lassi Wassi",
+    "tagline": "",
+    "cuisines": [
+      "Beverages",
+      "Shawarma",
+      "Sandwich",
+      "Fast Food"
+    ],
+    "branches": [
+      {
+        "area": "Kothrud",
+        "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Kothrud+Pune",
+        "lat": 18.5072618,
+        "lng": 73.8056676
+      },
+      {
+        "area": "Salunke Vihar Road",
+        "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Salunke+Vihar+Pune"
+      },
+      {
+        "area": "Anand Nagar",
+        "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Anand+Nagar+Pune",
+        "lat": 18.4782576,
+        "lng": 73.823807
+      },
+      {
+        "area": "Dhankawadi",
+        "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Dhankawadi+Pune",
+        "lat": 18.4654198,
+        "lng": 73.850152
+      },
+      {
+        "area": "Koregaon Park",
+        "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Koregaon+Park+Pune",
+        "lat": 18.5366225,
+        "lng": 73.8932738
+      }
+    ]
+  },
+  {
+    "name": "Blue Nile",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Mughlai",
+      "Chinese",
+      "Fast Food",
+      "Biryani",
+      "Ice Cream",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Blue+Nile+Restaurant+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      }
+    ]
+  },
+  {
+    "name": "Shahi Dawat",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Mughlai",
+      "Chinese"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Shahi+Dawat+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      }
+    ]
+  },
+  {
+    "name": "Butterwala and Co.",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Bakery",
+      "Fast Food",
+      "Tea",
+      "Street Food",
+      "Sandwich",
+      "Biryani",
+      "Rolls"
+    ],
+    "branches": [
+      {
+        "area": "Salunke Vihar Road",
+        "mapsUrl": "https://www.google.com/maps/search/Butterwala+and+Co+Salunke+Vihar+Road+Pune"
+      }
+    ]
+  },
+  {
+    "name": "Salt",
+    "tagline": "",
+    "cuisines": [
+      "Fast Food",
+      "Sandwich",
+      "Pizza",
+      "Pasta",
+      "Burger",
+      "North Indian",
+      "South Indian",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Salunke Vihar Road",
+        "mapsUrl": "https://www.google.com/maps/search/Salt+Restaurant+Salunke+Vihar+Road+Pune"
+      }
+    ]
+  },
+  {
+    "name": "Irani Cafe",
+    "tagline": "",
+    "cuisines": [
+      "Sandwich",
+      "Iranian",
+      "Fast Food",
+      "Bakery",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      },
+      {
+        "area": "Deccan Gymkhana",
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Deccan+Gymkhana+Pune",
+        "lat": 18.5158926,
+        "lng": 73.84116
+      },
+      {
+        "area": "Senapati Bapat Road",
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Senapati+Bapat+Road+Pune"
+      },
+      {
+        "area": "Koregaon Park",
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Koregaon+Park+Pune",
+        "lat": 18.5366225,
+        "lng": 73.8932738
+      },
+      {
+        "area": "Karve Nagar",
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Karve+Nagar+Pune",
+        "lat": 18.4894205,
+        "lng": 73.821347
+      },
+      {
+        "area": "Singhad Road",
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Singhad+Road+Pune"
+      },
+      {
+        "area": "Kalyani Nagar",
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Kalyani+Nagar+Pune",
+        "lat": 18.5481382,
+        "lng": 73.9025513
+      },
+      {
+        "area": "Katraj",
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+Katraj+Pune",
+        "lat": 18.4536792,
+        "lng": 73.8563196
+      },
+      {
+        "area": "NIBM Road",
+        "mapsUrl": "https://www.google.com/maps/search/Irani+Cafe+NIBM+Road+Pune",
+        "lat": 18.4770994,
+        "lng": 73.8991249
+      }
+    ]
+  },
+  {
+    "name": "Cream Craver",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Chinese",
+      "Sandwich",
+      "Fast Food",
+      "Street Food",
+      "Desserts",
+      "Shawarma",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Cream+Craver+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      }
+    ]
+  },
+  {
+    "name": "Miya Kebabs",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Kebab",
+      "Shawarma"
+    ],
+    "branches": [
+      {
+        "area": "Koregaon Park",
+        "mapsUrl": "https://www.google.com/maps/search/Miya+Kebabs+Koregaon+Park+Pune",
+        "lat": 18.5366225,
+        "lng": 73.8932738
+      }
+    ]
+  },
+  {
+    "name": "Bombay Seekh Parathas",
+    "tagline": "",
+    "cuisines": [
+      "Mughlai",
+      "Kebab"
+    ],
+    "branches": [
+      {
+        "area": "Kausar Bagh",
+        "mapsUrl": "https://www.google.com/maps/search/Bombay+Seekh+Parathas+Kausar+Bagh+Pune"
+      }
+    ]
+  },
+  {
+    "name": "Signature",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Chinese",
+      "Sichuan",
+      "Continental",
+      "Kebab",
+      "Seafood",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Lullanagar",
+        "mapsUrl": "https://www.google.com/maps/search/Signature+Restaurant+Lullanagar+Pune",
+        "lat": 18.4820771,
+        "lng": 73.8849644
+      }
+    ]
+  },
+  {
+    "name": "Olympia Kathi Kabab",
+    "tagline": "",
+    "cuisines": [
+      "Rolls"
+    ],
+    "branches": [
+      {
+        "area": "East Street, Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Olympia+Kathi+Kabab+East+Street+Camp+Pune"
+      }
+    ]
+  },
+  {
+    "name": "Al Di La Restaurant",
+    "tagline": "",
+    "cuisines": [
+      "Italian",
+      "Bar Food",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/Al+Di+La+Restaurant+Bund+Garden+Road+Pune",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "Jashn",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Biryani",
+      "Continental",
+      "Chinese",
+      "Fast Food",
+      "Oriental",
+      "Ice Cream",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Salunke Vihar Road",
+        "mapsUrl": "https://www.google.com/maps/search/Jashn+Restaurant+Salunke+Vihar+Road+Pune"
+      }
+    ]
+  },
+  {
+    "name": "Cafe Yezdan",
+    "tagline": "",
+    "cuisines": [
+      "Fast Food",
+      "Street Food",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Cafe+Yezdan+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      },
+      {
+        "area": "NIBM Road",
+        "mapsUrl": "https://www.google.com/maps/search/Cafe+Yezdan+NIBM+Road+Pune",
+        "lat": 18.4770994,
+        "lng": 73.8991249
+      }
+    ]
+  },
+  {
+    "name": "Akhtar's Samosa",
+    "tagline": "",
+    "cuisines": [
+      "Street Food",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Akhtars+Samosa+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      }
+    ]
+  },
+  {
+    "name": "Burger King (Camp Burger)",
+    "tagline": "",
+    "cuisines": [
+      "Burger",
+      "Fast Food"
+    ],
+    "branches": [
+      {
+        "area": "East Street, Camp",
+        "mapsUrl": "https://www.google.com/maps/search/Burger+King+Camp+Burger+East+Street+Pune"
+      }
+    ]
+  },
+  {
+    "name": "The Place - Touche The Sizzler",
+    "tagline": "",
+    "cuisines": [
+      "Continental"
+    ],
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://www.google.com/maps/search/The+Place+Touche+The+Sizzler+Camp+Pune",
+        "lat": 18.5216239,
+        "lng": 73.8717527
+      }
+    ]
+  },
+  {
+    "name": "Paasha - JW Marriott Pune",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Kebab",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Senapati Bapat Road",
+        "mapsUrl": "https://www.google.com/maps/search/Paasha+JW+Marriott+Pune+Senapati+Bapat+Road"
+      }
+    ]
+  },
+  {
+    "name": "Spice Kitchen - JW Marriott Pune",
+    "tagline": "",
+    "cuisines": [
+      "Italian",
+      "Asian",
+      "North Indian",
+      "South Indian",
+      "European"
+    ],
+    "branches": [
+      {
+        "area": "Senapati Bapat Road",
+        "mapsUrl": "https://www.google.com/maps/search/Spice+Kitchen+JW+Marriott+Pune+Senapati+Bapat+Road"
+      }
+    ]
+  },
+  {
+    "name": "Tao Fu - JW Marriott Pune",
+    "tagline": "",
+    "cuisines": [
+      "Chinese",
+      "Asian"
+    ],
+    "branches": [
+      {
+        "area": "Senapati Bapat Road",
+        "mapsUrl": "https://www.google.com/maps/search/Tao+Fu+JW+Marriott+Pune+Senapati+Bapat+Road"
+      }
+    ]
+  },
+  {
+    "name": "Alto Vino - JW Marriott Pune",
+    "tagline": "",
+    "cuisines": [
+      "Italian",
+      "Pizza",
+      "Pasta",
+      "Bakery",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Senapati Bapat Road",
+        "mapsUrl": "https://www.google.com/maps/search/Alto+Vino+JW+Marriott+Pune+Senapati+Bapat+Road"
+      }
+    ]
+  },
+  {
+    "name": "Pune Baking Company - JW Marriott Pune",
+    "tagline": "",
+    "cuisines": [
+      "Cafe",
+      "Sandwich",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Senapati Bapat Road",
+        "mapsUrl": "https://www.google.com/maps/search/Pune+Baking+Company+JW+Marriott+Pune"
+      }
+    ]
+  },
+  {
+    "name": "Alta Vida - Ritz-Carlton Pune",
+    "tagline": "",
+    "cuisines": [
+      "Continental",
+      "Asian",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Yerawada",
+        "mapsUrl": "https://www.google.com/maps/search/Alta+Vida+Ritz+Carlton+Pune+Yerawada",
+        "lat": 18.5656319,
+        "lng": 73.8865762
+      }
+    ]
+  },
+  {
+    "name": "Three Kitchens - The Ritz-Carlton Pune",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Biryani",
+      "Continental",
+      "Italian",
+      "Pizza",
+      "Fast Food",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Yerawada",
+        "mapsUrl": "https://www.google.com/maps/search/Three+Kitchens+Ritz+Carlton+Pune+Yerawada",
+        "lat": 18.5656319,
+        "lng": 73.8865762
+      }
+    ]
+  },
+  {
+    "name": "Aasmana - The Ritz-Carlton Pune",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Kebab",
+      "Biryani",
+      "Mughlai",
+      "Seafood"
+    ],
+    "branches": [
+      {
+        "area": "Yerawada",
+        "mapsUrl": "https://www.google.com/maps/search/Aasmana+Ritz+Carlton+Pune+Yerawada",
+        "lat": 18.5656319,
+        "lng": 73.8865762
+      }
+    ]
+  },
+  {
+    "name": "Café 88 - Hyatt Pune",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Continental",
+      "Pasta",
+      "Pizza",
+      "Healthy Food",
+      "Beverages",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Kalyani Nagar",
+        "mapsUrl": "https://www.google.com/maps/search/Cafe+88+Hyatt+Pune+Kalyani+Nagar",
+        "lat": 18.5481382,
+        "lng": 73.9025513
+      }
+    ]
+  },
+  {
+    "name": "The Terrace Bar - Hyatt Pune",
+    "tagline": "",
+    "cuisines": [
+      "Beverages",
+      "Bar Food",
+      "Continental",
+      "Fast Food"
+    ],
+    "branches": [
+      {
+        "area": "Kalyani Nagar",
+        "mapsUrl": "https://www.google.com/maps/search/The+Terrace+Bar+Hyatt+Pune+Kalyani+Nagar",
+        "lat": 18.5481382,
+        "lng": 73.9025513
+      }
+    ]
+  },
+  {
+    "name": "Baan Tao - Hyatt Pune",
+    "tagline": "",
+    "cuisines": [
+      "Chinese",
+      "Thai",
+      "Asian",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Kalyani Nagar",
+        "mapsUrl": "https://www.google.com/maps/search/Baan+Tao+Hyatt+Pune+Kalyani+Nagar",
+        "lat": 18.5481382,
+        "lng": 73.9025513
+      }
+    ]
+  },
+  {
+    "name": "TG's - The Oriental Grill",
+    "tagline": "",
+    "cuisines": [
+      "Oriental",
+      "Thai",
+      "Asian",
+      "Chinese"
+    ],
+    "branches": [
+      {
+        "area": "Kalyani Nagar",
+        "mapsUrl": "https://www.google.com/maps/search/TGs+The+Oriental+Grill+Kalyani+Nagar+Pune",
+        "lat": 18.5481382,
+        "lng": 73.9025513
+      }
+    ]
+  },
+  {
+    "name": "2BHK Diner & Key Club",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Mediterranean",
+      "European",
+      "Italian",
+      "American",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/2BHK+Diner+Key+Club+Bund+Garden+Road+Pune",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "Ba Da Bom",
+    "tagline": "",
+    "cuisines": [
+      "Korean",
+      "Asian",
+      "Coffee"
+    ],
+    "branches": [
+      {
+        "area": "Sangamvadi",
+        "mapsUrl": "https://www.google.com/maps/search/Ba+Da+Bom+Sangamvadi+Pune"
+      }
+    ]
+  },
+  {
+    "name": "Acai",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Continental",
+      "Italian",
+      "Pizza",
+      "Bar Food"
+    ],
+    "branches": [
+      {
+        "area": "Dhole Patil Road",
+        "mapsUrl": "https://www.google.com/maps/search/Acai+Restaurant+Dhole+Patil+Road+Pune",
+        "lat": 18.534898,
+        "lng": 73.8767171
+      }
+    ]
+  },
+  {
+    "name": "Millers - The Luxury Club",
+    "tagline": "",
+    "cuisines": [
+      "Continental",
+      "North Indian",
+      "Fast Food",
+      "Biryani",
+      "Beverages",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/Millers+The+Luxury+Club+Bund+Garden+Road+Pune",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "Epitome",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Asian",
+      "Italian",
+      "Chinese",
+      "Fast Food",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/Epitome+Restaurant+Bund+Garden+Road+Pune",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "Kukoo",
+    "tagline": "",
+    "cuisines": [
+      "Continental",
+      "Asian",
+      "Italian",
+      "Salad",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Sangamvadi",
+        "mapsUrl": "https://www.google.com/maps/search/Kukoo+Restaurant+Sangamvadi+Pune"
+      }
+    ]
+  },
+  {
+    "name": "The Game Palacio",
+    "tagline": "",
+    "cuisines": [
+      "Pizza",
+      "Asian",
+      "Italian"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/The+Game+Palacio+Bund+Garden+Road+Pune",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "Shisha Jazz Cafe",
+    "tagline": "",
+    "cuisines": [
+      "Continental",
+      "Fast Food",
+      "Salad",
+      "Iranian",
+      "North Indian",
+      "Seafood",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Dhole Patil Road",
+        "mapsUrl": "https://www.google.com/maps/search/Shisha+Jazz+Cafe+Dhole+Patil+Road+Pune",
+        "lat": 18.534898,
+        "lng": 73.8767171
+      }
+    ]
+  },
+  {
+    "name": "Di Mora",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Chinese",
+      "Italian",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Dhole Patil Road",
+        "mapsUrl": "https://www.google.com/maps/search/Di+Mora+Dhole+Patil+Road+Pune",
+        "lat": 18.534898,
+        "lng": 73.8767171
+      }
+    ]
+  },
+  {
+    "name": "Buggy @ The Mills",
+    "tagline": "",
+    "cuisines": [
+      "Kebab",
+      "Rolls",
+      "Fast Food"
+    ],
+    "branches": [
+      {
+        "area": "Dhole Patil Road",
+        "mapsUrl": "https://www.google.com/maps/search/Buggy+The+Mills+Dhole+Patil+Road+Pune",
+        "lat": 18.534898,
+        "lng": 73.8767171
+      }
+    ]
+  },
+  {
+    "name": "Latitude - Blue Diamond",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Mediterranean",
+      "Italian",
+      "European"
+    ],
+    "branches": [
+      {
+        "area": "Koregaon Park",
+        "mapsUrl": "https://www.google.com/maps/search/Latitude+Blue+Diamond+Hotel+Koregaon+Park+Pune",
+        "lat": 18.5366225,
+        "lng": 73.8932738
+      }
+    ]
+  },
+  {
+    "name": "Chingari - Sheraton Grand Pune",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Mughlai",
+      "Kebab",
+      "Desserts",
+      "Beverages",
+      "Seafood"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/Chingari+Sheraton+Grand+Pune+Bund+Garden+Road",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "Feast - Sheraton Grand Pune",
+    "tagline": "",
+    "cuisines": [
+      "Chinese",
+      "North Indian",
+      "Mughlai",
+      "Asian",
+      "Continental",
+      "Salad",
+      "Italian",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/Feast+Sheraton+Grand+Pune+Bund+Garden+Road",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "KMCY - Sheraton Grand Pune",
+    "tagline": "",
+    "cuisines": [
+      "Sichuan",
+      "Chinese",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Sangamvadi",
+        "mapsUrl": "https://www.google.com/maps/search/KMCY+Sheraton+Grand+Pune+Sangamvadi"
+      }
+    ]
+  },
+  {
+    "name": "The Lobby @ Sheraton Cafe",
+    "tagline": "",
+    "cuisines": [
+      "Cafe",
+      "Fast Food",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/The+Lobby+Sheraton+Grand+Pune+Bund+Garden+Road",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "The Market - The Westin Pune",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "European",
+      "Asian",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Mundhwa",
+        "mapsUrl": "https://www.google.com/maps/search/The+Market+Westin+Pune+Mundhwa",
+        "lat": 18.5343218,
+        "lng": 73.9298264
+      }
+    ]
+  },
+  {
+    "name": "Asilo - The Westin Pune",
+    "tagline": "",
+    "cuisines": [
+      "Mediterranean",
+      "Asian",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Mundhwa",
+        "mapsUrl": "https://www.google.com/maps/search/Asilo+Westin+Pune+Mundhwa",
+        "lat": 18.5343218,
+        "lng": 73.9298264
+      }
+    ]
+  },
+  {
+    "name": "Daily Treats - The Westin Pune",
+    "tagline": "",
+    "cuisines": [
+      "Cafe",
+      "Continental",
+      "Beverages",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Mundhwa",
+        "mapsUrl": "https://www.google.com/maps/search/Daily+Treats+Westin+Pune+Mundhwa",
+        "lat": 18.5343218,
+        "lng": 73.9298264
+      }
+    ]
+  },
+  {
+    "name": "Aafreen - The Westin Pune",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Mughlai"
+    ],
+    "branches": [
+      {
+        "area": "Mundhwa",
+        "mapsUrl": "https://www.google.com/maps/search/Aafreen+Westin+Pune+Mundhwa",
+        "lat": 18.5343218,
+        "lng": 73.9298264
+      }
+    ]
+  },
+  {
+    "name": "Masu - Conrad Pune",
+    "tagline": "",
+    "cuisines": [
+      "Asian",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Dhole Patil Road",
+        "mapsUrl": "https://www.google.com/maps/search/Masu+Conrad+Pune+Dhole+Patil+Road",
+        "lat": 18.534898,
+        "lng": 73.8767171
+      }
+    ]
+  },
+  {
+    "name": "Kabana - Conrad Pune",
+    "tagline": "",
+    "cuisines": [
+      "Continental",
+      "Italian",
+      "North Indian",
+      "Asian",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Sangamvadi",
+        "mapsUrl": "https://www.google.com/maps/search/Kabana+Conrad+Pune+Sangamvadi"
+      }
+    ]
+  },
+  {
+    "name": "Pune Sugar Box - Conrad Pune",
+    "tagline": "",
+    "cuisines": [
+      "Cafe"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/Pune+Sugar+Box+Conrad+Pune+Bund+Garden+Road",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "Zeera - Conrad Pune",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Biryani",
+      "Street Food",
+      "Desserts"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/Zeera+Conrad+Pune+Bund+Garden+Road",
+        "lat": 18.5347175,
+        "lng": 73.879556
+      }
+    ]
+  },
+  {
+    "name": "Coriander Kitchen - Conrad Pune",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Asian",
+      "Mediterranean",
+      "Desserts",
+      "Beverages"
+    ],
+    "branches": [
+      {
+        "area": "Bund Garden Road",
+        "mapsUrl": "https://www.google.com/maps/search/Coriander+Kitchen+Conrad+Pune+Bund+Garden+Road",
+        "lat": 18.5347175,
+        "lng": 73.879556
       }
     ]
   }
