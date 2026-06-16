@@ -882,29 +882,34 @@
         "area": "Kothrud",
         "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Kothrud+Pune",
         "lat": 18.5072618,
-        "lng": 73.8056676
+        "lng": 73.8056676,
+        "rating": 4.2
       },
       {
         "area": "Salunke Vihar Road",
-        "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Salunke+Vihar+Pune"
+        "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Salunke+Vihar+Pune",
+        "rating": 4.2
       },
       {
         "area": "Anand Nagar",
         "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Anand+Nagar+Pune",
         "lat": 18.4782576,
-        "lng": 73.823807
+        "lng": 73.823807,
+        "rating": 4.2
       },
       {
         "area": "Dhankawadi",
         "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Dhankawadi+Pune",
         "lat": 18.4654198,
-        "lng": 73.850152
+        "lng": 73.850152,
+        "rating": 4.2
       },
       {
         "area": "Koregaon Park",
         "mapsUrl": "https://www.google.com/maps/search/Shawarma.co+Lassi+Wassi+Koregaon+Park+Pune",
         "lat": 18.5366225,
-        "lng": 73.8932738
+        "lng": 73.8932738,
+        "rating": 4.2
       }
     ],
     "rating": 4.2
