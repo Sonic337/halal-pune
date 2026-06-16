@@ -1341,40 +1341,6 @@
     "rating": 4.6
   },
   {
-    "name": "Alto Vino - JW Marriott Pune",
-    "tagline": "",
-    "cuisines": [
-      "Italian",
-      "Pizza",
-      "Pasta",
-      "Bakery",
-      "Desserts"
-    ],
-    "branches": [
-      {
-        "area": "Senapati Bapat Road",
-        "mapsUrl": "https://www.google.com/maps/search/Alto+Vino+JW+Marriott+Pune+Senapati+Bapat+Road"
-      }
-    ],
-    "rating": 4.7
-  },
-  {
-    "name": "Pune Baking Company - JW Marriott Pune",
-    "tagline": "",
-    "cuisines": [
-      "Cafe",
-      "Sandwich",
-      "Desserts"
-    ],
-    "branches": [
-      {
-        "area": "Senapati Bapat Road",
-        "mapsUrl": "https://www.google.com/maps/search/Pune+Baking+Company+JW+Marriott+Pune"
-      }
-    ],
-    "rating": 4.5
-  },
-  {
     "name": "Alta Vida - Ritz-Carlton Pune",
     "tagline": "",
     "cuisines": [
@@ -1393,29 +1359,6 @@
     "rating": 4.5
   },
   {
-    "name": "Three Kitchens - The Ritz-Carlton Pune",
-    "tagline": "",
-    "cuisines": [
-      "North Indian",
-      "Biryani",
-      "Continental",
-      "Italian",
-      "Pizza",
-      "Fast Food",
-      "Desserts",
-      "Beverages"
-    ],
-    "branches": [
-      {
-        "area": "Yerawada",
-        "mapsUrl": "https://www.google.com/maps/search/Three+Kitchens+Ritz+Carlton+Pune+Yerawada",
-        "lat": 18.5656319,
-        "lng": 73.8865762
-      }
-    ],
-    "rating": 4.4
-  },
-  {
     "name": "Aasmana - The Ritz-Carlton Pune",
     "tagline": "",
     "cuisines": [
@@ -1431,67 +1374,6 @@
         "mapsUrl": "https://www.google.com/maps/search/Aasmana+Ritz+Carlton+Pune+Yerawada",
         "lat": 18.5656319,
         "lng": 73.8865762
-      }
-    ],
-    "rating": 4.5
-  },
-  {
-    "name": "Café 88 - Hyatt Pune",
-    "tagline": "",
-    "cuisines": [
-      "North Indian",
-      "Continental",
-      "Pasta",
-      "Pizza",
-      "Healthy Food",
-      "Beverages",
-      "Desserts"
-    ],
-    "branches": [
-      {
-        "area": "Kalyani Nagar",
-        "mapsUrl": "https://www.google.com/maps/search/Cafe+88+Hyatt+Pune+Kalyani+Nagar",
-        "lat": 18.5481382,
-        "lng": 73.9025513
-      }
-    ],
-    "rating": 4.3
-  },
-  {
-    "name": "The Terrace Bar - Hyatt Pune",
-    "tagline": "",
-    "cuisines": [
-      "Beverages",
-      "Bar Food",
-      "Continental",
-      "Fast Food"
-    ],
-    "branches": [
-      {
-        "area": "Kalyani Nagar",
-        "mapsUrl": "https://www.google.com/maps/search/The+Terrace+Bar+Hyatt+Pune+Kalyani+Nagar",
-        "lat": 18.5481382,
-        "lng": 73.9025513
-      }
-    ],
-    "rating": 4.2,
-    "reviewCount": 507
-  },
-  {
-    "name": "Baan Tao - Hyatt Pune",
-    "tagline": "",
-    "cuisines": [
-      "Chinese",
-      "Thai",
-      "Asian",
-      "Desserts"
-    ],
-    "branches": [
-      {
-        "area": "Kalyani Nagar",
-        "mapsUrl": "https://www.google.com/maps/search/Baan+Tao+Hyatt+Pune+Kalyani+Nagar",
-        "lat": 18.5481382,
-        "lng": 73.9025513
       }
     ],
     "rating": 4.5
@@ -1532,22 +1414,6 @@
         "mapsUrl": "https://www.google.com/maps/search/2BHK+Diner+Key+Club+Bund+Garden+Road+Pune",
         "lat": 18.5347175,
         "lng": 73.879556
-      }
-    ],
-    "rating": 4.3
-  },
-  {
-    "name": "Ba Da Bom",
-    "tagline": "",
-    "cuisines": [
-      "Korean",
-      "Asian",
-      "Coffee"
-    ],
-    "branches": [
-      {
-        "area": "Sangamvadi",
-        "mapsUrl": "https://www.google.com/maps/search/Ba+Da+Bom+Sangamvadi+Pune"
       }
     ],
     "rating": 4.3
@@ -1735,45 +1601,6 @@
     "rating": 4.1
   },
   {
-    "name": "Feast - Sheraton Grand Pune",
-    "tagline": "",
-    "cuisines": [
-      "Chinese",
-      "North Indian",
-      "Mughlai",
-      "Asian",
-      "Continental",
-      "Salad",
-      "Italian",
-      "Desserts"
-    ],
-    "branches": [
-      {
-        "area": "Bund Garden Road",
-        "mapsUrl": "https://www.google.com/maps/search/Feast+Sheraton+Grand+Pune+Bund+Garden+Road",
-        "lat": 18.5347175,
-        "lng": 73.879556
-      }
-    ],
-    "rating": 4.3
-  },
-  {
-    "name": "KMCY - Sheraton Grand Pune",
-    "tagline": "",
-    "cuisines": [
-      "Sichuan",
-      "Chinese",
-      "Desserts"
-    ],
-    "branches": [
-      {
-        "area": "Sangamvadi",
-        "mapsUrl": "https://www.google.com/maps/search/KMCY+Sheraton+Grand+Pune+Sangamvadi"
-      }
-    ],
-    "rating": 4.5
-  },
-  {
     "name": "The Lobby @ Sheraton Cafe",
     "tagline": "",
     "cuisines": [
@@ -1811,44 +1638,6 @@
       }
     ],
     "rating": 4.4
-  },
-  {
-    "name": "Asilo - The Westin Pune",
-    "tagline": "",
-    "cuisines": [
-      "Mediterranean",
-      "Asian",
-      "Beverages"
-    ],
-    "branches": [
-      {
-        "area": "Mundhwa",
-        "mapsUrl": "https://www.google.com/maps/search/Asilo+Westin+Pune+Mundhwa",
-        "lat": 18.5343218,
-        "lng": 73.9298264
-      }
-    ],
-    "rating": 4.2
-  },
-  {
-    "name": "Daily Treats - The Westin Pune",
-    "tagline": "",
-    "cuisines": [
-      "Cafe",
-      "Continental",
-      "Beverages",
-      "Desserts"
-    ],
-    "branches": [
-      {
-        "area": "Mundhwa",
-        "mapsUrl": "https://www.google.com/maps/search/Daily+Treats+Westin+Pune+Mundhwa",
-        "lat": 18.5343218,
-        "lng": 73.9298264
-      }
-    ],
-    "rating": 4.3,
-    "reviewCount": 653
   },
   {
     "name": "Aafreen - The Westin Pune",
@@ -1912,45 +1701,6 @@
       {
         "area": "Bund Garden Road",
         "mapsUrl": "https://www.google.com/maps/search/Pune+Sugar+Box+Conrad+Pune+Bund+Garden+Road",
-        "lat": 18.5347175,
-        "lng": 73.879556
-      }
-    ],
-    "rating": 4.5
-  },
-  {
-    "name": "Zeera - Conrad Pune",
-    "tagline": "",
-    "cuisines": [
-      "North Indian",
-      "Biryani",
-      "Street Food",
-      "Desserts"
-    ],
-    "branches": [
-      {
-        "area": "Bund Garden Road",
-        "mapsUrl": "https://www.google.com/maps/search/Zeera+Conrad+Pune+Bund+Garden+Road",
-        "lat": 18.5347175,
-        "lng": 73.879556
-      }
-    ],
-    "rating": 4.5
-  },
-  {
-    "name": "Coriander Kitchen - Conrad Pune",
-    "tagline": "",
-    "cuisines": [
-      "North Indian",
-      "Asian",
-      "Mediterranean",
-      "Desserts",
-      "Beverages"
-    ],
-    "branches": [
-      {
-        "area": "Bund Garden Road",
-        "mapsUrl": "https://www.google.com/maps/search/Coriander+Kitchen+Conrad+Pune+Bund+Garden+Road",
         "lat": 18.5347175,
         "lng": 73.879556
       }
