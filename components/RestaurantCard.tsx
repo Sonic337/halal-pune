@@ -281,6 +281,8 @@ export default function RestaurantCard({
         )}
       </div>
 
+      <hr className="border-t" style={{ borderColor: "var(--color-border)" }} />
+
       {/* ── Branch chips ── */}
       <div className="flex flex-wrap gap-2 mt-auto pt-1">
         {visibleBranches.map((b) => (
