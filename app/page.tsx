@@ -102,6 +102,7 @@ export default function Home() {
           <div className="text-4xl mb-2">🍽️</div>
           <h1 className="text-4xl font-extrabold tracking-tight mb-2">Wurrynot</h1>
           <p className="text-orange-100 text-lg">Eat without the worry. Pune's best local spots, personally picked.</p>
+          <p className="text-orange-200 text-sm mt-3">Spotted something wrong? Reach us at <a href="mailto:contactwurrynot@gmail.com" className="underline underline-offset-2 hover:text-white transition-colors">contactwurrynot@gmail.com</a></p>
         </div>
       </div>
 
