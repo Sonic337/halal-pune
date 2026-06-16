@@ -138,8 +138,8 @@ input.themed-input::placeholder {
    in CSS-variable dark mode, so we remap the -100/-800 pattern)
    ============================================================ */
 [data-theme="dark"] .cuisine-badge {
-  filter: brightness(0.7) saturate(0.8);
-  color: #f1f5f9;
+  filter: brightness(0.65) saturate(0.75);
+  color: #f1f5f9 !important;
 }
 
 /* ============================================================
