@@ -55,6 +55,13 @@ const ratings = {
   "Pune Sugar Box - Conrad Pune": { rating: 4.5, reviewCount: null },
   "Zeera - Conrad Pune": { rating: 4.5, reviewCount: null },
   "Coriander Kitchen - Conrad Pune": { rating: 4.5, reviewCount: null },
+  // Previously skipped — now found
+  "The Game Palacio": { rating: 4.5, reviewCount: 719 },
+  "The Lobby @ Sheraton Cafe": { rating: 4.4, reviewCount: 153 },
+  "Daily Treats - The Westin Pune": { rating: 4.3, reviewCount: 653 },
+  "Aafreen - The Westin Pune": { rating: 4.0, reviewCount: null },
+  "The Terrace Bar - Hyatt Pune": { rating: 4.2, reviewCount: 507 },
+  "Bombay Seekh Parathas": { rating: 4.2, reviewCount: null },
 };
 
 let patched = 0;

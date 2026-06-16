@@ -1049,7 +1049,8 @@
         "area": "Kausar Bagh",
         "mapsUrl": "https://www.google.com/maps/search/Bombay+Seekh+Parathas+Kausar+Bagh+Pune"
       }
-    ]
+    ],
+    "rating": 4.2
   },
   {
     "name": "Signature",
@@ -1382,7 +1383,9 @@
         "lat": 18.5481382,
         "lng": 73.9025513
       }
-    ]
+    ],
+    "rating": 4.2,
+    "reviewCount": 507
   },
   {
     "name": "Baan Tao - Hyatt Pune",
@@ -1556,7 +1559,9 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.5,
+    "reviewCount": 719
   },
   {
     "name": "Shisha Jazz Cafe",
@@ -1711,7 +1716,9 @@
         "lat": 18.5347175,
         "lng": 73.879556
       }
-    ]
+    ],
+    "rating": 4.4,
+    "reviewCount": 153
   },
   {
     "name": "The Market - The Westin Pune",
@@ -1766,7 +1773,9 @@
         "lat": 18.5343218,
         "lng": 73.9298264
       }
-    ]
+    ],
+    "rating": 4.3,
+    "reviewCount": 653
   },
   {
     "name": "Aafreen - The Westin Pune",
@@ -1782,7 +1791,8 @@
         "lat": 18.5343218,
         "lng": 73.9298264
       }
-    ]
+    ],
+    "rating": 4
   },
   {
     "name": "Masu - Conrad Pune",
