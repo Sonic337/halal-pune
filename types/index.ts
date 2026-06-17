@@ -16,4 +16,5 @@ export interface Restaurant {
   branches: Branch[];
   dietType?: "pure-veg" | "veg-nonveg" | "non-veg";
   fishNote?: string;
+  menuUrl?: string;
 }

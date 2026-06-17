@@ -17,7 +17,8 @@
         "lng": 73.9149296
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/the-liberty-grills-wadgaon-sheri"
   },
   {
     "name": "Chai Square",
@@ -40,7 +41,8 @@
         "lng": 73.8937064
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/chai-square-wanowrie"
   },
   {
     "name": "Kebabbest",
@@ -59,7 +61,8 @@
         "lng": 73.8717527
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.google.com/search?q=Kebabbest+Pune+menu"
   },
   {
     "name": "Klinq",
@@ -82,7 +85,8 @@
         "lng": 73.9133336
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/klinq-cocktails-cuisine-viman-nagar"
   },
   {
     "name": "Sunmoi",
@@ -101,7 +105,8 @@
         "lng": 73.8767171
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/suonmoi-dhole-patil-road"
   },
   {
     "name": "Chung Fa",
@@ -120,7 +125,8 @@
         "lng": 73.8717527
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/chung-fa-east-street"
   },
   {
     "name": "Uncle Chinese",
@@ -183,7 +189,8 @@
         "reviewCount": 851
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/uncles-chinese-koregaon-park"
   },
   {
     "name": "Pimplico",
@@ -223,7 +230,8 @@
         "reviewCount": 2571
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/pimlico-koregaon-park"
   },
   {
     "name": "Camden Lane",
@@ -244,7 +252,8 @@
         "lng": 73.8932738
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/the-camden-lane-koregaon-park"
   },
   {
     "name": "Taco Bell",
@@ -318,7 +327,8 @@
         "reviewCount": 198
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.google.com/search?q=Taco+Bell+Pune+menu"
   },
   {
     "name": "Nothing but Chicken",
@@ -373,7 +383,8 @@
         "reviewCount": 19
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/nothing-but-chicken-1-viman-nagar"
   },
   {
     "name": "Marrakesh",
@@ -396,7 +407,8 @@
         "lng": 73.9116173
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/marrakesh-nibm-road"
   },
   {
     "name": "Habibi Ya Fatayer",
@@ -416,7 +428,8 @@
         "lng": 73.9116173
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/ya-habibi-fatayer-nibm-road"
   },
   {
     "name": "Kimling",
@@ -434,7 +447,8 @@
         "lng": 73.8940627
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/kimling-wanowrie"
   },
   {
     "name": "Mocha",
@@ -452,7 +466,8 @@
         "mapsUrl": "https://www.google.com/maps/search/Mocha+restaurant+Salunke+Vihar+Pune"
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/mocha-salunkhe-vihar-road"
   },
   {
     "name": "Pandan Kitchen",
@@ -471,7 +486,8 @@
         "lng": 73.9029445
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/pandan-kitchen-nibm-road"
   },
   {
     "name": "Grand Delhi Darbar",
@@ -491,7 +507,8 @@
         "lng": 73.8717527
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/grand-dilli-darbar-camp-area"
   },
   {
     "name": "Persian Darbar",
@@ -511,7 +528,8 @@
         "lng": 73.8717527
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/persian-darbar-camp-area"
   },
   {
     "name": "Gareeb Nawaz",
@@ -530,7 +548,8 @@
         "mapsUrl": "https://www.google.com/maps/search/Gareeb+Nawaz+Kausar+Bagh+Pune"
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/gareeb-nawaz-biryani-kondhwa"
   },
   {
     "name": "Grand Darbar",
@@ -546,7 +565,8 @@
         "mapsUrl": "https://www.google.com/maps/search/Grand+Darbar+Kausar+Bagh+Pune"
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/grand-darbar-kondhwa"
   },
   {
     "name": "Supreme",
@@ -564,7 +584,8 @@
         "mapsUrl": "https://maps.app.goo.gl/SmoAoRzrHeBJAmVh6"
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.google.com/search?q=Supreme+Pune+menu"
   },
   {
     "name": "Masala Times",
@@ -584,7 +605,8 @@
         "lng": 73.8717527
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/masala-times-camp-area"
   },
   {
     "name": "Spice Culture",
@@ -603,7 +625,8 @@
         "lng": 73.8940627
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/spice-culture-bar-kitchen-salunkhe-vihar-road"
   },
   {
     "name": "Balsam",
@@ -629,7 +652,8 @@
         "reviewCount": 323
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/balsam-cafe-and-kitchen-salunkhe-vihar-road"
   },
   {
     "name": "Arabian Mandi",
@@ -647,7 +671,8 @@
         "mapsUrl": "https://maps.app.goo.gl/FQQm44XyA46Pxt9LA"
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/arabian-mandi-nibm-road"
   },
   {
     "name": "Qehhwa Cafe",
@@ -669,7 +694,8 @@
         "lng": 73.9097744
       }
     ],
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/qehhwa-cafe-kondhwa"
   },
   {
     "name": "Chafa Cafe",
@@ -704,7 +730,8 @@
         "reviewCount": 417
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/chafa-cafe-and-studio-koregaon-park"
   },
   {
     "name": "Grand Shalimar",
@@ -725,7 +752,8 @@
         "lng": 73.9116173
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/grand-shalimar-restaurant-and-lawns-nibm-road"
   },
   {
     "name": "Arabian Chilies",
@@ -747,7 +775,8 @@
         "mapsUrl": "https://maps.app.goo.gl/DBT99UKaRk3v1hUQ7"
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/arabian-chillies-kondhwa"
   },
   {
     "name": "Bhiwandi Darbar",
@@ -770,7 +799,8 @@
         "lng": 73.8717527
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/bhiwandi-darbar-camp-area"
   },
   {
     "name": "The Steam Room Pizzeria",
@@ -789,7 +819,8 @@
         "lng": 73.9116173
       }
     ],
-    "dietType": "pure-veg"
+    "dietType": "pure-veg",
+    "menuUrl": "https://www.zomato.com/pune/the-steam-room-kondhwa"
   },
   {
     "name": "Badshah",
@@ -811,7 +842,8 @@
       }
     ],
     "rating": 4,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/badshah-east-street"
   },
   {
     "name": "George Restaurant",
@@ -833,7 +865,8 @@
       }
     ],
     "rating": 4.2,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/george-restaurant-camp-area"
   },
   {
     "name": "Yana Sizzler",
@@ -881,7 +914,8 @@
     ],
     "rating": 4.2,
     "reviewCount": 14729,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/yana-sizzlers-camp-area"
   },
   {
     "name": "Shawarma.co - Lassi Wassi",
@@ -927,7 +961,8 @@
       }
     ],
     "rating": 4.2,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/shawarma-co-lassi-wassi-kothrud"
   },
   {
     "name": "Blue Nile",
@@ -948,7 +983,8 @@
       }
     ],
     "rating": 4.1,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/blue-nile-camp-area"
   },
   {
     "name": "Shahi Dawat",
@@ -967,7 +1003,8 @@
       }
     ],
     "rating": 4.3,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/shahi-dawat-camp-area"
   },
   {
     "name": "Butterwala and Co.",
@@ -989,7 +1026,8 @@
       }
     ],
     "rating": 4.2,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/butterwala-co-kondhwa"
   },
   {
     "name": "Salt",
@@ -1010,7 +1048,8 @@
       }
     ],
     "rating": 4.2,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/salt-salunkhe-vihar-road"
   },
   {
     "name": "Irani Cafe",
@@ -1093,7 +1132,8 @@
     ],
     "rating": 4.1,
     "reviewCount": 26061,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/irani-cafe-camp-area"
   },
   {
     "name": "Cream Craver",
@@ -1115,7 +1155,8 @@
       }
     ],
     "rating": 4,
-    "dietType": "pure-veg"
+    "dietType": "pure-veg",
+    "menuUrl": "https://www.zomato.com/pune/cream-craver-camp-area"
   },
   {
     "name": "Miya Kebabs",
@@ -1134,7 +1175,8 @@
       }
     ],
     "rating": 4.5,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/miya-kebabs-koregaon-park"
   },
   {
     "name": "Bombay Seekh Parathas",
@@ -1150,7 +1192,8 @@
       }
     ],
     "rating": 4.2,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/bombay-seekh-paratha-kondhwa"
   },
   {
     "name": "Signature",
@@ -1172,7 +1215,8 @@
       }
     ],
     "rating": 4.2,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/signature-kondhwa"
   },
   {
     "name": "Olympia Kathi Kabab",
@@ -1187,7 +1231,8 @@
       }
     ],
     "rating": 4.3,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/olympia-east-street"
   },
   {
     "name": "Al Di La Restaurant",
@@ -1204,7 +1249,8 @@
       }
     ],
     "rating": 4.4,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/al-di-la-conrad-pune-bund-garden"
   },
   {
     "name": "Jashn",
@@ -1224,7 +1270,8 @@
       }
     ],
     "rating": 4,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/jashn-salunkhe-vihar-road"
   },
   {
     "name": "Cafe Yezdan",
@@ -1253,7 +1300,8 @@
     ],
     "rating": 4.2,
     "reviewCount": 1797,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/cafe-yezdan-camp-area"
   },
   {
     "name": "Akhtar's Samosa",
@@ -1270,7 +1318,8 @@
       }
     ],
     "rating": 4.1,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/akhtars-samosa-camp-area"
   },
   {
     "name": "Burger King (Camp Burger)",
@@ -1286,7 +1335,8 @@
       }
     ],
     "rating": 4.3,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/burger-king-1-east-street"
   },
   {
     "name": "The Place - Touche The Sizzler",
@@ -1303,7 +1353,8 @@
       }
     ],
     "rating": 4.2,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/the-place-touche-the-sizzler-camp-area"
   },
   {
     "name": "Paasha - JW Marriott Pune",
@@ -1319,7 +1370,8 @@
       }
     ],
     "rating": 4.5,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/paasha-jw-marriott-pune-senapati-bapat-road"
   },
   {
     "name": "Spice Kitchen - JW Marriott Pune",
@@ -1338,7 +1390,8 @@
       }
     ],
     "rating": 4.5,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/spice-kitchen-jw-marriott-pune-senapati-bapat-road"
   },
   {
     "name": "Tao Fu - JW Marriott Pune",
@@ -1354,7 +1407,8 @@
       }
     ],
     "rating": 4.6,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/tao-fu-jw-marriott-pune-senapati-bapat-road"
   },
   {
     "name": "Aasmana - The Ritz-Carlton Pune",
@@ -1375,7 +1429,8 @@
       }
     ],
     "rating": 4.5,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/aasmana-the-ritz-carlton-yerawada"
   },
   {
     "name": "2BHK Diner & Key Club",
@@ -1396,7 +1451,8 @@
       }
     ],
     "rating": 4.3,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/2bhk-diner-key-club-bund-garden"
   },
   {
     "name": "Acai",
@@ -1416,7 +1472,8 @@
       }
     ],
     "rating": 4.3,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/acai-dhole-patil-road"
   },
   {
     "name": "Millers - The Luxury Club",
@@ -1437,7 +1494,8 @@
     ],
     "rating": 4.1,
     "dietType": "non-veg",
-    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you."
+    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
+    "menuUrl": "https://www.zomato.com/pune/millers-the-luxury-club-bund-garden"
   },
   {
     "name": "Epitome",
@@ -1458,7 +1516,8 @@
       }
     ],
     "rating": 4.1,
-    "dietType": "pure-veg"
+    "dietType": "pure-veg",
+    "menuUrl": "https://www.zomato.com/pune/epitome-bund-garden"
   },
   {
     "name": "Kukoo",
@@ -1476,7 +1535,8 @@
       }
     ],
     "rating": 4.2,
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "menuUrl": "https://www.zomato.com/pune/kukoo-sangamvadi"
   },
   {
     "name": "The Game Palacio",
@@ -1496,7 +1556,8 @@
     ],
     "rating": 4.5,
     "reviewCount": 719,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/the-game-palacio-bund-garden"
   },
   {
     "name": "Shisha Jazz Cafe",
@@ -1519,7 +1580,8 @@
     ],
     "rating": 4.3,
     "dietType": "non-veg",
-    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you."
+    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
+    "menuUrl": "https://www.zomato.com/pune/shisha-jazz-cafe-dhole-patil-road"
   },
   {
     "name": "Latitude - Blue Diamond",
@@ -1539,7 +1601,8 @@
       }
     ],
     "rating": 4.3,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/latitude-blue-diamond-koregaon-park"
   },
   {
     "name": "Chingari - Sheraton Grand Pune",
@@ -1560,7 +1623,8 @@
     ],
     "rating": 4.1,
     "dietType": "veg-nonveg",
-    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you."
+    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
+    "menuUrl": "https://www.zomato.com/pune/chingari-sheraton-grand-bund-garden"
   },
   {
     "name": "The Lobby @ Sheraton Cafe",
@@ -1579,7 +1643,8 @@
     ],
     "rating": 4.4,
     "reviewCount": 153,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/the-lobby-@-sheraton-cafe-bund-garden"
   },
   {
     "name": "The Market - The Westin Pune",
@@ -1598,7 +1663,8 @@
       }
     ],
     "rating": 4.4,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/the-market-the-westin-pune-mundhwa"
   },
   {
     "name": "Aafreen - The Westin Pune",
@@ -1616,7 +1682,8 @@
       }
     ],
     "rating": 4,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/aafreen-the-westin-pune-mundhwa"
   },
   {
     "name": "Masu - Conrad Pune",
@@ -1633,7 +1700,8 @@
       }
     ],
     "rating": 4.4,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/masu-conrad-pune-dhole-patil-road"
   },
   {
     "name": "Kabana - Conrad Pune",
@@ -1651,7 +1719,8 @@
       }
     ],
     "rating": 4.7,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/kabana-conrad-pune-bund-garden"
   },
   {
     "name": "Pune Sugar Box - Conrad Pune",
@@ -1668,7 +1737,8 @@
       }
     ],
     "rating": 4.5,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/pune-sugar-box-conrad-pune-bund-garden"
   },
   {
     "name": "Zeeshan Restaurant - Apna Hyderabadi Food",
@@ -1688,7 +1758,8 @@
     ],
     "rating": 3.9,
     "reviewCount": 5523,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "menuUrl": "https://www.zomato.com/pune/zeeshan-restaurant-apna-hyderabadi-food-viman-nagar"
   },
   {
     "name": "Alto Vino - JW Marriott Pune",
@@ -1708,6 +1779,7 @@
     ],
     "rating": 4.7,
     "dietType": "non-veg",
-    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you."
+    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
+    "menuUrl": "https://www.zomato.com/pune/alto-vino-jw-marriott-pune-senapati-bapat-road"
   }
 ]

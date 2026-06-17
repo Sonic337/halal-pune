@@ -349,6 +349,23 @@ export default function RestaurantCard({
           </button>
         )}
       </div>
+
+      {/* ── Menu link ── */}
+      {restaurant.menuUrl && (
+        <a
+          href={restaurant.menuUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full w-fit transition-colors"
+          style={{
+            backgroundColor: "color-mix(in srgb, var(--brand-emerald) 12%, var(--color-surface))",
+            color: "var(--brand-emerald-dark)",
+            border: "1px solid color-mix(in srgb, var(--brand-emerald) 30%, transparent)",
+          }}
+        >
+          📋 View Menu
+        </a>
+      )}
     </article>
   );
 }
