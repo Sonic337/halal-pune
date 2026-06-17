@@ -1378,26 +1378,6 @@
     "dietType": "veg-nonveg"
   },
   {
-    "name": "TG's - The Oriental Grill",
-    "tagline": "",
-    "cuisines": [
-      "Oriental",
-      "Thai",
-      "Asian",
-      "Chinese"
-    ],
-    "branches": [
-      {
-        "area": "Kalyani Nagar",
-        "mapsUrl": "https://www.google.com/maps/search/TGs+The+Oriental+Grill+Kalyani+Nagar+Pune",
-        "lat": 18.5481382,
-        "lng": 73.9025513
-      }
-    ],
-    "rating": 4.4,
-    "dietType": "veg-nonveg"
-  },
-  {
     "name": "2BHK Diner & Key Club",
     "tagline": "",
     "cuisines": [
@@ -1456,7 +1436,8 @@
       }
     ],
     "rating": 4.1,
-    "dietType": "non-veg"
+    "dietType": "non-veg",
+    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you."
   },
   {
     "name": "Epitome",
@@ -1537,26 +1518,8 @@
       }
     ],
     "rating": 4.3,
-    "dietType": "non-veg"
-  },
-  {
-    "name": "Di Mora",
-    "tagline": "",
-    "cuisines": [
-      "North Indian",
-      "Chinese",
-      "Italian"
-    ],
-    "branches": [
-      {
-        "area": "Dhole Patil Road",
-        "mapsUrl": "https://www.google.com/maps/search/Di+Mora+Dhole+Patil+Road+Pune",
-        "lat": 18.534898,
-        "lng": 73.8767171
-      }
-    ],
-    "rating": 4.2,
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg",
+    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you."
   },
   {
     "name": "Latitude - Blue Diamond",
@@ -1596,7 +1559,8 @@
       }
     ],
     "rating": 4.1,
-    "dietType": "veg-nonveg"
+    "dietType": "veg-nonveg",
+    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you."
   },
   {
     "name": "The Lobby @ Sheraton Cafe",
@@ -1725,5 +1689,25 @@
     "rating": 3.9,
     "reviewCount": 5523,
     "dietType": "veg-nonveg"
+  },
+  {
+    "name": "Alto Vino - JW Marriott Pune",
+    "tagline": "",
+    "cuisines": [
+      "Italian",
+      "Pizza",
+      "Pasta"
+    ],
+    "branches": [
+      {
+        "area": "Senapati Bapat Road",
+        "mapsUrl": "https://www.google.com/maps/search/Alto+Vino+JW+Marriott+Pune+Senapati+Bapat+Road",
+        "lat": 18.5308,
+        "lng": 73.8475
+      }
+    ],
+    "rating": 4.7,
+    "dietType": "non-veg",
+    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you."
   }
 ]

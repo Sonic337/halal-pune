@@ -293,6 +293,21 @@ export default function RestaurantCard({
         )}
       </div>
 
+      {/* ── Fish note ── */}
+      {restaurant.fishNote && (
+        <div
+          title={restaurant.fishNote}
+          className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full w-fit"
+          style={{
+            backgroundColor: "color-mix(in srgb, #f59e0b 12%, var(--color-surface))",
+            color: "#92400e",
+            border: "1px solid color-mix(in srgb, #f59e0b 35%, transparent)",
+          }}
+        >
+          🐟 Fish served — call ahead for separate prep
+        </div>
+      )}
+
       <hr className="border-t-2" style={{ borderColor: "var(--color-border)" }} />
 
       {/* ── Branch chips ── */}
