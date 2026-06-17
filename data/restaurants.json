@@ -1417,7 +1417,8 @@
         "lng": 73.879556
       }
     ],
-    "rating": 4.1
+    "rating": 4.1,
+    "isVeg": true
   },
   {
     "name": "Kukoo",

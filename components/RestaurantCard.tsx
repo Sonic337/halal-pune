@@ -185,12 +185,24 @@ export default function RestaurantCard({
       {/* ── Header row ── */}
       <div className="flex items-start justify-between gap-2">
         <div>
-          <h2
-            className="text-xl font-bold"
-            style={{ color: "var(--color-text)" }}
-          >
-            {restaurant.name}
-          </h2>
+          <div className="flex items-center gap-2 flex-wrap">
+            <h2
+              className="text-xl font-bold"
+              style={{ color: "var(--color-text)" }}
+            >
+              {restaurant.name}
+            </h2>
+            {restaurant.isVeg && (
+              <span
+                title="Pure Vegetarian"
+                className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded border-2 border-green-600 text-green-700 dark:text-green-400 shrink-0"
+                style={{ lineHeight: 1 }}
+              >
+                <span className="w-2 h-2 rounded-full bg-green-600 dark:bg-green-400 inline-block" />
+                Pure Veg
+              </span>
+            )}
+          </div>
           {restaurant.tagline && (
             <p
               className="text-sm mt-0.5"

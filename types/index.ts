@@ -14,4 +14,5 @@ export interface Restaurant {
   reviewCount?: number;
   cuisines: string[];
   branches: Branch[];
+  isVeg?: boolean;
 }
