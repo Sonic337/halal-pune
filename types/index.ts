@@ -14,5 +14,5 @@ export interface Restaurant {
   reviewCount?: number;
   cuisines: string[];
   branches: Branch[];
-  isVeg?: boolean;
+  dietType?: "pure-veg" | "veg-nonveg" | "non-veg";
 }

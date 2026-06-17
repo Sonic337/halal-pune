@@ -192,7 +192,7 @@ export default function RestaurantCard({
             >
               {restaurant.name}
             </h2>
-            {restaurant.isVeg && (
+            {restaurant.dietType === "pure-veg" && (
               <span
                 title="Pure Vegetarian"
                 className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded border-2 border-green-600 text-green-700 dark:text-green-400 shrink-0"

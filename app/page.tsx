@@ -54,6 +54,7 @@ export default function Home() {
   const [selectedAreas, setSelectedAreas] = useState<string[]>([]);
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [radiusKm, setRadiusKm] = useState(5);
+  const [dietFilter, setDietFilter] = useState<"all" | "veg" | "non-veg">("all");
 
   function handleLocation(coords: UserLocation | null, radius: number) {
     setUserLocation(coords);
@@ -74,6 +75,9 @@ export default function Home() {
       return matchesSearch && matchesCuisine && matchesArea;
     });
 
+    if (dietFilter === "veg") results = results.filter((r) => r.dietType === "pure-veg");
+    if (dietFilter === "non-veg") results = results.filter((r) => r.dietType !== "pure-veg");
+
     if (userLocation) {
       results = results.filter((r) => {
         const d = nearestDistance(r, userLocation);
@@ -87,7 +91,7 @@ export default function Home() {
     }
 
     return results;
-  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm]);
+  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter]);
 
   function toggleCuisine(c: string) {
     setSelectedCuisines((prev) =>
@@ -105,10 +109,11 @@ export default function Home() {
     setSearch("");
     setSelectedCuisines([]);
     setSelectedAreas([]);
+    setDietFilter("all");
   }
 
   const hasFilters =
-    search || selectedCuisines.length > 0 || selectedAreas.length > 0;
+    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all";
 
   return (
     <main
@@ -222,6 +227,32 @@ export default function Home() {
               Clear all
             </button>
           )}
+        </div>
+
+        {/* Diet filter pills */}
+        <div className="flex gap-2 mb-4">
+          {(["all", "veg", "non-veg"] as const).map((d) => {
+            const labels = { all: "All", veg: "🌿 Veg", "non-veg": "🍖 Non-Veg" };
+            const isActive = dietFilter === d;
+            return (
+              <button
+                key={d}
+                onClick={() => setDietFilter(d)}
+                className="px-3 py-1 text-sm rounded-full font-medium transition-colors border"
+                style={
+                  isActive
+                    ? d === "veg"
+                      ? { backgroundColor: "#16a34a", color: "#fff", borderColor: "#16a34a" }
+                      : d === "non-veg"
+                      ? { backgroundColor: "var(--brand-orange)", color: "#fff", borderColor: "var(--brand-orange)" }
+                      : { backgroundColor: "var(--color-text)", color: "var(--color-bg)", borderColor: "var(--color-text)" }
+                    : { backgroundColor: "var(--color-surface)", color: "var(--color-text-2)", borderColor: "var(--color-border)" }
+                }
+              >
+                {labels[d]}
+              </button>
+            );
+          })}
         </div>
 
         {/* Active filter pills */}
