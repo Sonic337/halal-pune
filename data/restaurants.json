@@ -18,7 +18,8 @@
       }
     ],
     "dietType": "non-veg",
-    "menuUrl": "https://www.zomato.com/pune/the-liberty-grills-wadgaon-sheri"
+    "menuUrl": "https://www.zomato.com/pune/the-liberty-grills-wadgaon-sheri",
+    "phone": "+919422196654"
   },
   {
     "name": "Chai Square",
@@ -42,7 +43,8 @@
       }
     ],
     "dietType": "non-veg",
-    "menuUrl": "https://www.zomato.com/pune/chai-square-wanowrie"
+    "menuUrl": "https://www.zomato.com/pune/chai-square-wanowrie",
+    "phone": "+919172997142"
   },
   {
     "name": "Kebabbest",
@@ -62,7 +64,8 @@
       }
     ],
     "dietType": "veg-nonveg",
-    "menuUrl": "https://www.google.com/search?q=Kebabbest+Pune+menu"
+    "menuUrl": "https://www.google.com/search?q=Kebabbest+Pune+menu",
+    "phone": "+919665595001"
   },
   {
     "name": "Klinq",
@@ -498,7 +501,8 @@
       }
     ],
     "dietType": "non-veg",
-    "menuUrl": "https://www.zomato.com/pune/pandan-kitchen-nibm-road"
+    "menuUrl": "https://www.zomato.com/pune/pandan-kitchen-nibm-road",
+    "phone": "+917410152966"
   },
   {
     "name": "Grand Delhi Darbar",
@@ -671,7 +675,8 @@
       }
     ],
     "dietType": "veg-nonveg",
-    "menuUrl": "https://www.zomato.com/pune/balsam-cafe-and-kitchen-salunkhe-vihar-road"
+    "menuUrl": "https://www.zomato.com/pune/balsam-cafe-and-kitchen-salunkhe-vihar-road",
+    "phone": "+919146702882"
   },
   {
     "name": "Arabian Mandi",
@@ -844,7 +849,8 @@
       }
     ],
     "dietType": "pure-veg",
-    "menuUrl": "https://www.zomato.com/pune/the-steam-room-kondhwa"
+    "menuUrl": "https://www.zomato.com/pune/the-steam-room-kondhwa",
+    "phone": "+918830985290"
   },
   {
     "name": "Badshah",
