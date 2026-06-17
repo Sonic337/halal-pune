@@ -25,13 +25,11 @@
     "reviewCount": 54,
     "cuisines": [
       "Fast Food",
-      "Beverages",
       "Sandwich",
       "Bakery",
       "Tea",
       "Street Food",
-      "Burger",
-      "Juices"
+      "Burger"
     ],
     "branches": [
       {
@@ -72,8 +70,7 @@
       "Continental",
       "Italian",
       "Lebanese",
-      "Bar Food",
-      "Desserts"
+      "Bar Food"
     ],
     "branches": [
       {
@@ -131,8 +128,6 @@
       "Seafood",
       "Thai",
       "Sichuan",
-      "Desserts",
-      "Beverages",
       "Asian"
     ],
     "branches": [
@@ -192,7 +187,6 @@
     "cuisines": [
       "Cafe",
       "Tea",
-      "Beverages",
       "Italian",
       "Continental",
       "Thai",
@@ -595,8 +589,7 @@
     "rating": 4.3,
     "reviewCount": 646,
     "cuisines": [
-      "Continental",
-      "Desserts"
+      "Continental"
     ],
     "branches": [
       {
@@ -641,10 +634,8 @@
       "Cafe",
       "Coffee",
       "Sandwich",
-      "Desserts",
       "Pizza",
-      "Pasta",
-      "Beverages"
+      "Pasta"
     ],
     "branches": [
       {
@@ -721,8 +712,7 @@
       "Rolls",
       "Chinese",
       "Shawarma",
-      "Seafood",
-      "Desserts"
+      "Seafood"
     ],
     "branches": [
       {
@@ -742,9 +732,7 @@
       "Biryani",
       "Seafood",
       "Chinese",
-      "Fast Food",
-      "Desserts",
-      "Beverages"
+      "Fast Food"
     ],
     "branches": [
       {
@@ -762,9 +750,7 @@
     "reviewCount": 41,
     "cuisines": [
       "Italian",
-      "Pasta",
-      "Desserts",
-      "Beverages"
+      "Pasta"
     ],
     "branches": [
       {
@@ -784,9 +770,7 @@
       "Pizza",
       "Italian",
       "Sandwich",
-      "Street Food",
-      "Desserts",
-      "Beverages"
+      "Street Food"
     ],
     "branches": [
       {
@@ -807,9 +791,7 @@
       "Chinese",
       "Mughlai",
       "Continental",
-      "Kebab",
-      "Desserts",
-      "Beverages"
+      "Kebab"
     ],
     "branches": [
       {
@@ -872,7 +854,6 @@
     "name": "Shawarma.co - Lassi Wassi",
     "tagline": "",
     "cuisines": [
-      "Beverages",
       "Shawarma",
       "Sandwich",
       "Fast Food"
@@ -922,9 +903,7 @@
       "Mughlai",
       "Chinese",
       "Fast Food",
-      "Biryani",
-      "Desserts",
-      "Beverages"
+      "Biryani"
     ],
     "branches": [
       {
@@ -985,8 +964,7 @@
       "Pasta",
       "Burger",
       "North Indian",
-      "South Indian",
-      "Beverages"
+      "South Indian"
     ],
     "branches": [
       {
@@ -1003,9 +981,7 @@
       "Sandwich",
       "Iranian",
       "Fast Food",
-      "Bakery",
-      "Desserts",
-      "Beverages"
+      "Bakery"
     ],
     "branches": [
       {
@@ -1089,9 +1065,7 @@
       "Sandwich",
       "Fast Food",
       "Street Food",
-      "Desserts",
-      "Shawarma",
-      "Beverages"
+      "Shawarma"
     ],
     "branches": [
       {
@@ -1145,9 +1119,7 @@
       "Sichuan",
       "Continental",
       "Kebab",
-      "Seafood",
-      "Desserts",
-      "Beverages"
+      "Seafood"
     ],
     "branches": [
       {
@@ -1178,9 +1150,7 @@
     "tagline": "",
     "cuisines": [
       "Italian",
-      "Bar Food",
-      "Desserts",
-      "Beverages"
+      "Bar Food"
     ],
     "branches": [
       {
@@ -1201,8 +1171,7 @@
       "Continental",
       "Chinese",
       "Fast Food",
-      "Oriental",
-      "Beverages"
+      "Oriental"
     ],
     "branches": [
       {
@@ -1217,8 +1186,7 @@
     "tagline": "",
     "cuisines": [
       "Fast Food",
-      "Street Food",
-      "Beverages"
+      "Street Food"
     ],
     "branches": [
       {
@@ -1245,8 +1213,7 @@
     "name": "Akhtar's Samosa",
     "tagline": "",
     "cuisines": [
-      "Street Food",
-      "Beverages"
+      "Street Food"
     ],
     "branches": [
       {
@@ -1294,8 +1261,7 @@
     "tagline": "",
     "cuisines": [
       "North Indian",
-      "Kebab",
-      "Desserts"
+      "Kebab"
     ],
     "branches": [
       {
@@ -1385,8 +1351,7 @@
       "Mediterranean",
       "European",
       "Italian",
-      "American",
-      "Beverages"
+      "American"
     ],
     "branches": [
       {
@@ -1425,9 +1390,7 @@
       "Continental",
       "North Indian",
       "Fast Food",
-      "Biryani",
-      "Beverages",
-      "Desserts"
+      "Biryani"
     ],
     "branches": [
       {
@@ -1447,9 +1410,7 @@
       "Asian",
       "Italian",
       "Chinese",
-      "Fast Food",
-      "Desserts",
-      "Beverages"
+      "Fast Food"
     ],
     "branches": [
       {
@@ -1468,9 +1429,7 @@
       "Continental",
       "Asian",
       "Italian",
-      "Salad",
-      "Desserts",
-      "Beverages"
+      "Salad"
     ],
     "branches": [
       {
@@ -1508,8 +1467,7 @@
       "Salad",
       "Iranian",
       "North Indian",
-      "Seafood",
-      "Beverages"
+      "Seafood"
     ],
     "branches": [
       {
@@ -1527,8 +1485,7 @@
     "cuisines": [
       "North Indian",
       "Chinese",
-      "Italian",
-      "Desserts"
+      "Italian"
     ],
     "branches": [
       {
@@ -1566,8 +1523,6 @@
       "North Indian",
       "Mughlai",
       "Kebab",
-      "Desserts",
-      "Beverages",
       "Seafood"
     ],
     "branches": [
@@ -1585,9 +1540,7 @@
     "tagline": "",
     "cuisines": [
       "Cafe",
-      "Fast Food",
-      "Desserts",
-      "Beverages"
+      "Fast Food"
     ],
     "branches": [
       {
@@ -1606,8 +1559,7 @@
     "cuisines": [
       "North Indian",
       "European",
-      "Asian",
-      "Desserts"
+      "Asian"
     ],
     "branches": [
       {
@@ -1640,8 +1592,7 @@
     "name": "Masu - Conrad Pune",
     "tagline": "",
     "cuisines": [
-      "Asian",
-      "Beverages"
+      "Asian"
     ],
     "branches": [
       {
@@ -1660,8 +1611,7 @@
       "Continental",
       "Italian",
       "North Indian",
-      "Asian",
-      "Desserts"
+      "Asian"
     ],
     "branches": [
       {
@@ -1695,8 +1645,7 @@
       "Kebab",
       "Mandi",
       "Mughlai",
-      "Seafood",
-      "Desserts"
+      "Seafood"
     ],
     "branches": [
       {
