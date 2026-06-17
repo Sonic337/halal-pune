@@ -350,21 +350,41 @@ export default function RestaurantCard({
         )}
       </div>
 
-      {/* ── Menu link ── */}
-      {restaurant.menuUrl && (
-        <a
-          href={restaurant.menuUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full w-fit transition-colors"
-          style={{
-            backgroundColor: "color-mix(in srgb, var(--brand-emerald) 12%, var(--color-surface))",
-            color: "var(--brand-emerald-dark)",
-            border: "1px solid color-mix(in srgb, var(--brand-emerald) 30%, transparent)",
-          }}
-        >
-          📋 View Menu
-        </a>
+      {/* ── Action row ── */}
+      {(restaurant.menuUrl || restaurant.phone) && (
+        <>
+          <hr className="border-t-2" style={{ borderColor: "var(--color-border)" }} />
+          <div className="flex gap-2 flex-wrap">
+            {restaurant.menuUrl && (
+              <a
+                href={restaurant.menuUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors"
+                style={{
+                  backgroundColor: "color-mix(in srgb, var(--brand-emerald) 12%, var(--color-surface))",
+                  color: "var(--brand-emerald-dark)",
+                  border: "1px solid color-mix(in srgb, var(--brand-emerald) 30%, transparent)",
+                }}
+              >
+                📋 View Menu
+              </a>
+            )}
+            {restaurant.phone && (
+              <a
+                href={`tel:${restaurant.phone}`}
+                className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors"
+                style={{
+                  backgroundColor: "color-mix(in srgb, var(--brand-emerald) 12%, var(--color-surface))",
+                  color: "var(--brand-emerald-dark)",
+                  border: "1px solid color-mix(in srgb, var(--brand-emerald) 30%, transparent)",
+                }}
+              >
+                📞 Call
+              </a>
+            )}
+          </div>
+        </>
       )}
     </article>
   );

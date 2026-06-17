@@ -17,4 +17,5 @@ export interface Restaurant {
   dietType?: "pure-veg" | "veg-nonveg" | "non-veg";
   fishNote?: string;
   menuUrl?: string;
+  phone?: string;
 }
