@@ -232,7 +232,7 @@ export default function Home() {
         {/* Diet filter pills */}
         <div className="flex gap-2 mb-4">
           {(["all", "veg", "non-veg"] as const).map((d) => {
-            const labels = { all: "All", veg: "🌿 Veg", "non-veg": "🍖 Non-Veg" };
+            const labels = { all: "All", veg: "🌿 Veg", "non-veg": "🍖 Non-Veg + Veg" };
             const isActive = dietFilter === d;
             return (
               <button
