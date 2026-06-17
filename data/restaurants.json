@@ -17,7 +17,7 @@
         "lng": 73.9149296
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Chai Square",
@@ -40,7 +40,7 @@
         "lng": 73.8937064
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Kebabbest",
@@ -82,7 +82,7 @@
         "lng": 73.9133336
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Sunmoi",
@@ -101,7 +101,7 @@
         "lng": 73.8767171
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Chung Fa",
@@ -244,7 +244,7 @@
         "lng": 73.8932738
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Taco Bell",
@@ -396,7 +396,7 @@
         "lng": 73.9116173
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Habibi Ya Fatayer",
@@ -416,7 +416,7 @@
         "lng": 73.9116173
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Kimling",
@@ -434,7 +434,7 @@
         "lng": 73.8940627
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Mocha",
@@ -471,7 +471,7 @@
         "lng": 73.9029445
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Grand Delhi Darbar",
@@ -669,7 +669,7 @@
         "lng": 73.9097744
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Chafa Cafe",
@@ -729,7 +729,7 @@
   },
   {
     "name": "Arabian Chilies",
-    "tagline": "Temporarily closed for dining — back soon!",
+    "tagline": "Temporarily closed for dining \u2014 back soon!",
     "rating": 4.2,
     "reviewCount": 538,
     "cuisines": [
@@ -789,7 +789,7 @@
         "lng": 73.9116173
       }
     ],
-    "dietType": "veg-nonveg"
+    "dietType": "pure-veg"
   },
   {
     "name": "Badshah",
@@ -1456,7 +1456,7 @@
       }
     ],
     "rating": 4.1,
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Epitome",
@@ -1495,7 +1495,7 @@
       }
     ],
     "rating": 4.2,
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "The Game Palacio",
@@ -1537,7 +1537,7 @@
       }
     ],
     "rating": 4.3,
-    "dietType": "veg-nonveg"
+    "dietType": "non-veg"
   },
   {
     "name": "Di Mora",
@@ -1708,7 +1708,7 @@
   },
   {
     "name": "Zeeshan Restaurant - Apna Hyderabadi Food",
-    "tagline": "Authentic Hyderabadi flavours — biryani, mandi & more",
+    "tagline": "Authentic Hyderabadi flavours \u2014 biryani, mandi & more",
     "cuisines": [
       "Biryani",
       "Kebab",
