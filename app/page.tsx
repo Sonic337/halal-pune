@@ -13,7 +13,7 @@ const restaurants = restaurantsData as Restaurant[];
 
 const allCuisines = Array.from(
   new Set(restaurants.flatMap((r) => r.cuisines))
-).filter((c) => !["Desserts", "Ice Cream", "Beverages", "Juices", "Drinks"].includes(c)).sort();
+).filter((c) => !["Desserts", "Ice Cream", "Beverages", "Juices", "Drinks", "Bar Food"].includes(c)).sort();
 
 const allAreas = Array.from(
   new Set(restaurants.flatMap((r) => r.branches.map((b) => b.area)))
