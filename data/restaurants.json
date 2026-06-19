@@ -2046,25 +2046,6 @@
     "imageUrl": "/images/restaurants/the-great-indian-khau-gully.jpg"
   },
   {
-    "name": "Surti 12 Handi",
-    "tagline": "",
-    "cuisines": [
-      "North Indian",
-      "Street Food"
-    ],
-    "branches": [
-      {
-        "area": "Kausar Bagh",
-        "mapsUrl": "https://www.google.com/maps/place/Surti+12+handi/@18.4715224,73.8933919,17z",
-        "lat": 18.4715224,
-        "lng": 73.8933919
-      }
-    ],
-    "phone": "+919767632313",
-    "menuUrl": "https://www.google.com/search?q=Surti+12+Handi+Pune+menu",
-    "dietType": "non-veg"
-  },
-  {
     "name": "Vohuman Cafe",
     "tagline": "",
     "rating": 4.5,
