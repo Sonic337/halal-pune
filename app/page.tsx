@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import restaurantsData from "@/data/restaurants.json";
 import RestaurantCard from "@/components/RestaurantCard";
 import FilterDropdown from "@/components/FilterDropdown";
@@ -141,8 +142,14 @@ export default function Home() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <header className="relative bg-gradient-to-r from-orange-500 to-emerald-600 text-white py-12 px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="text-4xl mb-2" aria-hidden="true">
-            🍽️
+          <div className="flex justify-center mb-3">
+            <Image
+              src="/wurrynot-logo.jpg"
+              alt="Wurrynot"
+              width={80}
+              height={80}
+              className="rounded-full object-cover shadow-lg"
+            />
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight mb-2">
             Wurrynot

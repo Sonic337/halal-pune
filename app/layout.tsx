@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Wurrynot",
   description:
     "Eat without the worry. Discover Pune's best local restaurants, personally picked and community-curated.",
+  icons: {
+    icon: "/wurrynot-logo.jpg",
+    apple: "/wurrynot-logo.jpg",
+  },
 };
 
 /**
