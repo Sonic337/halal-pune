@@ -1945,27 +1945,6 @@
     "hotelBrand": "JW Marriott"
   },
   {
-    "name": "Ikku Bhai's Manthi Restaurant",
-    "tagline": "",
-    "cuisines": [
-      "North Indian",
-      "Arabic",
-      "Mughlai",
-      "Mandi"
-    ],
-    "branches": [
-      {
-        "area": "Kausar Bagh",
-        "mapsUrl": "https://www.google.com/maps/search/Ikkubhais+Restaurant+Kausarbaug+Kondhwa+Pune",
-        "lat": 18.4731,
-        "lng": 73.8936
-      }
-    ],
-    "menuUrl": "https://www.zomato.com/pune/ikkubhais-restaurant-kondhwa",
-    "dietType": "non-veg",
-    "imageUrl": "/images/restaurants/ikku-bhais-manthi.jpg"
-  },
-  {
     "name": "Cafe Bun Maska",
     "tagline": "",
     "rating": 3.9,
