@@ -54,6 +54,7 @@ export default function Home() {
   const [selectedCuisines, setSelectedCuisines] = useState<string[]>([]);
   const [selectedAreas, setSelectedAreas] = useState<string[]>([]);
   const [fishFilter, setFishFilter] = useState<string[]>([]);
+  const [ratingFilter, setRatingFilter] = useState("");
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [radiusKm, setRadiusKm] = useState(5);
   const [dietFilter, setDietFilter] = useState<"all" | "veg" | "non-veg">("all");
@@ -90,6 +91,14 @@ export default function Home() {
       });
     }
 
+    if (ratingFilter === "Above 3★")   results = results.filter((r) => (r.rating ?? 0) > 3);
+    if (ratingFilter === "Above 3.5★") results = results.filter((r) => (r.rating ?? 0) > 3.5);
+    if (ratingFilter === "Above 4★")   results = results.filter((r) => (r.rating ?? 0) > 4);
+    if (!userLocation) {
+      if (ratingFilter === "Highest to Lowest") results = [...results].sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+      if (ratingFilter === "Lowest to Highest") results = [...results].sort((a, b) => (a.rating ?? 0) - (b.rating ?? 0));
+    }
+
     if (userLocation) {
       results = results.filter((r) => {
         const d = nearestDistance(r, userLocation);
@@ -103,7 +112,7 @@ export default function Home() {
     }
 
     return results;
-  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter, fishFilter]);
+  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter, fishFilter, ratingFilter]);
 
   function toggleCuisine(c: string) {
     setSelectedCuisines((prev) =>
@@ -123,16 +132,21 @@ export default function Home() {
     );
   }
 
+  function toggleRating(val: string) {
+    setRatingFilter((prev) => (prev === val ? "" : val));
+  }
+
   function clearAll() {
     setSearch("");
     setSelectedCuisines([]);
     setSelectedAreas([]);
     setDietFilter("all");
     setFishFilter([]);
+    setRatingFilter("");
   }
 
   const hasFilters =
-    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all" || fishFilter.length > 0;
+    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all" || fishFilter.length > 0 || ratingFilter !== "";
 
   return (
     <main
@@ -247,6 +261,15 @@ export default function Home() {
             onChange={toggleFish}
             onClear={() => setFishFilter([])}
             accentColor="sky"
+          />
+
+          <FilterDropdown
+            label="★ Rating"
+            options={["Highest to Lowest", "Lowest to Highest", "Above 3★", "Above 3.5★", "Above 4★"]}
+            selected={ratingFilter ? [ratingFilter] : []}
+            onChange={toggleRating}
+            onClear={() => setRatingFilter("")}
+            accentColor="orange"
           />
 
           {hasFilters && (
