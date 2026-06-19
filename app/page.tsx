@@ -176,14 +176,27 @@ export default function Home() {
               placeholder="Search restaurants..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="themed-input w-full pl-12 pr-4 py-2.5 rounded-xl text-sm"
+              className="themed-input w-full pl-12 py-2.5 rounded-xl text-sm"
               style={{
+                paddingRight: search ? "2.75rem" : "1rem",
                 backgroundColor: "var(--color-surface)",
                 color: "var(--color-text)",
                 border: "1px solid var(--color-border)",
                 boxShadow: "var(--shadow-card)",
               }}
             />
+            {search && (
+              <button
+                onClick={() => setSearch("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full transition-colors"
+                style={{ color: "var(--color-text-3)" }}
+                aria-label="Clear search"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            )}
           </div>
 
           <FilterDropdown
@@ -191,6 +204,7 @@ export default function Home() {
             options={allCuisines}
             selected={selectedCuisines}
             onChange={toggleCuisine}
+            onClear={() => setSelectedCuisines([])}
             accentColor="orange"
           />
 
@@ -199,6 +213,7 @@ export default function Home() {
             options={allAreas}
             selected={selectedAreas}
             onChange={toggleArea}
+            onClear={() => setSelectedAreas([])}
             accentColor="emerald"
           />
 

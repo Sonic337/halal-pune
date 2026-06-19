@@ -7,6 +7,7 @@ interface Props {
   options: string[];
   selected: string[];
   onChange: (value: string) => void;
+  onClear: () => void;
   accentColor: "orange" | "emerald";
 }
 
@@ -15,6 +16,7 @@ export default function FilterDropdown({
   options,
   selected,
   onChange,
+  onClear,
   accentColor,
 }: Props) {
   const [open, setOpen] = useState(false);
@@ -112,6 +114,28 @@ export default function FilterDropdown({
               }}
             />
           </div>
+
+          {/* Clear all */}
+          {selected.length > 0 && (
+            <div style={{ borderBottom: "1px solid var(--color-border)" }}>
+              <button
+                onClick={() => { onClear(); setOpen(false); }}
+                className="w-full text-left px-4 py-2.5 text-sm font-medium flex items-center gap-2 transition-colors"
+                style={{ color: "var(--color-text-3)" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "var(--color-surface-2)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                }}
+              >
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                Clear all
+              </button>
+            </div>
+          )}
 
           {/* Options list */}
           <ul className="max-h-56 overflow-y-auto py-1">
