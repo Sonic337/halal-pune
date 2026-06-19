@@ -55,6 +55,7 @@ export default function Home() {
   const [selectedAreas, setSelectedAreas] = useState<string[]>([]);
   const [fishFilter, setFishFilter] = useState<string[]>([]);
   const [ratingFilter, setRatingFilter] = useState("");
+  const [highEndFilter, setHighEndFilter] = useState("");
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [radiusKm, setRadiusKm] = useState(5);
   const [dietFilter, setDietFilter] = useState<"all" | "veg" | "non-veg">("all");
@@ -99,6 +100,10 @@ export default function Home() {
       if (ratingFilter === "Lowest to Highest") results = [...results].sort((a, b) => (a.rating ?? 0) - (b.rating ?? 0));
     }
 
+    if (highEndFilter === "Hotel Restaurants") {
+      results = results.filter((r) => !!r.hotelBrand);
+    }
+
     if (userLocation) {
       results = results.filter((r) => {
         const d = nearestDistance(r, userLocation);
@@ -112,7 +117,7 @@ export default function Home() {
     }
 
     return results;
-  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter, fishFilter, ratingFilter]);
+  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter, fishFilter, ratingFilter, highEndFilter]);
 
   function toggleCuisine(c: string) {
     setSelectedCuisines((prev) =>
@@ -143,10 +148,11 @@ export default function Home() {
     setDietFilter("all");
     setFishFilter([]);
     setRatingFilter("");
+    setHighEndFilter("");
   }
 
   const hasFilters =
-    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all" || fishFilter.length > 0 || ratingFilter !== "";
+    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all" || fishFilter.length > 0 || ratingFilter !== "" || highEndFilter !== "";
 
   return (
     <main
@@ -261,6 +267,15 @@ export default function Home() {
             onChange={toggleFish}
             onClear={() => setFishFilter([])}
             accentColor="sky"
+          />
+
+          <FilterDropdown
+            label="✦ High-End"
+            options={["Hotel Restaurants"]}
+            selected={highEndFilter ? [highEndFilter] : []}
+            onChange={(val) => setHighEndFilter((prev) => (prev === val ? "" : val))}
+            onClear={() => setHighEndFilter("")}
+            accentColor="emerald"
           />
 
           <FilterDropdown
