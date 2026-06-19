@@ -20,4 +20,5 @@ export interface Restaurant {
   phone?: string;
   imageUrl?: string;
   tempClosed?: boolean;
+  hotelBrand?: string;
 }

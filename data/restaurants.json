@@ -1474,7 +1474,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/paasha-jw-marriott-pune-senapati-bapat-road",
     "phone": "+912066832356",
-    "imageUrl": "/images/restaurants/paasha-jw-marriott.jpg"
+    "imageUrl": "/images/restaurants/paasha-jw-marriott.jpg",
+    "hotelBrand": "JW Marriott"
   },
   {
     "name": "Spice Kitchen - JW Marriott Pune",
@@ -1497,7 +1498,8 @@
     "menuUrl": "https://www.zomato.com/pune/spice-kitchen-jw-marriott-pune-senapati-bapat-road",
     "phone": "+912066832345",
     "imageUrl": "/images/restaurants/spice-kitchen-jw-marriott.jpg",
-    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate."
+    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate.",
+    "hotelBrand": "JW Marriott"
   },
   {
     "name": "Tao Fu - JW Marriott Pune",
@@ -1516,7 +1518,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/tao-fu-jw-marriott-pune-senapati-bapat-road",
     "phone": "+912066833333",
-    "imageUrl": "/images/restaurants/tao-fu-jw-marriott.jpg"
+    "imageUrl": "/images/restaurants/tao-fu-jw-marriott.jpg",
+    "hotelBrand": "JW Marriott"
   },
   {
     "name": "Aasmana - The Ritz-Carlton Pune",
@@ -1540,7 +1543,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/aasmana-the-ritz-carlton-yerawada",
     "phone": "+912067675000",
-    "imageUrl": "/images/restaurants/aasmana-ritz-carlton.jpg"
+    "imageUrl": "/images/restaurants/aasmana-ritz-carlton.jpg",
+    "hotelBrand": "Ritz-Carlton"
   },
   {
     "name": "2BHK Diner & Key Club",
@@ -1732,7 +1736,8 @@
     "menuUrl": "https://www.zomato.com/pune/latitude-blue-diamond-koregaon-park",
     "phone": "+912066025555",
     "imageUrl": "/images/restaurants/latitude-blue-diamond.jpg",
-    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate."
+    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate.",
+    "hotelBrand": "Blue Diamond"
   },
   {
     "name": "Chingari - Sheraton Grand Pune",
@@ -1756,7 +1761,8 @@
     "fishNote": "Fish is served here but chicken is kept separate. We've confirmed this \u2014 calling ahead means they'll go the extra mile for you.",
     "menuUrl": "https://www.zomato.com/pune/chingari-sheraton-grand-bund-garden",
     "phone": "+912066411111",
-    "imageUrl": "/images/restaurants/chingari-sheraton.jpg"
+    "imageUrl": "/images/restaurants/chingari-sheraton.jpg",
+    "hotelBrand": "Sheraton"
   },
   {
     "name": "The Lobby @ Sheraton Cafe",
@@ -1778,7 +1784,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/the-lobby-@-sheraton-cafe-bund-garden",
     "phone": "+912066411111",
-    "imageUrl": "/images/restaurants/the-lobby-sheraton.jpg"
+    "imageUrl": "/images/restaurants/the-lobby-sheraton.jpg",
+    "hotelBrand": "Sheraton"
   },
   {
     "name": "The Market - The Westin Pune",
@@ -1801,7 +1808,8 @@
     "menuUrl": "https://www.zomato.com/pune/the-market-the-westin-pune-mundhwa",
     "phone": "+912067210000",
     "imageUrl": "/images/restaurants/the-market-westin.jpg",
-    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate."
+    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate.",
+    "hotelBrand": "Westin"
   },
   {
     "name": "Aafreen - The Westin Pune",
@@ -1822,7 +1830,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/aafreen-the-westin-pune-mundhwa",
     "phone": "+912067210000",
-    "imageUrl": "/images/restaurants/aafreen-westin.jpg"
+    "imageUrl": "/images/restaurants/aafreen-westin.jpg",
+    "hotelBrand": "Westin"
   },
   {
     "name": "Masu - Conrad Pune",
@@ -1842,7 +1851,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/masu-conrad-pune-dhole-patil-road",
     "phone": "+912067456745",
-    "imageUrl": "/images/restaurants/masu-conrad.jpg"
+    "imageUrl": "/images/restaurants/masu-conrad.jpg",
+    "hotelBrand": "Conrad"
   },
   {
     "name": "Kabana - Conrad Pune",
@@ -1863,7 +1873,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/kabana-conrad-pune-bund-garden",
     "phone": "+912067456745",
-    "imageUrl": "/images/restaurants/kabana-conrad.jpg"
+    "imageUrl": "/images/restaurants/kabana-conrad.jpg",
+    "hotelBrand": "Conrad"
   },
   {
     "name": "Pune Sugar Box - Conrad Pune",
@@ -1883,7 +1894,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/pune-sugar-box-conrad-pune-bund-garden",
     "phone": "+912067456745",
-    "imageUrl": "/images/restaurants/pune-sugar-box-conrad.jpg"
+    "imageUrl": "/images/restaurants/pune-sugar-box-conrad.jpg",
+    "hotelBrand": "Conrad"
   },
   {
     "name": "Zeeshan Restaurant - Apna Hyderabadi Food",
@@ -1929,7 +1941,8 @@
     "fishNote": "Fish is served here but chicken is kept separate. We've confirmed this \u2014 calling ahead means they'll go the extra mile for you.",
     "menuUrl": "https://www.zomato.com/pune/alto-vino-jw-marriott-pune-senapati-bapat-road",
     "phone": "+912066833333",
-    "imageUrl": "/images/restaurants/alto-vino-jw-marriott.jpg"
+    "imageUrl": "/images/restaurants/alto-vino-jw-marriott.jpg",
+    "hotelBrand": "JW Marriott"
   },
   {
     "name": "Ikku Bhai's Manthi Restaurant",

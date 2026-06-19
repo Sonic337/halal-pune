@@ -193,6 +193,23 @@ export default function RestaurantCard({
             className="object-cover object-center"
             sizes="(max-width: 768px) 100vw, 400px"
           />
+          {restaurant.hotelBrand && (
+            <span
+              className="absolute top-2 left-2 z-10"
+              style={{
+                backgroundColor: "rgba(10, 15, 30, 0.78)",
+                color: "#ffffff",
+                fontSize: "10px",
+                fontWeight: 600,
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                padding: "3px 8px",
+                borderRadius: "6px",
+              }}
+            >
+              {restaurant.hotelBrand}
+            </span>
+          )}
         </div>
       )}
       <div className="flex flex-col gap-3 p-5">
