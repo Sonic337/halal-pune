@@ -169,7 +169,7 @@ export default function RestaurantCard({
 
   return (
     <article
-      className="rounded-2xl p-5 flex flex-col gap-3 transition-shadow"
+      className="rounded-2xl flex flex-col transition-shadow overflow-hidden"
       style={{
         backgroundColor: "var(--color-surface)",
         border: "1px solid var(--color-border)",
@@ -185,16 +185,17 @@ export default function RestaurantCard({
     >
       {/* ── Image ── */}
       {restaurant.imageUrl && (
-        <div className="relative w-full h-44 -mx-5 -mt-5 mb-0 overflow-hidden rounded-t-2xl">
+        <div className="relative w-full h-44 shrink-0">
           <Image
             src={restaurant.imageUrl}
             alt={restaurant.name}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             sizes="(max-width: 768px) 100vw, 400px"
           />
         </div>
       )}
+      <div className="flex flex-col gap-3 p-5">
 
       {/* ── Header row ── */}
       <div className="flex items-start justify-between gap-2">
@@ -400,6 +401,7 @@ export default function RestaurantCard({
           </div>
         </>
       )}
+      </div>
     </article>
   );
 }
