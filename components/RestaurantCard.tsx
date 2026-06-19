@@ -403,6 +403,13 @@ export default function RestaurantCard({
         )}
       </div>
 
+      {/* ── Price ── */}
+      {restaurant.priceRange && (
+        <p className="text-xs" style={{ color: "var(--color-text-3)" }}>
+          {restaurant.priceRange} for two
+        </p>
+      )}
+
       {/* ── Action row ── */}
       {(restaurant.menuUrl || restaurant.phone) && (
         <>
