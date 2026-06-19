@@ -156,7 +156,7 @@ export default function FilterDropdown({
               return (
                 <li key={option}>
                   <button
-                    onClick={() => onChange(option)}
+                    onClick={() => { onChange(option); setOpen(false); }}
                     className="w-full text-left px-4 py-2.5 text-sm flex items-center justify-between transition-colors"
                     style={{
                       color: isSelected

@@ -92,7 +92,6 @@ export default function Home() {
       });
     }
 
-    if (ratingFilter === "Above 3★")   results = results.filter((r) => (r.rating ?? 0) > 3);
     if (ratingFilter === "Above 3.5★") results = results.filter((r) => (r.rating ?? 0) > 3.5);
     if (ratingFilter === "Above 4★")   results = results.filter((r) => (r.rating ?? 0) > 4);
     if (!userLocation) {
@@ -280,7 +279,7 @@ export default function Home() {
 
           <FilterDropdown
             label="★ Rating"
-            options={["Highest to Lowest", "Lowest to Highest", "Above 3★", "Above 3.5★", "Above 4★"]}
+            options={["Highest to Lowest", "Lowest to Highest", "Above 3.5★", "Above 4★"]}
             selected={ratingFilter ? [ratingFilter] : []}
             onChange={toggleRating}
             onClear={() => setRatingFilter("")}
