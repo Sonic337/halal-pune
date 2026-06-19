@@ -140,8 +140,79 @@ export default function Home() {
       className="min-h-screen"
     >
       {/* ── Hero ─────────────────────────────────────────── */}
-      <header className="relative bg-gradient-to-r from-orange-500 to-emerald-600 text-white py-12 px-4">
-        <div className="max-w-2xl mx-auto text-center">
+      <header className="relative bg-gradient-to-r from-orange-500 to-emerald-600 text-white py-12 px-4 overflow-hidden">
+
+        {/* Food image collage — desktop/tablet only */}
+        <div className="hidden md:block" aria-hidden="true">
+          <style>{`
+            @keyframes fadeUp {
+              from { opacity: 0; transform: translateY(14px) var(--img-rotate, rotate(0deg)); }
+              to   { opacity: 1; transform: translateY(0px)  var(--img-rotate, rotate(0deg)); }
+            }
+            .hero-img {
+              position: absolute;
+              border-radius: 13px;
+              box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+              object-fit: cover;
+              animation: fadeUp 0.7s ease both;
+            }
+          `}</style>
+
+          {/* Row of images — hardcoded positions, varied rotations & sizes */}
+          <Image unoptimized src="https://source.unsplash.com/180x220/?biryani" alt="" width={180} height={220}
+            className="hero-img" style={{ top: "-20px", left: "2%", zIndex: 2, rotate: "-8deg", animationDelay: "0ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/140x170/?kebab" alt="" width={140} height={170}
+            className="hero-img" style={{ top: "40px", left: "12%", zIndex: 4, rotate: "5deg", animationDelay: "80ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/220x270/?curry" alt="" width={220} height={270}
+            className="hero-img" style={{ top: "-30px", left: "22%", zIndex: 1, rotate: "-13deg", animationDelay: "160ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/160x200/?naan" alt="" width={160} height={200}
+            className="hero-img" style={{ bottom: "-30px", left: "8%", zIndex: 3, rotate: "7deg", animationDelay: "240ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/130x160/?samosa" alt="" width={130} height={160}
+            className="hero-img" style={{ bottom: "-10px", left: "28%", zIndex: 5, rotate: "-4deg", animationDelay: "300ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/200x240/?shawarma" alt="" width={200} height={240}
+            className="hero-img" style={{ top: "10px", right: "22%", zIndex: 2, rotate: "10deg", animationDelay: "100ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/150x150/?tikka" alt="" width={150} height={150}
+            className="hero-img" style={{ bottom: "-20px", right: "30%", zIndex: 4, rotate: "-9deg", animationDelay: "200ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/180x220/?tandoori" alt="" width={180} height={220}
+            className="hero-img" style={{ top: "-25px", right: "12%", zIndex: 1, rotate: "6deg", animationDelay: "350ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/140x180/?haleem" alt="" width={140} height={180}
+            className="hero-img" style={{ top: "50px", right: "3%", zIndex: 3, rotate: "-12deg", animationDelay: "430ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/220x260/?mutton" alt="" width={220} height={260}
+            className="hero-img" style={{ bottom: "-40px", right: "8%", zIndex: 5, rotate: "4deg", animationDelay: "510ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/160x190/?pulao" alt="" width={160} height={190}
+            className="hero-img" style={{ bottom: "-15px", right: "20%", zIndex: 2, rotate: "-6deg", animationDelay: "590ms" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/130x160/?grilled+chicken" alt="" width={130} height={160}
+            className="hero-img" style={{ top: "30px", left: "35%", zIndex: 0, rotate: "14deg", animationDelay: "670ms", willChange: "transform" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/150x190/?indian+street+food" alt="" width={150} height={190}
+            className="hero-img" style={{ bottom: "-25px", left: "42%", zIndex: 3, rotate: "-11deg", animationDelay: "750ms", willChange: "transform" }} />
+
+          <Image unoptimized src="https://source.unsplash.com/180x140/?food+platter" alt="" width={180} height={140}
+            className="hero-img" style={{ top: "-10px", right: "35%", zIndex: 1, rotate: "3deg", animationDelay: "800ms" }} />
+        </div>
+
+        {/* Dark overlay so text stays legible */}
+        <div
+          className="absolute inset-0 hidden md:block"
+          style={{
+            background: "linear-gradient(to right, rgba(0,0,0,0.42), rgba(0,0,0,0.38))",
+            zIndex: 6,
+          }}
+        />
+
+        {/* Text content */}
+        <div className="relative max-w-2xl mx-auto text-center" style={{ zIndex: 10 }}>
           <div className="flex justify-center mb-3">
             <Image
               src="/wurrynot-logo.jpg"
@@ -170,7 +241,7 @@ export default function Home() {
         </div>
 
         {/* Theme toggle — top-right of hero */}
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4" style={{ zIndex: 10 }}>
           <ThemeToggle />
         </div>
       </header>
