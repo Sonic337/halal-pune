@@ -98,7 +98,7 @@
     "menuUrl": "https://www.zomato.com/pune/klinq-cocktails-cuisine-viman-nagar",
     "phone": "+919112212057",
     "imageUrl": "/images/restaurants/klinq.jpg",
-    "priceRange": 2
+    "priceRange": 2400
   },
   {
     "name": "Sunmoi",
@@ -121,7 +121,7 @@
     "menuUrl": "https://www.zomato.com/pune/suonmoi-dhole-patil-road",
     "phone": "+912030581110",
     "imageUrl": "/images/restaurants/sunmoi.jpg",
-    "priceRange": 1
+    "priceRange": 1400
   },
   {
     "name": "Chung Fa",
@@ -214,50 +214,6 @@
     "priceRange": 800
   },
   {
-    "name": "Pimplico",
-    "tagline": "",
-    "rating": 4.2,
-    "reviewCount": 7516,
-    "cuisines": [
-      "Cafe",
-      "Tea",
-      "Italian",
-      "Continental",
-      "Thai",
-      "North Indian",
-      "Fast Food"
-    ],
-    "branches": [
-      {
-        "area": "Royale Heritage Mall, Mohammadwadi",
-        "mapsUrl": "https://maps.app.goo.gl/pr2rxqhwuog3CpzL8",
-        "rating": 4.2,
-        "reviewCount": 539
-      },
-      {
-        "area": "Koregaon Park",
-        "mapsUrl": "https://maps.app.goo.gl/NKYwzQaZNnNpdKmj6",
-        "lat": 18.5366225,
-        "lng": 73.8932738,
-        "rating": 4.2,
-        "reviewCount": 4406
-      },
-      {
-        "area": "Kothrud, Erandwane",
-        "mapsUrl": "https://maps.app.goo.gl/sSwqCQGS6hApAVzS7",
-        "lat": 18.4984773,
-        "lng": 73.8191685,
-        "rating": 4.1,
-        "reviewCount": 2571
-      }
-    ],
-    "dietType": "veg-nonveg",
-    "menuUrl": "https://www.zomato.com/pune/pimlico-koregaon-park",
-    "phone": "+912071971512",
-    "imageUrl": "/images/restaurants/pimplico.jpg",
-    "priceRange": 3
-  },
-  {
     "name": "Camden Lane",
     "tagline": "",
     "rating": 4.2,
@@ -280,7 +236,7 @@
     "menuUrl": "https://www.zomato.com/pune/the-camden-lane-koregaon-park",
     "phone": "+917757942396",
     "imageUrl": "/images/restaurants/camden-lane.jpg",
-    "priceRange": 1
+    "priceRange": 1500
   },
   {
     "name": "Taco Bell",
@@ -511,7 +467,7 @@
     "menuUrl": "https://www.zomato.com/pune/mocha-salunkhe-vihar-road",
     "phone": "+919559558823",
     "imageUrl": "/images/restaurants/mocha.jpg",
-    "priceRange": 1
+    "priceRange": 1500
   },
   {
     "name": "Pandan Kitchen",
@@ -582,7 +538,7 @@
     "menuUrl": "https://www.zomato.com/pune/persian-darbar-camp-area",
     "phone": "+919175623047",
     "imageUrl": "/images/restaurants/persian-darbar.jpg",
-    "priceRange": 1
+    "priceRange": 1700
   },
   {
     "name": "Gareeb Nawaz",
@@ -625,7 +581,7 @@
     "menuUrl": "https://www.zomato.com/pune/grand-darbar-kondhwa",
     "phone": "+917559100848",
     "imageUrl": "/images/restaurants/grand-darbar.jpg",
-    "priceRange": 1
+    "priceRange": 1000
   },
   {
     "name": "Supreme",
@@ -644,10 +600,10 @@
       }
     ],
     "dietType": "veg-nonveg",
-    "menuUrl": "https://www.google.com/search?q=Supreme+Pune+menu",
+    "menuUrl": "https://www.zomato.com/pune/anis-somjees-supreme-kondhwa/order",
     "phone": "+919158646566",
     "imageUrl": "/images/restaurants/supreme.jpg",
-    "priceRange": 1
+    "priceRange": 1600
   },
   {
     "name": "Masala Times",
@@ -671,7 +627,7 @@
     "menuUrl": "https://www.zomato.com/pune/masala-times-camp-area",
     "phone": "+918087444556",
     "imageUrl": "/images/restaurants/masala-times.jpg",
-    "priceRange": 1
+    "priceRange": 1300
   },
   {
     "name": "Spice Culture",
@@ -694,7 +650,7 @@
     "menuUrl": "https://www.zomato.com/pune/spice-culture-bar-kitchen-salunkhe-vihar-road",
     "phone": "+918669667755",
     "imageUrl": "/images/restaurants/spice-culture.jpg",
-    "priceRange": 1
+    "priceRange": 1600
   },
   {
     "name": "Balsam",
@@ -724,7 +680,7 @@
     "menuUrl": "https://www.zomato.com/pune/balsam-cafe-and-kitchen-salunkhe-vihar-road",
     "phone": "+919146702882",
     "imageUrl": "/images/restaurants/balsam.jpg",
-    "priceRange": 1
+    "priceRange": 1000
   },
   {
     "name": "Arabian Mandi",
@@ -746,7 +702,7 @@
     "menuUrl": "https://www.zomato.com/pune/arabian-mandi-nibm-road",
     "phone": "+919717469407",
     "imageUrl": "/images/restaurants/arabian-mandi.jpg",
-    "priceRange": 1
+    "priceRange": 1000
   },
   {
     "name": "Qehhwa Cafe",
@@ -811,7 +767,7 @@
     "menuUrl": "https://www.zomato.com/pune/chafa-cafe-and-studio-koregaon-park",
     "phone": "+919767100022",
     "imageUrl": "/images/restaurants/chafa-cafe.jpg",
-    "priceRange": 1
+    "priceRange": 1200
   },
   {
     "name": "Grand Shalimar",
@@ -862,7 +818,7 @@
     "menuUrl": "https://www.zomato.com/pune/arabian-chillies-kondhwa",
     "phone": "+918495099099",
     "imageUrl": "/images/restaurants/arabian-chilies.jpg",
-    "priceRange": 1
+    "priceRange": 1100
   },
   {
     "name": "Bhiwandi Darbar",
@@ -889,7 +845,7 @@
     "menuUrl": "https://www.zomato.com/pune/bhiwandi-darbar-camp-area",
     "phone": "+918511028446",
     "imageUrl": "/images/restaurants/bhiwandi-darbar.jpg",
-    "priceRange": 1
+    "priceRange": 1000
   },
   {
     "name": "The Steam Room Pizzeria",
@@ -964,7 +920,7 @@
     "menuUrl": "https://www.zomato.com/pune/george-restaurant-camp-area",
     "phone": "+919881153613",
     "imageUrl": "/images/restaurants/george-restaurant.jpg",
-    "priceRange": 1
+    "priceRange": 1200
   },
   {
     "name": "Yana Sizzler",
@@ -1016,7 +972,7 @@
     "menuUrl": "https://www.zomato.com/pune/yana-sizzlers-camp-area",
     "phone": "+918888258911",
     "imageUrl": "/images/restaurants/yana-sizzler.jpg",
-    "priceRange": 1
+    "priceRange": 1200
   },
   {
     "name": "Shawarma.co - Lassi Wassi",
@@ -1091,7 +1047,7 @@
     "menuUrl": "https://www.zomato.com/pune/blue-nile-camp-area",
     "phone": "+912026125238",
     "imageUrl": "/images/restaurants/blue-nile.jpg",
-    "priceRange": 2
+    "priceRange": 2000
   },
   {
     "name": "Shahi Dawat",
@@ -1347,7 +1303,7 @@
     "menuUrl": "https://www.zomato.com/pune/signature-kondhwa",
     "phone": "+912026837364",
     "imageUrl": "/images/restaurants/signature.jpg",
-    "priceRange": 1
+    "priceRange": 1400
   },
   {
     "name": "Olympia Kathi Kabab",
@@ -1387,7 +1343,7 @@
     "menuUrl": "https://www.zomato.com/pune/al-di-la-conrad-pune-bund-garden",
     "phone": "+912067456745",
     "imageUrl": "/images/restaurants/al-di-la-restaurant.jpg",
-    "priceRange": 5
+    "priceRange": 5000
   },
   {
     "name": "Jashn",
@@ -1411,7 +1367,7 @@
     "menuUrl": "https://www.zomato.com/pune/jashn-salunkhe-vihar-road",
     "phone": "+918796578037",
     "imageUrl": "/images/restaurants/jashn.jpg",
-    "priceRange": 1
+    "priceRange": 1400
   },
   {
     "name": "Cafe Yezdan",
@@ -1506,7 +1462,7 @@
     "menuUrl": "https://www.zomato.com/pune/the-place-touche-the-sizzler-camp-area",
     "phone": "+912026134632",
     "imageUrl": "/images/restaurants/the-place-touche-the-sizzler.jpg",
-    "priceRange": 1
+    "priceRange": 1200
   },
   {
     "name": "Paasha - JW Marriott Pune",
@@ -1527,7 +1483,7 @@
     "phone": "+912066832356",
     "imageUrl": "/images/restaurants/paasha-jw-marriott.jpg",
     "hotelBrand": "JW Marriott",
-    "priceRange": 5
+    "priceRange": 5500
   },
   {
     "name": "Spice Kitchen - JW Marriott Pune",
@@ -1552,7 +1508,7 @@
     "imageUrl": "/images/restaurants/spice-kitchen-jw-marriott.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
     "hotelBrand": "JW Marriott",
-    "priceRange": 6
+    "priceRange": 6200
   },
   {
     "name": "Tao Fu - JW Marriott Pune",
@@ -1573,7 +1529,7 @@
     "phone": "+912066833333",
     "imageUrl": "/images/restaurants/tao-fu-jw-marriott.jpg",
     "hotelBrand": "JW Marriott",
-    "priceRange": 5
+    "priceRange": 5000
   },
   {
     "name": "Aasmana - The Ritz-Carlton Pune",
@@ -1599,7 +1555,7 @@
     "phone": "+912067675000",
     "imageUrl": "/images/restaurants/aasmana-ritz-carlton.jpg",
     "hotelBrand": "Ritz-Carlton",
-    "priceRange": 3
+    "priceRange": 3500
   },
   {
     "name": "2BHK Diner & Key Club",
@@ -1625,7 +1581,7 @@
     "phone": "+917745042999",
     "imageUrl": "/images/restaurants/2bhk-diner-key-club.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
-    "priceRange": 3
+    "priceRange": 3000
   },
   {
     "name": "Acai",
@@ -1649,7 +1605,7 @@
     "menuUrl": "https://www.zomato.com/pune/acai-dhole-patil-road",
     "phone": "+918149268969",
     "imageUrl": "/images/restaurants/acai.jpg",
-    "priceRange": 2
+    "priceRange": 2200
   },
   {
     "name": "Millers - The Luxury Club",
@@ -1674,7 +1630,7 @@
     "menuUrl": "https://www.zomato.com/pune/millers-the-luxury-club-bund-garden",
     "phone": "+918282818158",
     "imageUrl": "/images/restaurants/millers-the-luxury-club.jpg",
-    "priceRange": 3
+    "priceRange": 3500
   },
   {
     "name": "Epitome",
@@ -1699,7 +1655,7 @@
     "menuUrl": "https://www.zomato.com/pune/epitome-bund-garden",
     "phone": "+918600080503",
     "imageUrl": "/images/restaurants/epitome.jpg",
-    "priceRange": 1
+    "priceRange": 1700
   },
   {
     "name": "Kukoo",
@@ -1722,7 +1678,7 @@
     "phone": "+917861004444",
     "imageUrl": "/images/restaurants/kukoo.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
-    "priceRange": 1
+    "priceRange": 1800
   },
   {
     "name": "The Game Palacio",
@@ -1747,7 +1703,7 @@
     "phone": "+918657747547",
     "imageUrl": "/images/restaurants/the-game-palacio.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
-    "priceRange": 3
+    "priceRange": 3000
   },
   {
     "name": "Shisha Jazz Cafe",
@@ -1774,7 +1730,7 @@
     "menuUrl": "https://www.zomato.com/pune/shisha-jazz-cafe-dhole-patil-road",
     "phone": "+912065200390",
     "imageUrl": "/images/restaurants/shisha-jazz-cafe.jpg",
-    "priceRange": 1
+    "priceRange": 1800
   },
   {
     "name": "Latitude - Blue Diamond",
@@ -1800,7 +1756,7 @@
     "imageUrl": "/images/restaurants/latitude-blue-diamond.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
     "hotelBrand": "Blue Diamond",
-    "priceRange": 3
+    "priceRange": 3100
   },
   {
     "name": "Chingari - Sheraton Grand Pune",
@@ -1826,7 +1782,7 @@
     "phone": "+912066411111",
     "imageUrl": "/images/restaurants/chingari-sheraton.jpg",
     "hotelBrand": "Sheraton",
-    "priceRange": 4
+    "priceRange": 4000
   },
   {
     "name": "The Lobby @ Sheraton Cafe",
@@ -1850,7 +1806,7 @@
     "phone": "+912066411111",
     "imageUrl": "/images/restaurants/the-lobby-sheraton.jpg",
     "hotelBrand": "Sheraton",
-    "priceRange": 1
+    "priceRange": 1200
   },
   {
     "name": "The Market - The Westin Pune",
@@ -1875,7 +1831,7 @@
     "imageUrl": "/images/restaurants/the-market-westin.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
     "hotelBrand": "Westin",
-    "priceRange": 6
+    "priceRange": 6000
   },
   {
     "name": "Aafreen - The Westin Pune",
@@ -1898,7 +1854,7 @@
     "phone": "+912067210000",
     "imageUrl": "/images/restaurants/aafreen-westin.jpg",
     "hotelBrand": "Westin",
-    "priceRange": 3
+    "priceRange": 3500
   },
   {
     "name": "Masu - Conrad Pune",
@@ -1920,7 +1876,7 @@
     "phone": "+912067456745",
     "imageUrl": "/images/restaurants/masu-conrad.jpg",
     "hotelBrand": "Conrad",
-    "priceRange": 3
+    "priceRange": 3500
   },
   {
     "name": "Kabana - Conrad Pune",
@@ -1943,7 +1899,7 @@
     "phone": "+912067456745",
     "imageUrl": "/images/restaurants/kabana-conrad.jpg",
     "hotelBrand": "Conrad",
-    "priceRange": 3
+    "priceRange": 3000
   },
   {
     "name": "Pune Sugar Box - Conrad Pune",
@@ -1965,7 +1921,7 @@
     "phone": "+912067456745",
     "imageUrl": "/images/restaurants/pune-sugar-box-conrad.jpg",
     "hotelBrand": "Conrad",
-    "priceRange": 1
+    "priceRange": 1100
   },
   {
     "name": "Zeeshan Restaurant - Apna Hyderabadi Food",
@@ -1989,7 +1945,7 @@
     "menuUrl": "https://www.zomato.com/pune/zeeshan-restaurant-apna-hyderabadi-food-viman-nagar",
     "phone": "+918888924441",
     "imageUrl": "/images/restaurants/zeeshan-restaurant.jpg",
-    "priceRange": 1
+    "priceRange": 1000
   },
   {
     "name": "Alto Vino - JW Marriott Pune",
@@ -2014,7 +1970,7 @@
     "phone": "+912066833333",
     "imageUrl": "/images/restaurants/alto-vino-jw-marriott.jpg",
     "hotelBrand": "JW Marriott",
-    "priceRange": 6
+    "priceRange": 6000
   },
   {
     "name": "Cafe Bun Maska",
@@ -2111,7 +2067,7 @@
     "dietType": "non-veg",
     "tempClosed": true,
     "imageUrl": "/images/restaurants/the-great-indian-khau-gully.jpg",
-    "priceRange": 1
+    "priceRange": 1100
   },
   {
     "name": "Vohuman Cafe",
@@ -2160,6 +2116,6 @@
     "dietType": "non-veg",
     "fishNote": "Fish is served here but chicken is kept separate. We've confirmed this — calling ahead means they'll go the extra mile for you.",
     "imageUrl": "/images/restaurants/mystic-masala.jpg",
-    "priceRange": 3
+    "priceRange": 3500
   }
 ]
