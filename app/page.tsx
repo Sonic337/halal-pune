@@ -6,7 +6,7 @@ import HeroCollage from "@/components/HeroCollage";
 import restaurantsData from "@/data/restaurants.json";
 import RestaurantCard from "@/components/RestaurantCard";
 import FilterDropdown from "@/components/FilterDropdown";
-import FilterPanel, { PanelFilters } from "@/components/FilterPanel";
+import FilterPanel, { PanelFilters, DEFAULT_PANEL_FILTERS, countActiveFilters } from "@/components/FilterPanel";
 import LocationButton from "@/components/LocationButton";
 import { Restaurant } from "@/types";
 import { haversineKm } from "@/lib/distance";
@@ -54,10 +54,9 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [selectedCuisines, setSelectedCuisines] = useState<string[]>([]);
   const [selectedAreas, setSelectedAreas] = useState<string[]>([]);
-  const [fishFilter, setFishFilter] = useState<string[]>([]);
   const [highEndFilter, setHighEndFilter] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
-  const [panelFilters, setPanelFilters] = useState<PanelFilters>({ minRating: null, maxPrice: null });
+  const [panelFilters, setPanelFilters] = useState<PanelFilters>(DEFAULT_PANEL_FILTERS);
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [radiusKm, setRadiusKm] = useState(5);
   const [dietFilter, setDietFilter] = useState<"all" | "veg" | "non-veg">("all");
@@ -84,20 +83,19 @@ export default function Home() {
     if (dietFilter === "veg") results = results.filter((r) => r.dietType === "pure-veg");
     if (dietFilter === "non-veg") results = results.filter((r) => r.dietType !== "pure-veg");
 
-    if (fishFilter.length > 0) {
-      results = results.filter((r) => {
-        if (!r.fishNote) return false;
-        const confirmed = r.fishNote.includes("We've confirmed");
-        if (fishFilter.includes("confirmed") && confirmed) return true;
-        if (fishFilter.includes("unconfirmed") && !confirmed) return true;
-        return false;
-      });
-    }
-
     if (panelFilters.minRating !== null)
       results = results.filter((r) => (r.rating ?? 0) >= panelFilters.minRating!);
-    if (panelFilters.maxPrice !== null)
-      results = results.filter((r) => r.priceRange === undefined || r.priceRange <= panelFilters.maxPrice!);
+
+    const priceActive = panelFilters.minPrice !== null || panelFilters.maxPrice !== null;
+    if (priceActive) {
+      const lo = panelFilters.minPrice ?? 0;
+      results = results.filter((r) => {
+        if (r.priceRange === undefined) return false;
+        if (r.priceRange < lo) return false;
+        if (panelFilters.maxPrice !== null && r.priceRange > panelFilters.maxPrice) return false;
+        return true;
+      });
+    }
 
     if (highEndFilter === "Hotel Restaurants") {
       results = results.filter((r) => !!r.hotelBrand);
@@ -116,7 +114,7 @@ export default function Home() {
     }
 
     return results;
-  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter, fishFilter, panelFilters, highEndFilter]);
+  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter, panelFilters, highEndFilter]);
 
   function toggleCuisine(c: string) {
     setSelectedCuisines((prev) =>
@@ -130,26 +128,19 @@ export default function Home() {
     );
   }
 
-  function toggleFish(val: string) {
-    setFishFilter((prev) =>
-      prev.includes(val) ? prev.filter((x) => x !== val) : [...prev, val]
-    );
-  }
-
   function clearAll() {
     setSearch("");
     setSelectedCuisines([]);
     setSelectedAreas([]);
     setDietFilter("all");
-    setFishFilter([]);
     setHighEndFilter("");
-    setPanelFilters({ minRating: null, maxPrice: null });
+    setPanelFilters(DEFAULT_PANEL_FILTERS);
   }
 
-  const panelActiveCount = [panelFilters.minRating !== null, panelFilters.maxPrice !== null].filter(Boolean).length;
+  const panelActiveCount = countActiveFilters(panelFilters);
 
   const hasFilters =
-    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all" || fishFilter.length > 0 || highEndFilter !== "" || panelActiveCount > 0;
+    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all" || highEndFilter !== "" || panelActiveCount > 0;
 
   return (
     <main
