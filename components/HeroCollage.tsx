@@ -63,8 +63,9 @@ export default function HeroCollage() {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    // container is non-null from here; capture in const for closure safety
-    const heroEl: HTMLDivElement = container;
+    // Attach pointer events to the <header> (parent) so the overlay div
+    // at z-6 doesn't swallow mousemove before it reaches the collage wrapper.
+    const heroEl: HTMLElement = container.parentElement ?? container;
 
     // ── helpers ────────────────────────────────────────────────────────────
 
@@ -208,10 +209,10 @@ export default function HeroCollage() {
         }
       `}</style>
 
-      {/* Wrapper sits over the full hero — hidden on mobile */}
+      {/* Wrapper sits over the full hero */}
       <div
         ref={containerRef}
-        className="hidden md:block absolute inset-0"
+        className="absolute inset-0"
         aria-hidden="true"
       >
         {IMAGES.map((img, i) => (

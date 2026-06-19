@@ -148,10 +148,11 @@ export default function Home() {
 
         {/* Dark overlay so text stays legible */}
         <div
-          className="absolute inset-0 hidden md:block"
+          className="absolute inset-0"
           style={{
             background: "linear-gradient(to right, rgba(0,0,0,0.42), rgba(0,0,0,0.38))",
             zIndex: 6,
+            pointerEvents: "none",
           }}
         />
 
