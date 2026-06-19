@@ -406,7 +406,7 @@ export default function RestaurantCard({
       {/* ── Price ── */}
       {restaurant.priceRange && (
         <p className="text-xs" style={{ color: "var(--color-text-3)" }}>
-          {restaurant.priceRange} for two
+          ₹{restaurant.priceRange.toLocaleString("en-IN")} for two
         </p>
       )}
 

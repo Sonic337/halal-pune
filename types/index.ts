@@ -21,5 +21,5 @@ export interface Restaurant {
   imageUrl?: string;
   tempClosed?: boolean;
   hotelBrand?: string;
-  priceRange?: string;
+  priceRange?: number;
 }

@@ -6,6 +6,7 @@ import HeroCollage from "@/components/HeroCollage";
 import restaurantsData from "@/data/restaurants.json";
 import RestaurantCard from "@/components/RestaurantCard";
 import FilterDropdown from "@/components/FilterDropdown";
+import FilterPanel, { PanelFilters } from "@/components/FilterPanel";
 import LocationButton from "@/components/LocationButton";
 import { Restaurant } from "@/types";
 import { haversineKm } from "@/lib/distance";
@@ -54,8 +55,9 @@ export default function Home() {
   const [selectedCuisines, setSelectedCuisines] = useState<string[]>([]);
   const [selectedAreas, setSelectedAreas] = useState<string[]>([]);
   const [fishFilter, setFishFilter] = useState<string[]>([]);
-  const [ratingFilter, setRatingFilter] = useState("");
   const [highEndFilter, setHighEndFilter] = useState("");
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [panelFilters, setPanelFilters] = useState<PanelFilters>({ minRating: null, maxPrice: null });
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [radiusKm, setRadiusKm] = useState(5);
   const [dietFilter, setDietFilter] = useState<"all" | "veg" | "non-veg">("all");
@@ -92,12 +94,10 @@ export default function Home() {
       });
     }
 
-    if (ratingFilter === "Above 3.5★") results = results.filter((r) => (r.rating ?? 0) > 3.5);
-    if (ratingFilter === "Above 4★")   results = results.filter((r) => (r.rating ?? 0) > 4);
-    if (!userLocation) {
-      if (ratingFilter === "Highest to Lowest") results = [...results].sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
-      if (ratingFilter === "Lowest to Highest") results = [...results].sort((a, b) => (a.rating ?? 0) - (b.rating ?? 0));
-    }
+    if (panelFilters.minRating !== null)
+      results = results.filter((r) => (r.rating ?? 0) >= panelFilters.minRating!);
+    if (panelFilters.maxPrice !== null)
+      results = results.filter((r) => r.priceRange === undefined || r.priceRange <= panelFilters.maxPrice!);
 
     if (highEndFilter === "Hotel Restaurants") {
       results = results.filter((r) => !!r.hotelBrand);
@@ -116,7 +116,7 @@ export default function Home() {
     }
 
     return results;
-  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter, fishFilter, ratingFilter, highEndFilter]);
+  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter, fishFilter, panelFilters, highEndFilter]);
 
   function toggleCuisine(c: string) {
     setSelectedCuisines((prev) =>
@@ -136,22 +136,20 @@ export default function Home() {
     );
   }
 
-  function toggleRating(val: string) {
-    setRatingFilter((prev) => (prev === val ? "" : val));
-  }
-
   function clearAll() {
     setSearch("");
     setSelectedCuisines([]);
     setSelectedAreas([]);
     setDietFilter("all");
     setFishFilter([]);
-    setRatingFilter("");
     setHighEndFilter("");
+    setPanelFilters({ minRating: null, maxPrice: null });
   }
 
+  const panelActiveCount = [panelFilters.minRating !== null, panelFilters.maxPrice !== null].filter(Boolean).length;
+
   const hasFilters =
-    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all" || fishFilter.length > 0 || ratingFilter !== "" || highEndFilter !== "";
+    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all" || fishFilter.length > 0 || highEndFilter !== "" || panelActiveCount > 0;
 
   return (
     <main
@@ -255,20 +253,7 @@ export default function Home() {
             accentColor="emerald"
           />
 
-          <FilterDropdown
-            label="🐟 Serves Fish"
-            options={["confirmed", "unconfirmed"]}
-            optionLabels={{
-              confirmed: "Chicken kept separate — call ahead for extra care",
-              unconfirmed: "Call before visiting to confirm separate prep",
-            }}
-            selected={fishFilter}
-            onChange={toggleFish}
-            onClear={() => setFishFilter([])}
-            accentColor="sky"
-          />
-
-          <FilterDropdown
+<FilterDropdown
             label="✦ High-End"
             options={["Hotel Restaurants"]}
             selected={highEndFilter ? [highEndFilter] : []}
@@ -277,14 +262,26 @@ export default function Home() {
             accentColor="emerald"
           />
 
-          <FilterDropdown
-            label="★ Rating"
-            options={["Highest to Lowest", "Lowest to Highest", "Above 3.5★", "Above 4★"]}
-            selected={ratingFilter ? [ratingFilter] : []}
-            onChange={toggleRating}
-            onClear={() => setRatingFilter("")}
-            accentColor="orange"
-          />
+          {/* Filters button */}
+          <button
+            onClick={() => setPanelOpen(true)}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-colors whitespace-nowrap"
+            style={
+              panelActiveCount > 0
+                ? { backgroundColor: "var(--brand-orange)", color: "#fff", border: "1px solid var(--brand-orange)" }
+                : { backgroundColor: "var(--color-surface)", color: "var(--color-text)", border: "1px solid var(--color-border)" }
+            }
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h18M7 8h10M11 12h2M9 16h6" />
+            </svg>
+            Filters
+            {panelActiveCount > 0 && (
+              <span className="bg-white/30 text-xs rounded-full px-1.5 py-0.5 font-bold">
+                {panelActiveCount}
+              </span>
+            )}
+          </button>
 
           {hasFilters && (
             <button
@@ -435,6 +432,14 @@ export default function Home() {
       </div>
 
       <LocationButton onLocation={handleLocation} />
+
+      {panelOpen && (
+        <FilterPanel
+          filters={panelFilters}
+          onApply={setPanelFilters}
+          onClose={() => setPanelOpen(false)}
+        />
+      )}
     </main>
   );
 }
