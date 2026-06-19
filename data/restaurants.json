@@ -19,7 +19,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/the-liberty-grills-wadgaon-sheri",
-    "phone": "+919422196654"
+    "phone": "+919422196654",
+    "imageUrl": "/images/restaurants/liberty-grill.jpg"
   },
   {
     "name": "Chai Square",
@@ -44,7 +45,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/chai-square-wanowrie",
-    "phone": "+919172997142"
+    "phone": "+919172997142",
+    "imageUrl": "/images/restaurants/chai-square.jpg"
   },
   {
     "name": "Kebabbest",
@@ -90,7 +92,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/klinq-cocktails-cuisine-viman-nagar",
-    "phone": "+919112212057"
+    "phone": "+919112212057",
+    "imageUrl": "/images/restaurants/klinq.jpg"
   },
   {
     "name": "Sunmoi",
@@ -111,7 +114,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/suonmoi-dhole-patil-road",
-    "phone": "+912030581110"
+    "phone": "+912030581110",
+    "imageUrl": "/images/restaurants/sunmoi.jpg"
   },
   {
     "name": "Chung Fa",
@@ -132,7 +136,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/chung-fa-east-street",
-    "phone": "+912026130678"
+    "phone": "+912026130678",
+    "imageUrl": "/images/restaurants/chung-fa.jpg"
   },
   {
     "name": "Uncle Chinese",
@@ -197,7 +202,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/uncles-chinese-koregaon-park",
-    "phone": "+912026152970"
+    "phone": "+912026152970",
+    "imageUrl": "/images/restaurants/uncle-chinese.jpg"
   },
   {
     "name": "Pimplico",
@@ -239,7 +245,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/pimlico-koregaon-park",
-    "phone": "+912071971512"
+    "phone": "+912071971512",
+    "imageUrl": "/images/restaurants/pimplico.jpg"
   },
   {
     "name": "Camden Lane",
@@ -262,7 +269,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/the-camden-lane-koregaon-park",
-    "phone": "+917757942396"
+    "phone": "+917757942396",
+    "imageUrl": "/images/restaurants/camden-lane.jpg"
   },
   {
     "name": "Taco Bell",
@@ -337,7 +345,8 @@
       }
     ],
     "dietType": "veg-nonveg",
-    "menuUrl": "https://www.google.com/search?q=Taco+Bell+Pune+menu"
+    "menuUrl": "https://www.google.com/search?q=Taco+Bell+Pune+menu",
+    "imageUrl": "/images/restaurants/taco-bell.jpg"
   },
   {
     "name": "Nothing but Chicken",
@@ -394,7 +403,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/nothing-but-chicken-1-viman-nagar",
-    "phone": "+918600576023"
+    "phone": "+918600576023",
+    "imageUrl": "/images/restaurants/nothing-but-chicken.jpg"
   },
   {
     "name": "Marrakesh",
@@ -419,7 +429,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/marrakesh-nibm-road",
-    "phone": "+917719861888"
+    "phone": "+917719861888",
+    "imageUrl": "/images/restaurants/marrakesh.jpg"
   },
   {
     "name": "Habibi Ya Fatayer",
@@ -441,7 +452,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/ya-habibi-fatayer-nibm-road",
-    "phone": "+918208704985"
+    "phone": "+918208704985",
+    "imageUrl": "/images/restaurants/habibi-ya-fatayer.jpg"
   },
   {
     "name": "Kimling",
@@ -461,7 +473,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/kimling-wanowrie",
-    "phone": "+912041210781"
+    "phone": "+912041210781",
+    "imageUrl": "/images/restaurants/kimling.jpg"
   },
   {
     "name": "Mocha",
@@ -481,7 +494,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/mocha-salunkhe-vihar-road",
-    "phone": "+919559558823"
+    "phone": "+919559558823",
+    "imageUrl": "/images/restaurants/mocha.jpg"
   },
   {
     "name": "Pandan Kitchen",
@@ -502,7 +516,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/pandan-kitchen-nibm-road",
-    "phone": "+917410152966"
+    "phone": "+917410152966",
+    "imageUrl": "/images/restaurants/pandan-kitchen.jpg"
   },
   {
     "name": "Grand Delhi Darbar",
@@ -524,7 +539,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/grand-dilli-darbar-camp-area",
-    "phone": "+919172080002"
+    "phone": "+919172080002",
+    "imageUrl": "/images/restaurants/grand-delhi-darbar.jpg"
   },
   {
     "name": "Persian Darbar",
@@ -546,7 +562,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/persian-darbar-camp-area",
-    "phone": "+919175623047"
+    "phone": "+919175623047",
+    "imageUrl": "/images/restaurants/persian-darbar.jpg"
   },
   {
     "name": "Gareeb Nawaz",
@@ -567,7 +584,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/gareeb-nawaz-biryani-kondhwa",
-    "phone": "+917073355050"
+    "phone": "+917073355050",
+    "imageUrl": "/images/restaurants/gareeb-nawaz.jpg"
   },
   {
     "name": "Grand Darbar",
@@ -585,7 +603,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/grand-darbar-kondhwa",
-    "phone": "+917559100848"
+    "phone": "+917559100848",
+    "imageUrl": "/images/restaurants/grand-darbar.jpg"
   },
   {
     "name": "Supreme",
@@ -627,7 +646,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/masala-times-camp-area",
-    "phone": "+918087444556"
+    "phone": "+918087444556",
+    "imageUrl": "/images/restaurants/masala-times.jpg"
   },
   {
     "name": "Spice Culture",
@@ -648,7 +668,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/spice-culture-bar-kitchen-salunkhe-vihar-road",
-    "phone": "+918669667755"
+    "phone": "+918669667755",
+    "imageUrl": "/images/restaurants/spice-culture.jpg"
   },
   {
     "name": "Balsam",
@@ -676,7 +697,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/balsam-cafe-and-kitchen-salunkhe-vihar-road",
-    "phone": "+919146702882"
+    "phone": "+919146702882",
+    "imageUrl": "/images/restaurants/balsam.jpg"
   },
   {
     "name": "Arabian Mandi",
@@ -696,7 +718,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/arabian-mandi-nibm-road",
-    "phone": "+919717469407"
+    "phone": "+919717469407",
+    "imageUrl": "/images/restaurants/arabian-mandi.jpg"
   },
   {
     "name": "Qehhwa Cafe",
@@ -720,7 +743,8 @@
     ],
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/qehhwa-cafe-kondhwa",
-    "phone": "+917020193085"
+    "phone": "+917020193085",
+    "imageUrl": "/images/restaurants/qehhwa-cafe.jpg"
   },
   {
     "name": "Chafa Cafe",
@@ -757,7 +781,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/chafa-cafe-and-studio-koregaon-park",
-    "phone": "+919767100022"
+    "phone": "+919767100022",
+    "imageUrl": "/images/restaurants/chafa-cafe.jpg"
   },
   {
     "name": "Grand Shalimar",
@@ -780,7 +805,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/grand-shalimar-restaurant-and-lawns-nibm-road",
-    "phone": "+918308890889"
+    "phone": "+918308890889",
+    "imageUrl": "/images/restaurants/grand-shalimar.jpg"
   },
   {
     "name": "Arabian Chilies",
@@ -804,7 +830,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/arabian-chillies-kondhwa",
-    "phone": "+918495099099"
+    "phone": "+918495099099",
+    "imageUrl": "/images/restaurants/arabian-chilies.jpg"
   },
   {
     "name": "Bhiwandi Darbar",
@@ -829,7 +856,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/bhiwandi-darbar-camp-area",
-    "phone": "+918511028446"
+    "phone": "+918511028446",
+    "imageUrl": "/images/restaurants/bhiwandi-darbar.jpg"
   },
   {
     "name": "The Steam Room Pizzeria",
@@ -850,7 +878,8 @@
     ],
     "dietType": "pure-veg",
     "menuUrl": "https://www.zomato.com/pune/the-steam-room-kondhwa",
-    "phone": "+918830985290"
+    "phone": "+918830985290",
+    "imageUrl": "/images/restaurants/the-steam-room-pizzeria.jpg"
   },
   {
     "name": "Badshah",
@@ -874,7 +903,8 @@
     "rating": 4,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/badshah-east-street",
-    "phone": "+912026362667"
+    "phone": "+912026362667",
+    "imageUrl": "/images/restaurants/badshah.jpg"
   },
   {
     "name": "George Restaurant",
@@ -898,7 +928,8 @@
     "rating": 4.2,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/george-restaurant-camp-area",
-    "phone": "+919881153613"
+    "phone": "+919881153613",
+    "imageUrl": "/images/restaurants/george-restaurant.jpg"
   },
   {
     "name": "Yana Sizzler",
@@ -948,7 +979,8 @@
     "reviewCount": 14729,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/yana-sizzlers-camp-area",
-    "phone": "+918888258911"
+    "phone": "+918888258911",
+    "imageUrl": "/images/restaurants/yana-sizzler.jpg"
   },
   {
     "name": "Shawarma.co - Lassi Wassi",
@@ -996,7 +1028,8 @@
     "rating": 4.2,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/shawarma-co-lassi-wassi-kothrud",
-    "phone": "+919529964152"
+    "phone": "+919529964152",
+    "imageUrl": "/images/restaurants/shawarma-co-lassi-wassi.jpg"
   },
   {
     "name": "Blue Nile",
@@ -1019,7 +1052,8 @@
     "rating": 4.1,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/blue-nile-camp-area",
-    "phone": "+912026125238"
+    "phone": "+912026125238",
+    "imageUrl": "/images/restaurants/blue-nile.jpg"
   },
   {
     "name": "Shahi Dawat",
@@ -1040,7 +1074,8 @@
     "rating": 4.3,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/shahi-dawat-camp-area",
-    "phone": "+912026340114"
+    "phone": "+912026340114",
+    "imageUrl": "/images/restaurants/shahi-dawat.jpg"
   },
   {
     "name": "Butterwala and Co.",
@@ -1064,7 +1099,8 @@
     "rating": 4.2,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/butterwala-co-kondhwa",
-    "phone": "+918983723222"
+    "phone": "+918983723222",
+    "imageUrl": "/images/restaurants/butterwala-and-co.jpg"
   },
   {
     "name": "Salt",
@@ -1087,7 +1123,8 @@
     "rating": 4.2,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/salt-salunkhe-vihar-road",
-    "phone": "+919764788925"
+    "phone": "+919764788925",
+    "imageUrl": "/images/restaurants/salt.jpg"
   },
   {
     "name": "Irani Cafe",
@@ -1172,7 +1209,8 @@
     "reviewCount": 26061,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/irani-cafe-camp-area",
-    "phone": "+917420053999"
+    "phone": "+917420053999",
+    "imageUrl": "/images/restaurants/irani-cafe.jpg"
   },
   {
     "name": "Cream Craver",
@@ -1196,7 +1234,8 @@
     "rating": 4,
     "dietType": "pure-veg",
     "menuUrl": "https://www.zomato.com/pune/cream-craver-camp-area",
-    "phone": "+917276016970"
+    "phone": "+917276016970",
+    "imageUrl": "/images/restaurants/cream-craver.jpg"
   },
   {
     "name": "Miya Kebabs",
@@ -1235,7 +1274,8 @@
     "rating": 4.2,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/bombay-seekh-paratha-kondhwa",
-    "phone": "+919834970770"
+    "phone": "+919834970770",
+    "imageUrl": "/images/restaurants/bombay-seekh-parathas.jpg"
   },
   {
     "name": "Signature",
@@ -1259,7 +1299,8 @@
     "rating": 4.2,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/signature-kondhwa",
-    "phone": "+912026837364"
+    "phone": "+912026837364",
+    "imageUrl": "/images/restaurants/signature.jpg"
   },
   {
     "name": "Olympia Kathi Kabab",
@@ -1276,7 +1317,8 @@
     "rating": 4.3,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/olympia-east-street",
-    "phone": "+917972559822"
+    "phone": "+917972559822",
+    "imageUrl": "/images/restaurants/olympia-kathi-kabab.jpg"
   },
   {
     "name": "Al Di La Restaurant",
@@ -1295,7 +1337,8 @@
     "rating": 4.4,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/al-di-la-conrad-pune-bund-garden",
-    "phone": "+912067456745"
+    "phone": "+912067456745",
+    "imageUrl": "/images/restaurants/al-di-la-restaurant.jpg"
   },
   {
     "name": "Jashn",
@@ -1317,7 +1360,8 @@
     "rating": 4,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/jashn-salunkhe-vihar-road",
-    "phone": "+918796578037"
+    "phone": "+918796578037",
+    "imageUrl": "/images/restaurants/jashn.jpg"
   },
   {
     "name": "Cafe Yezdan",
@@ -1348,7 +1392,8 @@
     "reviewCount": 1797,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/cafe-yezdan-camp-area",
-    "phone": "+919545459850"
+    "phone": "+919545459850",
+    "imageUrl": "/images/restaurants/cafe-yezdan.jpg"
   },
   {
     "name": "Akhtar's Samosa",
@@ -1367,7 +1412,8 @@
     "rating": 4.1,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/akhtars-samosa-camp-area",
-    "phone": "+919860103232"
+    "phone": "+919860103232",
+    "imageUrl": "/images/restaurants/akhtars-samosa.jpg"
   },
   {
     "name": "Burger King (Camp Burger)",
@@ -1385,7 +1431,8 @@
     "rating": 4.3,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/burger-king-1-east-street",
-    "phone": "+912065255301"
+    "phone": "+912065255301",
+    "imageUrl": "/images/restaurants/burger-king-camp.jpg"
   },
   {
     "name": "The Place - Touche The Sizzler",
@@ -1404,7 +1451,8 @@
     "rating": 4.2,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/the-place-touche-the-sizzler-camp-area",
-    "phone": "+912026134632"
+    "phone": "+912026134632",
+    "imageUrl": "/images/restaurants/the-place-touche-the-sizzler.jpg"
   },
   {
     "name": "Paasha - JW Marriott Pune",
@@ -1422,7 +1470,8 @@
     "rating": 4.5,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/paasha-jw-marriott-pune-senapati-bapat-road",
-    "phone": "+912066832356"
+    "phone": "+912066832356",
+    "imageUrl": "/images/restaurants/paasha-jw-marriott.jpg"
   },
   {
     "name": "Spice Kitchen - JW Marriott Pune",
@@ -1443,7 +1492,8 @@
     "rating": 4.5,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/spice-kitchen-jw-marriott-pune-senapati-bapat-road",
-    "phone": "+912066832345"
+    "phone": "+912066832345",
+    "imageUrl": "/images/restaurants/spice-kitchen-jw-marriott.jpg"
   },
   {
     "name": "Tao Fu - JW Marriott Pune",
@@ -1461,7 +1511,8 @@
     "rating": 4.6,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/tao-fu-jw-marriott-pune-senapati-bapat-road",
-    "phone": "+912066833333"
+    "phone": "+912066833333",
+    "imageUrl": "/images/restaurants/tao-fu-jw-marriott.jpg"
   },
   {
     "name": "Aasmana - The Ritz-Carlton Pune",
@@ -1484,7 +1535,8 @@
     "rating": 4.5,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/aasmana-the-ritz-carlton-yerawada",
-    "phone": "+912067675000"
+    "phone": "+912067675000",
+    "imageUrl": "/images/restaurants/aasmana-ritz-carlton.jpg"
   },
   {
     "name": "2BHK Diner & Key Club",
@@ -1507,7 +1559,8 @@
     "rating": 4.3,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/2bhk-diner-key-club-bund-garden",
-    "phone": "+917745042999"
+    "phone": "+917745042999",
+    "imageUrl": "/images/restaurants/2bhk-diner-key-club.jpg"
   },
   {
     "name": "Acai",
@@ -1529,7 +1582,8 @@
     "rating": 4.3,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/acai-dhole-patil-road",
-    "phone": "+918149268969"
+    "phone": "+918149268969",
+    "imageUrl": "/images/restaurants/acai.jpg"
   },
   {
     "name": "Millers - The Luxury Club",
@@ -1552,7 +1606,8 @@
     "dietType": "non-veg",
     "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
     "menuUrl": "https://www.zomato.com/pune/millers-the-luxury-club-bund-garden",
-    "phone": "+918282818158"
+    "phone": "+918282818158",
+    "imageUrl": "/images/restaurants/millers-the-luxury-club.jpg"
   },
   {
     "name": "Epitome",
@@ -1575,7 +1630,8 @@
     "rating": 4.1,
     "dietType": "pure-veg",
     "menuUrl": "https://www.zomato.com/pune/epitome-bund-garden",
-    "phone": "+918600080503"
+    "phone": "+918600080503",
+    "imageUrl": "/images/restaurants/epitome.jpg"
   },
   {
     "name": "Kukoo",
@@ -1595,7 +1651,8 @@
     "rating": 4.2,
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/kukoo-sangamvadi",
-    "phone": "+917861004444"
+    "phone": "+917861004444",
+    "imageUrl": "/images/restaurants/kukoo.jpg"
   },
   {
     "name": "The Game Palacio",
@@ -1617,7 +1674,8 @@
     "reviewCount": 719,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/the-game-palacio-bund-garden",
-    "phone": "+918657747547"
+    "phone": "+918657747547",
+    "imageUrl": "/images/restaurants/the-game-palacio.jpg"
   },
   {
     "name": "Shisha Jazz Cafe",
@@ -1642,7 +1700,8 @@
     "dietType": "non-veg",
     "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
     "menuUrl": "https://www.zomato.com/pune/shisha-jazz-cafe-dhole-patil-road",
-    "phone": "+912065200390"
+    "phone": "+912065200390",
+    "imageUrl": "/images/restaurants/shisha-jazz-cafe.jpg"
   },
   {
     "name": "Latitude - Blue Diamond",
@@ -1664,7 +1723,8 @@
     "rating": 4.3,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/latitude-blue-diamond-koregaon-park",
-    "phone": "+912066025555"
+    "phone": "+912066025555",
+    "imageUrl": "/images/restaurants/latitude-blue-diamond.jpg"
   },
   {
     "name": "Chingari - Sheraton Grand Pune",
@@ -1687,7 +1747,8 @@
     "dietType": "veg-nonveg",
     "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
     "menuUrl": "https://www.zomato.com/pune/chingari-sheraton-grand-bund-garden",
-    "phone": "+912066411111"
+    "phone": "+912066411111",
+    "imageUrl": "/images/restaurants/chingari-sheraton.jpg"
   },
   {
     "name": "The Lobby @ Sheraton Cafe",
@@ -1708,7 +1769,8 @@
     "reviewCount": 153,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/the-lobby-@-sheraton-cafe-bund-garden",
-    "phone": "+912066411111"
+    "phone": "+912066411111",
+    "imageUrl": "/images/restaurants/the-lobby-sheraton.jpg"
   },
   {
     "name": "The Market - The Westin Pune",
@@ -1729,7 +1791,8 @@
     "rating": 4.4,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/the-market-the-westin-pune-mundhwa",
-    "phone": "+912067210000"
+    "phone": "+912067210000",
+    "imageUrl": "/images/restaurants/the-market-westin.jpg"
   },
   {
     "name": "Aafreen - The Westin Pune",
@@ -1749,7 +1812,8 @@
     "rating": 4,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/aafreen-the-westin-pune-mundhwa",
-    "phone": "+912067210000"
+    "phone": "+912067210000",
+    "imageUrl": "/images/restaurants/aafreen-westin.jpg"
   },
   {
     "name": "Masu - Conrad Pune",
@@ -1768,7 +1832,8 @@
     "rating": 4.4,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/masu-conrad-pune-dhole-patil-road",
-    "phone": "+912067456745"
+    "phone": "+912067456745",
+    "imageUrl": "/images/restaurants/masu-conrad.jpg"
   },
   {
     "name": "Kabana - Conrad Pune",
@@ -1788,7 +1853,8 @@
     "rating": 4.7,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/kabana-conrad-pune-bund-garden",
-    "phone": "+912067456745"
+    "phone": "+912067456745",
+    "imageUrl": "/images/restaurants/kabana-conrad.jpg"
   },
   {
     "name": "Pune Sugar Box - Conrad Pune",
@@ -1807,7 +1873,8 @@
     "rating": 4.5,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/pune-sugar-box-conrad-pune-bund-garden",
-    "phone": "+912067456745"
+    "phone": "+912067456745",
+    "imageUrl": "/images/restaurants/pune-sugar-box-conrad.jpg"
   },
   {
     "name": "Zeeshan Restaurant - Apna Hyderabadi Food",
@@ -1829,7 +1896,8 @@
     "reviewCount": 5523,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/zeeshan-restaurant-apna-hyderabadi-food-viman-nagar",
-    "phone": "+918888924441"
+    "phone": "+918888924441",
+    "imageUrl": "/images/restaurants/zeeshan-restaurant.jpg"
   },
   {
     "name": "Alto Vino - JW Marriott Pune",
@@ -1851,6 +1919,7 @@
     "dietType": "non-veg",
     "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
     "menuUrl": "https://www.zomato.com/pune/alto-vino-jw-marriott-pune-senapati-bapat-road",
-    "phone": "+912066833333"
+    "phone": "+912066833333",
+    "imageUrl": "/images/restaurants/alto-vino-jw-marriott.jpg"
   }
 ]
