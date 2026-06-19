@@ -324,34 +324,22 @@ export default function RestaurantCard({
       {restaurant.fishNote && (() => {
         const confirmed = restaurant.fishNote.includes("We've confirmed");
         return (
-          <div className="flex flex-col gap-1.5">
-            <span
-              className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full w-fit"
-              style={{
-                backgroundColor: "color-mix(in srgb, #0ea5e9 15%, var(--color-surface))",
-                color: "#0369a1",
-                border: "1px solid color-mix(in srgb, #0ea5e9 40%, transparent)",
-              }}
-            >
-              🐟 Serves Fish
-            </span>
-            <span
-              title={restaurant.fishNote}
-              className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full w-fit"
-              style={confirmed ? {
-                backgroundColor: "color-mix(in srgb, #0ea5e9 12%, var(--color-surface))",
-                color: "#0369a1",
-                border: "1px solid color-mix(in srgb, #0ea5e9 35%, transparent)",
-              } : {
-                backgroundColor: "color-mix(in srgb, #dc2626 12%, var(--color-surface))",
-                color: "#b91c1c",
-                border: "1px solid color-mix(in srgb, #dc2626 40%, transparent)",
-              }}
-            >
-              {confirmed
-                ? "✓ Chicken kept separate — call ahead for extra care"
-                : "⚠ Unable to confirm — please call before visiting"}
-            </span>
+          <div
+            title={restaurant.fishNote}
+            className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full w-fit"
+            style={confirmed ? {
+              backgroundColor: "color-mix(in srgb, #0ea5e9 12%, var(--color-surface))",
+              color: "#0c4a6e",
+              border: "1px solid color-mix(in srgb, #0ea5e9 35%, transparent)",
+            } : {
+              backgroundColor: "color-mix(in srgb, #dc2626 12%, var(--color-surface))",
+              color: "#dc2626",
+              border: "1px solid color-mix(in srgb, #dc2626 40%, transparent)",
+            }}
+          >
+            {confirmed
+              ? "🐟 Fish served — chicken kept separate, call ahead for extra care"
+              : "🐟 Fish served — call before visiting to confirm separate prep"}
           </div>
         );
       })()}
