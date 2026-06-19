@@ -329,7 +329,7 @@ export default function RestaurantCard({
             className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full w-fit"
             style={confirmed ? {
               backgroundColor: "color-mix(in srgb, #0ea5e9 12%, var(--color-surface))",
-              color: "#0c4a6e",
+              color: "#1e3a5f",
               border: "1px solid color-mix(in srgb, #0ea5e9 35%, transparent)",
             } : {
               backgroundColor: "color-mix(in srgb, #dc2626 12%, var(--color-surface))",
