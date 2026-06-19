@@ -159,46 +159,46 @@ export default function Home() {
           `}</style>
 
           {/* Row of images — hardcoded positions, varied rotations & sizes */}
-          <Image unoptimized src="https://source.unsplash.com/180x220/?biryani" alt="" width={180} height={220}
+          <Image src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?w=400" alt="" width={180} height={220}
             className="hero-img" style={{ top: "-20px", left: "2%", zIndex: 2, rotate: "-8deg", animationDelay: "0ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/140x170/?kebab" alt="" width={140} height={170}
+          <Image src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?w=400" alt="" width={140} height={170}
             className="hero-img" style={{ top: "40px", left: "12%", zIndex: 4, rotate: "5deg", animationDelay: "80ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/220x270/?curry" alt="" width={220} height={270}
+          <Image src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400" alt="" width={220} height={270}
             className="hero-img" style={{ top: "-30px", left: "22%", zIndex: 1, rotate: "-13deg", animationDelay: "160ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/160x200/?naan" alt="" width={160} height={200}
+          <Image src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?w=400" alt="" width={160} height={200}
             className="hero-img" style={{ bottom: "-30px", left: "8%", zIndex: 3, rotate: "7deg", animationDelay: "240ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/130x160/?samosa" alt="" width={130} height={160}
+          <Image src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?w=400" alt="" width={130} height={160}
             className="hero-img" style={{ bottom: "-10px", left: "28%", zIndex: 5, rotate: "-4deg", animationDelay: "300ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/200x240/?shawarma" alt="" width={200} height={240}
+          <Image src="https://images.pexels.com/photos/2611917/pexels-photo-2611917.jpeg?w=400" alt="" width={200} height={240}
             className="hero-img" style={{ top: "10px", right: "22%", zIndex: 2, rotate: "10deg", animationDelay: "100ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/150x150/?tikka" alt="" width={150} height={150}
+          <Image src="https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?w=400" alt="" width={150} height={150}
             className="hero-img" style={{ bottom: "-20px", right: "30%", zIndex: 4, rotate: "-9deg", animationDelay: "200ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/180x220/?tandoori" alt="" width={180} height={220}
+          <Image src="https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?w=400" alt="" width={180} height={220}
             className="hero-img" style={{ top: "-25px", right: "12%", zIndex: 1, rotate: "6deg", animationDelay: "350ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/140x180/?haleem" alt="" width={140} height={180}
+          <Image src="https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?w=400" alt="" width={140} height={180}
             className="hero-img" style={{ top: "50px", right: "3%", zIndex: 3, rotate: "-12deg", animationDelay: "430ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/220x260/?mutton" alt="" width={220} height={260}
+          <Image src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?w=400" alt="" width={220} height={260}
             className="hero-img" style={{ bottom: "-40px", right: "8%", zIndex: 5, rotate: "4deg", animationDelay: "510ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/160x190/?pulao" alt="" width={160} height={190}
+          <Image src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?w=400" alt="" width={160} height={190}
             className="hero-img" style={{ bottom: "-15px", right: "20%", zIndex: 2, rotate: "-6deg", animationDelay: "590ms" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/130x160/?grilled+chicken" alt="" width={130} height={160}
+          <Image src="https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?w=400" alt="" width={130} height={160}
             className="hero-img" style={{ top: "30px", left: "35%", zIndex: 0, rotate: "14deg", animationDelay: "670ms", willChange: "transform" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/150x190/?indian+street+food" alt="" width={150} height={190}
+          <Image src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?w=400" alt="" width={150} height={190}
             className="hero-img" style={{ bottom: "-25px", left: "42%", zIndex: 3, rotate: "-11deg", animationDelay: "750ms", willChange: "transform" }} />
 
-          <Image unoptimized src="https://source.unsplash.com/180x140/?food+platter" alt="" width={180} height={140}
+          <Image src="https://images.pexels.com/photos/2611917/pexels-photo-2611917.jpeg?w=400" alt="" width={180} height={140}
             className="hero-img" style={{ top: "-10px", right: "35%", zIndex: 1, rotate: "3deg", animationDelay: "800ms" }} />
         </div>
 
