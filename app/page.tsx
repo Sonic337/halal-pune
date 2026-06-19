@@ -146,8 +146,8 @@ export default function Home() {
             <Image
               src="/wurrynot-logo.jpg"
               alt="Wurrynot"
-              width={80}
-              height={80}
+              width={240}
+              height={240}
               className="rounded-full object-cover shadow-lg"
             />
           </div>
