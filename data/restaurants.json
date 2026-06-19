@@ -2067,5 +2067,29 @@
     "menuUrl": "https://www.zomato.com/pune/vohuman-cafe-dhole-patil-road",
     "dietType": "veg-nonveg",
     "imageUrl": "/images/restaurants/vohuman-cafe.jpg"
+  },
+  {
+    "name": "Mystic Masala",
+    "tagline": "",
+    "rating": 4.3,
+    "reviewCount": 504,
+    "cuisines": [
+      "North Indian",
+      "Mughlai",
+      "Maharashtrian"
+    ],
+    "branches": [
+      {
+        "area": "Koregaon Park",
+        "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=18.5381925,73.8863249",
+        "lat": 18.5381925,
+        "lng": 73.8863249
+      }
+    ],
+    "phone": "+912066025555",
+    "menuUrl": "https://www.zomato.com/pune/mystic-masala-blue-diamond-koregaon-park",
+    "dietType": "non-veg",
+    "fishNote": "Fish is served here but chicken is kept separate. We've confirmed this \u2014 calling ahead means they'll go the extra mile for you.",
+    "imageUrl": "/images/restaurants/mystic-masala.jpg"
   }
 ]

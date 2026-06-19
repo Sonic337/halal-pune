@@ -328,13 +328,13 @@ export default function RestaurantCard({
             title={restaurant.fishNote}
             className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full w-fit"
             style={confirmed ? {
-              backgroundColor: "color-mix(in srgb, #16a34a 10%, var(--color-surface))",
-              color: "#14532d",
-              border: "1px solid color-mix(in srgb, #16a34a 30%, transparent)",
+              backgroundColor: "color-mix(in srgb, #0ea5e9 12%, var(--color-surface))",
+              color: "#0c4a6e",
+              border: "1px solid color-mix(in srgb, #0ea5e9 35%, transparent)",
             } : {
-              backgroundColor: "color-mix(in srgb, #dc2626 10%, var(--color-surface))",
-              color: "#7f1d1d",
-              border: "1px solid color-mix(in srgb, #dc2626 30%, transparent)",
+              backgroundColor: "color-mix(in srgb, #dc2626 12%, var(--color-surface))",
+              color: "#dc2626",
+              border: "1px solid color-mix(in srgb, #dc2626 40%, transparent)",
             }}
           >
             {confirmed
