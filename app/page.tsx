@@ -155,8 +155,7 @@ export default function Home() {
             Wurrynot
           </h1>
           <p className="text-orange-100 text-lg">
-            Eat without the worry. Pune&apos;s best local spots, personally
-            picked.
+            Eat without the worry. Pune&apos;s best, personally picked.
           </p>
           <p className="text-orange-200 text-sm mt-3">
             Spotted something wrong?{" "}
