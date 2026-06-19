@@ -19,4 +19,5 @@ export interface Restaurant {
   menuUrl?: string;
   phone?: string;
   imageUrl?: string;
+  tempClosed?: boolean;
 }

@@ -1930,5 +1930,161 @@
     "menuUrl": "https://www.zomato.com/pune/alto-vino-jw-marriott-pune-senapati-bapat-road",
     "phone": "+912066833333",
     "imageUrl": "/images/restaurants/alto-vino-jw-marriott.jpg"
+  },
+  {
+    "name": "Ikku Bhai's Manthi Restaurant",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Arabic",
+      "Mughlai",
+      "Mandi"
+    ],
+    "branches": [
+      {
+        "area": "Kausar Bagh",
+        "mapsUrl": "https://www.google.com/maps/search/Ikkubhais+Restaurant+Kausarbaug+Kondhwa+Pune",
+        "lat": 18.4731,
+        "lng": 73.8936
+      }
+    ],
+    "menuUrl": "https://www.zomato.com/pune/ikkubhais-restaurant-kondhwa",
+    "dietType": "non-veg",
+    "imageUrl": "/images/restaurants/ikku-bhais-manthi.jpg"
+  },
+  {
+    "name": "Cafe Bun Maska",
+    "tagline": "",
+    "rating": 3.9,
+    "reviewCount": 449,
+    "cuisines": [
+      "Chinese",
+      "Street Food",
+      "Bakery",
+      "Fast Food"
+    ],
+    "branches": [
+      {
+        "area": "Kausar Bagh",
+        "mapsUrl": "https://www.google.com/maps?q=18.473904,73.891007",
+        "lat": 18.473904,
+        "lng": 73.891007
+      }
+    ],
+    "phone": "+917666379394",
+    "menuUrl": "https://www.zomato.com/pune/cafe-bun-maska-kondhwa",
+    "dietType": "veg-nonveg",
+    "imageUrl": "/images/restaurants/cafe-bun-maska.jpg"
+  },
+  {
+    "name": "Bagicha Corner",
+    "tagline": "",
+    "rating": 4.2,
+    "reviewCount": 756,
+    "cuisines": [
+      "Fast Food",
+      "Street Food"
+    ],
+    "branches": [
+      {
+        "area": "MG Road, Camp",
+        "mapsUrl": "https://www.google.com/maps?q=18.51820,73.87918",
+        "lat": 18.5182,
+        "lng": 73.87918
+      }
+    ],
+    "phone": "+919405607638",
+    "menuUrl": "https://www.zomato.com/pune/bagicha-corner-mg-road",
+    "dietType": "veg-nonveg",
+    "imageUrl": "/images/restaurants/bagicha-corner.jpg"
+  },
+  {
+    "name": "Garden Seekh Kebab",
+    "tagline": "",
+    "rating": 4.3,
+    "reviewCount": 140,
+    "cuisines": [
+      "Kebab",
+      "Street Food",
+      "Mughlai"
+    ],
+    "branches": [
+      {
+        "area": "Bootee Street, Camp",
+        "mapsUrl": "https://maps.app.goo.gl/B3deUQ65M5eayg8RA"
+      }
+    ],
+    "phone": "+919579088266",
+    "menuUrl": "https://www.zomato.com/pune/garden-seekh-kebab-camp-area",
+    "dietType": "non-veg",
+    "imageUrl": "/images/restaurants/garden-seekh-kebab.jpg"
+  },
+  {
+    "name": "The Great Indian Khau Gully",
+    "tagline": "",
+    "rating": 4.4,
+    "reviewCount": 466,
+    "cuisines": [
+      "North Indian",
+      "Chinese",
+      "Biryani",
+      "Mughlai",
+      "Kebab"
+    ],
+    "branches": [
+      {
+        "area": "Taboot Street, Camp",
+        "mapsUrl": "https://www.google.com/maps?q=18.5158707,73.8780061",
+        "lat": 18.5158707,
+        "lng": 73.8780061
+      }
+    ],
+    "phone": "+919665990977",
+    "menuUrl": "https://www.zomato.com/pune/the-great-indian-khau-gully-1-camp-area",
+    "dietType": "non-veg",
+    "tempClosed": true,
+    "imageUrl": "/images/restaurants/the-great-indian-khau-gully.jpg"
+  },
+  {
+    "name": "Surti 12 Handi",
+    "tagline": "",
+    "cuisines": [
+      "North Indian",
+      "Street Food"
+    ],
+    "branches": [
+      {
+        "area": "Kausar Bagh",
+        "mapsUrl": "https://www.google.com/maps/place/Surti+12+handi/@18.4715224,73.8933919,17z",
+        "lat": 18.4715224,
+        "lng": 73.8933919
+      }
+    ],
+    "phone": "+919767632313",
+    "menuUrl": "https://www.google.com/search?q=Surti+12+Handi+Pune+menu",
+    "dietType": "non-veg"
+  },
+  {
+    "name": "Vohuman Cafe",
+    "tagline": "",
+    "rating": 4.5,
+    "reviewCount": 433,
+    "cuisines": [
+      "Street Food",
+      "Bakery",
+      "Tea"
+    ],
+    "branches": [
+      {
+        "area": "Dhole Patil Road",
+        "mapsUrl": "https://www.google.com/maps?q=18.53259,73.87671",
+        "lat": 18.53259,
+        "lng": 73.87671
+      }
+    ],
+    "phone": "+919373323263",
+    "menuUrl": "https://www.zomato.com/pune/vohuman-cafe-dhole-patil-road",
+    "dietType": "veg-nonveg",
+    "imageUrl": "/images/restaurants/vohuman-cafe.jpg"
   }
 ]

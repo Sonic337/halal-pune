@@ -217,6 +217,18 @@ export default function RestaurantCard({
                 Pure Veg
               </span>
             )}
+            {restaurant.tempClosed && (
+              <span
+                className="text-xs font-semibold px-2 py-0.5 rounded-full shrink-0"
+                style={{
+                  backgroundColor: "color-mix(in srgb, #6b7280 12%, var(--color-surface))",
+                  color: "#374151",
+                  border: "1px solid color-mix(in srgb, #6b7280 30%, transparent)",
+                }}
+              >
+                ⏸ Temporarily Closed
+              </span>
+            )}
           </div>
           {restaurant.tagline && (
             <p
