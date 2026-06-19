@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Restaurant, Branch } from "@/types";
 
 const CUISINE_COLORS: Record<string, string> = {
@@ -182,6 +183,19 @@ export default function RestaurantCard({
         (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-card)";
       }}
     >
+      {/* ── Image ── */}
+      {restaurant.imageUrl && (
+        <div className="relative w-full h-44 -mx-5 -mt-5 mb-0 overflow-hidden rounded-t-2xl">
+          <Image
+            src={restaurant.imageUrl}
+            alt={restaurant.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 400px"
+          />
+        </div>
+      )}
+
       {/* ── Header row ── */}
       <div className="flex items-start justify-between gap-2">
         <div>

@@ -18,4 +18,5 @@ export interface Restaurant {
   fishNote?: string;
   menuUrl?: string;
   phone?: string;
+  imageUrl?: string;
 }
