@@ -67,7 +67,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.google.com/search?q=Kebabbest+Pune+menu",
-    "phone": "+919665595001"
+    "phone": "+919665595001",
+    "imageUrl": "/images/restaurants/kebabbest.jpg"
   },
   {
     "name": "Klinq",
@@ -624,7 +625,8 @@
     ],
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.google.com/search?q=Supreme+Pune+menu",
-    "phone": "+919158646566"
+    "phone": "+919158646566",
+    "imageUrl": "/images/restaurants/supreme.jpg"
   },
   {
     "name": "Masala Times",
@@ -1256,7 +1258,8 @@
     "rating": 4.5,
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/miya-kebabs-koregaon-park",
-    "phone": "+917758878975"
+    "phone": "+917758878975",
+    "imageUrl": "/images/restaurants/miya-kebabs.jpg"
   },
   {
     "name": "Bombay Seekh Parathas",
