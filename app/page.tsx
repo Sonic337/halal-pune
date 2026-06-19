@@ -52,6 +52,7 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [selectedCuisines, setSelectedCuisines] = useState<string[]>([]);
   const [selectedAreas, setSelectedAreas] = useState<string[]>([]);
+  const [fishFilter, setFishFilter] = useState<string[]>([]);
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [radiusKm, setRadiusKm] = useState(5);
   const [dietFilter, setDietFilter] = useState<"all" | "veg" | "non-veg">("all");
@@ -78,6 +79,16 @@ export default function Home() {
     if (dietFilter === "veg") results = results.filter((r) => r.dietType === "pure-veg");
     if (dietFilter === "non-veg") results = results.filter((r) => r.dietType !== "pure-veg");
 
+    if (fishFilter.length > 0) {
+      results = results.filter((r) => {
+        if (!r.fishNote) return false;
+        const confirmed = r.fishNote.includes("We've confirmed");
+        if (fishFilter.includes("confirmed") && confirmed) return true;
+        if (fishFilter.includes("unconfirmed") && !confirmed) return true;
+        return false;
+      });
+    }
+
     if (userLocation) {
       results = results.filter((r) => {
         const d = nearestDistance(r, userLocation);
@@ -91,7 +102,7 @@ export default function Home() {
     }
 
     return results;
-  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter]);
+  }, [search, selectedCuisines, selectedAreas, userLocation, radiusKm, dietFilter, fishFilter]);
 
   function toggleCuisine(c: string) {
     setSelectedCuisines((prev) =>
@@ -105,15 +116,22 @@ export default function Home() {
     );
   }
 
+  function toggleFish(val: string) {
+    setFishFilter((prev) =>
+      prev.includes(val) ? prev.filter((x) => x !== val) : [...prev, val]
+    );
+  }
+
   function clearAll() {
     setSearch("");
     setSelectedCuisines([]);
     setSelectedAreas([]);
     setDietFilter("all");
+    setFishFilter([]);
   }
 
   const hasFilters =
-    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all";
+    search || selectedCuisines.length > 0 || selectedAreas.length > 0 || dietFilter !== "all" || fishFilter.length > 0;
 
   return (
     <main
@@ -215,6 +233,19 @@ export default function Home() {
             onChange={toggleArea}
             onClear={() => setSelectedAreas([])}
             accentColor="emerald"
+          />
+
+          <FilterDropdown
+            label="🐟 Serves Fish"
+            options={["confirmed", "unconfirmed"]}
+            optionLabels={{
+              confirmed: "Chicken kept separate — call ahead for extra care",
+              unconfirmed: "Call before visiting to confirm separate prep",
+            }}
+            selected={fishFilter}
+            onChange={toggleFish}
+            onClear={() => setFishFilter([])}
+            accentColor="sky"
           />
 
           {hasFilters && (

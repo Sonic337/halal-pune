@@ -5,15 +5,17 @@ import { useState, useRef, useEffect } from "react";
 interface Props {
   label: string;
   options: string[];
+  optionLabels?: Record<string, string>;
   selected: string[];
   onChange: (value: string) => void;
   onClear: () => void;
-  accentColor: "orange" | "emerald";
+  accentColor: "orange" | "emerald" | "sky";
 }
 
 export default function FilterDropdown({
   label,
   options,
+  optionLabels,
   selected,
   onChange,
   onClear,
@@ -33,15 +35,17 @@ export default function FilterDropdown({
   }, []);
 
   const filtered = options.filter((o) =>
-    o.toLowerCase().includes(search.toLowerCase())
+    (optionLabels?.[o] ?? o).toLowerCase().includes(search.toLowerCase())
   );
 
   const accentVar =
-    accentColor === "orange" ? "var(--brand-orange)" : "var(--brand-emerald)";
+    accentColor === "orange" ? "var(--brand-orange)" :
+    accentColor === "sky" ? "#0ea5e9" :
+    "var(--brand-emerald)";
   const accentDarkVar =
-    accentColor === "orange"
-      ? "var(--brand-orange-dark)"
-      : "var(--brand-emerald-dark)";
+    accentColor === "orange" ? "var(--brand-orange-dark)" :
+    accentColor === "sky" ? "#0369a1" :
+    "var(--brand-emerald-dark)";
 
   return (
     <div className="relative" ref={ref}>
@@ -169,7 +173,7 @@ export default function FilterDropdown({
                         "transparent";
                     }}
                   >
-                    {option}
+                    {optionLabels?.[option] ?? option}
                     {isSelected && (
                       <svg
                         className="w-4 h-4 shrink-0"
