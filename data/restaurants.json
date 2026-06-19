@@ -1496,7 +1496,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/spice-kitchen-jw-marriott-pune-senapati-bapat-road",
     "phone": "+912066832345",
-    "imageUrl": "/images/restaurants/spice-kitchen-jw-marriott.jpg"
+    "imageUrl": "/images/restaurants/spice-kitchen-jw-marriott.jpg",
+    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate."
   },
   {
     "name": "Tao Fu - JW Marriott Pune",
@@ -1563,7 +1564,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/2bhk-diner-key-club-bund-garden",
     "phone": "+917745042999",
-    "imageUrl": "/images/restaurants/2bhk-diner-key-club.jpg"
+    "imageUrl": "/images/restaurants/2bhk-diner-key-club.jpg",
+    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate."
   },
   {
     "name": "Acai",
@@ -1607,7 +1609,7 @@
     ],
     "rating": 4.1,
     "dietType": "non-veg",
-    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
+    "fishNote": "Fish is served here but chicken is kept separate. We've confirmed this \u2014 calling ahead means they'll go the extra mile for you.",
     "menuUrl": "https://www.zomato.com/pune/millers-the-luxury-club-bund-garden",
     "phone": "+918282818158",
     "imageUrl": "/images/restaurants/millers-the-luxury-club.jpg"
@@ -1655,7 +1657,8 @@
     "dietType": "non-veg",
     "menuUrl": "https://www.zomato.com/pune/kukoo-sangamvadi",
     "phone": "+917861004444",
-    "imageUrl": "/images/restaurants/kukoo.jpg"
+    "imageUrl": "/images/restaurants/kukoo.jpg",
+    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate."
   },
   {
     "name": "The Game Palacio",
@@ -1678,7 +1681,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/the-game-palacio-bund-garden",
     "phone": "+918657747547",
-    "imageUrl": "/images/restaurants/the-game-palacio.jpg"
+    "imageUrl": "/images/restaurants/the-game-palacio.jpg",
+    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate."
   },
   {
     "name": "Shisha Jazz Cafe",
@@ -1701,7 +1705,7 @@
     ],
     "rating": 4.3,
     "dietType": "non-veg",
-    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
+    "fishNote": "Fish is served here but chicken is kept separate. We've confirmed this \u2014 calling ahead means they'll go the extra mile for you.",
     "menuUrl": "https://www.zomato.com/pune/shisha-jazz-cafe-dhole-patil-road",
     "phone": "+912065200390",
     "imageUrl": "/images/restaurants/shisha-jazz-cafe.jpg"
@@ -1727,7 +1731,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/latitude-blue-diamond-koregaon-park",
     "phone": "+912066025555",
-    "imageUrl": "/images/restaurants/latitude-blue-diamond.jpg"
+    "imageUrl": "/images/restaurants/latitude-blue-diamond.jpg",
+    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate."
   },
   {
     "name": "Chingari - Sheraton Grand Pune",
@@ -1748,7 +1753,7 @@
     ],
     "rating": 4.1,
     "dietType": "veg-nonveg",
-    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
+    "fishNote": "Fish is served here but chicken is kept separate. We've confirmed this \u2014 calling ahead means they'll go the extra mile for you.",
     "menuUrl": "https://www.zomato.com/pune/chingari-sheraton-grand-bund-garden",
     "phone": "+912066411111",
     "imageUrl": "/images/restaurants/chingari-sheraton.jpg"
@@ -1795,7 +1800,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/the-market-the-westin-pune-mundhwa",
     "phone": "+912067210000",
-    "imageUrl": "/images/restaurants/the-market-westin.jpg"
+    "imageUrl": "/images/restaurants/the-market-westin.jpg",
+    "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation \u2014 please call before visiting to check if chicken and fish are kept separate."
   },
   {
     "name": "Aafreen - The Westin Pune",
@@ -1920,7 +1926,7 @@
     ],
     "rating": 4.7,
     "dietType": "non-veg",
-    "fishNote": "Fish is served here but kept separate from chicken. Call ahead so the kitchen can take extra care for you.",
+    "fishNote": "Fish is served here but chicken is kept separate. We've confirmed this \u2014 calling ahead means they'll go the extra mile for you.",
     "menuUrl": "https://www.zomato.com/pune/alto-vino-jw-marriott-pune-senapati-bapat-road",
     "phone": "+912066833333",
     "imageUrl": "/images/restaurants/alto-vino-jw-marriott.jpg"

@@ -319,7 +319,9 @@ export default function RestaurantCard({
             border: "1px solid color-mix(in srgb, #f59e0b 35%, transparent)",
           }}
         >
-          🐟 Fish served — call ahead for separate prep
+          {restaurant.fishNote.includes("We've confirmed")
+            ? "🐟 Fish served — chicken kept separate, call ahead for extra care"
+            : "🐟 Fish served — call before visiting to confirm separate prep"}
         </div>
       )}
 
