@@ -1,147 +1,281 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, type ReactNode } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
-interface CollagImage {
-  src: string;
-  width: number;
-  height: number;
-  /** absolute-position styles for the wrapper (top/left/right/bottom/zIndex) */
-  wrapStyle: React.CSSProperties;
-  /** decoration styles for the <img> element (rotate, animationDelay, willChange) */
-  imgStyle: React.CSSProperties;
-  /** parallax depth multiplier: 0.02–0.08 */
-  depth: number;
-}
-
-const IMAGES: CollagImage[] = [
-  { src: "https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?w=400",
-    width: 180, height: 220, wrapStyle: { top: "-20px",  left:  "2%",  zIndex: 2 }, imgStyle: { rotate: "-8deg",  animationDelay: "0ms"   }, depth: 0.05 },
-  { src: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?w=400",
-    width: 140, height: 170, wrapStyle: { top:  "40px",  left: "12%",  zIndex: 4 }, imgStyle: { rotate:  "5deg",  animationDelay: "80ms"  }, depth: 0.03 },
-  { src: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400",
-    width: 220, height: 270, wrapStyle: { top: "-30px",  left: "22%",  zIndex: 1 }, imgStyle: { rotate: "-13deg", animationDelay: "160ms" }, depth: 0.07 },
-  { src: "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?w=400",
-    width: 160, height: 200, wrapStyle: { bottom: "-30px", left:  "8%", zIndex: 3 }, imgStyle: { rotate:  "7deg",  animationDelay: "240ms" }, depth: 0.04 },
-  { src: "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?w=400",
-    width: 130, height: 160, wrapStyle: { bottom: "-10px", left: "28%", zIndex: 5 }, imgStyle: { rotate: "-4deg",  animationDelay: "300ms" }, depth: 0.06 },
-  { src: "https://images.pexels.com/photos/2611917/pexels-photo-2611917.jpeg?w=400",
-    width: 200, height: 240, wrapStyle: { top:  "10px",  right: "22%", zIndex: 2 }, imgStyle: { rotate: "10deg",  animationDelay: "100ms" }, depth: 0.08 },
-  { src: "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?w=400",
-    width: 150, height: 150, wrapStyle: { bottom: "-20px", right: "30%", zIndex: 4 }, imgStyle: { rotate: "-9deg",  animationDelay: "200ms" }, depth: 0.02 },
-  { src: "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?w=400",
-    width: 180, height: 220, wrapStyle: { top: "-25px",  right: "12%", zIndex: 1 }, imgStyle: { rotate:  "6deg",  animationDelay: "350ms" }, depth: 0.06 },
-  { src: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?w=400",
-    width: 140, height: 180, wrapStyle: { top:  "50px",  right:  "3%", zIndex: 3 }, imgStyle: { rotate: "-12deg", animationDelay: "430ms" }, depth: 0.04 },
-  { src: "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?w=400",
-    width: 220, height: 260, wrapStyle: { bottom: "-40px", right:  "8%", zIndex: 5 }, imgStyle: { rotate:  "4deg",  animationDelay: "510ms" }, depth: 0.07 },
-  { src: "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?w=400",
-    width: 160, height: 190, wrapStyle: { bottom: "-15px", right: "20%", zIndex: 2 }, imgStyle: { rotate: "-6deg",  animationDelay: "590ms" }, depth: 0.03 },
-  { src: "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?w=400",
-    width: 130, height: 160, wrapStyle: { top:  "30px",  left: "35%",  zIndex: 0 }, imgStyle: { rotate: "14deg",  animationDelay: "670ms", willChange: "transform" }, depth: 0.05 },
-  { src: "https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?w=400",
-    width: 150, height: 190, wrapStyle: { bottom: "-25px", left: "42%", zIndex: 3 }, imgStyle: { rotate: "-11deg", animationDelay: "750ms", willChange: "transform" }, depth: 0.08 },
-  { src: "https://images.pexels.com/photos/2611917/pexels-photo-2611917.jpeg?w=400",
-    width: 180, height: 140, wrapStyle: { top: "-10px",  right: "35%", zIndex: 1 }, imgStyle: { rotate:  "3deg",  animationDelay: "800ms" }, depth: 0.02 },
-];
-
-const LERP = 0.10;
-const MAX_MOUSE = 30;
-const MAX_GYRO = 20;
+// ── Types ────────────────────────────────────────────────────────────────────
 
 type Vec2 = { x: number; y: number };
 
-export default function HeroCollage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const imgRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const rafRef = useRef<number | null>(null);
-  const cur = useRef<Vec2[]>(IMAGES.map(() => ({ x: 0, y: 0 })));
-  const tgt = useRef<Vec2[]>(IMAGES.map(() => ({ x: 0, y: 0 })));
-  const inViewport = useRef(false);
+interface DesktopImg {
+  src: string;
+  width: number;
+  height: number;
+  wrapStyle: React.CSSProperties;
+  imgStyle: React.CSSProperties;
+}
+
+interface StripImg {
+  src: string;
+  depth: number;
+}
+
+// ── Data ─────────────────────────────────────────────────────────────────────
+
+const DESKTOP: DesktopImg[] = [
+  { src: "https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?w=400",
+    width: 180, height: 220, wrapStyle: { top: "-20px", left: "2%", zIndex: 2 }, imgStyle: { rotate: "-8deg", animationDelay: "0ms" } },
+  { src: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?w=400",
+    width: 140, height: 170, wrapStyle: { top: "40px", left: "12%", zIndex: 4 }, imgStyle: { rotate: "5deg", animationDelay: "80ms" } },
+  { src: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400",
+    width: 220, height: 270, wrapStyle: { top: "-30px", left: "22%", zIndex: 1 }, imgStyle: { rotate: "-13deg", animationDelay: "160ms" } },
+  { src: "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?w=400",
+    width: 160, height: 200, wrapStyle: { bottom: "-30px", left: "8%", zIndex: 3 }, imgStyle: { rotate: "7deg", animationDelay: "240ms" } },
+  { src: "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?w=400",
+    width: 130, height: 160, wrapStyle: { bottom: "-10px", left: "28%", zIndex: 5 }, imgStyle: { rotate: "-4deg", animationDelay: "300ms" } },
+  { src: "https://images.pexels.com/photos/2611917/pexels-photo-2611917.jpeg?w=400",
+    width: 200, height: 240, wrapStyle: { top: "10px", right: "22%", zIndex: 2 }, imgStyle: { rotate: "10deg", animationDelay: "100ms" } },
+  { src: "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?w=400",
+    width: 150, height: 150, wrapStyle: { bottom: "-20px", right: "30%", zIndex: 4 }, imgStyle: { rotate: "-9deg", animationDelay: "200ms" } },
+  { src: "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?w=400",
+    width: 180, height: 220, wrapStyle: { top: "-25px", right: "12%", zIndex: 1 }, imgStyle: { rotate: "6deg", animationDelay: "350ms" } },
+  { src: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?w=400",
+    width: 140, height: 180, wrapStyle: { top: "50px", right: "3%", zIndex: 3 }, imgStyle: { rotate: "-12deg", animationDelay: "430ms" } },
+  { src: "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?w=400",
+    width: 220, height: 260, wrapStyle: { bottom: "-40px", right: "8%", zIndex: 5 }, imgStyle: { rotate: "4deg", animationDelay: "510ms" } },
+  { src: "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?w=400",
+    width: 160, height: 190, wrapStyle: { bottom: "-15px", right: "20%", zIndex: 2 }, imgStyle: { rotate: "-6deg", animationDelay: "590ms" } },
+  { src: "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?w=400",
+    width: 130, height: 160, wrapStyle: { top: "30px", left: "35%", zIndex: 0 }, imgStyle: { rotate: "14deg", animationDelay: "670ms", willChange: "transform" } },
+  { src: "https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?w=400",
+    width: 150, height: 190, wrapStyle: { bottom: "-25px", left: "42%", zIndex: 3 }, imgStyle: { rotate: "-11deg", animationDelay: "750ms", willChange: "transform" } },
+  { src: "https://images.pexels.com/photos/2611917/pexels-photo-2611917.jpeg?w=400",
+    width: 180, height: 140, wrapStyle: { top: "-10px", right: "35%", zIndex: 1 }, imgStyle: { rotate: "3deg", animationDelay: "800ms" } },
+];
+
+const STRIP_1: StripImg[] = [
+  { src: "https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?w=400", depth: 0.05 },
+  { src: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?w=400", depth: 0.03 },
+  { src: "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?w=400",   depth: 0.06 },
+  { src: "https://images.pexels.com/photos/2611917/pexels-photo-2611917.jpeg?w=400", depth: 0.04 },
+  { src: "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?w=400", depth: 0.07 },
+  { src: "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?w=400", depth: 0.04 },
+];
+
+const STRIP_2: StripImg[] = [
+  { src: "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?w=400", depth: 0.06 },
+  { src: "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?w=400",   depth: 0.04 },
+  { src: "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?w=400", depth: 0.05 },
+  { src: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?w=400", depth: 0.03 },
+  { src: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?w=400", depth: 0.07 },
+  { src: "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?w=400", depth: 0.05 },
+];
+
+// Combined for indexing allStripRefs: [STRIP_1..., STRIP_2...]
+const ALL_STRIP = [...STRIP_1, ...STRIP_2];
+
+// Alternating ±6deg base rotation for strip images
+const STRIP_ROTS = [-6, 6, -6, 6, -6, 6] as const;
+
+// ── Constants ─────────────────────────────────────────────────────────────────
+
+const REPEL_LERP   = 0.10;
+const MAX_REPEL    = 55;      // px at distance 0
+const REPEL_RADIUS = 200;     // px — falloff to 0 at this distance
+
+const GYRO_LERP      = 0.08;
+const GYRO_MAX_PX    = 18;   // max translation per axis
+const GYRO_TILT_CAP  = 30;   // degrees — clamp gamma/beta to this range
+const GYRO_DEPTH_MID = 0.05; // depth value that maps to GYRO_MAX_PX
+
+// ── Component ─────────────────────────────────────────────────────────────────
+
+export default function HeroCollage({ children }: { children: ReactNode }) {
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Desktop repel state
+  const desktopWrapRef = useRef<HTMLDivElement>(null);
+  const imgWrapRefs    = useRef<(HTMLDivElement | null)[]>([]);
+  const repelRafRef    = useRef<number | null>(null);
+  const repelCur       = useRef<Vec2[]>(DESKTOP.map(() => ({ x: 0, y: 0 })));
+  const repelTgt       = useRef<Vec2[]>(DESKTOP.map(() => ({ x: 0, y: 0 })));
+  const desktopInView  = useRef(false);
+
+  // Mobile gyro state
+  const allStripRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const gyroRafRef   = useRef<number | null>(null);
+  const gyroCur      = useRef<Vec2[]>(ALL_STRIP.map(() => ({ x: 0, y: 0 })));
+  const gyroTgt      = useRef<Vec2[]>(ALL_STRIP.map(() => ({ x: 0, y: 0 })));
+  const gyroInView   = useRef(false);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    // Attach pointer events to the <header> (parent) so the overlay div
-    // at z-6 doesn't swallow mousemove before it reaches the collage wrapper.
-    const heroEl: HTMLElement = container.parentElement ?? container;
+    const header = headerRef.current;
+    if (!header) return;
 
-    // ── helpers ────────────────────────────────────────────────────────────
+    // ── Shared helpers ───────────────────────────────────────────────────────
 
-    function clamp(v: number, max: number) {
+    function clamp(v: number, max: number): number {
       return Math.max(-max, Math.min(max, v));
     }
 
-    function applyTransforms() {
-      for (let i = 0; i < IMAGES.length; i++) {
-        const el = imgRefs.current[i];
-        if (el) el.style.transform = `translate(${cur.current[i].x.toFixed(2)}px, ${cur.current[i].y.toFixed(2)}px)`;
+    // ── Desktop: Repel rAF loop ──────────────────────────────────────────────
+
+    function applyRepel() {
+      for (let i = 0; i < DESKTOP.length; i++) {
+        const el = imgWrapRefs.current[i];
+        if (el) el.style.transform = `translate(${repelCur.current[i].x.toFixed(2)}px,${repelCur.current[i].y.toFixed(2)}px)`;
       }
     }
 
-    // ── rAF loop ───────────────────────────────────────────────────────────
-
-    function tick() {
+    function repelTick() {
       let dirty = false;
-      for (let i = 0; i < IMAGES.length; i++) {
-        const dx = tgt.current[i].x - cur.current[i].x;
-        const dy = tgt.current[i].y - cur.current[i].y;
+      for (let i = 0; i < DESKTOP.length; i++) {
+        const dx = repelTgt.current[i].x - repelCur.current[i].x;
+        const dy = repelTgt.current[i].y - repelCur.current[i].y;
         if (Math.abs(dx) > 0.01 || Math.abs(dy) > 0.01) {
-          cur.current[i].x += dx * LERP;
-          cur.current[i].y += dy * LERP;
+          repelCur.current[i].x += dx * REPEL_LERP;
+          repelCur.current[i].y += dy * REPEL_LERP;
           dirty = true;
         } else {
-          cur.current[i].x = tgt.current[i].x;
-          cur.current[i].y = tgt.current[i].y;
+          repelCur.current[i].x = repelTgt.current[i].x;
+          repelCur.current[i].y = repelTgt.current[i].y;
         }
       }
-      if (dirty) applyTransforms();
-      if (inViewport.current) rafRef.current = requestAnimationFrame(tick);
-    }
-
-    function startLoop() {
-      if (rafRef.current != null || !inViewport.current) return;
-      rafRef.current = requestAnimationFrame(tick);
-    }
-
-    function stopLoop() {
-      if (rafRef.current != null) {
-        cancelAnimationFrame(rafRef.current);
-        rafRef.current = null;
+      if (dirty) applyRepel();
+      if (desktopInView.current) {
+        repelRafRef.current = requestAnimationFrame(repelTick);
+      } else {
+        repelRafRef.current = null;
       }
     }
 
-    // ── mouse parallax ─────────────────────────────────────────────────────
+    function startRepelLoop() {
+      if (repelRafRef.current == null) {
+        repelRafRef.current = requestAnimationFrame(repelTick);
+      }
+    }
+
+    function stopRepelLoop() {
+      if (repelRafRef.current != null) {
+        cancelAnimationFrame(repelRafRef.current);
+        repelRafRef.current = null;
+      }
+    }
+
+    // ── Desktop: mousemove repel ─────────────────────────────────────────────
 
     function onMouseMove(e: MouseEvent) {
-      const rect = heroEl.getBoundingClientRect();
-      const dx = e.clientX - (rect.left + rect.width / 2);
-      const dy = e.clientY - (rect.top + rect.height / 2);
-      for (let i = 0; i < IMAGES.length; i++) {
-        tgt.current[i].x = clamp(dx * IMAGES[i].depth, MAX_MOUSE);
-        tgt.current[i].y = clamp(dy * IMAGES[i].depth, MAX_MOUSE);
+      let minDist = Infinity;
+      let closestIdx = -1;
+
+      // Find the single closest image to the cursor
+      for (let i = 0; i < DESKTOP.length; i++) {
+        const el = imgWrapRefs.current[i];
+        if (!el) continue;
+        const r = el.getBoundingClientRect();
+        const dist = Math.hypot(e.clientX - (r.left + r.width / 2), e.clientY - (r.top + r.height / 2));
+        if (dist < minDist) { minDist = dist; closestIdx = i; }
       }
+
+      // Reset all targets
+      for (let i = 0; i < DESKTOP.length; i++) {
+        repelTgt.current[i] = { x: 0, y: 0 };
+      }
+
+      // Apply repel only to closest
+      if (closestIdx >= 0) {
+        const el = imgWrapRefs.current[closestIdx]!;
+        const r  = el.getBoundingClientRect();
+        const cx = r.left + r.width / 2;
+        const cy = r.top  + r.height / 2;
+
+        // Direction vector: image center → away from cursor
+        const rawDx = cx - e.clientX;
+        const rawDy = cy - e.clientY;
+        const len   = Math.hypot(rawDx, rawDy) || 1;
+
+        // Inverse falloff: full strength at 0px, zero at REPEL_RADIUS
+        const strength = MAX_REPEL * Math.max(0, 1 - minDist / REPEL_RADIUS);
+
+        repelTgt.current[closestIdx] = {
+          x: (rawDx / len) * strength,
+          y: (rawDy / len) * strength,
+        };
+      }
+
+      startRepelLoop();
     }
 
     function onMouseLeave() {
-      for (let i = 0; i < IMAGES.length; i++) {
-        tgt.current[i] = { x: 0, y: 0 };
+      for (let i = 0; i < DESKTOP.length; i++) {
+        repelTgt.current[i] = { x: 0, y: 0 };
+      }
+      startRepelLoop(); // keep ticking until everything eases back to 0
+    }
+
+    // ── Mobile: Gyroscope rAF loop ───────────────────────────────────────────
+
+    function applyGyro() {
+      for (let i = 0; i < ALL_STRIP.length; i++) {
+        const el = allStripRefs.current[i];
+        if (el) el.style.transform = `translate(${gyroCur.current[i].x.toFixed(2)}px,${gyroCur.current[i].y.toFixed(2)}px)`;
       }
     }
 
-    // ── gyroscope parallax ─────────────────────────────────────────────────
+    function gyroTick() {
+      let dirty = false;
+      for (let i = 0; i < ALL_STRIP.length; i++) {
+        const dx = gyroTgt.current[i].x - gyroCur.current[i].x;
+        const dy = gyroTgt.current[i].y - gyroCur.current[i].y;
+        if (Math.abs(dx) > 0.01 || Math.abs(dy) > 0.01) {
+          gyroCur.current[i].x += dx * GYRO_LERP;
+          gyroCur.current[i].y += dy * GYRO_LERP;
+          dirty = true;
+        } else {
+          gyroCur.current[i].x = gyroTgt.current[i].x;
+          gyroCur.current[i].y = gyroTgt.current[i].y;
+        }
+      }
+      if (dirty) applyGyro();
+      if (gyroInView.current) {
+        gyroRafRef.current = requestAnimationFrame(gyroTick);
+      } else {
+        gyroRafRef.current = null;
+      }
+    }
 
-    let gyroAttached = false;
+    function startGyroLoop() {
+      if (gyroRafRef.current == null) {
+        gyroRafRef.current = requestAnimationFrame(gyroTick);
+      }
+    }
+
+    function stopGyroLoop() {
+      if (gyroRafRef.current != null) {
+        cancelAnimationFrame(gyroRafRef.current);
+        gyroRafRef.current = null;
+      }
+    }
 
     function onDeviceOrientation(e: DeviceOrientationEvent) {
-      const gamma = e.gamma ?? 0; // left-right tilt, -90..90
-      const beta  = e.beta  ?? 0; // front-back tilt, -180..180; ~45° neutral hold
-      for (let i = 0; i < IMAGES.length; i++) {
-        tgt.current[i].x = clamp(gamma * IMAGES[i].depth * 10, MAX_GYRO);
-        tgt.current[i].y = clamp((beta - 45) * IMAGES[i].depth * 10, MAX_GYRO);
+      const gamma = clamp(e.gamma ?? 0, GYRO_TILT_CAP); // left-right
+      const beta  = clamp((e.beta ?? 45) - 45, GYRO_TILT_CAP); // front-back, 45° neutral
+
+      for (let i = 0; i < ALL_STRIP.length; i++) {
+        const scale = (ALL_STRIP[i].depth / GYRO_DEPTH_MID) * GYRO_MAX_PX;
+        gyroTgt.current[i] = {
+          x: clamp((gamma / GYRO_TILT_CAP) * scale, GYRO_MAX_PX),
+          y: clamp((beta  / GYRO_TILT_CAP) * scale, GYRO_MAX_PX),
+        };
       }
+
+      startGyroLoop();
     }
+
+    // ── Wire up input methods ────────────────────────────────────────────────
+
+    let gyroAttached = false;
 
     function attachGyro() {
       window.addEventListener("deviceorientation", onDeviceOrientation);
@@ -151,50 +285,64 @@ export default function HeroCollage() {
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 
     if (isTouchDevice) {
-      const DOE = DeviceOrientationEvent as unknown as {
-        requestPermission?: () => Promise<string>;
-      };
+      const DOE = DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> };
       if (typeof DOE.requestPermission === "function") {
-        // iOS 13+: must gate behind a user gesture
         const onFirstTouch = () => {
           DOE.requestPermission!()
-            .then((result) => { if (result === "granted") attachGyro(); })
-            .catch(() => {/* silently ignore */});
+            .then((r) => { if (r === "granted") attachGyro(); })
+            .catch(() => {});
         };
-        heroEl.addEventListener("touchstart", onFirstTouch, { once: true });
+        header.addEventListener("touchstart", onFirstTouch, { once: true });
       } else if (typeof DeviceOrientationEvent !== "undefined") {
         attachGyro();
       }
     } else {
-      heroEl.addEventListener("mousemove", onMouseMove);
-      heroEl.addEventListener("mouseleave", onMouseLeave);
+      header.addEventListener("mousemove", onMouseMove);
+      header.addEventListener("mouseleave", onMouseLeave);
     }
 
-    // ── IntersectionObserver ───────────────────────────────────────────────
+    // ── IntersectionObservers ────────────────────────────────────────────────
 
-    const observer = new IntersectionObserver(
+    const desktopWrap = desktopWrapRef.current;
+
+    const repelObserver = new IntersectionObserver(
       ([entry]) => {
-        inViewport.current = entry.isIntersecting;
-        if (entry.isIntersecting) startLoop();
-        else stopLoop();
+        desktopInView.current = entry.isIntersecting;
+        if (!entry.isIntersecting) stopRepelLoop();
       },
       { threshold: 0.1 }
     );
-    observer.observe(heroEl);
+    if (desktopWrap) repelObserver.observe(desktopWrap);
 
-    // ── cleanup ────────────────────────────────────────────────────────────
+    const gyroObserver = new IntersectionObserver(
+      ([entry]) => {
+        gyroInView.current = entry.isIntersecting;
+        if (!entry.isIntersecting) stopGyroLoop();
+      },
+      { threshold: 0.1 }
+    );
+    gyroObserver.observe(header);
+
+    // ── Cleanup ──────────────────────────────────────────────────────────────
 
     return () => {
-      stopLoop();
-      observer.disconnect();
-      heroEl.removeEventListener("mousemove", onMouseMove);
-      heroEl.removeEventListener("mouseleave", onMouseLeave);
+      stopRepelLoop();
+      stopGyroLoop();
+      repelObserver.disconnect();
+      gyroObserver.disconnect();
+      header.removeEventListener("mousemove", onMouseMove);
+      header.removeEventListener("mouseleave", onMouseLeave);
       if (gyroAttached) window.removeEventListener("deviceorientation", onDeviceOrientation);
     };
   }, []);
 
+  // ── Render ───────────────────────────────────────────────────────────────────
+
   return (
-    <>
+    <header
+      ref={headerRef}
+      className="relative bg-gradient-to-r from-orange-500 to-emerald-600 text-white overflow-hidden"
+    >
       <style>{`
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(14px); }
@@ -207,19 +355,26 @@ export default function HeroCollage() {
           object-fit: cover;
           animation: fadeUp 0.7s ease both;
         }
+        .strip-img-el {
+          display: block;
+          border-radius: 12px;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.30);
+          object-fit: cover;
+          flex-shrink: 0;
+        }
+        .strip-scroll::-webkit-scrollbar { display: none; }
       `}</style>
 
-      {/* Wrapper sits over the full hero */}
+      {/* ── Desktop: absolute collage (hidden on mobile) ── */}
       <div
-        ref={containerRef}
-        className="absolute inset-0"
+        ref={desktopWrapRef}
+        className="hidden md:block absolute inset-0"
         aria-hidden="true"
       >
-        {IMAGES.map((img, i) => (
-          // Outer div: absolute position + parallax translate
+        {DESKTOP.map((img, i) => (
           <div
-            key={i}
-            ref={(el) => { imgRefs.current[i] = el; }}
+            key={`d-${i}`}
+            ref={(el) => { imgWrapRefs.current[i] = el; }}
             style={{ position: "absolute", ...img.wrapStyle }}
           >
             <Image
@@ -233,6 +388,60 @@ export default function HeroCollage() {
           </div>
         ))}
       </div>
-    </>
+
+      {/* Desktop overlay — pointer-events:none so mousemove reaches the header */}
+      <div
+        className="absolute inset-0 hidden md:block"
+        style={{
+          background: "linear-gradient(to right, rgba(0,0,0,0.42), rgba(0,0,0,0.38))",
+          zIndex: 6,
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* ── Mobile strip 1 (above text) ── */}
+      <div
+        className="md:hidden flex overflow-x-auto strip-scroll gap-[10px] px-4 pt-5 pb-2"
+        style={{ scrollbarWidth: "none" }}
+        aria-hidden="true"
+      >
+        {STRIP_1.map((img, i) => (
+          <div
+            key={`s1-${i}`}
+            ref={(el) => { allStripRefs.current[i] = el; }}
+            style={{ flexShrink: 0, rotate: `${STRIP_ROTS[i]}deg` }}
+          >
+            <Image src={img.src} alt="" width={120} height={120} className="strip-img-el" />
+          </div>
+        ))}
+      </div>
+
+      {/* ── Text content (passed from page.tsx) ── */}
+      <div className="relative px-4 py-8 md:py-12" style={{ zIndex: 10 }}>
+        {children}
+      </div>
+
+      {/* ── Mobile strip 2 (below text) ── */}
+      <div
+        className="md:hidden flex overflow-x-auto strip-scroll gap-[10px] px-4 pt-2 pb-5"
+        style={{ scrollbarWidth: "none" }}
+        aria-hidden="true"
+      >
+        {STRIP_2.map((img, i) => (
+          <div
+            key={`s2-${i}`}
+            ref={(el) => { allStripRefs.current[STRIP_1.length + i] = el; }}
+            style={{ flexShrink: 0, rotate: `${STRIP_ROTS[i]}deg` }}
+          >
+            <Image src={img.src} alt="" width={120} height={120} className="strip-img-el" />
+          </div>
+        ))}
+      </div>
+
+      {/* Theme toggle — top-right */}
+      <div className="absolute top-4 right-4" style={{ zIndex: 20 }}>
+        <ThemeToggle />
+      </div>
+    </header>
   );
 }

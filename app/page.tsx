@@ -7,7 +7,6 @@ import restaurantsData from "@/data/restaurants.json";
 import RestaurantCard from "@/components/RestaurantCard";
 import FilterDropdown from "@/components/FilterDropdown";
 import LocationButton from "@/components/LocationButton";
-import ThemeToggle from "@/components/ThemeToggle";
 import { Restaurant } from "@/types";
 import { haversineKm } from "@/lib/distance";
 
@@ -141,23 +140,8 @@ export default function Home() {
       className="min-h-screen"
     >
       {/* ── Hero ─────────────────────────────────────────── */}
-      <header className="relative bg-gradient-to-r from-orange-500 to-emerald-600 text-white py-12 px-4 overflow-hidden">
-
-        {/* Food image collage with parallax — desktop/tablet only */}
-        <HeroCollage />
-
-        {/* Dark overlay so text stays legible */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(to right, rgba(0,0,0,0.42), rgba(0,0,0,0.38))",
-            zIndex: 6,
-            pointerEvents: "none",
-          }}
-        />
-
-        {/* Text content */}
-        <div className="relative max-w-2xl mx-auto text-center" style={{ zIndex: 10 }}>
+      <HeroCollage>
+        <div className="max-w-2xl mx-auto text-center">
           <div className="flex justify-center mb-3">
             <Image
               src="/wurrynot-logo.jpg"
@@ -184,12 +168,7 @@ export default function Home() {
             </a>
           </p>
         </div>
-
-        {/* Theme toggle — top-right of hero */}
-        <div className="absolute top-4 right-4" style={{ zIndex: 10 }}>
-          <ThemeToggle />
-        </div>
-      </header>
+      </HeroCollage>
 
       {/* ── Content ──────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-4 py-8">
