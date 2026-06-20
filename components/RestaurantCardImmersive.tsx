@@ -14,10 +14,10 @@ export default function RestaurantCardImmersive({
   distanceKm?: number;
 }) {
   const branches = branchesProp ?? restaurant.branches;
-  const primaryArea = branches[0]?.area ?? "";
 
   const [hovered, setHovered] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [areasExpanded, setAreasExpanded] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const hasActions = !!(restaurant.menuUrl || restaurant.phone);
@@ -193,33 +193,71 @@ export default function RestaurantCardImmersive({
           {restaurant.cuisines.join(", ")}
         </p>
 
-        {/* Row 3: area + price */}
-        <div className="flex items-center gap-1 min-w-0">
-          <p
-            className="truncate"
-            style={{
-              fontSize: 12,
-              color: "var(--color-text-3)",
-              flex: 1,
-              minWidth: 0,
-            }}
-          >
-            📍 {primaryArea}
-            {distanceKm !== undefined && ` · ${distanceKm} km`}
-          </p>
-          {restaurant.priceRange !== undefined && (
-            <p
-              style={{
-                fontSize: 12,
-                color: "var(--color-text-3)",
-                flexShrink: 0,
-                whiteSpace: "nowrap",
-              }}
-            >
-              ₹{restaurant.priceRange.toLocaleString("en-IN")} for two
+        {/* Row 3: areas + price */}
+        {areasExpanded ? (
+          <>
+            <p style={{ fontSize: 12, color: "var(--color-text-3)", lineHeight: 1.5 }}>
+              📍 {branches.map((b) => b.area).join(", ")}{" "}
+              <button
+                onClick={() => setAreasExpanded(false)}
+                style={{
+                  fontSize: 12,
+                  color: "var(--color-text-3)",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                }}
+              >
+                show less
+              </button>
             </p>
-          )}
-        </div>
+            {restaurant.priceRange !== undefined && (
+              <p style={{ fontSize: 12, color: "var(--color-text-3)", whiteSpace: "nowrap" }}>
+                ₹{restaurant.priceRange.toLocaleString("en-IN")} for two
+              </p>
+            )}
+          </>
+        ) : (
+          <div className="flex items-center gap-1 min-w-0">
+            <p
+              className="truncate"
+              style={{ fontSize: 12, color: "var(--color-text-3)", flex: 1, minWidth: 0 }}
+            >
+              📍 {branches.slice(0, 2).map((b) => b.area).join(", ")}
+              {branches.length > 2 && (
+                <button
+                  onClick={() => setAreasExpanded(true)}
+                  style={{
+                    fontSize: 12,
+                    color: "var(--color-text-3)",
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                    background: "none",
+                    border: "none",
+                    padding: "0 0 0 4px",
+                  }}
+                >
+                  +{branches.length - 2} more
+                </button>
+              )}
+              {distanceKm !== undefined && ` · ${distanceKm} km`}
+            </p>
+            {restaurant.priceRange !== undefined && (
+              <p
+                style={{
+                  fontSize: 12,
+                  color: "var(--color-text-3)",
+                  flexShrink: 0,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                ₹{restaurant.priceRange.toLocaleString("en-IN")} for two
+              </p>
+            )}
+          </div>
+        )}
 
         {/* Row 4: hotelBrand (conditional) */}
         {restaurant.hotelBrand && (
