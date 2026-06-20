@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Restaurant, Branch } from "@/types";
 
@@ -13,32 +14,44 @@ export default function RestaurantCardImmersive({
   distanceKm?: number;
 }) {
   const branches = branchesProp ?? restaurant.branches;
-  const primaryBranch = branches[0];
-  const areas = branches.map((b) => b.area).join(", ");
+  const primaryArea = branches[0]?.area ?? "";
 
-  const namePrefix = restaurant.hotelBrand ? (
-    <span style={{ color: "var(--color-text-2)", fontWeight: 400 }}>
-      {restaurant.hotelBrand} · {" "}
-    </span>
-  ) : null;
+  const [hovered, setHovered] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const hasActions = !!(restaurant.menuUrl || restaurant.phone);
+
+  // Close mobile dropdown on outside tap
+  useEffect(() => {
+    if (!dropdownOpen) return;
+    function handleOutsideTap(e: TouchEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("touchstart", handleOutsideTap);
+    return () => document.removeEventListener("touchstart", handleOutsideTap);
+  }, [dropdownOpen]);
 
   return (
     <article
-      className="rounded-xl flex flex-col transition-shadow overflow-hidden"
+      className="flex flex-col"
       style={{
-        backgroundColor: "var(--color-surface)",
+        borderRadius: 12,
         border: "1px solid var(--color-border)",
-        boxShadow: "var(--shadow-card)",
+        backgroundColor: "var(--color-surface)",
+        boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
+        overflow: "hidden",
       }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-card-hover)";
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-card)";
-      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       {/* ── Image ── */}
-      <div className="relative w-full shrink-0 immersive-image">
+      <div
+        className="relative w-full shrink-0 immersive-image"
+        style={{ borderRadius: "12px 12px 0 0", overflow: "hidden" }}
+      >
         {restaurant.imageUrl ? (
           <Image
             src={restaurant.imageUrl}
@@ -46,15 +59,11 @@ export default function RestaurantCardImmersive({
             fill
             className="object-cover object-center"
             sizes="(max-width: 768px) 100vw, 400px"
-            style={{ borderRadius: "12px 12px 0 0" }}
           />
         ) : (
           <div
-            className="w-full h-full flex items-center justify-center text-4xl"
-            style={{
-              borderRadius: "12px 12px 0 0",
-              backgroundColor: "var(--color-surface-2)",
-            }}
+            className="w-full h-full flex items-center justify-center text-3xl"
+            style={{ backgroundColor: "var(--color-surface-2)" }}
           >
             🍽️
           </div>
@@ -64,85 +73,49 @@ export default function RestaurantCardImmersive({
         {restaurant.tempClosed && (
           <div
             className="absolute inset-0 flex items-center justify-center"
-            style={{
-              borderRadius: "12px 12px 0 0",
-              backgroundColor: "rgba(0,0,0,0.55)",
-            }}
+            style={{ backgroundColor: "rgba(0,0,0,0.52)" }}
           >
             <span
-              className="font-semibold text-white text-sm px-3 py-1.5 rounded-full"
-              style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+              style={{
+                color: "#fff",
+                fontSize: 12,
+                fontWeight: 600,
+                letterSpacing: "0.03em",
+              }}
             >
               Temporarily Closed
             </span>
           </div>
         )}
-      </div>
 
-      {/* ── Card body ── */}
-      <div className="flex flex-col gap-2 p-4">
-
-        {/* Line 1: name + rating */}
-        <div className="flex items-start justify-between gap-2">
-          <p
-            className="font-bold leading-tight text-[18px] md:text-[16px]"
-            style={{ color: "var(--color-text)" }}
+        {/* Desktop hover button overlay */}
+        {hasActions && (
+          <div
+            className="absolute inset-x-0 bottom-0 hidden md:flex items-end gap-2 px-3 pb-3 pt-8"
+            style={{
+              background: "linear-gradient(to top, rgba(0,0,0,0.62) 0%, transparent 100%)",
+              opacity: hovered ? 1 : 0,
+              transition: "opacity 200ms ease",
+              pointerEvents: hovered ? "auto" : "none",
+            }}
           >
-            {namePrefix}
-            {restaurant.name}
-          </p>
-          {restaurant.rating !== undefined && (
-            <span
-              className="shrink-0 text-xs font-bold px-2 py-0.5 rounded-full text-white"
-              style={{ backgroundColor: "#1a7a4a", whiteSpace: "nowrap" }}
-            >
-              {restaurant.rating.toFixed(1)}★
-            </span>
-          )}
-        </div>
-
-        {/* Line 2: cuisines */}
-        <p
-          className="truncate text-[14px] md:text-[13px]"
-          style={{ color: "var(--color-text-2)" }}
-        >
-          {restaurant.cuisines.join(", ")}
-        </p>
-
-        {/* Line 3: areas */}
-        <p
-          className="truncate text-[14px] md:text-[13px]"
-          style={{ color: "var(--color-text-3)" }}
-        >
-          📍 {areas}
-          {distanceKm !== undefined && ` · ${distanceKm} km`}
-        </p>
-
-        {/* Line 4: price */}
-        {restaurant.priceRange !== undefined ? (
-          <p
-            className="text-[14px] md:text-[13px]"
-            style={{ color: "var(--color-text-3)" }}
-          >
-            ₹{restaurant.priceRange.toLocaleString("en-IN")} for two
-          </p>
-        ) : (
-          <p className="text-[13px]" style={{ visibility: "hidden" }}>—</p>
-        )}
-
-        {/* Action buttons */}
-        {(restaurant.menuUrl || restaurant.phone) && (
-          <div className="flex flex-col md:flex-row gap-2 mt-1">
             {restaurant.menuUrl && (
               <a
                 href={restaurant.menuUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors md:w-auto w-full"
                 style={{
-                  backgroundColor: "color-mix(in srgb, var(--brand-emerald) 12%, var(--color-surface))",
-                  color: "var(--brand-emerald-dark)",
-                  border: "1px solid color-mix(in srgb, var(--brand-emerald) 30%, transparent)",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: "#fff",
+                  backgroundColor: "rgba(255,255,255,0.15)",
+                  backdropFilter: "blur(4px)",
+                  WebkitBackdropFilter: "blur(4px)",
+                  border: "1px solid rgba(255,255,255,0.25)",
+                  padding: "4px 10px",
+                  borderRadius: 20,
+                  textDecoration: "none",
+                  whiteSpace: "nowrap",
                 }}
               >
                 📋 View Menu
@@ -151,15 +124,170 @@ export default function RestaurantCardImmersive({
             {restaurant.phone && (
               <a
                 href={`tel:${restaurant.phone}`}
-                className="flex items-center justify-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors md:w-auto w-full"
                 style={{
-                  backgroundColor: "color-mix(in srgb, var(--brand-emerald) 12%, var(--color-surface))",
-                  color: "var(--brand-emerald-dark)",
-                  border: "1px solid color-mix(in srgb, var(--brand-emerald) 30%, transparent)",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: "#fff",
+                  backgroundColor: "rgba(255,255,255,0.15)",
+                  backdropFilter: "blur(4px)",
+                  WebkitBackdropFilter: "blur(4px)",
+                  border: "1px solid rgba(255,255,255,0.25)",
+                  padding: "4px 10px",
+                  borderRadius: 20,
+                  textDecoration: "none",
+                  whiteSpace: "nowrap",
                 }}
               >
                 📞 Call
               </a>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* ── Card body ── */}
+      <div
+        className="flex flex-col"
+        style={{ padding: 12, gap: 4 }}
+      >
+        {/* Row 1: name + rating */}
+        <div className="flex items-center gap-2 min-w-0">
+          <p
+            className="truncate"
+            style={{
+              fontSize: 15,
+              fontWeight: 700,
+              color: "var(--color-text)",
+              flex: 1,
+              minWidth: 0,
+            }}
+          >
+            {restaurant.name}
+          </p>
+          {restaurant.rating !== undefined && (
+            <span
+              style={{
+                flexShrink: 0,
+                fontSize: 11,
+                fontWeight: 700,
+                color: "#fff",
+                backgroundColor: "#1a7a4a",
+                padding: "2px 7px",
+                borderRadius: 20,
+                whiteSpace: "nowrap",
+              }}
+            >
+              {restaurant.rating.toFixed(1)}★
+            </span>
+          )}
+        </div>
+
+        {/* Row 2: cuisines */}
+        <p
+          className="truncate"
+          style={{
+            fontSize: 12,
+            color: "var(--color-text-2)",
+          }}
+        >
+          {restaurant.cuisines.join(", ")}
+        </p>
+
+        {/* Row 3: area + price */}
+        <div className="flex items-center gap-1 min-w-0">
+          <p
+            className="truncate"
+            style={{
+              fontSize: 12,
+              color: "var(--color-text-3)",
+              flex: 1,
+              minWidth: 0,
+            }}
+          >
+            📍 {primaryArea}
+            {distanceKm !== undefined && ` · ${distanceKm} km`}
+          </p>
+          {restaurant.priceRange !== undefined && (
+            <p
+              style={{
+                fontSize: 12,
+                color: "var(--color-text-3)",
+                flexShrink: 0,
+                whiteSpace: "nowrap",
+              }}
+            >
+              ₹{restaurant.priceRange.toLocaleString("en-IN")} for two
+            </p>
+          )}
+        </div>
+
+        {/* Row 4: hotelBrand (conditional) */}
+        {restaurant.hotelBrand && (
+          <p
+            style={{
+              fontSize: 11,
+              color: "var(--color-text-3)",
+              fontStyle: "italic",
+            }}
+          >
+            Part of {restaurant.hotelBrand}
+          </p>
+        )}
+
+        {/* Mobile options pill + inline dropdown */}
+        {hasActions && (
+          <div ref={dropdownRef} className="md:hidden" style={{ marginTop: 4 }}>
+            <button
+              onClick={() => setDropdownOpen((v) => !v)}
+              style={{
+                fontSize: 12,
+                fontWeight: 500,
+                color: "var(--color-text-2)",
+                backgroundColor: "var(--color-surface-2)",
+                border: "1px solid var(--color-border)",
+                padding: "3px 10px",
+                borderRadius: 20,
+                cursor: "pointer",
+              }}
+            >
+              {dropdownOpen ? "✕ Close" : "••• Options"}
+            </button>
+
+            {dropdownOpen && (
+              <div
+                className="flex flex-col"
+                style={{ marginTop: 6, gap: 2 }}
+              >
+                {restaurant.menuUrl && (
+                  <a
+                    href={restaurant.menuUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      fontSize: 14,
+                      color: "var(--color-text)",
+                      padding: "8px 4px",
+                      textDecoration: "none",
+                      borderBottom: "1px solid var(--color-border)",
+                    }}
+                  >
+                    📋 View Menu
+                  </a>
+                )}
+                {restaurant.phone && (
+                  <a
+                    href={`tel:${restaurant.phone}`}
+                    style={{
+                      fontSize: 14,
+                      color: "var(--color-text)",
+                      padding: "8px 4px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    📞 Call
+                  </a>
+                )}
+              </div>
             )}
           </div>
         )}
