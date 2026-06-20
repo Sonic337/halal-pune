@@ -63,7 +63,7 @@ export default function HomeClient() {
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [radiusKm, setRadiusKm] = useState(5);
   const [dietFilter, setDietFilter] = useState<"all" | "veg" | "non-veg">("all");
-  const [viewMode, setViewMode] = useState<ViewMode>("compact");
+  const [viewMode, setViewMode] = useState<ViewMode>("immersive");
 
   useEffect(() => {
     const saved = localStorage.getItem("wurrynot-view-mode");
@@ -209,7 +209,7 @@ export default function HomeClient() {
               boxShadow: "var(--shadow-card)",
             }}
           >
-            {viewMode === "compact" ? "✦ Immersive View" : "✦ Compact View"}
+            {viewMode === "immersive" ? "Old UI" : "Immersive View"}
           </button>
         </div>
 
