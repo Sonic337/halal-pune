@@ -193,70 +193,81 @@ export default function RestaurantCardImmersive({
           {restaurant.cuisines.join(", ")}
         </p>
 
-        {/* Row 3: areas + price */}
-        {areasExpanded ? (
-          <>
-            <p style={{ fontSize: 12, color: "var(--color-text-3)", lineHeight: 1.5 }}>
-              📍 {branches.map((b) => b.area).join(", ")}{" "}
-              <button
-                onClick={() => setAreasExpanded(false)}
-                style={{
-                  fontSize: 12,
-                  color: "var(--color-text-3)",
-                  textDecoration: "underline",
-                  cursor: "pointer",
-                  background: "none",
-                  border: "none",
-                  padding: 0,
-                }}
-              >
-                show less
-              </button>
-            </p>
-            {restaurant.priceRange !== undefined && (
-              <p style={{ fontSize: 12, color: "var(--color-text-3)", whiteSpace: "nowrap" }}>
-                ₹{restaurant.priceRange.toLocaleString("en-IN")} for two
-              </p>
-            )}
-          </>
-        ) : (
-          <div className="flex items-center gap-1 min-w-0">
-            <p
-              className="truncate"
-              style={{ fontSize: 12, color: "var(--color-text-3)", flex: 1, minWidth: 0 }}
-            >
-              📍 {branches.slice(0, 2).map((b) => b.area).join(", ")}
-              {branches.length > 2 && (
-                <button
-                  onClick={() => setAreasExpanded(true)}
+        {/* Row 3: branch list */}
+        <div className="flex flex-col" style={{ gap: 2 }}>
+          {(areasExpanded ? branches : branches.slice(0, 2)).map((b) => (
+            <div key={b.area} style={{ fontSize: 12, color: "var(--color-text-3)" }}>
+              {b.mapsUrl ? (
+                <a
+                  href={b.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
-                    fontSize: 12,
                     color: "var(--color-text-3)",
-                    textDecoration: "underline",
+                    textDecoration: "none",
                     cursor: "pointer",
-                    background: "none",
-                    border: "none",
-                    padding: "0 0 0 4px",
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
+                  onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
                 >
-                  +{branches.length - 2} more
-                </button>
+                  📍 {b.area}
+                  {b.rating !== undefined && (
+                    <span style={{ marginLeft: 4 }}>★ {b.rating.toFixed(1)}</span>
+                  )}
+                </a>
+              ) : (
+                <span>
+                  📍 {b.area}
+                  {b.rating !== undefined && (
+                    <span style={{ marginLeft: 4 }}>★ {b.rating.toFixed(1)}</span>
+                  )}
+                </span>
               )}
-              {distanceKm !== undefined && ` · ${distanceKm} km`}
-            </p>
-            {restaurant.priceRange !== undefined && (
-              <p
-                style={{
-                  fontSize: 12,
-                  color: "var(--color-text-3)",
-                  flexShrink: 0,
-                  whiteSpace: "nowrap",
-                }}
-              >
-                ₹{restaurant.priceRange.toLocaleString("en-IN")} for two
-              </p>
-            )}
-          </div>
+            </div>
+          ))}
+
+          {!areasExpanded && branches.length > 2 && (
+            <button
+              onClick={() => setAreasExpanded(true)}
+              style={{
+                fontSize: 12,
+                color: "var(--color-text-3)",
+                textDecoration: "underline",
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                padding: 0,
+                textAlign: "left",
+              }}
+            >
+              +{branches.length - 2} more
+            </button>
+          )}
+
+          {areasExpanded && (
+            <button
+              onClick={() => setAreasExpanded(false)}
+              style={{
+                fontSize: 12,
+                color: "var(--color-text-3)",
+                textDecoration: "underline",
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                padding: 0,
+                textAlign: "left",
+              }}
+            >
+              show less
+            </button>
+          )}
+        </div>
+
+        {/* Price row */}
+        {restaurant.priceRange !== undefined && (
+          <p style={{ fontSize: 12, color: "var(--color-text-3)" }}>
+            ₹{restaurant.priceRange.toLocaleString("en-IN")} for two
+          </p>
         )}
 
         {/* Row 4: hotelBrand (conditional) */}
