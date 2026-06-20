@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
   try {
     await resend.emails.send({
       from: "Wurrynot Suggestions <onboarding@resend.dev>",
-      to: "sonicthesaga1@gmail.com",
+      to: "contactwurrynot@gmail.com",
       subject: "New Restaurant Suggestion — Wurrynot",
       html: `
         <h2>New Restaurant Suggestion</h2>

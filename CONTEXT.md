@@ -82,3 +82,55 @@ tempClosed?, hotelBrand?, priceRange?
 ## Commands to resume local dev
 npm run dev → localhost:3000
 git push origin main → triggers Vercel auto-deploy
+
+---
+
+## Security — completed June 20 2026
+
+- Security headers added to next.config.ts (X-Frame-Options, 
+  X-Content-Type-Options, Referrer-Policy, Permissions-Policy)
+- Cloudflare active on wurrynot.com (free plan)
+  - SSL/TLS: Full (strict)
+  - Bot Fight Mode: on
+  - Block AI Bots: on
+  - Caching: Standard, 4hr browser TTL
+- Cloudflare Turnstile added to /forms page
+  - Site key: 0x4AAAAAADoNTRuX1QAq2Yjr
+  - Secret key stored in Vercel env as TURNSTILE_SECRET_KEY
+  - Verifies token in /api/suggest-restaurant before writing to sheet
+- TURNSTILE_SECRET_KEY added to Vercel environment variables 
+  (Production + Preview + Development)
+- Rate limiting on /api/suggest-restaurant — NOT YET DONE
+
+## SEO — completed June 20 2026
+
+- metadata export added to app/layout.tsx (title, description, 
+  openGraph, twitter, canonical)
+- Page-level metadata added to app/page.tsx and app/forms/page.tsx
+- app/sitemap.ts created — live at wurrynot.com/sitemap.xml
+- app/robots.ts created
+- JsonLd component created with Restaurant schema, rendered in 
+  app/page.tsx
+- Google Search Console: domain verified, sitemap submitted, 
+  status Success, 2 pages discovered
+- Vercel Analytics: not yet added
+- Google Analytics: not yet added
+
+## Resend API
+
+- RESEND_API_KEY added to Vercel environment variables
+- Current status: broken/not working — needs debugging
+- Unknown if Resend was added before or after the revert to 
+  ac1d53e on June 20 — check if integration exists in codebase
+
+## Open tasks — updated June 20 2026
+
+1. Fix Resend API integration
+2. Rate limiting on /api/suggest-restaurant
+3. Card layout fix — previous attempt reverted (commit f8db2e5)
+   Last good state: ac1d53e
+4. Cost for Two filter — sort behavior not yet added
+5. Google Places API for restaurant images — billing blocker
+6. Vercel Analytics + Google Analytics setup
+7. OG image — placeholder in public/og-image.png, needs 
+   proper 1200x630 branded version
