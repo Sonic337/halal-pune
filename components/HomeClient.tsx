@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import HeroCollage from "@/components/HeroCollage";
 import restaurantsData from "@/data/restaurants.json";
 import RestaurantCard from "@/components/RestaurantCard";
+import RestaurantCardImmersive from "@/components/RestaurantCardImmersive";
 import FilterDropdown from "@/components/FilterDropdown";
 import FilterPanel, { PanelFilters, DEFAULT_PANEL_FILTERS, countActiveFilters } from "@/components/FilterPanel";
 import LocationButton from "@/components/LocationButton";
@@ -50,6 +51,8 @@ function sortedBranches(restaurant: Restaurant, loc: UserLocation) {
   });
 }
 
+type ViewMode = "compact" | "immersive";
+
 export default function HomeClient() {
   const [search, setSearch] = useState("");
   const [selectedCuisines, setSelectedCuisines] = useState<string[]>([]);
@@ -60,6 +63,20 @@ export default function HomeClient() {
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [radiusKm, setRadiusKm] = useState(5);
   const [dietFilter, setDietFilter] = useState<"all" | "veg" | "non-veg">("all");
+  const [viewMode, setViewMode] = useState<ViewMode>("compact");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("wurrynot-view-mode");
+    if (saved === "compact" || saved === "immersive") setViewMode(saved);
+  }, []);
+
+  function toggleViewMode() {
+    setViewMode((prev) => {
+      const next: ViewMode = prev === "compact" ? "immersive" : "compact";
+      localStorage.setItem("wurrynot-view-mode", next);
+      return next;
+    });
+  }
 
   function handleLocation(coords: UserLocation | null, radius: number) {
     setUserLocation(coords);
@@ -179,6 +196,23 @@ export default function HomeClient() {
 
       {/* ── Content ──────────────────────────────────────── */}
       <div className="max-w-6xl mx-auto px-4 py-8">
+        {/* View toggle */}
+        <div className="flex justify-end mb-3 sm:mb-4">
+          <button
+            onClick={toggleViewMode}
+            className="w-full sm:w-auto px-4 py-1.5 rounded-full font-medium transition-colors"
+            style={{
+              fontSize: 13,
+              backgroundColor: "var(--color-surface)",
+              color: "var(--color-text-2)",
+              border: "1px solid var(--color-border)",
+              boxShadow: "var(--shadow-card)",
+            }}
+          >
+            {viewMode === "compact" ? "✦ Immersive View" : "✦ Compact View"}
+          </button>
+        </div>
+
         {/* Search + Filter row */}
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           {/* Search input */}
@@ -384,20 +418,37 @@ export default function HomeClient() {
 
         {/* Grid */}
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((r) => (
-              <RestaurantCard
-                key={r.name}
-                restaurant={r}
-                branches={
-                  userLocation ? sortedBranches(r, userLocation) : undefined
-                }
-                distanceKm={
-                  userLocation ? nearestDistance(r, userLocation) : undefined
-                }
-              />
-            ))}
-          </div>
+          viewMode === "compact" ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filtered.map((r) => (
+                <RestaurantCard
+                  key={r.name}
+                  restaurant={r}
+                  branches={
+                    userLocation ? sortedBranches(r, userLocation) : undefined
+                  }
+                  distanceKm={
+                    userLocation ? nearestDistance(r, userLocation) : undefined
+                  }
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {filtered.map((r) => (
+                <RestaurantCardImmersive
+                  key={r.name}
+                  restaurant={r}
+                  branches={
+                    userLocation ? sortedBranches(r, userLocation) : undefined
+                  }
+                  distanceKm={
+                    userLocation ? nearestDistance(r, userLocation) : undefined
+                  }
+                />
+              ))}
+            </div>
+          )
         ) : (
           <div
             className="text-center py-20"

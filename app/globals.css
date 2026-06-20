@@ -147,3 +147,7 @@ input.themed-input::placeholder {
 ::-webkit-scrollbar-track { background: var(--color-surface-2); }
 ::-webkit-scrollbar-thumb { background: var(--color-border-2); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-text-3); }
+
+/* Immersive card image: 4/3 on mobile, 16/9 on md+ */
+.immersive-image { aspect-ratio: 4/3; }
+@media (min-width: 768px) { .immersive-image { aspect-ratio: 16/9; } }
