@@ -11,12 +11,15 @@ export default function FormsClient() {
     e.preventDefault();
     if (!restaurants.trim()) return;
 
+    const turnstileToken =
+      (document.querySelector('input[name="cf-turnstile-response"]') as HTMLInputElement | null)?.value ?? "";
+
     setStatus("loading");
     try {
       const res = await fetch("/api/suggest-restaurant", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ restaurants }),
+        body: JSON.stringify({ restaurants, turnstileToken }),
       });
 
       if (res.ok) {
@@ -89,6 +92,8 @@ export default function FormsClient() {
                 }}
               />
             </div>
+
+            <div className="cf-turnstile" data-sitekey="0x4AAAAAADoNTRuX1QAq2Yjr"></div>
 
             <button
               type="submit"
