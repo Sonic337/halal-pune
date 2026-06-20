@@ -1,7 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+// In-memory rate limiting — resets on cold starts, acceptable at current scale
+const rateLimitMap = new Map<string, { count: number; firstRequest: number }>();
+
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+
 export async function POST(req: NextRequest) {
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+    req.headers.get("x-real-ip") ??
+    "unknown";
+
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (entry) {
+    if (now - entry.firstRequest < RATE_LIMIT_WINDOW_MS) {
+      if (entry.count >= RATE_LIMIT_MAX) {
+        return NextResponse.json(
+          { error: "Too many requests. Please try again later." },
+          { status: 429 }
+        );
+      }
+      entry.count += 1;
+    } else {
+      rateLimitMap.set(ip, { count: 1, firstRequest: now });
+    }
+  } else {
+    rateLimitMap.set(ip, { count: 1, firstRequest: now });
+  }
+
   const { restaurants, turnstileToken } = await req.json();
 
   if (!restaurants || !restaurants.trim()) {
