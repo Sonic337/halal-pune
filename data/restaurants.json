@@ -500,6 +500,7 @@
     "priceRange": 300,
     "phone": "+918265057647",
     "menuUrl": "https://www.zomato.com/pune/pasteur-ice-cream-parlour-mg-road/menu",
+    "imageUrl": "/images/restaurants/pasteur.jpg",
     "branches": [
       {
         "area": "MG Road",
@@ -628,6 +629,7 @@
     "priceRange": 300,
     "phone": "+912026130774",
     "menuUrl": "https://www.zomato.com/pune/marz-o-rin-mg-road/menu",
+    "imageUrl": "/images/restaurants/marzorin.jpg",
     "branches": [
       {
         "area": "MG Road",
