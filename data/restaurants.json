@@ -493,6 +493,21 @@
     "priceRange": 600
   },
   {
+    "name": "Pasteur Ice Cream Parlour",
+    "rating": 4.1,
+    "reviewCount": 383,
+    "cuisines": ["Ice Cream", "Desserts", "Fast Food"],
+    "priceRange": 300,
+    "phone": "+918265057647",
+    "menuUrl": "https://www.zomato.com/pune/pasteur-ice-cream-parlour-mg-road/menu",
+    "branches": [
+      {
+        "area": "MG Road",
+        "mapsUrl": "https://maps.app.goo.gl/TRRfRXwHUdwsztke9"
+      }
+    ]
+  },
+  {
     "name": "Grand Delhi Darbar",
     "tagline": "",
     "rating": 4.2,
@@ -604,6 +619,21 @@
     "phone": "+919158646566",
     "imageUrl": "/images/restaurants/supreme.jpg",
     "priceRange": 1600
+  },
+  {
+    "name": "Marz-O-Rin",
+    "rating": 3.9,
+    "reviewCount": 3608,
+    "cuisines": ["Sandwich", "Rolls", "Burger", "Fast Food", "Bakery", "Desserts", "Shake", "Beverages"],
+    "priceRange": 300,
+    "phone": "+912026130774",
+    "menuUrl": "https://www.zomato.com/pune/marz-o-rin-mg-road/menu",
+    "branches": [
+      {
+        "area": "MG Road",
+        "mapsUrl": "https://maps.app.goo.gl/bqWgU1P5TJVEQNeTA"
+      }
+    ]
   },
   {
     "name": "Masala Times",
