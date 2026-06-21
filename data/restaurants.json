@@ -1902,6 +1902,20 @@
     "priceRange": 3000
   },
   {
+    "name": "Kapila Kathi Kebab",
+    "tagline": "Rolls",
+    "cuisines": ["Rolls", "Kathi Roll"],
+    "priceRange": 300,
+    "phone": "+917038204449",
+    "menuUrl": "https://www.zomato.com/pune/kapila-kathi-kebab-dhole-patil-road/menu",
+    "branches": [
+      {
+        "area": "Dhole Patil Road",
+        "mapsUrl": "https://maps.app.goo.gl/7eSJXGt7ueiNRHuVA"
+      }
+    ]
+  },
+  {
     "name": "Pune Sugar Box - Conrad Pune",
     "tagline": "",
     "cuisines": [
