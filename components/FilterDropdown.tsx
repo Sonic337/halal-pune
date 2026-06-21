@@ -34,9 +34,16 @@ export default function FilterDropdown({
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  const isMultiSelect = options.length > 1;
+
   const filtered = options.filter((o) =>
     (optionLabels?.[o] ?? o).toLowerCase().includes(search.toLowerCase())
   );
+
+  const selectionSummary =
+    selected.length === 0 ? null :
+    selected.length === 1 ? (optionLabels?.[selected[0]] ?? selected[0]) :
+    `${selected.length} selected`;
 
   const accentVar =
     accentColor === "orange" ? "var(--brand-orange)" :
@@ -99,6 +106,31 @@ export default function FilterDropdown({
             boxShadow: "var(--shadow-popup)",
           }}
         >
+          {/* Close row */}
+          <div
+            className="flex items-center justify-between px-3 py-2"
+            style={{ borderBottom: "1px solid var(--color-border)" }}
+          >
+            <span style={{ fontSize: 12, color: "var(--color-text-3)" }}>
+              {selectionSummary ?? ""}
+            </span>
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close filter"
+              style={{
+                fontSize: 16,
+                color: "var(--color-text-3)",
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                padding: "0 0 0 8px",
+                lineHeight: 1,
+              }}
+            >
+              ↓
+            </button>
+          </div>
+
           {/* Search within dropdown */}
           <div
             className="p-2"
@@ -156,7 +188,7 @@ export default function FilterDropdown({
               return (
                 <li key={option}>
                   <button
-                    onClick={() => { onChange(option); setOpen(false); }}
+                    onClick={() => { onChange(option); if (!isMultiSelect) setOpen(false); }}
                     className="w-full text-left px-4 py-2.5 text-sm flex items-center justify-between transition-colors"
                     style={{
                       color: isSelected
