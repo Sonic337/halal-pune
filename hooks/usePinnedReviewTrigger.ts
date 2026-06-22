@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const SCROLL_STOP_MS = 2500;
+const AUTO_DISMISS_MS = 10000;
 
 export function usePinnedReviewTrigger(
   cardRefs: React.RefObject<Map<string, HTMLElement>>,
@@ -10,9 +11,25 @@ export function usePinnedReviewTrigger(
 ): { activeSlug: string | null; dismiss: () => void } {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const scrollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dismissTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isScrollingRef = useRef(false);
 
+  function clearDismissTimer() {
+    if (dismissTimerRef.current) {
+      clearTimeout(dismissTimerRef.current);
+      dismissTimerRef.current = null;
+    }
+  }
+
+  function startDismissTimer() {
+    clearDismissTimer();
+    dismissTimerRef.current = setTimeout(() => {
+      setActiveSlug(null);
+    }, AUTO_DISMISS_MS);
+  }
+
   function dismiss() {
+    clearDismissTimer();
     setActiveSlug(null);
   }
 
@@ -55,6 +72,7 @@ export function usePinnedReviewTrigger(
     function onScrollStart() {
       if (!isScrollingRef.current) {
         isScrollingRef.current = true;
+        clearDismissTimer();
         setActiveSlug(null);
       }
       if (scrollTimerRef.current) clearTimeout(scrollTimerRef.current);
@@ -62,6 +80,7 @@ export function usePinnedReviewTrigger(
         isScrollingRef.current = false;
         const slug = getMostCenteredSlug();
         setActiveSlug(slug);
+        if (slug) startDismissTimer();
       }, SCROLL_STOP_MS);
     }
 
@@ -69,6 +88,7 @@ export function usePinnedReviewTrigger(
     return () => {
       window.removeEventListener("scroll", onScrollStart);
       if (scrollTimerRef.current) clearTimeout(scrollTimerRef.current);
+      clearDismissTimer();
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slugsWithPinned]);
