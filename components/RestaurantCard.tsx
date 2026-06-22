@@ -184,7 +184,17 @@ export default function RestaurantCard({
   const slug = slugify(restaurant.name);
 
   return (
-    <Link href={`/restaurants/${slug}`} className="block">
+    <Link
+      href={`/restaurants/${slug}`}
+      className="block"
+      onMouseEnter={() => {
+        console.log("[Card] mouse enter:", slug);
+        onHoverStart?.();
+      }}
+      onMouseLeave={() => {
+        onHoverEnd?.();
+      }}
+    >
     <article
       className="rounded-2xl flex flex-col transition-shadow overflow-hidden"
       style={{
@@ -195,11 +205,9 @@ export default function RestaurantCard({
       }}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-card-hover)";
-        onHoverStart?.();
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-card)";
-        onHoverEnd?.();
       }}
     >
       {/* ── Image ── */}

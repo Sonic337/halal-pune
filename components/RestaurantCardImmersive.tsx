@@ -49,7 +49,19 @@ export default function RestaurantCardImmersive({
   }, [dropdownOpen]);
 
   return (
-    <Link href={`/restaurants/${slug}`} className="block">
+    <Link
+      href={`/restaurants/${slug}`}
+      className="block"
+      onMouseEnter={() => {
+        console.log("[Card] mouse enter:", slug);
+        setHovered(true);
+        onHoverStart?.();
+      }}
+      onMouseLeave={() => {
+        setHovered(false);
+        onHoverEnd?.();
+      }}
+    >
     <article
       className="flex flex-col"
       style={{
@@ -61,8 +73,6 @@ export default function RestaurantCardImmersive({
         cursor: "pointer",
         position: "relative",
       }}
-      onMouseEnter={() => { setHovered(true); onHoverStart?.(); }}
-      onMouseLeave={() => { setHovered(false); onHoverEnd?.(); }}
     >
       {/* ── Image ── */}
       <div
