@@ -22,4 +22,5 @@ export interface Restaurant {
   tempClosed?: boolean;
   hotelBrand?: string;
   priceRange?: number;
+  googlePlaceId?: string;
 }

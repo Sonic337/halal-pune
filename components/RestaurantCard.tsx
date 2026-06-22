@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Restaurant, Branch } from "@/types";
+import { slugify } from "@/lib/slug";
 
 const CUISINE_COLORS: Record<string, string> = {
   // light: bg-X-100 text-X-800  |  dark: bg-X-900/60 text-X-200
@@ -169,7 +171,7 @@ export default function RestaurantCard({
 
   return (
     <article
-      className="rounded-2xl flex flex-col transition-shadow overflow-hidden"
+      className="rounded-2xl flex flex-col transition-shadow overflow-hidden relative"
       style={{
         backgroundColor: "var(--color-surface)",
         border: "1px solid var(--color-border)",
@@ -183,9 +185,16 @@ export default function RestaurantCard({
         (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-card)";
       }}
     >
+      {/* Stretched link — covers whole card; interactive elements sit above via z-index */}
+      <Link
+        href={`/restaurants/${slugify(restaurant.name)}`}
+        aria-label={`View ${restaurant.name}`}
+        className="absolute inset-0"
+        style={{ zIndex: 0 }}
+      />
       {/* ── Image ── */}
       {restaurant.imageUrl && (
-        <div className="relative w-full h-44 shrink-0">
+        <div className="relative w-full h-44 shrink-0" style={{ zIndex: 1 }}>
           <Image
             src={restaurant.imageUrl}
             alt={restaurant.name}
@@ -212,7 +221,7 @@ export default function RestaurantCard({
           )}
         </div>
       )}
-      <div className="flex flex-col gap-3 p-5">
+      <div className="flex flex-col gap-3 p-5" style={{ position: "relative", zIndex: 1 }}>
 
       {/* ── Header row ── */}
       <div className="flex items-start justify-between gap-2">

@@ -2,7 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Restaurant, Branch } from "@/types";
+import { slugify } from "@/lib/slug";
 
 export default function RestaurantCardImmersive({
   restaurant,
@@ -43,14 +45,21 @@ export default function RestaurantCardImmersive({
         backgroundColor: "var(--color-surface)",
         boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
         overflow: "hidden",
+        position: "relative",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
+      {/* Stretched link — interactive elements sit above via z-index */}
+      <Link
+        href={`/restaurants/${slugify(restaurant.name)}`}
+        aria-label={`View ${restaurant.name}`}
+        style={{ position: "absolute", inset: 0, zIndex: 0 }}
+      />
       {/* ── Image ── */}
       <div
         className="relative w-full shrink-0 immersive-image"
-        style={{ borderRadius: "12px 12px 0 0", overflow: "hidden" }}
+        style={{ borderRadius: "12px 12px 0 0", overflow: "hidden", zIndex: 1 }}
       >
         {restaurant.imageUrl ? (
           <Image
@@ -148,7 +157,7 @@ export default function RestaurantCardImmersive({
       {/* ── Card body ── */}
       <div
         className="flex flex-col"
-        style={{ padding: 12, gap: 4 }}
+        style={{ padding: 12, gap: 4, position: "relative", zIndex: 1 }}
       >
         {/* Row 1: name + rating */}
         <div className="flex items-center gap-2 min-w-0">
