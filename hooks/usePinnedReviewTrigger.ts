@@ -17,6 +17,11 @@ export function usePinnedReviewTrigger(
   const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dismissTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hoveredSlugRef = useRef<string | null>(null);
+  const slugsRef = useRef<Set<string>>(slugsWithPinned);
+
+  useEffect(() => {
+    slugsRef.current = slugsWithPinned;
+  }, [slugsWithPinned]);
 
   function clearHoverTimer() {
     if (hoverTimerRef.current) {
@@ -43,7 +48,7 @@ export function usePinnedReviewTrigger(
     // Hovering a new card clears any running dismiss timer
     clearDismissTimer();
 
-    if (!slugsWithPinned.has(slug)) {
+    if (!slugsRef.current.has(slug)) {
       // This card has no pinned review — clear any pending hover timer
       clearHoverTimer();
       hoveredSlugRef.current = null;
@@ -59,7 +64,7 @@ export function usePinnedReviewTrigger(
     console.log(`[PinnedReview] hovering "${slug}" — has pinned review, starting ${HOVER_TRIGGER_MS}ms timer`);
 
     hoverTimerRef.current = setTimeout(() => {
-      if (hoveredSlugRef.current === slug) {
+      if (hoveredSlugRef.current === slug && slugsRef.current.has(slug)) {
         console.log(`[PinnedReview] showing bubble for "${slug}"`);
         setActiveSlug(slug);
       }
