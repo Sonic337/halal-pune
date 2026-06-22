@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Restaurant, Branch } from "@/types";
 import { slugify } from "@/lib/slug";
 import PinnedReviewBubble from "@/components/PinnedReviewBubble";
@@ -157,7 +157,6 @@ export default function RestaurantCard({
   onDismiss?: () => void;
   cardRef?: (el: HTMLElement | null) => void;
 }) {
-  const router = useRouter();
   const [expanded, setExpanded] = useState(false);
   const [cuisineExpanded, setCuisineExpanded] = useState(false);
   const [hoveredBranch, setHoveredBranch] = useState<Branch | null>(null);
@@ -180,7 +179,10 @@ export default function RestaurantCard({
     ? nearestBranch.area
     : null;
 
+  const slug = slugify(restaurant.name);
+
   return (
+    <Link href={`/restaurants/${slug}`} className="block">
     <article
       ref={cardRef}
       className="rounded-2xl flex flex-col transition-shadow overflow-hidden"
@@ -190,7 +192,6 @@ export default function RestaurantCard({
         boxShadow: "var(--shadow-card)",
         cursor: "pointer",
       }}
-      onClick={() => router.push(`/restaurants/${slugify(restaurant.name)}`)}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow =
           "var(--shadow-card-hover)";
@@ -474,5 +475,6 @@ export default function RestaurantCard({
       )}
       </div>
     </article>
+    </Link>
   );
 }

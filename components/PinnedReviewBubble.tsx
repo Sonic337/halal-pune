@@ -8,7 +8,8 @@ interface Props {
 }
 
 export default function PinnedReviewBubble({ rating, reviewText, visible, onDismiss }: Props) {
-  const truncated = reviewText.length > 80 ? reviewText.slice(0, 80) + "…" : reviewText;
+  const words = reviewText.split(' ');
+  const display = words.length > 6 ? words.slice(0, 6).join(' ') + '...' : reviewText;
 
   return (
     <div
@@ -50,13 +51,9 @@ export default function PinnedReviewBubble({ rating, reviewText, visible, onDism
           lineHeight: 1.4,
           color: "var(--color-text-2)",
           margin: 0,
-          display: "-webkit-box",
-          WebkitLineClamp: 3,
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
         }}
       >
-        {truncated}
+        {display}
       </p>
 
       {/* Speech bubble tail — triangle pointing down-left */}

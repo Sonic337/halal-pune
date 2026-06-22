@@ -41,6 +41,15 @@ export function usePinnedReviewTrigger(
   }
 
   useEffect(() => {
+    console.log("[PinnedReview] slugsWithPinned:", [...slugsWithPinned]);
+    console.log("[PinnedReview] cards being tracked:", cardRefs.current?.size ?? 0);
+  }, [slugsWithPinned, cardRefs]);
+
+  useEffect(() => {
+    console.log("[PinnedReview] activeSlug changed:", activeSlug);
+  }, [activeSlug]);
+
+  useEffect(() => {
     if (slugsWithPinned.size === 0) return;
 
     function onScrollStart() {

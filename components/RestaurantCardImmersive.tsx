@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Restaurant, Branch } from "@/types";
 import { slugify } from "@/lib/slug";
 import PinnedReviewBubble from "@/components/PinnedReviewBubble";
@@ -24,8 +24,8 @@ export default function RestaurantCardImmersive({
   onDismiss?: () => void;
   cardRef?: (el: HTMLElement | null) => void;
 }) {
-  const router = useRouter();
   const branches = branchesProp ?? restaurant.branches;
+  const slug = slugify(restaurant.name);
 
   const [hovered, setHovered] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -47,6 +47,7 @@ export default function RestaurantCardImmersive({
   }, [dropdownOpen]);
 
   return (
+    <Link href={`/restaurants/${slug}`} className="block">
     <article
       ref={cardRef}
       className="flex flex-col"
@@ -59,7 +60,6 @@ export default function RestaurantCardImmersive({
         cursor: "pointer",
         position: "relative",
       }}
-      onClick={() => router.push(`/restaurants/${slugify(restaurant.name)}`)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -371,5 +371,6 @@ export default function RestaurantCardImmersive({
         )}
       </div>
     </article>
+    </Link>
   );
 }
