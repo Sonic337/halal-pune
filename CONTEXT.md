@@ -24,7 +24,11 @@ Supabase (reviews storage), Resend (email), Cloudflare Turnstile (bot protection
 - Filters: Cuisine dropdown (multi-select), Area dropdown (multi-select),
   High-End dropdown, Veg/Non-Veg pills, Filters panel (rating + price range)
 - Location-based filtering (haversine distance)
-- Nav links above hero: "Contact Us" → /contact, "Suggest a Restaurant" → /forms
+- Sticky navbar (components/Navbar.tsx) rendered in layout.tsx — appears on every page
+  - Logo (32px circle) + "Wurrynot" wordmark on left, links to / (scrolls to top)
+  - "Contact Us" → /contact and "Suggest a Restaurant" → /forms on right
+  - position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px)
+- Hero big logo (240px circle) is now a Link → / (clickable, goes home)
 
 ### Restaurant cards
 - RestaurantCard (compact view): image, name, rating badge, cuisines,
@@ -68,18 +72,20 @@ Supabase (reviews storage), Resend (email), Cloudflare Turnstile (bot protection
 
 ### Admin panel (/admin) — not linked publicly
 - /admin — password login form, POSTs to /api/admin/login
-- /admin/reviews — cookie-gated server component; fetches all reviews via
-  secret key; passes to ReviewsTable client component for delete-without-reload
-- /api/admin/login — checks ADMIN_PASSWORD env var, sets httpOnly
-  admin_session cookie (8hr)
+- /admin/reviews — cookie-gated; accepts "authenticated" (admin) or "editor";
+  shows role pill badge; passes role prop to ReviewsTable
+- /api/admin/login — two-role system:
+  - ADMIN_PASSWORD → cookie "authenticated", role: "admin" (full access, can delete)
+  - EDITOR_PASSWORD → cookie "editor", role: "editor" (pin-only, no delete)
+  - Returns { success: true, role } in response body
 - /api/admin/logout — clears cookie, redirects to /admin
 - /api/admin/delete-review — cookie-gated DELETE via secret key
 
 ### Hero
 - HeroCollage with cursor repel (desktop) and gyro parallax (mobile)
-- Nav links (Contact Us, Suggest a Restaurant) sit above HeroCollage, outside it
-- Logo image, tagline "Eat without the worry. Pune's best, personally picked."
+- Logo image (240px circle, clickable → /), tagline "Eat without the worry. Pune's best, personally picked."
 - No email link inside hero (removed)
+- Old nav links row above hero was removed (replaced by sticky navbar)
 
 ## Data file
 data/restaurants.json — array of restaurant objects (80 restaurants as of June 2026).
@@ -110,7 +116,8 @@ tempClosed?, hotelBrand?, priceRange?, googlePlaceId?
   (NOT used for reviews — all review routes use inline secret key clients)
 - app/admin/page.tsx — admin login form
 - app/admin/reviews/page.tsx — cookie-gated admin reviews table
-- components/admin/ReviewsTable.tsx — delete UI client component
+- components/Navbar.tsx — sticky top navbar, rendered globally in layout.tsx
+- components/admin/ReviewsTable.tsx — accepts role: 'admin' | 'editor'; Delete column hidden for editor
 - app/api/admin/login/route.ts — sets admin_session cookie
 - app/api/admin/logout/route.ts — clears cookie
 - app/api/admin/delete-review/route.ts — cookie-gated review deletion
@@ -127,7 +134,8 @@ tempClosed?, hotelBrand?, priceRange?, googlePlaceId?
 - RESEND_API_KEY
 - TURNSTILE_SECRET_KEY
 - GOOGLE_PLACES_API_KEY (used only by scripts/populate-place-ids.mjs locally)
-- ADMIN_PASSWORD (used by /api/admin/login to gate the admin panel)
+- ADMIN_PASSWORD (full admin access — can delete reviews)
+- EDITOR_PASSWORD (editor access — pin only, no delete)
 
 ## Open tasks
 1. Domain — wurrynot.com DNS was configured (A record @ → 
@@ -143,7 +151,7 @@ tempClosed?, hotelBrand?, priceRange?, googlePlaceId?
    Supabase → Project Settings → API (not the anon/publishable key).
    Temporary debug logs in /api/reviews/route.ts and /api/reviews/get/route.ts
    will show the key prefix in Vercel logs — remove once confirmed working.
-4. ADMIN_PASSWORD — must be set in Vercel environment variables.
+4. ADMIN_PASSWORD and EDITOR_PASSWORD — must both be set in Vercel environment variables.
 5. OG image: placeholder in public/og-image.png, proper branded version not made.
 6. Custom sending domain in Resend not yet configured (sends from onboarding@resend.dev).
 
