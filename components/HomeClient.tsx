@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -13,6 +13,13 @@ import FilterPanel, { PanelFilters, DEFAULT_PANEL_FILTERS, countActiveFilters } 
 import LocationButton from "@/components/LocationButton";
 import { Restaurant } from "@/types";
 import { haversineKm } from "@/lib/distance";
+import { slugify } from "@/lib/slug";
+import { usePinnedReviewTrigger } from "@/hooks/usePinnedReviewTrigger";
+
+interface PinnedReview {
+  rating: number;
+  review_text: string;
+}
 
 const restaurants = restaurantsData as Restaurant[];
 
@@ -98,6 +105,25 @@ export default function HomeClient() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // ── Pinned reviews ────────────────────────────────────
+  const [pinnedReviews, setPinnedReviews] = useState<Map<string, PinnedReview>>(new Map());
+  const cardRefs = useRef<Map<string, HTMLElement>>(new Map());
+
+  useEffect(() => {
+    fetch("/api/reviews/pinned")
+      .then((r) => r.json())
+      .then((data: { restaurant_slug: string; rating: number; review_text: string }[]) => {
+        if (!Array.isArray(data)) return;
+        const map = new Map<string, PinnedReview>();
+        data.forEach((d) => map.set(d.restaurant_slug, { rating: d.rating, review_text: d.review_text }));
+        setPinnedReviews(map);
+      })
+      .catch(() => {});
+  }, []);
+
+  const slugsWithPinned = useMemo(() => new Set(pinnedReviews.keys()), [pinnedReviews]);
+  const { activeSlug, dismiss } = usePinnedReviewTrigger(cardRefs, slugsWithPinned);
 
   const updateUrl = useCallback((overrides: Record<string, string | null>) => {
     const params = new URLSearchParams(window.location.search);
@@ -469,33 +495,45 @@ export default function HomeClient() {
         {filtered.length > 0 ? (
           viewMode === "compact" ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filtered.map((r) => (
-                <RestaurantCard
-                  key={r.name}
-                  restaurant={r}
-                  branches={
-                    userLocation ? sortedBranches(r, userLocation) : undefined
-                  }
-                  distanceKm={
-                    userLocation ? nearestDistance(r, userLocation) : undefined
-                  }
-                />
-              ))}
+              {filtered.map((r) => {
+                const slug = slugify(r.name);
+                return (
+                  <RestaurantCard
+                    key={r.name}
+                    restaurant={r}
+                    branches={userLocation ? sortedBranches(r, userLocation) : undefined}
+                    distanceKm={userLocation ? nearestDistance(r, userLocation) : undefined}
+                    pinnedReview={pinnedReviews.get(slug)}
+                    isActive={activeSlug === slug}
+                    onDismiss={dismiss}
+                    cardRef={(el) => {
+                      if (el) cardRefs.current.set(slug, el);
+                      else cardRefs.current.delete(slug);
+                    }}
+                  />
+                );
+              })}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {filtered.map((r) => (
-                <RestaurantCardImmersive
-                  key={r.name}
-                  restaurant={r}
-                  branches={
-                    userLocation ? sortedBranches(r, userLocation) : undefined
-                  }
-                  distanceKm={
-                    userLocation ? nearestDistance(r, userLocation) : undefined
-                  }
-                />
-              ))}
+              {filtered.map((r) => {
+                const slug = slugify(r.name);
+                return (
+                  <RestaurantCardImmersive
+                    key={r.name}
+                    restaurant={r}
+                    branches={userLocation ? sortedBranches(r, userLocation) : undefined}
+                    distanceKm={userLocation ? nearestDistance(r, userLocation) : undefined}
+                    pinnedReview={pinnedReviews.get(slug)}
+                    isActive={activeSlug === slug}
+                    onDismiss={dismiss}
+                    cardRef={(el) => {
+                      if (el) cardRefs.current.set(slug, el);
+                      else cardRefs.current.delete(slug);
+                    }}
+                  />
+                );
+              })}
             </div>
           )
         ) : (

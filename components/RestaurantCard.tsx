@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Restaurant, Branch } from "@/types";
 import { slugify } from "@/lib/slug";
+import PinnedReviewBubble from "@/components/PinnedReviewBubble";
 
 const CUISINE_COLORS: Record<string, string> = {
   // light: bg-X-100 text-X-800  |  dark: bg-X-900/60 text-X-200
@@ -143,10 +144,18 @@ export default function RestaurantCard({
   restaurant,
   branches: branchesProp,
   distanceKm,
+  pinnedReview,
+  isActive,
+  onDismiss,
+  cardRef,
 }: {
   restaurant: Restaurant;
   branches?: Branch[];
   distanceKm?: number;
+  pinnedReview?: { rating: number; review_text: string };
+  isActive?: boolean;
+  onDismiss?: () => void;
+  cardRef?: (el: HTMLElement | null) => void;
 }) {
   const router = useRouter();
   const [expanded, setExpanded] = useState(false);
@@ -173,6 +182,7 @@ export default function RestaurantCard({
 
   return (
     <article
+      ref={cardRef}
       className="rounded-2xl flex flex-col transition-shadow overflow-hidden"
       style={{
         backgroundColor: "var(--color-surface)",
@@ -192,6 +202,14 @@ export default function RestaurantCard({
       {/* ── Image ── */}
       {restaurant.imageUrl && (
         <div className="relative w-full h-44 shrink-0">
+          {pinnedReview && (
+            <PinnedReviewBubble
+              rating={pinnedReview.rating}
+              reviewText={pinnedReview.review_text}
+              visible={!!isActive}
+              onDismiss={onDismiss ?? (() => {})}
+            />
+          )}
           <Image
             src={restaurant.imageUrl}
             alt={restaurant.name}

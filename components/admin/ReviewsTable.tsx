@@ -5,10 +5,12 @@ import { useState } from "react";
 interface Review {
   id: string;
   restaurant_name: string;
+  restaurant_slug: string;
   reviewer_name: string | null;
   rating: number;
   review_text: string;
   created_at: string;
+  is_pinned: boolean;
 }
 
 function formatDate(iso: string) {
@@ -26,18 +28,17 @@ function stars(n: number) {
 export default function ReviewsTable({ reviews: initial }: { reviews: Review[] }) {
   const [reviews, setReviews] = useState<Review[]>(initial);
   const [deleting, setDeleting] = useState<string | null>(null);
+  const [pinning, setPinning] = useState<string | null>(null);
 
   async function handleDelete(id: string) {
     if (!confirm("Delete this review?")) return;
     setDeleting(id);
-
     try {
       const res = await fetch("/api/admin/delete-review", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),
       });
-
       if (res.ok) {
         setReviews((prev) => prev.filter((r) => r.id !== id));
       } else {
@@ -48,6 +49,44 @@ export default function ReviewsTable({ reviews: initial }: { reviews: Review[] }
       alert("Network error");
     } finally {
       setDeleting(null);
+    }
+  }
+
+  async function handlePin(review: Review) {
+    setPinning(review.id);
+    const isCurrentlyPinned = review.is_pinned;
+    try {
+      const res = await fetch("/api/admin/pin-review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(
+          isCurrentlyPinned
+            ? { id: review.id, unpin: true }
+            : { id: review.id, restaurant_slug: review.restaurant_slug }
+        ),
+      });
+      if (res.ok) {
+        setReviews((prev) =>
+          prev.map((r) => {
+            if (isCurrentlyPinned) {
+              return r.id === review.id ? { ...r, is_pinned: false } : r;
+            } else {
+              // unpin all same restaurant, pin this one
+              if (r.restaurant_slug === review.restaurant_slug) {
+                return { ...r, is_pinned: r.id === review.id };
+              }
+              return r;
+            }
+          })
+        );
+      } else {
+        const data = await res.json();
+        alert(data.error ?? "Failed to update pin");
+      }
+    } catch {
+      alert("Network error");
+    } finally {
+      setPinning(null);
     }
   }
 
@@ -65,12 +104,19 @@ export default function ReviewsTable({ reviews: initial }: { reviews: Review[] }
             <th style={th}>Rating</th>
             <th style={th}>Review</th>
             <th style={th}>Date</th>
+            <th style={th}>Pin</th>
             <th style={th}></th>
           </tr>
         </thead>
         <tbody>
           {reviews.map((r) => (
-            <tr key={r.id} style={{ borderBottom: "1px solid #f3f4f6" }}>
+            <tr
+              key={r.id}
+              style={{
+                borderBottom: "1px solid #f3f4f6",
+                backgroundColor: r.is_pinned ? "#f0fdf4" : undefined,
+              }}
+            >
               <td style={td}>{r.restaurant_name || "—"}</td>
               <td style={td}>{r.reviewer_name || <span style={{ color: "#9ca3af" }}>Anonymous</span>}</td>
               <td style={{ ...td, color: "#d97706", whiteSpace: "nowrap" }}>{stars(r.rating)}</td>
@@ -80,6 +126,39 @@ export default function ReviewsTable({ reviews: initial }: { reviews: Review[] }
                 </span>
               </td>
               <td style={{ ...td, whiteSpace: "nowrap", color: "#6b7280" }}>{formatDate(r.created_at)}</td>
+              <td style={td}>
+                <button
+                  onClick={() => handlePin(r)}
+                  disabled={pinning === r.id}
+                  style={
+                    r.is_pinned
+                      ? {
+                          padding: "3px 10px",
+                          fontSize: 12,
+                          fontWeight: 600,
+                          color: "#fff",
+                          backgroundColor: pinning === r.id ? "#86efac" : "#16a34a",
+                          border: "none",
+                          borderRadius: 4,
+                          cursor: pinning === r.id ? "not-allowed" : "pointer",
+                          whiteSpace: "nowrap",
+                        }
+                      : {
+                          padding: "3px 10px",
+                          fontSize: 12,
+                          fontWeight: 600,
+                          color: "#16a34a",
+                          backgroundColor: "transparent",
+                          border: "1px solid #16a34a",
+                          borderRadius: 4,
+                          cursor: pinning === r.id ? "not-allowed" : "pointer",
+                          whiteSpace: "nowrap",
+                        }
+                  }
+                >
+                  {pinning === r.id ? "…" : r.is_pinned ? "Pinned ★" : "Pin"}
+                </button>
+              </td>
               <td style={td}>
                 <button
                   onClick={() => handleDelete(r.id)}

@@ -5,15 +5,24 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Restaurant, Branch } from "@/types";
 import { slugify } from "@/lib/slug";
+import PinnedReviewBubble from "@/components/PinnedReviewBubble";
 
 export default function RestaurantCardImmersive({
   restaurant,
   branches: branchesProp,
   distanceKm,
+  pinnedReview,
+  isActive,
+  onDismiss,
+  cardRef,
 }: {
   restaurant: Restaurant;
   branches?: Branch[];
   distanceKm?: number;
+  pinnedReview?: { rating: number; review_text: string };
+  isActive?: boolean;
+  onDismiss?: () => void;
+  cardRef?: (el: HTMLElement | null) => void;
 }) {
   const router = useRouter();
   const branches = branchesProp ?? restaurant.branches;
@@ -39,6 +48,7 @@ export default function RestaurantCardImmersive({
 
   return (
     <article
+      ref={cardRef}
       className="flex flex-col"
       style={{
         borderRadius: 12,
@@ -47,6 +57,7 @@ export default function RestaurantCardImmersive({
         boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
         overflow: "hidden",
         cursor: "pointer",
+        position: "relative",
       }}
       onClick={() => router.push(`/restaurants/${slugify(restaurant.name)}`)}
       onMouseEnter={() => setHovered(true)}
@@ -55,8 +66,16 @@ export default function RestaurantCardImmersive({
       {/* ── Image ── */}
       <div
         className="relative w-full shrink-0 immersive-image"
-        style={{ borderRadius: "12px 12px 0 0", overflow: "hidden" }}
+        style={{ borderRadius: "12px 12px 0 0", overflow: "visible" }}
       >
+        {pinnedReview && (
+          <PinnedReviewBubble
+            rating={pinnedReview.rating}
+            reviewText={pinnedReview.review_text}
+            visible={!!isActive}
+            onDismiss={onDismiss ?? (() => {})}
+          />
+        )}
         {restaurant.imageUrl ? (
           <Image
             src={restaurant.imageUrl}
