@@ -28,12 +28,14 @@ Supabase (reviews storage), Resend (email), Cloudflare Turnstile (bot protection
 
 ### Restaurant cards
 - RestaurantCard (compact view): image, name, rating badge, cuisines,
-  area badges, priceRange, stretched link to sub-page
+  area badges, priceRange
 - RestaurantCardImmersive (immersive view): full-bleed image, desktop
   hover buttons (View Menu, Call), mobile ••• Options dropdown,
-  branch list (clickable to Google Maps), expanded branches toggle,
-  stretched link to sub-page
-- Both cards navigate to /restaurants/[slug] on click
+  branch list (clickable to Google Maps), expanded branches toggle
+- Both cards navigate to /restaurants/[slug] via onClick on article +
+  router.push (NOT a stretched Link — that pattern was broken and removed)
+- Interactive children (branch links, menu/call links, expand buttons)
+  call e.stopPropagation() so they work independently
 
 ### Restaurant sub-pages (/restaurants/[slug])
 - Statically generated via generateStaticParams
@@ -46,18 +48,32 @@ Supabase (reviews storage), Resend (email), Cloudflare Turnstile (bot protection
 
 ### Reviews system
 - ReviewsSection (client component):
-  - Fetches reviews from Supabase 'reviews' table filtered by restaurant_slug
+  - Fetches reviews from /api/reviews/get?slug= (NOT direct Supabase call —
+    anon key was blocked by RLS; moved to server-side API route)
   - Star selector (1–5), name (optional), email (optional), review_text (required, min 10 chars)
+  - Submits to POST /api/reviews (server-side, secret key)
   - On success: "Thanks for your review!" + "Copy & Open Google Reviews →" button if googlePlaceId exists
   - Copy button: copies review text to clipboard + opens Google review URL for the place
-- POST /api/reviews: server-side insert using SUPABASE_SECRET_KEY (not anon key)
+- GET /api/reviews/get — public read endpoint using SUPABASE_SECRET_KEY server-side
+- POST /api/reviews — insert endpoint using SUPABASE_SECRET_KEY server-side
   - Validates: restaurant_slug required, rating 1–5, review_text min 10 chars
+  - Has temporary key-prefix debug log (can be removed once confirmed working)
+- IMPORTANT: lib/supabase.ts (anon key) is NOT used for reviews at all
 
 ### Other pages
 - /forms — restaurant suggestion form with Turnstile, Resend email, IP rate limiting
 - /contact — simple page with mailto link to contactwurrynot@gmail.com
 - /sitemap.xml — includes all static pages + all restaurant sub-pages
 - /robots.txt
+
+### Admin panel (/admin) — not linked publicly
+- /admin — password login form, POSTs to /api/admin/login
+- /admin/reviews — cookie-gated server component; fetches all reviews via
+  secret key; passes to ReviewsTable client component for delete-without-reload
+- /api/admin/login — checks ADMIN_PASSWORD env var, sets httpOnly
+  admin_session cookie (8hr)
+- /api/admin/logout — clears cookie, redirects to /admin
+- /api/admin/delete-review — cookie-gated DELETE via secret key
 
 ### Hero
 - HeroCollage with cursor repel (desktop) and gyro parallax (mobile)
@@ -66,7 +82,7 @@ Supabase (reviews storage), Resend (email), Cloudflare Turnstile (bot protection
 - No email link inside hero (removed)
 
 ## Data file
-data/restaurants.json — array of restaurant objects (~79 restaurants).
+data/restaurants.json — array of restaurant objects (80 restaurants as of June 2026).
 Fields: name, tagline, rating, reviewCount, cuisines,
 branches (area/mapsUrl/lat/lng/rating/reviewCount),
 dietType?, fishNote?, menuUrl?, phone?, imageUrl?,
@@ -85,11 +101,19 @@ tempClosed?, hotelBrand?, priceRange?, googlePlaceId?
 - components/RestaurantTabs.tsx — tabs: Overview + Reviews
 - components/ReviewsSection.tsx — review fetch/submit UI
 - components/BackButton.tsx — back navigation
-- app/api/reviews/route.ts — POST endpoint for submitting reviews
+- app/api/reviews/route.ts — POST endpoint for submitting reviews (secret key, lazy init)
+- app/api/reviews/get/route.ts — GET endpoint for reading reviews (secret key, lazy init)
 - app/api/suggest-restaurant/route.ts — POST endpoint for /forms, Turnstile + rate limit
 - app/contact/page.tsx — contact page
 - app/forms/page.tsx — server wrapper with Turnstile script + metadata
-- lib/supabase.ts — lazy Supabase client (avoids build-time crash without env vars)
+- lib/supabase.ts — lazy anon-key Supabase client; only used for future public reads
+  (NOT used for reviews — all review routes use inline secret key clients)
+- app/admin/page.tsx — admin login form
+- app/admin/reviews/page.tsx — cookie-gated admin reviews table
+- components/admin/ReviewsTable.tsx — delete UI client component
+- app/api/admin/login/route.ts — sets admin_session cookie
+- app/api/admin/logout/route.ts — clears cookie
+- app/api/admin/delete-review/route.ts — cookie-gated review deletion
 - lib/slug.ts — slugify() and getRestaurantBySlug()
 - lib/distance.ts — haversineKm()
 - types/index.ts — Restaurant + Branch interfaces (includes googlePlaceId?)
@@ -103,17 +127,25 @@ tempClosed?, hotelBrand?, priceRange?, googlePlaceId?
 - RESEND_API_KEY
 - TURNSTILE_SECRET_KEY
 - GOOGLE_PLACES_API_KEY (used only by scripts/populate-place-ids.mjs locally)
+- ADMIN_PASSWORD (used by /api/admin/login to gate the admin panel)
 
 ## Open tasks
 1. Domain — wurrynot.com DNS was configured (A record @ → 
    216.198.79.1, CNAME www → cname.vercel-dns.com).
    Verify Vercel dashboard shows green "Valid Configuration".
 2. Supabase 'reviews' table — must exist with columns:
-   id (uuid), restaurant_slug (text), rating (int), name (text),
-   review_text (text), email (text), created_at (timestamptz).
-   Row-level security: anon can SELECT, service role can INSERT.
-3. OG image: placeholder in public/og-image.png, proper branded version not made.
-4. Custom sending domain in Resend not yet configured (sends from onboarding@resend.dev).
+   id (uuid), restaurant_slug (text), restaurant_name (text), rating (int),
+   reviewer_name (text nullable), reviewer_email (text nullable),
+   review_text (text), created_at (timestamptz default now()).
+   RLS: all routes use service role key (bypasses RLS), so RLS policies
+   are not strictly required, but table must exist.
+3. SUPABASE_SECRET_KEY in Vercel — must be the SERVICE ROLE key from
+   Supabase → Project Settings → API (not the anon/publishable key).
+   Temporary debug logs in /api/reviews/route.ts and /api/reviews/get/route.ts
+   will show the key prefix in Vercel logs — remove once confirmed working.
+4. ADMIN_PASSWORD — must be set in Vercel environment variables.
+5. OG image: placeholder in public/og-image.png, proper branded version not made.
+6. Custom sending domain in Resend not yet configured (sends from onboarding@resend.dev).
 
 ## Commands to resume local dev
 npm run dev → localhost:3000
