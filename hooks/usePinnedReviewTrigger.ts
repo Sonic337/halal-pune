@@ -16,8 +16,16 @@ export function usePinnedReviewTrigger(
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dismissTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hoveredSlugRef = useRef<string | null>(null);
   const slugsRef = useRef<Set<string>>(slugsWithPinned);
+
+  function clearLeaveTimer() {
+    if (leaveTimerRef.current) {
+      clearTimeout(leaveTimerRef.current);
+      leaveTimerRef.current = null;
+    }
+  }
 
   useEffect(() => {
     slugsRef.current = slugsWithPinned;
@@ -45,7 +53,8 @@ export function usePinnedReviewTrigger(
   }
 
   function onCardHover(slug: string) {
-    // Hovering a new card clears any running dismiss timer
+    // Cancel any pending leave debounce and dismiss timer
+    clearLeaveTimer();
     clearDismissTimer();
 
     if (!slugsRef.current.has(slug)) {
@@ -72,13 +81,17 @@ export function usePinnedReviewTrigger(
   }
 
   function onCardLeave() {
-    clearHoverTimer();
-    hoveredSlugRef.current = null;
-    // If a bubble is currently visible, start the auto-dismiss countdown
-    startDismissTimer();
+    clearLeaveTimer();
+    leaveTimerRef.current = setTimeout(() => {
+      clearHoverTimer();
+      hoveredSlugRef.current = null;
+      // If a bubble is currently visible, start the auto-dismiss countdown
+      startDismissTimer();
+    }, 100);
   }
 
   function dismiss() {
+    clearLeaveTimer();
     clearHoverTimer();
     clearDismissTimer();
     setActiveSlug(null);
@@ -95,6 +108,7 @@ export function usePinnedReviewTrigger(
   // Cleanup on unmount
   useEffect(() => {
     return () => {
+      clearLeaveTimer();
       clearHoverTimer();
       clearDismissTimer();
     };

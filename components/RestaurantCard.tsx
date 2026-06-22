@@ -191,8 +191,11 @@ export default function RestaurantCard({
         console.log("[Card] mouse enter:", slug);
         onHoverStart?.();
       }}
-      onMouseLeave={() => {
-        onHoverEnd?.();
+      onMouseLeave={(e) => {
+        const related = e.relatedTarget as Node | null;
+        if (!e.currentTarget.contains(related)) {
+          onHoverEnd?.();
+        }
       }}
     >
     <article

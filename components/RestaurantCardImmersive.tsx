@@ -57,9 +57,12 @@ export default function RestaurantCardImmersive({
         setHovered(true);
         onHoverStart?.();
       }}
-      onMouseLeave={() => {
-        setHovered(false);
-        onHoverEnd?.();
+      onMouseLeave={(e) => {
+        const related = e.relatedTarget as Node | null;
+        if (!e.currentTarget.contains(related)) {
+          setHovered(false);
+          onHoverEnd?.();
+        }
       }}
     >
     <article
