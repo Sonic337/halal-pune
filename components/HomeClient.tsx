@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -108,22 +108,25 @@ export default function HomeClient() {
 
   // ── Pinned reviews ────────────────────────────────────
   const [pinnedReviews, setPinnedReviews] = useState<Map<string, PinnedReview>>(new Map());
-  const cardRefs = useRef<Map<string, HTMLElement>>(new Map());
 
   useEffect(() => {
     fetch("/api/reviews/pinned")
       .then((r) => r.json())
       .then((data: { restaurant_slug: string; rating: number; review_text: string }[]) => {
-        if (!Array.isArray(data)) return;
+        if (!Array.isArray(data)) {
+          console.log("[PinnedReview] /api/reviews/pinned returned non-array:", data);
+          return;
+        }
+        console.log("[PinnedReview] /api/reviews/pinned returned", data.length, "rows:", data.map(d => d.restaurant_slug));
         const map = new Map<string, PinnedReview>();
         data.forEach((d) => map.set(d.restaurant_slug, { rating: d.rating, review_text: d.review_text }));
         setPinnedReviews(map);
       })
-      .catch(() => {});
+      .catch((err) => console.log("[PinnedReview] fetch error:", err));
   }, []);
 
   const slugsWithPinned = useMemo(() => new Set(pinnedReviews.keys()), [pinnedReviews]);
-  const { activeSlug, dismiss } = usePinnedReviewTrigger(cardRefs, slugsWithPinned);
+  const { activeSlug, dismiss, onCardHover, onCardLeave } = usePinnedReviewTrigger(slugsWithPinned);
 
   const updateUrl = useCallback((overrides: Record<string, string | null>) => {
     const params = new URLSearchParams(window.location.search);
@@ -498,10 +501,8 @@ export default function HomeClient() {
                     pinnedReview={pinnedReviews.get(slug)}
                     isActive={activeSlug === slug}
                     onDismiss={dismiss}
-                    cardRef={(el) => {
-                      if (el) cardRefs.current.set(slug, el);
-                      else cardRefs.current.delete(slug);
-                    }}
+                    onHoverStart={() => onCardHover(slug)}
+                    onHoverEnd={onCardLeave}
                   />
                 );
               })}
@@ -519,10 +520,8 @@ export default function HomeClient() {
                     pinnedReview={pinnedReviews.get(slug)}
                     isActive={activeSlug === slug}
                     onDismiss={dismiss}
-                    cardRef={(el) => {
-                      if (el) cardRefs.current.set(slug, el);
-                      else cardRefs.current.delete(slug);
-                    }}
+                    onHoverStart={() => onCardHover(slug)}
+                    onHoverEnd={onCardLeave}
                   />
                 );
               })}

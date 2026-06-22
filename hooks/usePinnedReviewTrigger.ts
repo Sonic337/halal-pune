@@ -2,17 +2,28 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const SCROLL_STOP_MS = 2500;
+const HOVER_TRIGGER_MS = 2500;
 const AUTO_DISMISS_MS = 10000;
 
 export function usePinnedReviewTrigger(
-  cardRefs: React.RefObject<Map<string, HTMLElement>>,
   slugsWithPinned: Set<string>
-): { activeSlug: string | null; dismiss: () => void } {
+): {
+  activeSlug: string | null;
+  dismiss: () => void;
+  onCardHover: (slug: string) => void;
+  onCardLeave: () => void;
+} {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
-  const scrollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dismissTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const isScrollingRef = useRef(false);
+  const hoveredSlugRef = useRef<string | null>(null);
+
+  function clearHoverTimer() {
+    if (hoverTimerRef.current) {
+      clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+  }
 
   function clearDismissTimer() {
     if (dismissTimerRef.current) {
@@ -28,70 +39,62 @@ export function usePinnedReviewTrigger(
     }, AUTO_DISMISS_MS);
   }
 
+  function onCardHover(slug: string) {
+    // Hovering a new card clears any running dismiss timer
+    clearDismissTimer();
+
+    if (!slugsWithPinned.has(slug)) {
+      // This card has no pinned review — clear any pending hover timer
+      clearHoverTimer();
+      hoveredSlugRef.current = null;
+      return;
+    }
+
+    // Already waiting on or showing this slug — do nothing
+    if (hoveredSlugRef.current === slug) return;
+
+    hoveredSlugRef.current = slug;
+    clearHoverTimer();
+
+    console.log(`[PinnedReview] hovering "${slug}" — has pinned review, starting ${HOVER_TRIGGER_MS}ms timer`);
+
+    hoverTimerRef.current = setTimeout(() => {
+      if (hoveredSlugRef.current === slug) {
+        console.log(`[PinnedReview] showing bubble for "${slug}"`);
+        setActiveSlug(slug);
+      }
+    }, HOVER_TRIGGER_MS);
+  }
+
+  function onCardLeave() {
+    clearHoverTimer();
+    hoveredSlugRef.current = null;
+    // If a bubble is currently visible, start the auto-dismiss countdown
+    startDismissTimer();
+  }
+
   function dismiss() {
+    clearHoverTimer();
     clearDismissTimer();
     setActiveSlug(null);
   }
 
-  function getMostCenteredSlug(): string | null {
-    const refs = cardRefs.current;
-    if (!refs) return null;
-
-    const viewportMid = window.innerHeight / 2;
-    let bestSlug: string | null = null;
-    let bestDist = Infinity;
-
-    refs.forEach((el, slug) => {
-      if (!slugsWithPinned.has(slug)) return;
-      const rect = el.getBoundingClientRect();
-      // Card must be at least partially visible
-      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-      const cardMid = rect.top + rect.height / 2;
-      const dist = Math.abs(cardMid - viewportMid);
-      if (dist < bestDist) {
-        bestDist = dist;
-        bestSlug = slug;
-      }
-    });
-
-    return bestSlug;
-  }
-
   useEffect(() => {
-    console.log("[PinnedReview] slugsWithPinned:", [...slugsWithPinned]);
-    console.log("[PinnedReview] cards being tracked:", cardRefs.current?.size ?? 0);
-  }, [slugsWithPinned, cardRefs]);
-
-  useEffect(() => {
-    console.log("[PinnedReview] activeSlug changed:", activeSlug);
-  }, [activeSlug]);
-
-  useEffect(() => {
-    if (slugsWithPinned.size === 0) return;
-
-    function onScrollStart() {
-      if (!isScrollingRef.current) {
-        isScrollingRef.current = true;
-        clearDismissTimer();
-        setActiveSlug(null);
-      }
-      if (scrollTimerRef.current) clearTimeout(scrollTimerRef.current);
-      scrollTimerRef.current = setTimeout(() => {
-        isScrollingRef.current = false;
-        const slug = getMostCenteredSlug();
-        setActiveSlug(slug);
-        if (slug) startDismissTimer();
-      }, SCROLL_STOP_MS);
-    }
-
-    window.addEventListener("scroll", onScrollStart, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScrollStart);
-      if (scrollTimerRef.current) clearTimeout(scrollTimerRef.current);
-      clearDismissTimer();
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    console.log("[PinnedReview] slugsWithPinned updated:", [...slugsWithPinned]);
   }, [slugsWithPinned]);
 
-  return { activeSlug, dismiss };
+  useEffect(() => {
+    console.log("[PinnedReview] activeSlug:", activeSlug);
+  }, [activeSlug]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      clearHoverTimer();
+      clearDismissTimer();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return { activeSlug, dismiss, onCardHover, onCardLeave };
 }

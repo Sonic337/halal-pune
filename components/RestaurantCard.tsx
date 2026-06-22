@@ -147,7 +147,8 @@ export default function RestaurantCard({
   pinnedReview,
   isActive,
   onDismiss,
-  cardRef,
+  onHoverStart,
+  onHoverEnd,
 }: {
   restaurant: Restaurant;
   branches?: Branch[];
@@ -155,7 +156,8 @@ export default function RestaurantCard({
   pinnedReview?: { rating: number; review_text: string };
   isActive?: boolean;
   onDismiss?: () => void;
-  cardRef?: (el: HTMLElement | null) => void;
+  onHoverStart?: () => void;
+  onHoverEnd?: () => void;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [cuisineExpanded, setCuisineExpanded] = useState(false);
@@ -184,7 +186,6 @@ export default function RestaurantCard({
   return (
     <Link href={`/restaurants/${slug}`} className="block">
     <article
-      ref={cardRef}
       className="rounded-2xl flex flex-col transition-shadow overflow-hidden"
       style={{
         backgroundColor: "var(--color-surface)",
@@ -193,11 +194,12 @@ export default function RestaurantCard({
         cursor: "pointer",
       }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.boxShadow =
-          "var(--shadow-card-hover)";
+        (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-card-hover)";
+        onHoverStart?.();
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-card)";
+        onHoverEnd?.();
       }}
     >
       {/* ── Image ── */}

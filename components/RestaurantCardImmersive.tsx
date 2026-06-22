@@ -14,7 +14,8 @@ export default function RestaurantCardImmersive({
   pinnedReview,
   isActive,
   onDismiss,
-  cardRef,
+  onHoverStart,
+  onHoverEnd,
 }: {
   restaurant: Restaurant;
   branches?: Branch[];
@@ -22,7 +23,8 @@ export default function RestaurantCardImmersive({
   pinnedReview?: { rating: number; review_text: string };
   isActive?: boolean;
   onDismiss?: () => void;
-  cardRef?: (el: HTMLElement | null) => void;
+  onHoverStart?: () => void;
+  onHoverEnd?: () => void;
 }) {
   const branches = branchesProp ?? restaurant.branches;
   const slug = slugify(restaurant.name);
@@ -49,7 +51,6 @@ export default function RestaurantCardImmersive({
   return (
     <Link href={`/restaurants/${slug}`} className="block">
     <article
-      ref={cardRef}
       className="flex flex-col"
       style={{
         borderRadius: 12,
@@ -60,8 +61,8 @@ export default function RestaurantCardImmersive({
         cursor: "pointer",
         position: "relative",
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => { setHovered(true); onHoverStart?.(); }}
+      onMouseLeave={() => { setHovered(false); onHoverEnd?.(); }}
     >
       {/* ── Image ── */}
       <div
