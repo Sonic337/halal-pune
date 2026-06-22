@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import restaurantsData from "@/data/restaurants.json";
 import { Restaurant } from "@/types";
 import HomeClient from "@/components/HomeClient";
@@ -19,7 +20,9 @@ export default function Home() {
   return (
     <>
       <JsonLd restaurants={restaurants} />
-      <HomeClient />
+      <Suspense>
+        <HomeClient />
+      </Suspense>
     </>
   );
 }
