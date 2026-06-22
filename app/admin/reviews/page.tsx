@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
+import Image from "next/image";
 import ReviewsTable from "@/components/admin/ReviewsTable";
 
 function getAdminSupabase() {
@@ -30,35 +31,100 @@ export default async function AdminReviewsPage() {
 
   if (error) {
     return (
-      <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-        <p style={{ color: "#dc2626" }}>Failed to load reviews: {error.message}</p>
+      <main style={{ minHeight: "100vh", backgroundColor: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <p style={{ color: "#dc2626", fontSize: 14 }}>Failed to load reviews: {error.message}</p>
       </main>
     );
   }
 
+  const isAdmin = role === "admin";
+
   return (
-    <main style={{ padding: "2rem", fontFamily: "sans-serif", maxWidth: 1100, margin: "0 auto" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
-        <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>Reviews — {reviews?.length ?? 0} total</h1>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <span style={{ fontSize: 12, fontWeight: 600, padding: "2px 8px", borderRadius: 20, backgroundColor: role === "admin" ? "rgba(22,163,74,0.12)" : "rgba(249,115,22,0.12)", color: role === "admin" ? "#16a34a" : "#c2410c" }}>
-            {role === "admin" ? "Admin" : "Editor"}
-          </span>
-          <a
-            href="/"
-            style={{ fontSize: 13, color: "#2563eb", textDecoration: "underline", cursor: "pointer" }}
-          >
-            ← Back to site
-          </a>
-          <a
-            href="/api/admin/logout"
-            style={{ fontSize: 13, color: "#6b7280", textDecoration: "underline", cursor: "pointer" }}
-          >
-            Log out
-          </a>
+    <div style={{ minHeight: "100vh", backgroundColor: "#f8fafc" }}>
+      {/* Top bar */}
+      <header
+        style={{
+          backgroundColor: "#ffffff",
+          borderBottom: "1px solid #e2e8f0",
+          position: "sticky",
+          top: 0,
+          zIndex: 40,
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1200,
+            margin: "0 auto",
+            padding: "0 24px",
+            height: 56,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 16,
+          }}
+        >
+          {/* Left: logo + title */}
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ width: 28, height: 28, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
+              <Image src="/wurrynot-logo.jpg" alt="Wurrynot" width={28} height={28} style={{ objectFit: "cover" }} />
+            </div>
+            <span style={{ fontSize: 16, fontWeight: 600, color: "#0f172a" }}>Reviews</span>
+          </div>
+
+          {/* Right: role pill + links */}
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                padding: "3px 10px",
+                borderRadius: 20,
+                backgroundColor: isAdmin ? "rgba(249,115,22,0.1)" : "rgba(66,133,244,0.12)",
+                color: isAdmin ? "#ea580c" : "#4285F4",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {isAdmin ? "Admin" : "Editor"}
+            </span>
+            <a
+              href="/"
+              style={{
+                fontSize: 13,
+                color: "#64748b",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              ← Back to site
+            </a>
+            <a
+              href="/api/admin/logout"
+              style={{
+                fontSize: 13,
+                color: "#64748b",
+                textDecoration: "none",
+                padding: "5px 12px",
+                borderRadius: 8,
+                border: "1px solid #e2e8f0",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Log out
+            </a>
+          </div>
         </div>
+      </header>
+
+      {/* Page content */}
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "24px 24px 48px" }}>
+        {/* Stats row */}
+        <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>
+          {reviews?.length ?? 0} reviews total
+        </p>
+
+        {/* Table */}
+        <ReviewsTable reviews={reviews ?? []} role={role} />
       </div>
-      <ReviewsTable reviews={reviews ?? []} role={role} />
-    </main>
+    </div>
   );
 }
