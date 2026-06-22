@@ -24,6 +24,9 @@ export async function POST(req: NextRequest) {
 
   const supabase = getServerSupabase();
 
+  const keyPrefix = (process.env.SUPABASE_SECRET_KEY ?? "").slice(0, 20);
+  console.log("[reviews] SUPABASE_SECRET_KEY prefix:", keyPrefix);
+
   const { error } = await supabase.from("reviews").insert({
     restaurant_slug,
     restaurant_name: restaurant_name ?? "",
