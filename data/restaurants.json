@@ -1,30 +1,5 @@
 [
   {
-    "name": "Liberty Grill",
-    "tagline": "Best burgers in Pune",
-    "rating": 4.6,
-    "reviewCount": 77,
-    "cuisines": [
-      "Mexican",
-      "Salad",
-      "Fast Food"
-    ],
-    "branches": [
-      {
-        "area": "Wadgaon Sheri",
-        "mapsUrl": "https://maps.app.goo.gl/jQJemMwLdQzDRQTeA",
-        "lat": 18.548967,
-        "lng": 73.9149296
-      }
-    ],
-    "dietType": "non-veg",
-    "menuUrl": "https://www.zomato.com/pune/the-liberty-grills-wadgaon-sheri",
-    "phone": "+919422196654",
-    "imageUrl": "/images/restaurants/liberty-grill.jpg",
-    "priceRange": 600,
-    "googlePlaceId": "ChIJWa3_dwTBwjsRcbfXlmiMBPo"
-  },
-  {
     "name": "Chai Square",
     "tagline": "",
     "rating": 4.7,
