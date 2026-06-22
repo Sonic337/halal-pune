@@ -238,27 +238,19 @@ export default function HomeClient() {
       style={{ backgroundColor: "var(--color-bg)", color: "var(--color-text)" }}
       className="min-h-screen"
     >
-      {/* ── Nav links ────────────────────────────────────── */}
-      <nav className="flex justify-center gap-6 py-3" style={{ fontSize: 13, color: "var(--color-text-3)" }}>
-        <Link href="/contact" className="hover:underline transition-colors hover:text-[var(--color-text-2)]">
-          Contact Us
-        </Link>
-        <Link href="/forms" className="hover:underline transition-colors hover:text-[var(--color-text-2)]">
-          Suggest a Restaurant
-        </Link>
-      </nav>
-
       {/* ── Hero ─────────────────────────────────────────── */}
       <HeroCollage>
         <div className="max-w-2xl mx-auto text-center">
           <div className="flex justify-center mb-3">
-            <Image
-              src="/wurrynot-logo.jpg"
-              alt="Wurrynot"
-              width={240}
-              height={240}
-              className="rounded-full object-cover shadow-lg"
-            />
+            <Link href="/" className="rounded-full block">
+              <Image
+                src="/wurrynot-logo.jpg"
+                alt="Wurrynot"
+                width={240}
+                height={240}
+                className="rounded-full object-cover shadow-lg hover:opacity-90 transition-opacity"
+              />
+            </Link>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight mb-2">
             Wurrynot
