@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Restaurant, Branch } from "@/types";
 import { slugify } from "@/lib/slug";
 
@@ -108,6 +108,7 @@ function BranchChip({
         rel="noopener noreferrer"
         onMouseEnter={() => onHover(branch)}
         onMouseLeave={onLeave}
+        onClick={(e) => e.stopPropagation()}
         className={`${shared} branch-chip-link`}
         style={{
           backgroundColor: "color-mix(in srgb, var(--brand-emerald) 12%, var(--color-surface))",
@@ -147,6 +148,7 @@ export default function RestaurantCard({
   branches?: Branch[];
   distanceKm?: number;
 }) {
+  const router = useRouter();
   const [expanded, setExpanded] = useState(false);
   const [cuisineExpanded, setCuisineExpanded] = useState(false);
   const [hoveredBranch, setHoveredBranch] = useState<Branch | null>(null);
@@ -171,12 +173,14 @@ export default function RestaurantCard({
 
   return (
     <article
-      className="rounded-2xl flex flex-col transition-shadow overflow-hidden relative"
+      className="rounded-2xl flex flex-col transition-shadow overflow-hidden"
       style={{
         backgroundColor: "var(--color-surface)",
         border: "1px solid var(--color-border)",
         boxShadow: "var(--shadow-card)",
+        cursor: "pointer",
       }}
+      onClick={() => router.push(`/restaurants/${slugify(restaurant.name)}`)}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLElement).style.boxShadow =
           "var(--shadow-card-hover)";
@@ -185,16 +189,9 @@ export default function RestaurantCard({
         (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-card)";
       }}
     >
-      {/* Stretched link — covers whole card; interactive elements sit above via z-index */}
-      <Link
-        href={`/restaurants/${slugify(restaurant.name)}`}
-        aria-label={`View ${restaurant.name}`}
-        className="absolute inset-0"
-        style={{ zIndex: 0 }}
-      />
       {/* ── Image ── */}
       {restaurant.imageUrl && (
-        <div className="relative w-full h-44 shrink-0" style={{ zIndex: 1 }}>
+        <div className="relative w-full h-44 shrink-0">
           <Image
             src={restaurant.imageUrl}
             alt={restaurant.name}
@@ -221,7 +218,7 @@ export default function RestaurantCard({
           )}
         </div>
       )}
-      <div className="flex flex-col gap-3 p-5" style={{ position: "relative", zIndex: 1 }}>
+      <div className="flex flex-col gap-3 p-5">
 
       {/* ── Header row ── */}
       <div className="flex items-start justify-between gap-2">
@@ -319,7 +316,7 @@ export default function RestaurantCard({
         ))}
         {restaurant.cuisines.length > VISIBLE_CUISINE_LIMIT && (
           <button
-            onClick={() => setCuisineExpanded((v) => !v)}
+            onClick={(e) => { e.stopPropagation(); setCuisineExpanded((v) => !v); }}
             className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-full font-medium transition-colors"
             style={{
               backgroundColor: "var(--color-surface-2)",
@@ -385,7 +382,7 @@ export default function RestaurantCard({
 
         {hasMore && (
           <button
-            onClick={() => setExpanded((v) => !v)}
+            onClick={(e) => { e.stopPropagation(); setExpanded((v) => !v); }}
             className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-full font-medium transition-colors"
             style={{
               backgroundColor: "var(--color-surface-2)",
@@ -429,6 +426,7 @@ export default function RestaurantCard({
                 href={restaurant.menuUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors"
                 style={{
                   backgroundColor: "color-mix(in srgb, var(--brand-emerald) 12%, var(--color-surface))",
@@ -442,6 +440,7 @@ export default function RestaurantCard({
             {restaurant.phone && (
               <a
                 href={`tel:${restaurant.phone}`}
+                onClick={(e) => e.stopPropagation()}
                 className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-colors"
                 style={{
                   backgroundColor: "color-mix(in srgb, var(--brand-emerald) 12%, var(--color-surface))",

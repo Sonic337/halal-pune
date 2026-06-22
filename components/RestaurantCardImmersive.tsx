@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Restaurant, Branch } from "@/types";
 import { slugify } from "@/lib/slug";
 
@@ -15,6 +15,7 @@ export default function RestaurantCardImmersive({
   branches?: Branch[];
   distanceKm?: number;
 }) {
+  const router = useRouter();
   const branches = branchesProp ?? restaurant.branches;
 
   const [hovered, setHovered] = useState(false);
@@ -45,21 +46,16 @@ export default function RestaurantCardImmersive({
         backgroundColor: "var(--color-surface)",
         boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
         overflow: "hidden",
-        position: "relative",
+        cursor: "pointer",
       }}
+      onClick={() => router.push(`/restaurants/${slugify(restaurant.name)}`)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Stretched link — interactive elements sit above via z-index */}
-      <Link
-        href={`/restaurants/${slugify(restaurant.name)}`}
-        aria-label={`View ${restaurant.name}`}
-        style={{ position: "absolute", inset: 0, zIndex: 0 }}
-      />
       {/* ── Image ── */}
       <div
         className="relative w-full shrink-0 immersive-image"
-        style={{ borderRadius: "12px 12px 0 0", overflow: "hidden", zIndex: 1 }}
+        style={{ borderRadius: "12px 12px 0 0", overflow: "hidden" }}
       >
         {restaurant.imageUrl ? (
           <Image
@@ -113,6 +109,7 @@ export default function RestaurantCardImmersive({
                 href={restaurant.menuUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 style={{
                   fontSize: 11,
                   fontWeight: 600,
@@ -133,6 +130,7 @@ export default function RestaurantCardImmersive({
             {restaurant.phone && (
               <a
                 href={`tel:${restaurant.phone}`}
+                onClick={(e) => e.stopPropagation()}
                 style={{
                   fontSize: 11,
                   fontWeight: 600,
@@ -157,7 +155,7 @@ export default function RestaurantCardImmersive({
       {/* ── Card body ── */}
       <div
         className="flex flex-col"
-        style={{ padding: 12, gap: 4, position: "relative", zIndex: 1 }}
+        style={{ padding: 12, gap: 4 }}
       >
         {/* Row 1: name + rating */}
         <div className="flex items-center gap-2 min-w-0">
@@ -211,6 +209,7 @@ export default function RestaurantCardImmersive({
                   href={b.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
                   style={{
                     color: "var(--color-text-3)",
                     textDecoration: "none",
@@ -237,7 +236,7 @@ export default function RestaurantCardImmersive({
 
           {!areasExpanded && branches.length > 2 && (
             <button
-              onClick={() => setAreasExpanded(true)}
+              onClick={(e) => { e.stopPropagation(); setAreasExpanded(true); }}
               style={{
                 fontSize: 12,
                 color: "var(--color-text-3)",
@@ -255,7 +254,7 @@ export default function RestaurantCardImmersive({
 
           {areasExpanded && (
             <button
-              onClick={() => setAreasExpanded(false)}
+              onClick={(e) => { e.stopPropagation(); setAreasExpanded(false); }}
               style={{
                 fontSize: 12,
                 color: "var(--color-text-3)",
@@ -296,7 +295,7 @@ export default function RestaurantCardImmersive({
         {hasActions && (
           <div ref={dropdownRef} className="md:hidden" style={{ marginTop: 4 }}>
             <button
-              onClick={() => setDropdownOpen((v) => !v)}
+              onClick={(e) => { e.stopPropagation(); setDropdownOpen((v) => !v); }}
               style={{
                 fontSize: 12,
                 fontWeight: 500,
@@ -321,6 +320,7 @@ export default function RestaurantCardImmersive({
                     href={restaurant.menuUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     style={{
                       fontSize: 14,
                       color: "var(--color-text)",
@@ -335,6 +335,7 @@ export default function RestaurantCardImmersive({
                 {restaurant.phone && (
                   <a
                     href={`tel:${restaurant.phone}`}
+                    onClick={(e) => e.stopPropagation()}
                     style={{
                       fontSize: 14,
                       color: "var(--color-text)",
