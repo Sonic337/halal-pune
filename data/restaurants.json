@@ -416,7 +416,7 @@
     "name": "Hite Bar",
     "cuisines": ["Fast Food", "Burger", "Sandwich"],
     "menuUrl": "https://www.zomato.com/pune/hite-bar-camp-area/menu",
-    "imageUrl": "images/restaurants/hite-bar/hite-bar.jpg",
+    "imageUrl": "/images/restaurants/hite-bar.jpg",
     "branches": [
       {
         "area": "Camp",
@@ -2113,7 +2113,7 @@
   {
     "name": "Cafe Garden",
     "cuisines": ["Cafe"],
-    "imageUrl": "images/restaurants/cafe-garden/cafe-garden.jpg",
+    "imageUrl": "/images/restaurants/cafe-garden.jpg",
     "branches": [
       {
         "area": "Pune",
