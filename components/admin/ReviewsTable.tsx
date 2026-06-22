@@ -45,7 +45,7 @@ function stars(n: number) {
   return "★".repeat(n) + "☆".repeat(5 - n);
 }
 
-export default function ReviewsTable({ reviews: initial }: { reviews: Review[] }) {
+export default function ReviewsTable({ reviews: initial, role }: { reviews: Review[]; role: "admin" | "editor" }) {
   const [reviews, setReviews] = useState<Review[]>(initial);
   const [deleting, setDeleting] = useState<string | null>(null);
   const [pinning, setPinning] = useState<string | null>(null);
@@ -126,7 +126,7 @@ export default function ReviewsTable({ reviews: initial }: { reviews: Review[] }
             <th style={th}>Review</th>
             <th style={th}>Date</th>
             <th style={th}>Pin</th>
-            <th style={th}></th>
+            {role === "admin" && <th style={th}></th>}
           </tr>
         </thead>
         <tbody>
@@ -181,24 +181,26 @@ export default function ReviewsTable({ reviews: initial }: { reviews: Review[] }
                   {pinning === r.id ? "…" : r.is_pinned ? "Pinned ★" : "Pin"}
                 </button>
               </td>
-              <td style={td}>
-                <button
-                  onClick={() => handleDelete(r.id)}
-                  disabled={deleting === r.id}
-                  style={{
-                    padding: "3px 10px",
-                    fontSize: 12,
-                    fontWeight: 600,
-                    color: "#fff",
-                    backgroundColor: deleting === r.id ? "#fca5a5" : "#dc2626",
-                    border: "none",
-                    borderRadius: 4,
-                    cursor: deleting === r.id ? "not-allowed" : "pointer",
-                  }}
-                >
-                  {deleting === r.id ? "…" : "Delete"}
-                </button>
-              </td>
+              {role === "admin" && (
+                <td style={td}>
+                  <button
+                    onClick={() => handleDelete(r.id)}
+                    disabled={deleting === r.id}
+                    style={{
+                      padding: "3px 10px",
+                      fontSize: 12,
+                      fontWeight: 600,
+                      color: "#fff",
+                      backgroundColor: deleting === r.id ? "#fca5a5" : "#dc2626",
+                      border: "none",
+                      borderRadius: 4,
+                      cursor: deleting === r.id ? "not-allowed" : "pointer",
+                    }}
+                  >
+                    {deleting === r.id ? "…" : "Delete"}
+                  </button>
+                </td>
+              )}
             </tr>
           ))}
         </tbody>
