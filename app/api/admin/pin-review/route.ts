@@ -13,7 +13,7 @@ function getAdminClient() {
 export async function POST(req: NextRequest) {
   const cookieStore = await cookies();
   const session = cookieStore.get("admin_session");
-  if (!session || session.value !== "authenticated") {
+  if (!session || (session.value !== "authenticated" && session.value !== "editor")) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

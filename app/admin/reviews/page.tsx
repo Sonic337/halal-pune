@@ -45,6 +45,12 @@ export default async function AdminReviewsPage() {
             {role === "admin" ? "Admin" : "Editor"}
           </span>
           <a
+            href="/"
+            style={{ fontSize: 13, color: "#2563eb", textDecoration: "underline", cursor: "pointer" }}
+          >
+            ← Back to site
+          </a>
+          <a
             href="/api/admin/logout"
             style={{ fontSize: 13, color: "#6b7280", textDecoration: "underline", cursor: "pointer" }}
           >
