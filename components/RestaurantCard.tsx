@@ -335,7 +335,7 @@ export default function RestaurantCard({
         ))}
         {restaurant.cuisines.length > VISIBLE_CUISINE_LIMIT && (
           <button
-            onClick={(e) => { e.stopPropagation(); setCuisineExpanded((v) => !v); }}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCuisineExpanded((v) => !v); }}
             className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-full font-medium transition-colors"
             style={{
               backgroundColor: "var(--color-surface-2)",
@@ -401,7 +401,7 @@ export default function RestaurantCard({
 
         {hasMore && (
           <button
-            onClick={(e) => { e.stopPropagation(); setExpanded((v) => !v); }}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setExpanded((v) => !v); }}
             className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-full font-medium transition-colors"
             style={{
               backgroundColor: "var(--color-surface-2)",

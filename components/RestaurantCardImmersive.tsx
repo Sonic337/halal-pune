@@ -255,7 +255,7 @@ export default function RestaurantCardImmersive({
 
           {!areasExpanded && branches.length > 2 && (
             <button
-              onClick={(e) => { e.stopPropagation(); setAreasExpanded(true); }}
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); setAreasExpanded(true); }}
               style={{
                 fontSize: 12,
                 color: "var(--color-text-3)",
@@ -273,7 +273,7 @@ export default function RestaurantCardImmersive({
 
           {areasExpanded && (
             <button
-              onClick={(e) => { e.stopPropagation(); setAreasExpanded(false); }}
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); setAreasExpanded(false); }}
               style={{
                 fontSize: 12,
                 color: "var(--color-text-3)",
