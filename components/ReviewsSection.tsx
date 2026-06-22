@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { supabase } from "@/lib/supabase";
 
 interface Review {
   id: string;
@@ -88,13 +87,15 @@ export default function ReviewsSection({ restaurantSlug, restaurantName, googleP
 
   const fetchReviews = useCallback(async () => {
     setLoading(true);
-    const { data } = await supabase
-      .from("reviews")
-      .select("id, reviewer_name, rating, review_text, created_at")
-      .eq("restaurant_slug", restaurantSlug)
-      .order("created_at", { ascending: false });
-    setReviews(data ?? []);
-    setLoading(false);
+    try {
+      const res = await fetch(`/api/reviews/get?slug=${encodeURIComponent(restaurantSlug)}`);
+      const data = await res.json();
+      setReviews(Array.isArray(data) ? data : []);
+    } catch {
+      setReviews([]);
+    } finally {
+      setLoading(false);
+    }
   }, [restaurantSlug]);
 
   useEffect(() => {

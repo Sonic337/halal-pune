@@ -23,6 +23,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "rating must be between 1 and 5" }, { status: 400 });
   }
 
+  console.log("[reviews POST] key prefix:", process.env.SUPABASE_SECRET_KEY?.substring(0, 15));
+
   const { error } = await getAdminClient().from("reviews").insert({
     restaurant_slug,
     restaurant_name: restaurant_name ?? "",
