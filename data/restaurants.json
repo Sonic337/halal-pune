@@ -413,6 +413,30 @@
     "googlePlaceId": "ChIJ3SKAQGPqwjsRY-5J_7iEiWY"
   },
   {
+    "name": "Hite Bar",
+    "cuisines": ["Fast Food", "Burger", "Sandwich"],
+    "menuUrl": "https://www.zomato.com/pune/hite-bar-camp-area/menu",
+    "imageUrl": "images/restaurants/hite-bar/hite-bar.jpg",
+    "branches": [
+      {
+        "area": "Camp",
+        "mapsUrl": "https://maps.app.goo.gl/yTyRLz9cxmWqkqHy8"
+      },
+      {
+        "area": "Kedari Nagar",
+        "mapsUrl": "https://maps.app.goo.gl/bSd653cAeuv1MQnk9"
+      },
+      {
+        "area": "Kondhwa",
+        "mapsUrl": "https://maps.app.goo.gl/rfT9nzEcSJCD9nPm7"
+      },
+      {
+        "area": "Handewadi",
+        "mapsUrl": "https://maps.app.goo.gl/gegGZE9cXZUpJmk56"
+      }
+    ]
+  },
+  {
     "name": "Kimling",
     "tagline": "",
     "rating": 4,
@@ -480,7 +504,7 @@
     "googlePlaceId": "ChIJ19sUEk_AwjsRP0WK8qdxHBs"
   },
   {
-    "name": "Grand Delhi Darbar",
+    "name": "Grand Delli Darbar",
     "tagline": "",
     "rating": 4.2,
     "reviewCount": 4208,
@@ -2085,6 +2109,17 @@
     "imageUrl": "/images/restaurants/cafe-bun-maska.jpg",
     "priceRange": 300,
     "googlePlaceId": "ChIJZ6i_wmLqwjsRR6cbtYjxOLI"
+  },
+  {
+    "name": "Cafe Garden",
+    "cuisines": ["Cafe"],
+    "imageUrl": "images/restaurants/cafe-garden/cafe-garden.jpg",
+    "branches": [
+      {
+        "area": "Pune",
+        "mapsUrl": "https://maps.app.goo.gl/yHCqsouPDcGodo598"
+      }
+    ]
   },
   {
     "name": "Bagicha Corner",
