@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
-function getServerSupabase() {
+function getAdminClient() {
   return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SECRET_KEY!
+    process.env.SUPABASE_SECRET_KEY!,
+    { auth: { autoRefreshToken: false, persistSession: false } }
   );
 }
 
@@ -22,12 +23,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "rating must be between 1 and 5" }, { status: 400 });
   }
 
-  const supabase = getServerSupabase();
-
-  const keyPrefix = (process.env.SUPABASE_SECRET_KEY ?? "").slice(0, 20);
-  console.log("[reviews] SUPABASE_SECRET_KEY prefix:", keyPrefix);
-
-  const { error } = await supabase.from("reviews").insert({
+  const { error } = await getAdminClient().from("reviews").insert({
     restaurant_slug,
     restaurant_name: restaurant_name ?? "",
     reviewer_name: reviewer_name?.trim() || null,
