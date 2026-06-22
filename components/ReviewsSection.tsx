@@ -8,6 +8,7 @@ interface WurrynотReview {
   rating: number;
   review_text: string;
   created_at: string;
+  is_pinned?: boolean;
 }
 
 interface GoogleReview {
@@ -21,6 +22,7 @@ interface Props {
   restaurantSlug: string;
   restaurantName: string;
   googlePlaceId?: string;
+  isAdmin?: boolean;
 }
 
 function StarDisplay({ rating }: { rating: number }) {
@@ -96,48 +98,81 @@ function SourceTag({ source }: { source: "wurrynot" | "google" }) {
   );
 }
 
+function PinButton({
+  isPinned,
+  loading,
+  onClick,
+}: {
+  isPinned: boolean;
+  loading: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <div className="flex flex-col gap-1">
+      <button
+        onClick={onClick}
+        disabled={loading}
+        style={{
+          fontSize: 11,
+          fontWeight: 600,
+          padding: "2px 8px",
+          borderRadius: 6,
+          cursor: loading ? "not-allowed" : "pointer",
+          border: isPinned ? "none" : "1px solid var(--color-border)",
+          backgroundColor: isPinned ? "#16a34a" : "transparent",
+          color: isPinned ? "#fff" : "var(--color-text-3)",
+          opacity: loading ? 0.6 : 1,
+          whiteSpace: "nowrap",
+        }}
+      >
+        {loading ? "…" : isPinned ? "📌 Pinned" : "📌 Pin as bubble"}
+      </button>
+      {isPinned && (
+        <span style={{ fontSize: 10, color: "var(--color-text-3)" }}>
+          Showing as bubble on listing page
+        </span>
+      )}
+    </div>
+  );
+}
+
 function ReviewSkeleton() {
   return (
     <div
       className="rounded-xl p-4 flex flex-col gap-3"
       style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)" }}
     >
-      <div
-        style={{
-          height: 12,
-          width: "40%",
-          borderRadius: 6,
-          backgroundColor: "var(--color-border)",
-          animation: "pulse 1.5s ease-in-out infinite",
-        }}
-      />
-      <div
-        style={{
-          height: 12,
-          width: "80%",
-          borderRadius: 6,
-          backgroundColor: "var(--color-border)",
-          animation: "pulse 1.5s ease-in-out infinite",
-        }}
-      />
-      <div
-        style={{
-          height: 12,
-          width: "60%",
-          borderRadius: 6,
-          backgroundColor: "var(--color-border)",
-          animation: "pulse 1.5s ease-in-out infinite",
-        }}
-      />
+      {[40, 80, 60].map((w) => (
+        <div
+          key={w}
+          style={{
+            height: 12,
+            width: `${w}%`,
+            borderRadius: 6,
+            backgroundColor: "var(--color-border)",
+            animation: "pulse 1.5s ease-in-out infinite",
+          }}
+        />
+      ))}
     </div>
   );
 }
 
-export default function ReviewsSection({ restaurantSlug, restaurantName, googlePlaceId }: Props) {
+export default function ReviewsSection({
+  restaurantSlug,
+  restaurantName,
+  googlePlaceId,
+  isAdmin = false,
+}: Props) {
   const [reviews, setReviews] = useState<WurrynотReview[]>([]);
   const [loading, setLoading] = useState(true);
   const [googleReviews, setGoogleReviews] = useState<GoogleReview[]>([]);
   const [googleLoading, setGoogleLoading] = useState(false);
+
+  // Track which google review index is pinned (at most one)
+  const [pinnedGoogleIdx, setPinnedGoogleIdx] = useState<number | null>(null);
+  const [pinningWurrynot, setPinningWurrynot] = useState<string | null>(null);
+  const [pinningGoogleIdx, setPinningGoogleIdx] = useState<number | null>(null);
 
   const [rating, setRating] = useState(0);
   const [name, setName] = useState("");
@@ -178,10 +213,67 @@ export default function ReviewsSection({ restaurantSlug, restaurantName, googleP
       .finally(() => setGoogleLoading(false));
   }, [googlePlaceId]);
 
+  async function handlePinWurrynot(reviewId: string, currentlyPinned: boolean) {
+    setPinningWurrynot(reviewId);
+    try {
+      const res = await fetch("/api/admin/pin-review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(
+          currentlyPinned
+            ? { id: reviewId, unpin: true }
+            : { id: reviewId, restaurant_slug: restaurantSlug }
+        ),
+      });
+      if (res.ok) {
+        setReviews((prev) =>
+          prev.map((r) => {
+            if (currentlyPinned) {
+              return r.id === reviewId ? { ...r, is_pinned: false } : r;
+            }
+            return { ...r, is_pinned: r.id === reviewId };
+          })
+        );
+        // Clear any pinned Google review when pinning a Wurrynot one
+        if (!currentlyPinned) setPinnedGoogleIdx(null);
+      }
+    } catch {
+      // silent
+    } finally {
+      setPinningWurrynot(null);
+    }
+  }
+
+  async function handlePinGoogle(idx: number) {
+    const review = googleReviews[idx];
+    if (!review) return;
+    setPinningGoogleIdx(idx);
+    try {
+      const res = await fetch("/api/admin/pin-google-review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          restaurant_slug: restaurantSlug,
+          restaurant_name: restaurantName,
+          rating: review.rating,
+          review_text: review.text,
+        }),
+      });
+      if (res.ok) {
+        setPinnedGoogleIdx(idx);
+        // Unpin all Wurrynot reviews locally
+        setReviews((prev) => prev.map((r) => ({ ...r, is_pinned: false })));
+      }
+    } catch {
+      // silent
+    } finally {
+      setPinningGoogleIdx(null);
+    }
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSubmitError("");
-
     if (rating === 0) { setSubmitError("Please select a star rating."); return; }
     if (text.trim().length < 10) { setSubmitError("Review must be at least 10 characters."); return; }
 
@@ -242,8 +334,7 @@ export default function ReviewsSection({ restaurantSlug, restaurantName, googleP
     outline: "none",
   };
 
-  const totalCount = reviews.length + googleReviews.length;
-  const hasAnyReviews = totalCount > 0 || googleLoading;
+  const hasAnyReviews = reviews.length > 0 || googleReviews.length > 0 || googleLoading;
 
   return (
     <div className="flex flex-col gap-8">
@@ -269,7 +360,16 @@ export default function ReviewsSection({ restaurantSlug, restaurantName, googleP
                       {formatDate(r.created_at)}
                     </span>
                   </div>
-                  <SourceTag source="wurrynot" />
+                  <div className="flex flex-col items-end gap-2 shrink-0">
+                    <SourceTag source="wurrynot" />
+                    {isAdmin && (
+                      <PinButton
+                        isPinned={!!r.is_pinned}
+                        loading={pinningWurrynot === r.id}
+                        onClick={() => handlePinWurrynot(r.id, !!r.is_pinned)}
+                      />
+                    )}
+                  </div>
                 </div>
                 <StarDisplay rating={r.rating} />
                 <p style={{ color: "var(--color-text-2)", fontSize: 14, lineHeight: 1.5 }}>
@@ -295,7 +395,16 @@ export default function ReviewsSection({ restaurantSlug, restaurantName, googleP
                     <span style={{ color: "var(--color-text-3)", fontSize: 12 }}>
                       {r.relativePublishTimeDescription}
                     </span>
-                    <SourceTag source="google" />
+                    <div className="flex flex-col items-end gap-2 shrink-0">
+                      <SourceTag source="google" />
+                      {isAdmin && (
+                        <PinButton
+                          isPinned={pinnedGoogleIdx === i}
+                          loading={pinningGoogleIdx === i}
+                          onClick={() => handlePinGoogle(i)}
+                        />
+                      )}
+                    </div>
                   </div>
                   <StarDisplay rating={r.rating} />
                   <p style={{ color: "var(--color-text-2)", fontSize: 14, lineHeight: 1.5 }}>
@@ -305,7 +414,7 @@ export default function ReviewsSection({ restaurantSlug, restaurantName, googleP
               ))
             )}
 
-            {/* Empty state — only show if nothing at all and not loading */}
+            {/* Empty state */}
             {!hasAnyReviews && !googleLoading && (
               <p style={{ color: "var(--color-text-3)", fontSize: 14 }}>
                 No reviews yet. Be the first!

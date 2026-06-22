@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import Image from "next/image";
 import restaurantsData from "@/data/restaurants.json";
 import { Restaurant } from "@/types";
@@ -45,6 +46,9 @@ export default async function RestaurantPage({
   const { slug } = await params;
   const restaurant = getRestaurantBySlug(restaurants, slug);
   if (!restaurant) notFound();
+
+  const cookieStore = await cookies();
+  const isAdmin = cookieStore.get("admin_session")?.value === "authenticated";
 
   return (
     <main
@@ -128,6 +132,7 @@ export default async function RestaurantPage({
           <RestaurantTabs
             restaurant={restaurant}
             slug={slug}
+            isAdmin={isAdmin}
           />
         </div>
       </div>

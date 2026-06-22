@@ -7,9 +7,10 @@ import ReviewsSection from "@/components/ReviewsSection";
 interface Props {
   restaurant: Restaurant;
   slug: string;
+  isAdmin: boolean;
 }
 
-export default function RestaurantTabs({ restaurant, slug }: Props) {
+export default function RestaurantTabs({ restaurant, slug, isAdmin }: Props) {
   const [activeTab, setActiveTab] = useState<"overview" | "reviews">("overview");
 
   const tabStyle = (tab: "overview" | "reviews"): React.CSSProperties =>
@@ -155,6 +156,7 @@ export default function RestaurantTabs({ restaurant, slug }: Props) {
             restaurantSlug={slug}
             restaurantName={restaurant.name}
             googlePlaceId={restaurant.googlePlaceId}
+            isAdmin={isAdmin}
           />
         </div>
       )}

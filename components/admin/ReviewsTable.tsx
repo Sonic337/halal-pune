@@ -11,6 +11,26 @@ interface Review {
   review_text: string;
   created_at: string;
   is_pinned: boolean;
+  source?: string;
+}
+
+function SourcePill({ source }: { source?: string }) {
+  const isGoogle = source === "google";
+  return (
+    <span
+      style={{
+        fontSize: 11,
+        fontWeight: 600,
+        padding: "2px 8px",
+        borderRadius: 20,
+        backgroundColor: isGoogle ? "rgba(66,133,244,0.15)" : "rgba(249,115,22,0.12)",
+        color: isGoogle ? "#4285F4" : "#c2410c",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {isGoogle ? "Google" : "Wurrynot"}
+    </span>
+  );
 }
 
 function formatDate(iso: string) {
@@ -100,6 +120,7 @@ export default function ReviewsTable({ reviews: initial }: { reviews: Review[] }
         <thead>
           <tr style={{ borderBottom: "2px solid #e5e7eb", textAlign: "left" }}>
             <th style={th}>Restaurant</th>
+            <th style={th}>Source</th>
             <th style={th}>Reviewer</th>
             <th style={th}>Rating</th>
             <th style={th}>Review</th>
@@ -118,6 +139,7 @@ export default function ReviewsTable({ reviews: initial }: { reviews: Review[] }
               }}
             >
               <td style={td}>{r.restaurant_name || "—"}</td>
+              <td style={td}><SourcePill source={r.source} /></td>
               <td style={td}>{r.reviewer_name || <span style={{ color: "#9ca3af" }}>Anonymous</span>}</td>
               <td style={{ ...td, color: "#d97706", whiteSpace: "nowrap" }}>{stars(r.rating)}</td>
               <td style={td}>
