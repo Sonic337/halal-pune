@@ -2,12 +2,19 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-interface Review {
+interface WurrynотReview {
   id: string;
   reviewer_name: string | null;
   rating: number;
   review_text: string;
   created_at: string;
+}
+
+interface GoogleReview {
+  rating: number;
+  text: string;
+  relativePublishTimeDescription: string;
+  source: "google";
 }
 
 interface Props {
@@ -28,13 +35,7 @@ function StarDisplay({ rating }: { rating: number }) {
   );
 }
 
-function StarSelector({
-  value,
-  onChange,
-}: {
-  value: number;
-  onChange: (v: number) => void;
-}) {
+function StarSelector({ value, onChange }: { value: number; onChange: (v: number) => void }) {
   const [hovered, setHovered] = useState(0);
   return (
     <div className="flex gap-1" role="group" aria-label="Select rating">
@@ -71,9 +72,72 @@ function formatDate(iso: string): string {
   });
 }
 
+function SourceTag({ source }: { source: "wurrynot" | "google" }) {
+  const isGoogle = source === "google";
+  return (
+    <span
+      style={{
+        fontSize: 10,
+        fontWeight: 600,
+        textTransform: "uppercase",
+        letterSpacing: "0.05em",
+        padding: "2px 7px",
+        borderRadius: 20,
+        backgroundColor: isGoogle
+          ? "rgba(66,133,244,0.15)"
+          : "color-mix(in srgb, var(--brand-orange) 15%, transparent)",
+        color: isGoogle ? "#4285F4" : "var(--brand-orange)",
+        whiteSpace: "nowrap",
+        flexShrink: 0,
+      }}
+    >
+      {isGoogle ? "Google Review" : "Wurrynot Review"}
+    </span>
+  );
+}
+
+function ReviewSkeleton() {
+  return (
+    <div
+      className="rounded-xl p-4 flex flex-col gap-3"
+      style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)" }}
+    >
+      <div
+        style={{
+          height: 12,
+          width: "40%",
+          borderRadius: 6,
+          backgroundColor: "var(--color-border)",
+          animation: "pulse 1.5s ease-in-out infinite",
+        }}
+      />
+      <div
+        style={{
+          height: 12,
+          width: "80%",
+          borderRadius: 6,
+          backgroundColor: "var(--color-border)",
+          animation: "pulse 1.5s ease-in-out infinite",
+        }}
+      />
+      <div
+        style={{
+          height: 12,
+          width: "60%",
+          borderRadius: 6,
+          backgroundColor: "var(--color-border)",
+          animation: "pulse 1.5s ease-in-out infinite",
+        }}
+      />
+    </div>
+  );
+}
+
 export default function ReviewsSection({ restaurantSlug, restaurantName, googlePlaceId }: Props) {
-  const [reviews, setReviews] = useState<Review[]>([]);
+  const [reviews, setReviews] = useState<WurrynотReview[]>([]);
   const [loading, setLoading] = useState(true);
+  const [googleReviews, setGoogleReviews] = useState<GoogleReview[]>([]);
+  const [googleLoading, setGoogleLoading] = useState(false);
 
   const [rating, setRating] = useState(0);
   const [name, setName] = useState("");
@@ -101,6 +165,18 @@ export default function ReviewsSection({ restaurantSlug, restaurantName, googleP
   useEffect(() => {
     fetchReviews();
   }, [fetchReviews]);
+
+  useEffect(() => {
+    if (!googlePlaceId) return;
+    setGoogleLoading(true);
+    fetch(`/api/reviews/google?placeId=${encodeURIComponent(googlePlaceId)}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data.reviews)) setGoogleReviews(data.reviews);
+      })
+      .catch(() => {})
+      .finally(() => setGoogleLoading(false));
+  }, [googlePlaceId]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -166,50 +242,83 @@ export default function ReviewsSection({ restaurantSlug, restaurantName, googleP
     outline: "none",
   };
 
+  const totalCount = reviews.length + googleReviews.length;
+  const hasAnyReviews = totalCount > 0 || googleLoading;
+
   return (
     <div className="flex flex-col gap-8">
       {/* ── Reviews list ── */}
       <div className="flex flex-col gap-4">
         {loading ? (
           <p style={{ color: "var(--color-text-3)", fontSize: 14 }}>Loading reviews…</p>
-        ) : reviews.length === 0 ? (
-          <p style={{ color: "var(--color-text-3)", fontSize: 14 }}>
-            No reviews yet. Be the first!
-          </p>
         ) : (
-          reviews.map((r) => (
-            <div
-              key={r.id}
-              className="rounded-xl p-4 flex flex-col gap-2"
-              style={{
-                backgroundColor: "var(--color-surface)",
-                border: "1px solid var(--color-border)",
-              }}
-            >
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-semibold text-sm" style={{ color: "var(--color-text)" }}>
-                  {r.reviewer_name || "Anonymous"}
-                </span>
-                <span style={{ color: "var(--color-text-3)", fontSize: 12 }}>
-                  {formatDate(r.created_at)}
-                </span>
+          <>
+            {/* Wurrynot reviews */}
+            {reviews.map((r) => (
+              <div
+                key={r.id}
+                className="rounded-xl p-4 flex flex-col gap-2"
+                style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)" }}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex flex-col gap-1 min-w-0">
+                    <span className="font-semibold text-sm" style={{ color: "var(--color-text)" }}>
+                      {r.reviewer_name || "Anonymous"}
+                    </span>
+                    <span style={{ color: "var(--color-text-3)", fontSize: 12 }}>
+                      {formatDate(r.created_at)}
+                    </span>
+                  </div>
+                  <SourceTag source="wurrynot" />
+                </div>
+                <StarDisplay rating={r.rating} />
+                <p style={{ color: "var(--color-text-2)", fontSize: 14, lineHeight: 1.5 }}>
+                  {r.review_text}
+                </p>
               </div>
-              <StarDisplay rating={r.rating} />
-              <p style={{ color: "var(--color-text-2)", fontSize: 14, lineHeight: 1.5 }}>
-                {r.review_text}
+            ))}
+
+            {/* Google reviews */}
+            {googleLoading ? (
+              <>
+                <ReviewSkeleton />
+                <ReviewSkeleton />
+              </>
+            ) : (
+              googleReviews.map((r, i) => (
+                <div
+                  key={`google-${i}`}
+                  className="rounded-xl p-4 flex flex-col gap-2"
+                  style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)" }}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span style={{ color: "var(--color-text-3)", fontSize: 12 }}>
+                      {r.relativePublishTimeDescription}
+                    </span>
+                    <SourceTag source="google" />
+                  </div>
+                  <StarDisplay rating={r.rating} />
+                  <p style={{ color: "var(--color-text-2)", fontSize: 14, lineHeight: 1.5 }}>
+                    {r.text}
+                  </p>
+                </div>
+              ))
+            )}
+
+            {/* Empty state — only show if nothing at all and not loading */}
+            {!hasAnyReviews && !googleLoading && (
+              <p style={{ color: "var(--color-text-3)", fontSize: 14 }}>
+                No reviews yet. Be the first!
               </p>
-            </div>
-          ))
+            )}
+          </>
         )}
       </div>
 
       {/* ── Write a review ── */}
       <div
         className="rounded-xl p-5 flex flex-col gap-4"
-        style={{
-          backgroundColor: "var(--color-surface)",
-          border: "1px solid var(--color-border)",
-        }}
+        style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)" }}
       >
         <h3 className="font-bold text-base" style={{ color: "var(--color-text)" }}>
           Write a Review
