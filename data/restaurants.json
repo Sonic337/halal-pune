@@ -21,7 +21,8 @@
     "menuUrl": "https://www.zomato.com/pune/the-liberty-grills-wadgaon-sheri",
     "phone": "+919422196654",
     "imageUrl": "/images/restaurants/liberty-grill.jpg",
-    "priceRange": 600
+    "priceRange": 600,
+    "googlePlaceId": "ChIJWa3_dwTBwjsRcbfXlmiMBPo"
   },
   {
     "name": "Chai Square",
@@ -48,7 +49,8 @@
     "menuUrl": "https://www.zomato.com/pune/chai-square-wanowrie",
     "phone": "+919172997142",
     "imageUrl": "/images/restaurants/chai-square.jpg",
-    "priceRange": 400
+    "priceRange": 400,
+    "googlePlaceId": "ChIJd0H-awDBwjsR7g99xjXCpBU"
   },
   {
     "name": "Kebabest",
@@ -71,7 +73,8 @@
     "menuUrl": "https://www.zomato.com/pune/kebabest-kalyani-nagar/menu?amp=1",
     "phone": "+919665595001",
     "imageUrl": "/images/restaurants/kebabest.jpg",
-    "priceRange": 500
+    "priceRange": 500,
+    "googlePlaceId": "ChIJH87z6I3BwjsRHEPQfZ2fxXw"
   },
   {
     "name": "Klinq",
@@ -98,10 +101,11 @@
     "menuUrl": "https://www.zomato.com/pune/klinq-cocktails-cuisine-viman-nagar",
     "phone": "+919112212057",
     "imageUrl": "/images/restaurants/klinq.jpg",
-    "priceRange": 2400
+    "priceRange": 2400,
+    "googlePlaceId": "ChIJmWSLqlLBwjsROQozbw9S5ls"
   },
   {
-    "name": "Sunmoi",
+    "name": "Suonmoi",
     "tagline": "",
     "rating": 4.4,
     "reviewCount": 1459,
@@ -121,7 +125,8 @@
     "menuUrl": "https://www.zomato.com/pune/suonmoi-dhole-patil-road",
     "phone": "+912030581110",
     "imageUrl": "/images/restaurants/sunmoi.jpg",
-    "priceRange": 1400
+    "priceRange": 1400,
+    "googlePlaceId": "ChIJMbxhIeXAwjsRT_shby1QKgM"
   },
   {
     "name": "Chung Fa",
@@ -144,7 +149,8 @@
     "menuUrl": "https://www.zomato.com/pune/chung-fa-east-street",
     "phone": "+912026130678",
     "imageUrl": "/images/restaurants/chung-fa.jpg",
-    "priceRange": 950
+    "priceRange": 950,
+    "googlePlaceId": "ChIJFZVp4TTAwjsRWxbX9GHaHiM"
   },
   {
     "name": "Uncle Chinese",
@@ -211,7 +217,8 @@
     "menuUrl": "https://www.zomato.com/pune/uncles-chinese-koregaon-park",
     "phone": "+912026152970",
     "imageUrl": "/images/restaurants/uncle-chinese.jpg",
-    "priceRange": 800
+    "priceRange": 800,
+    "googlePlaceId": "ChIJTXq3Fd7rwjsRUYzGYHsKhAE"
   },
   {
     "name": "Camden Lane",
@@ -236,7 +243,8 @@
     "menuUrl": "https://www.zomato.com/pune/the-camden-lane-koregaon-park",
     "phone": "+917757942396",
     "imageUrl": "/images/restaurants/camden-lane.jpg",
-    "priceRange": 1500
+    "priceRange": 1500,
+    "googlePlaceId": "ChIJ7wZfka_BwjsRw27WxqaMyLg"
   },
   {
     "name": "Taco Bell",
@@ -313,7 +321,8 @@
     "dietType": "veg-nonveg",
     "menuUrl": "https://www.zomato.com/pune/taco-bell-hadapsar/menu",
     "imageUrl": "/images/restaurants/taco-bell.jpg",
-    "priceRange": 600
+    "priceRange": 600,
+    "googlePlaceId": "ChIJdyFurUO_wjsRV4-hY62U2iU"
   },
   {
     "name": "Nothing but Chicken",
@@ -372,7 +381,8 @@
     "menuUrl": "https://www.zomato.com/pune/nothing-but-chicken-1-viman-nagar",
     "phone": "+918600576023",
     "imageUrl": "/images/restaurants/nothing-but-chicken.jpg",
-    "priceRange": 200
+    "priceRange": 200,
+    "googlePlaceId": "ChIJlVDfC-TBwjsRXMUgDxb5hSQ"
   },
   {
     "name": "Marrakesh",
@@ -399,7 +409,8 @@
     "menuUrl": "https://www.zomato.com/pune/marrakesh-nibm-road",
     "phone": "+917719861888",
     "imageUrl": "/images/restaurants/marrakesh.jpg",
-    "priceRange": 900
+    "priceRange": 900,
+    "googlePlaceId": "ChIJexOKaADrwjsRxd3O4TAiY7w"
   },
   {
     "name": "Habibi Ya Fatayer",
@@ -423,7 +434,8 @@
     "menuUrl": "https://www.zomato.com/pune/ya-habibi-fatayer-nibm-road",
     "phone": "+918208704985",
     "imageUrl": "/images/restaurants/habibi-ya-fatayer.jpg",
-    "priceRange": 500
+    "priceRange": 500,
+    "googlePlaceId": "ChIJ3SKAQGPqwjsRY-5J_7iEiWY"
   },
   {
     "name": "Kimling",
@@ -445,7 +457,8 @@
     "menuUrl": "https://www.zomato.com/pune/kimling-wanowrie",
     "phone": "+912041210781",
     "imageUrl": "/images/restaurants/kimling.jpg",
-    "priceRange": 900
+    "priceRange": 900,
+    "googlePlaceId": "ChIJKVKu5X_qwjsRzLqumQxzdhI"
   },
   {
     "name": "Mocha",
@@ -467,36 +480,18 @@
     "menuUrl": "https://www.zomato.com/pune/mocha-salunkhe-vihar-road",
     "phone": "+919559558823",
     "imageUrl": "/images/restaurants/mocha.jpg",
-    "priceRange": 1500
-  },
-  {
-    "name": "Pandan Kitchen",
-    "tagline": "",
-    "rating": 4.9,
-    "reviewCount": 123,
-    "cuisines": [
-      "Indonesian",
-      "Southeast Asian"
-    ],
-    "branches": [
-      {
-        "area": "NIBM, Kondhwa",
-        "mapsUrl": "https://www.google.com/maps/search/Pandan+Kitchen+NIBM+Road+Kondhwa+Pune",
-        "lat": 18.4642045,
-        "lng": 73.9029445
-      }
-    ],
-    "dietType": "non-veg",
-    "menuUrl": "https://www.zomato.com/pune/pandan-kitchen-nibm-road",
-    "phone": "+917410152966",
-    "imageUrl": "/images/restaurants/pandan-kitchen.jpg",
-    "priceRange": 600
+    "priceRange": 1500,
+    "googlePlaceId": "ChIJ5T1FQwDrwjsRPf1a4CGddB0"
   },
   {
     "name": "Pasteur Ice Cream Parlour",
     "rating": 4.1,
     "reviewCount": 383,
-    "cuisines": ["Ice Cream", "Desserts", "Fast Food"],
+    "cuisines": [
+      "Ice Cream",
+      "Desserts",
+      "Fast Food"
+    ],
     "priceRange": 300,
     "phone": "+918265057647",
     "menuUrl": "https://www.zomato.com/pune/pasteur-ice-cream-parlour-mg-road/menu",
@@ -506,7 +501,8 @@
         "area": "MG Road",
         "mapsUrl": "https://maps.app.goo.gl/TRRfRXwHUdwsztke9"
       }
-    ]
+    ],
+    "googlePlaceId": "ChIJ19sUEk_AwjsRP0WK8qdxHBs"
   },
   {
     "name": "Grand Delhi Darbar",
@@ -530,7 +526,8 @@
     "menuUrl": "https://www.zomato.com/pune/grand-dilli-darbar-camp-area",
     "phone": "+919172080002",
     "imageUrl": "/images/restaurants/grand-delhi-darbar.jpg",
-    "priceRange": 850
+    "priceRange": 850,
+    "googlePlaceId": "ChIJw-8T59TBwjsRCF6gLN4u1NI"
   },
   {
     "name": "Persian Darbar",
@@ -554,7 +551,8 @@
     "menuUrl": "https://www.zomato.com/pune/persian-darbar-camp-area",
     "phone": "+919175623047",
     "imageUrl": "/images/restaurants/persian-darbar.jpg",
-    "priceRange": 1700
+    "priceRange": 1700,
+    "googlePlaceId": "ChIJ97UStsXBwjsRCIwk_PK6-_k"
   },
   {
     "name": "Gareeb Nawaz",
@@ -577,7 +575,8 @@
     "menuUrl": "https://www.zomato.com/pune/gareeb-nawaz-biryani-kondhwa",
     "phone": "+917073355050",
     "imageUrl": "/images/restaurants/gareeb-nawaz.jpg",
-    "priceRange": 300
+    "priceRange": 300,
+    "googlePlaceId": "ChIJqfT6hgnrwjsRo3mxCDod-UM"
   },
   {
     "name": "Grand Darbar",
@@ -597,7 +596,8 @@
     "menuUrl": "https://www.zomato.com/pune/grand-darbar-kondhwa",
     "phone": "+917559100848",
     "imageUrl": "/images/restaurants/grand-darbar.jpg",
-    "priceRange": 1000
+    "priceRange": 1000,
+    "googlePlaceId": "ChIJxUufKQDrwjsR12ggCYKo2fM"
   },
   {
     "name": "Supreme",
@@ -619,13 +619,23 @@
     "menuUrl": "https://www.zomato.com/pune/anis-somjees-supreme-kondhwa/order",
     "phone": "+919158646566",
     "imageUrl": "/images/restaurants/supreme.jpg",
-    "priceRange": 1600
+    "priceRange": 1600,
+    "googlePlaceId": "ChIJlwBz497rwjsRKgAVsvu_iLk"
   },
   {
     "name": "Marz-O-Rin",
     "rating": 3.9,
     "reviewCount": 3608,
-    "cuisines": ["Sandwich", "Rolls", "Burger", "Fast Food", "Bakery", "Desserts", "Shake", "Beverages"],
+    "cuisines": [
+      "Sandwich",
+      "Rolls",
+      "Burger",
+      "Fast Food",
+      "Bakery",
+      "Desserts",
+      "Shake",
+      "Beverages"
+    ],
     "priceRange": 300,
     "phone": "+912026130774",
     "menuUrl": "https://www.zomato.com/pune/marz-o-rin-mg-road/menu",
@@ -635,7 +645,8 @@
         "area": "MG Road",
         "mapsUrl": "https://maps.app.goo.gl/bqWgU1P5TJVEQNeTA"
       }
-    ]
+    ],
+    "googlePlaceId": "ChIJoaM9Ek_AwjsRIOymQ4Ig9Mk"
   },
   {
     "name": "Masala Times",
@@ -659,7 +670,8 @@
     "menuUrl": "https://www.zomato.com/pune/masala-times-camp-area",
     "phone": "+918087444556",
     "imageUrl": "/images/restaurants/masala-times.jpg",
-    "priceRange": 1300
+    "priceRange": 1300,
+    "googlePlaceId": "ChIJ0Q5eGjLBwjsRiRvTp3WlVf4"
   },
   {
     "name": "Spice Culture",
@@ -682,7 +694,8 @@
     "menuUrl": "https://www.zomato.com/pune/spice-culture-bar-kitchen-salunkhe-vihar-road",
     "phone": "+918669667755",
     "imageUrl": "/images/restaurants/spice-culture.jpg",
-    "priceRange": 1600
+    "priceRange": 1600,
+    "googlePlaceId": "ChIJP9hurTXrwjsR3PCshwtM-nE"
   },
   {
     "name": "Balsam",
@@ -712,7 +725,8 @@
     "menuUrl": "https://www.zomato.com/pune/balsam-cafe-and-kitchen-salunkhe-vihar-road",
     "phone": "+919146702882",
     "imageUrl": "/images/restaurants/balsam.jpg",
-    "priceRange": 1000
+    "priceRange": 1000,
+    "googlePlaceId": "ChIJC23gDcXrwjsRYiL4nSuyidw"
   },
   {
     "name": "Arabian Mandi",
@@ -734,7 +748,8 @@
     "menuUrl": "https://www.zomato.com/pune/arabian-mandi-nibm-road",
     "phone": "+919717469407",
     "imageUrl": "/images/restaurants/arabian-mandi.jpg",
-    "priceRange": 1000
+    "priceRange": 1000,
+    "googlePlaceId": "ChIJWy-2dPjrwjsRt7x2JYQ3SSI"
   },
   {
     "name": "Qehhwa Cafe",
@@ -760,7 +775,8 @@
     "menuUrl": "https://www.zomato.com/pune/qehhwa-cafe-kondhwa",
     "phone": "+917020193085",
     "imageUrl": "/images/restaurants/qehhwa-cafe.jpg",
-    "priceRange": 800
+    "priceRange": 800,
+    "googlePlaceId": "ChIJGXAvFWXrwjsRlKDZc2rs9P8"
   },
   {
     "name": "Chafa Cafe",
@@ -799,7 +815,8 @@
     "menuUrl": "https://www.zomato.com/pune/chafa-cafe-and-studio-koregaon-park",
     "phone": "+919767100022",
     "imageUrl": "/images/restaurants/chafa-cafe.jpg",
-    "priceRange": 1200
+    "priceRange": 1200,
+    "googlePlaceId": "ChIJGf4my1bBwjsRhlZFxZDacbQ"
   },
   {
     "name": "Grand Shalimar",
@@ -824,7 +841,8 @@
     "menuUrl": "https://www.zomato.com/pune/grand-shalimar-restaurant-and-lawns-nibm-road",
     "phone": "+918308890889",
     "imageUrl": "/images/restaurants/grand-shalimar.jpg",
-    "priceRange": 300
+    "priceRange": 300,
+    "googlePlaceId": "ChIJRRiqZgDrwjsRc5k6ch_usbs"
   },
   {
     "name": "Arabian Chilies",
@@ -850,7 +868,8 @@
     "menuUrl": "https://www.zomato.com/pune/arabian-chillies-kondhwa",
     "phone": "+918495099099",
     "imageUrl": "/images/restaurants/arabian-chilies.jpg",
-    "priceRange": 1100
+    "priceRange": 1100,
+    "googlePlaceId": "ChIJa991OIbrwjsRyU8vsQ9daWc"
   },
   {
     "name": "Bhiwandi Darbar",
@@ -877,7 +896,8 @@
     "menuUrl": "https://www.zomato.com/pune/bhiwandi-darbar-camp-area",
     "phone": "+918511028446",
     "imageUrl": "/images/restaurants/bhiwandi-darbar.jpg",
-    "priceRange": 1000
+    "priceRange": 1000,
+    "googlePlaceId": "ChIJ2QOX0vXBwjsRpkRH06Kq93Y"
   },
   {
     "name": "The Steam Room Pizzeria",
@@ -900,7 +920,8 @@
     "menuUrl": "https://www.zomato.com/pune/the-steam-room-kondhwa",
     "phone": "+918830985290",
     "imageUrl": "/images/restaurants/the-steam-room-pizzeria.jpg",
-    "priceRange": 200
+    "priceRange": 200,
+    "googlePlaceId": "ChIJubjGVYLrwjsRrdcLORFLu-c"
   },
   {
     "name": "Badshah",
@@ -926,7 +947,8 @@
     "menuUrl": "https://www.zomato.com/pune/badshah-east-street",
     "phone": "+912026362667",
     "imageUrl": "/images/restaurants/badshah.jpg",
-    "priceRange": 650
+    "priceRange": 650,
+    "googlePlaceId": "ChIJ83W47EjAwjsRwj4pshoAM60"
   },
   {
     "name": "George Restaurant",
@@ -952,7 +974,8 @@
     "menuUrl": "https://www.zomato.com/pune/george-restaurant-camp-area",
     "phone": "+919881153613",
     "imageUrl": "/images/restaurants/george-restaurant.jpg",
-    "priceRange": 1200
+    "priceRange": 1200,
+    "googlePlaceId": "ChIJE1H1p0_AwjsRtBVB5YyT9XE"
   },
   {
     "name": "Yana Sizzler",
@@ -1004,7 +1027,8 @@
     "menuUrl": "https://www.zomato.com/pune/yana-sizzlers-camp-area",
     "phone": "+918888258911",
     "imageUrl": "/images/restaurants/yana-sizzler.jpg",
-    "priceRange": 1200
+    "priceRange": 1200,
+    "googlePlaceId": "ChIJ7WmIuU_AwjsRQLch5RGlkzI"
   },
   {
     "name": "Shawarma.co - Lassi Wassi",
@@ -1054,7 +1078,8 @@
     "menuUrl": "https://www.zomato.com/pune/shawarma-co-lassi-wassi-kothrud",
     "phone": "+919529964152",
     "imageUrl": "/images/restaurants/shawarma-co-lassi-wassi.jpg",
-    "priceRange": 300
+    "priceRange": 300,
+    "googlePlaceId": "ChIJM3RbJr2_wjsR4N8OWp8jNr0"
   },
   {
     "name": "Blue Nile",
@@ -1079,7 +1104,8 @@
     "menuUrl": "https://www.zomato.com/pune/blue-nile-camp-area",
     "phone": "+912026125238",
     "imageUrl": "/images/restaurants/blue-nile.jpg",
-    "priceRange": 2000
+    "priceRange": 2000,
+    "googlePlaceId": "ChIJa24Te_zAwjsRWUGzFcsdPTA"
   },
   {
     "name": "Shahi Dawat",
@@ -1102,7 +1128,8 @@
     "menuUrl": "https://www.zomato.com/pune/shahi-dawat-camp-area",
     "phone": "+912026340114",
     "imageUrl": "/images/restaurants/shahi-dawat.jpg",
-    "priceRange": 500
+    "priceRange": 500,
+    "googlePlaceId": "ChIJAyV2IUbAwjsR84cEmo1RZS0"
   },
   {
     "name": "Butterwala and Co.",
@@ -1128,7 +1155,8 @@
     "menuUrl": "https://www.zomato.com/pune/butterwala-co-kondhwa",
     "phone": "+918983723222",
     "imageUrl": "/images/restaurants/butterwala-and-co.jpg",
-    "priceRange": 500
+    "priceRange": 500,
+    "googlePlaceId": "ChIJycfuZ-jrwjsRAjq8GbGHlMA"
   },
   {
     "name": "Salt",
@@ -1153,7 +1181,8 @@
     "menuUrl": "https://www.zomato.com/pune/salt-salunkhe-vihar-road",
     "phone": "+919764788925",
     "imageUrl": "/images/restaurants/salt.jpg",
-    "priceRange": 200
+    "priceRange": 200,
+    "googlePlaceId": "ChIJu7ehOpTrwjsReDh9EqF3_E4"
   },
   {
     "name": "Irani Cafe",
@@ -1240,7 +1269,8 @@
     "menuUrl": "https://www.zomato.com/pune/irani-cafe-camp-area",
     "phone": "+917420053999",
     "imageUrl": "/images/restaurants/irani-cafe.jpg",
-    "priceRange": 500
+    "priceRange": 500,
+    "googlePlaceId": "ChIJy04qkVDBwjsRLMPP9WeoZfk"
   },
   {
     "name": "Cream Craver",
@@ -1266,7 +1296,8 @@
     "menuUrl": "https://www.zomato.com/pune/cream-craver-camp-area",
     "phone": "+917276016970",
     "imageUrl": "/images/restaurants/cream-craver.jpg",
-    "priceRange": 600
+    "priceRange": 600,
+    "googlePlaceId": "ChIJQZw-Bk_AwjsRF3XsTLi9lWk"
   },
   {
     "name": "Miya Kebabs",
@@ -1289,7 +1320,8 @@
     "menuUrl": "https://www.zomato.com/pune/miya-kebabs-koregaon-park",
     "phone": "+917758878975",
     "imageUrl": "/images/restaurants/miya-kebabs.jpg",
-    "priceRange": 300
+    "priceRange": 300,
+    "googlePlaceId": "ChIJo47RhpvBwjsRxKQur-WT4mk"
   },
   {
     "name": "Bombay Seekh Parathas",
@@ -1309,7 +1341,8 @@
     "menuUrl": "https://www.zomato.com/pune/bombay-seekh-paratha-kondhwa",
     "phone": "+919834970770",
     "imageUrl": "/images/restaurants/bombay-seekh-parathas.jpg",
-    "priceRange": 400
+    "priceRange": 400,
+    "googlePlaceId": "ChIJCWdoy2nrwjsRAKga6BUDnsk"
   },
   {
     "name": "Signature",
@@ -1335,7 +1368,8 @@
     "menuUrl": "https://www.zomato.com/pune/signature-kondhwa",
     "phone": "+912026837364",
     "imageUrl": "/images/restaurants/signature.jpg",
-    "priceRange": 1400
+    "priceRange": 1400,
+    "googlePlaceId": "ChIJV1FFcyXowjsRsgk_-CpcOt4"
   },
   {
     "name": "Olympia Kathi Kabab",
@@ -1354,7 +1388,8 @@
     "menuUrl": "https://www.zomato.com/pune/olympia-east-street",
     "phone": "+917972559822",
     "imageUrl": "/images/restaurants/olympia-kathi-kabab.jpg",
-    "priceRange": 200
+    "priceRange": 200,
+    "googlePlaceId": "ChIJIxNX0UjAwjsRJhZx1IrK9A0"
   },
   {
     "name": "Al Di La Restaurant",
@@ -1375,7 +1410,8 @@
     "menuUrl": "https://www.zomato.com/pune/al-di-la-conrad-pune-bund-garden",
     "phone": "+912067456745",
     "imageUrl": "/images/restaurants/al-di-la-restaurant.jpg",
-    "priceRange": 5000
+    "priceRange": 5000,
+    "googlePlaceId": "ChIJ8SGAnUbBwjsRMzUbBFea66U"
   },
   {
     "name": "Jashn",
@@ -1399,7 +1435,8 @@
     "menuUrl": "https://www.zomato.com/pune/jashn-salunkhe-vihar-road",
     "phone": "+918796578037",
     "imageUrl": "/images/restaurants/jashn.jpg",
-    "priceRange": 1400
+    "priceRange": 1400,
+    "googlePlaceId": "ChIJj_osW3nqwjsRkoN3PuuDOlU"
   },
   {
     "name": "Cafe Yezdan",
@@ -1432,7 +1469,8 @@
     "menuUrl": "https://www.zomato.com/pune/cafe-yezdan-camp-area",
     "phone": "+919545459850",
     "imageUrl": "/images/restaurants/cafe-yezdan.jpg",
-    "priceRange": 150
+    "priceRange": 150,
+    "googlePlaceId": "ChIJyT_m-UXAwjsRZzckl0AiBwQ"
   },
   {
     "name": "Akhtar's Samosa",
@@ -1453,7 +1491,8 @@
     "menuUrl": "https://www.zomato.com/pune/akhtars-samosa-camp-area",
     "phone": "+919860103232",
     "imageUrl": "/images/restaurants/akhtars-samosa.jpg",
-    "priceRange": 150
+    "priceRange": 150,
+    "googlePlaceId": "ChIJYYev3EjAwjsRlD2NbUreaVw"
   },
   {
     "name": "Burger King (Camp Burger)",
@@ -1473,7 +1512,8 @@
     "menuUrl": "https://www.zomato.com/pune/burger-king-1-east-street",
     "phone": "+912065255301",
     "imageUrl": "/images/restaurants/burger-king-camp.jpg",
-    "priceRange": 350
+    "priceRange": 350,
+    "googlePlaceId": "ChIJV-joujfAwjsRufimFOqQHDg"
   },
   {
     "name": "The Place - Touche The Sizzler",
@@ -1494,7 +1534,8 @@
     "menuUrl": "https://www.zomato.com/pune/the-place-touche-the-sizzler-camp-area",
     "phone": "+912026134632",
     "imageUrl": "/images/restaurants/the-place-touche-the-sizzler.jpg",
-    "priceRange": 1200
+    "priceRange": 1200,
+    "googlePlaceId": "ChIJxw3u9U_AwjsRsNwpCrutcsE"
   },
   {
     "name": "Paasha - JW Marriott Pune",
@@ -1515,7 +1556,8 @@
     "phone": "+912066832356",
     "imageUrl": "/images/restaurants/paasha-jw-marriott.jpg",
     "hotelBrand": "JW Marriott",
-    "priceRange": 5500
+    "priceRange": 5500,
+    "googlePlaceId": "ChIJBYVaXHe_wjsR0M8hEdheW3Y"
   },
   {
     "name": "Spice Kitchen - JW Marriott Pune",
@@ -1540,7 +1582,8 @@
     "imageUrl": "/images/restaurants/spice-kitchen-jw-marriott.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
     "hotelBrand": "JW Marriott",
-    "priceRange": 6200
+    "priceRange": 6200,
+    "googlePlaceId": "ChIJPzW2UHe_wjsRgOZmmnWabaQ"
   },
   {
     "name": "Tao Fu - JW Marriott Pune",
@@ -1561,7 +1604,8 @@
     "phone": "+912066833333",
     "imageUrl": "/images/restaurants/tao-fu-jw-marriott.jpg",
     "hotelBrand": "JW Marriott",
-    "priceRange": 5000
+    "priceRange": 5000,
+    "googlePlaceId": "ChIJJf0j1W6_wjsR_UOFNXiZ3Nk"
   },
   {
     "name": "Aasmana - The Ritz-Carlton Pune",
@@ -1587,7 +1631,8 @@
     "phone": "+912067675000",
     "imageUrl": "/images/restaurants/aasmana-ritz-carlton.jpg",
     "hotelBrand": "Ritz-Carlton",
-    "priceRange": 3500
+    "priceRange": 3500,
+    "googlePlaceId": "ChIJH6DZ1N7BwjsRLA6TtFed5As"
   },
   {
     "name": "2BHK Diner & Key Club",
@@ -1613,7 +1658,8 @@
     "phone": "+917745042999",
     "imageUrl": "/images/restaurants/2bhk-diner-key-club.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
-    "priceRange": 3000
+    "priceRange": 3000,
+    "googlePlaceId": "ChIJ86gvIS_BwjsRYx8zzCfJjfw"
   },
   {
     "name": "Acai",
@@ -1637,7 +1683,8 @@
     "menuUrl": "https://www.zomato.com/pune/acai-dhole-patil-road",
     "phone": "+918149268969",
     "imageUrl": "/images/restaurants/acai.jpg",
-    "priceRange": 2200
+    "priceRange": 2200,
+    "googlePlaceId": "ChIJG2PPtkfBwjsRhwP0Yxym0a0"
   },
   {
     "name": "Millers - The Luxury Club",
@@ -1662,7 +1709,8 @@
     "menuUrl": "https://www.zomato.com/pune/millers-the-luxury-club-bund-garden",
     "phone": "+918282818158",
     "imageUrl": "/images/restaurants/millers-the-luxury-club.jpg",
-    "priceRange": 3500
+    "priceRange": 3500,
+    "googlePlaceId": "ChIJ8w47gv7BwjsRlvGe1mKVFqI"
   },
   {
     "name": "Epitome",
@@ -1687,7 +1735,8 @@
     "menuUrl": "https://www.zomato.com/pune/epitome-bund-garden",
     "phone": "+918600080503",
     "imageUrl": "/images/restaurants/epitome.jpg",
-    "priceRange": 1700
+    "priceRange": 1700,
+    "googlePlaceId": "ChIJP3DLby_BwjsRzMypGR7xryY"
   },
   {
     "name": "Kukoo",
@@ -1710,7 +1759,8 @@
     "phone": "+917861004444",
     "imageUrl": "/images/restaurants/kukoo.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
-    "priceRange": 1800
+    "priceRange": 1800,
+    "googlePlaceId": "ChIJE7D35TLBwjsRKyEhW7I-Uwc"
   },
   {
     "name": "The Game Palacio",
@@ -1735,7 +1785,8 @@
     "phone": "+918657747547",
     "imageUrl": "/images/restaurants/the-game-palacio.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
-    "priceRange": 3000
+    "priceRange": 3000,
+    "googlePlaceId": "ChIJCz_76tLBwjsRECUO8KcJJRE"
   },
   {
     "name": "Shisha Jazz Cafe",
@@ -1762,7 +1813,8 @@
     "menuUrl": "https://www.zomato.com/pune/shisha-jazz-cafe-dhole-patil-road",
     "phone": "+912065200390",
     "imageUrl": "/images/restaurants/shisha-jazz-cafe.jpg",
-    "priceRange": 1800
+    "priceRange": 1800,
+    "googlePlaceId": "ChIJIanf-QPBwjsRqAm0vODG-qE"
   },
   {
     "name": "Latitude - Blue Diamond",
@@ -1788,7 +1840,8 @@
     "imageUrl": "/images/restaurants/latitude-blue-diamond.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
     "hotelBrand": "Blue Diamond",
-    "priceRange": 3100
+    "priceRange": 3100,
+    "googlePlaceId": "ChIJRYOG0v3AwjsR2XOAQu4VAME"
   },
   {
     "name": "Chingari - Sheraton Grand Pune",
@@ -1814,7 +1867,8 @@
     "phone": "+912066411111",
     "imageUrl": "/images/restaurants/chingari-sheraton.jpg",
     "hotelBrand": "Sheraton",
-    "priceRange": 4000
+    "priceRange": 4000,
+    "googlePlaceId": "ChIJ_eNlJuzAwjsRoa4_8VvEHH0"
   },
   {
     "name": "The Lobby @ Sheraton Cafe",
@@ -1838,7 +1892,8 @@
     "phone": "+912066411111",
     "imageUrl": "/images/restaurants/the-lobby-sheraton.jpg",
     "hotelBrand": "Sheraton",
-    "priceRange": 1200
+    "priceRange": 1200,
+    "googlePlaceId": "ChIJJ8e2zz7BwjsRsIXg3ziZJ10"
   },
   {
     "name": "The Market - The Westin Pune",
@@ -1863,7 +1918,8 @@
     "imageUrl": "/images/restaurants/the-market-westin.jpg",
     "fishNote": "Fish is served here. We weren't able to reach them to confirm preparation — please call before visiting to check if chicken and fish are kept separate.",
     "hotelBrand": "Westin",
-    "priceRange": 6000
+    "priceRange": 6000,
+    "googlePlaceId": "ChIJ_zxTZ9_BwjsRRZujCmgSmcU"
   },
   {
     "name": "Aafreen - The Westin Pune",
@@ -1886,7 +1942,8 @@
     "phone": "+912067210000",
     "imageUrl": "/images/restaurants/aafreen-westin.jpg",
     "hotelBrand": "Westin",
-    "priceRange": 3500
+    "priceRange": 3500,
+    "googlePlaceId": "ChIJHUW1XOjBwjsRnW4amcDBFc0"
   },
   {
     "name": "Masu - Conrad Pune",
@@ -1908,7 +1965,8 @@
     "phone": "+912067456745",
     "imageUrl": "/images/restaurants/masu-conrad.jpg",
     "hotelBrand": "Conrad",
-    "priceRange": 3500
+    "priceRange": 3500,
+    "googlePlaceId": "ChIJk0FT1fjAwjsRdUAOYCdexFo"
   },
   {
     "name": "Kabana - Conrad Pune",
@@ -1931,12 +1989,16 @@
     "phone": "+912067456745",
     "imageUrl": "/images/restaurants/kabana-conrad.jpg",
     "hotelBrand": "Conrad",
-    "priceRange": 3000
+    "priceRange": 3000,
+    "googlePlaceId": "ChIJZ-a91f7AwjsRrmftlCVDoD8"
   },
   {
     "name": "Kapila Kathi Kebab",
     "tagline": "Rolls",
-    "cuisines": ["Rolls", "Kathi Roll"],
+    "cuisines": [
+      "Rolls",
+      "Kathi Roll"
+    ],
     "priceRange": 300,
     "phone": "+917038204449",
     "menuUrl": "https://www.zomato.com/pune/kapila-kathi-kebab-dhole-patil-road/menu",
@@ -1946,7 +2008,8 @@
         "area": "Dhole Patil Road",
         "mapsUrl": "https://maps.app.goo.gl/7eSJXGt7ueiNRHuVA"
       }
-    ]
+    ],
+    "googlePlaceId": "ChIJp8SxeffAwjsR_HUkS28ltJo"
   },
   {
     "name": "Pune Sugar Box - Conrad Pune",
@@ -1968,7 +2031,8 @@
     "phone": "+912067456745",
     "imageUrl": "/images/restaurants/pune-sugar-box-conrad.jpg",
     "hotelBrand": "Conrad",
-    "priceRange": 1100
+    "priceRange": 1100,
+    "googlePlaceId": "ChIJwbC1KvnAwjsR4byjJ5Rop88"
   },
   {
     "name": "Zeeshan Restaurant - Apna Hyderabadi Food",
@@ -1992,7 +2056,8 @@
     "menuUrl": "https://www.zomato.com/pune/zeeshan-restaurant-apna-hyderabadi-food-viman-nagar",
     "phone": "+918888924441",
     "imageUrl": "/images/restaurants/zeeshan-restaurant.jpg",
-    "priceRange": 1000
+    "priceRange": 1000,
+    "googlePlaceId": "ChIJT_BiQUbBwjsRAkHuWQH-Aao"
   },
   {
     "name": "Alto Vino - JW Marriott Pune",
@@ -2017,7 +2082,8 @@
     "phone": "+912066833333",
     "imageUrl": "/images/restaurants/alto-vino-jw-marriott.jpg",
     "hotelBrand": "JW Marriott",
-    "priceRange": 6000
+    "priceRange": 6000,
+    "googlePlaceId": "ChIJHQAYWXe_wjsRREkCKMIygPM"
   },
   {
     "name": "Cafe Bun Maska",
@@ -2042,7 +2108,8 @@
     "menuUrl": "https://www.zomato.com/pune/cafe-bun-maska-kondhwa",
     "dietType": "veg-nonveg",
     "imageUrl": "/images/restaurants/cafe-bun-maska.jpg",
-    "priceRange": 300
+    "priceRange": 300,
+    "googlePlaceId": "ChIJZ6i_wmLqwjsRR6cbtYjxOLI"
   },
   {
     "name": "Bagicha Corner",
@@ -2065,7 +2132,8 @@
     "menuUrl": "https://www.zomato.com/pune/bagicha-corner-mg-road",
     "dietType": "veg-nonveg",
     "imageUrl": "/images/restaurants/bagicha-corner.jpg",
-    "priceRange": 500
+    "priceRange": 500,
+    "googlePlaceId": "ChIJZzLZuk_AwjsRPoa-ma_7C5k"
   },
   {
     "name": "Garden Seekh Kebab",
@@ -2087,7 +2155,8 @@
     "menuUrl": "https://www.zomato.com/pune/garden-seekh-kebab-camp-area",
     "dietType": "non-veg",
     "imageUrl": "/images/restaurants/garden-seekh-kebab.jpg",
-    "priceRange": 300
+    "priceRange": 300,
+    "googlePlaceId": "ChIJzUkrf0_AwjsRmLSuyNREoGA"
   },
   {
     "name": "The Great Indian Khau Gully",
@@ -2114,7 +2183,8 @@
     "dietType": "non-veg",
     "tempClosed": true,
     "imageUrl": "/images/restaurants/the-great-indian-khau-gully.jpg",
-    "priceRange": 1100
+    "priceRange": 1100,
+    "googlePlaceId": "ChIJbRbVqG7BwjsR8iF2OiqIzjU"
   },
   {
     "name": "Vohuman Cafe",
@@ -2138,7 +2208,8 @@
     "menuUrl": "https://www.zomato.com/pune/vohuman-cafe-dhole-patil-road",
     "dietType": "veg-nonveg",
     "imageUrl": "/images/restaurants/vohuman-cafe.jpg",
-    "priceRange": 200
+    "priceRange": 200,
+    "googlePlaceId": "ChIJHQkrD1jAwjsReTIzCjxLghc"
   },
   {
     "name": "Mystic Masala",
@@ -2163,6 +2234,7 @@
     "dietType": "non-veg",
     "fishNote": "Fish is served here but chicken is kept separate. We've confirmed this — calling ahead means they'll go the extra mile for you.",
     "imageUrl": "/images/restaurants/mystic-masala.jpg",
-    "priceRange": 3500
+    "priceRange": 3500,
+    "googlePlaceId": "ChIJdyi-eP7AwjsR1zezlvfhIyg"
   }
 ]
